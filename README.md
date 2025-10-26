@@ -1,5 +1,5 @@
 # Notes
-I will store all my nodes in this repo.
+I will store all my notes in this repo.
 
 # Play with markdown
 
