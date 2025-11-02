@@ -1,1 +1,0 @@
-# Arbeitszeiten und Pausen

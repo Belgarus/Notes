@@ -2,18 +2,18 @@
 
 [Gliederung](./gliederung.md)
 
-- [Aubildungsverhealtnis](./ausbildungsverhaeltnis.md)
-    - [Aubildungsvertrag](./ausbildungsvertrag.md)
-    - [Rechte und Pflichten](./rechte_pflichten.md)
-    - [Beendigung des Verhältnisses](./beendigung.md)
+- [Ausbildungsverhältnis](./ausbildungsverhaeltnis/ausbildungsverhaeltnis.md)
+    - [Ausbildungsvertrag](./ausbildungsverhaeltnis/ausbildungsvertrag.md)
+    - [Rechte und Pflichten](./ausbildungsverhaeltnis/rechte_pflichten.md)
+    - [Beendigung des Verhältnisses](./ausbildungsverhaeltnis/beendigung.md)
 
-- [Rechtlicher Rahmen](./rechtlicher_rahmen.md)
-    - [Berufsbildungsgesetz (BBiG)](./bbig.md)
-    - [Ausbildungsordnung](./ausbildungsordnung.md)
+- [Rechtlicher Rahmen](./rechtlicher_rahmen/rechtlicher_rahmen.md)
+    - [Berufsbildungsgesetz (BBiG)](./rechtlicher_rahmen/bbig.md)
+    - [Ausbildungsordnung](./rechtlicher_rahmen/ausbildungsordnung.md)
 
-- [Jugendarbeitsschutz](./jugendarbeitsschutz.md)
-    - [Arbeitszeiten und Pausen](./arbeitszeiten.md)
-    - [Besondere Schutzvorschriften](./schutzvorschriften.md)
+- [Jugendarbeitsschutz](./jugendarbeitsschutz/jugendarbeitsschutz.md)
+    - [Arbeitszeiten und Pausen](./jugendarbeitsschutz/arbeitszeiten.md)
+    - [Besondere Schutzvorschriften](./jugendarbeitsschutz/schutzvorschriften.md)
     
-- [Abschluss der Ausbildung](./abschluss.md)
-    - [Arbeitszeugnis](./arbeitszeugnis.md)
+- [Abschluss der Ausbildung](./abschluss/abschluss.md)
+    - [Arbeitszeugnis](./abschluss/arbeitszeugnis.md)

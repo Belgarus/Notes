@@ -30,3 +30,7 @@
 **4.1. Das Arbeitszeugnis**
 - Anspruch und Form
 - Zeugnissprache und Codes
+
+## Weiteres
+
+Diese Übersicht wurde mit [mdbook](https://rust-lang.github.io/mdBook/index.html) erstellt.
