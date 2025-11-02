@@ -16,7 +16,7 @@ This repository contains my public notes and serves as a learning platform for M
 ## FI25 - Vocational Training Documentation
 This section contains the **LF1 Duale Berufsausbildung** mdBook about the German dual education system.
 
-- **Live Version**: [View mdBook](https://belgarus.github.io/)
+- **Live Version**: [View mdBook](https://belgarus.github.io/Notes/fi25/lf1_dualeberufsausbildung/book/gliederung.html)
 - **Source Files**: `fi25/lf1_dualeberufsausbildung/src/`
 - **Built with**: [mdBook](https://rust-lang.github.io/mdBook/index.html)
 
