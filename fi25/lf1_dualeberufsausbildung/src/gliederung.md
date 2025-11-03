@@ -1,4 +1,4 @@
-# LK duale Berufsausbildung
+# LF1 - Leistungs Kontrolle duale Berufsausbildung
 
 ---
 
