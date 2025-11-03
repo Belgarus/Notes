@@ -1,21 +1,32 @@
 # Arbeitszeiten und Pausen
 
-## Arbeitszeiten
-- **Täglich max. 8 Stunden**, wöchentlich max. 40 Stunden (§8)
-- **Schichtzeit** (inkl. Pausen): max. 10 Stunden (§12)
-- **Nachtruhe**: 20:00 - 6:00 Uhr (§14)
+## Vergleich: Jugendliche vs. Erwachsene
 
-## Pausen
-- **4,5-6 Std.**: 30 Min. Pause
-- **Über 6 Std.**: 60 Min. Pause (§11)
-- Pausen müssen mind. 15 Min. am Stück sein
-- Spätestens nach 4,5 Std. muss Pause gewährt werden
+| Aspekt | Jugendliche (JArbSchG) | Erwachsene (ArbZG) |
+|--------|------------------------|-------------------|
+| **Tägliche Arbeitszeit** | max. 8 Std. | max. 8 Std. (bis 10 Std. möglich) |
+| **Wöchentliche Arbeitszeit** | max. 40 Std. | max. 48 Std. |
+| **Schichtzeit** (inkl. Pausen) | max. 10 Std. | keine Begrenzung |
+| **Nachtruhe** | 20:00 - 6:00 Uhr | keine Nachtruhe |
+| **Ruhezeit zwischen Schichten** | min. 12 Std. | min. 11 Std. |
+| **Pausen bei 6-9 Std. Arbeit** | 60 Min. | 30 Min. |
+| **Pausenlänge** | min. 15 Min. am Stück | keine Mindestdauer pro Pause |
+| **Erste Pause spätestens nach** | 4,5 Std. | 6 Std. |
+| **5-Tage-Woche** | verpflichtend | nicht verpflichtend |
 
-## Berufsschule
-- Unterrichtszeit gilt als Arbeitszeit (§9)
-- Bei mehr als 5 Std. Unterricht: ganzer Tag frei
-- Vor 9 Uhr Unterricht: am Vortag nur bis 20 Uhr
+## Besonderheiten für Jugendliche
 
-## Ruhezeiten
-- Mind. 12 Std. Freizeit zwischen Arbeitstagen (§13)
-- 5-Tage-Woche, Samstags- und Sonntagsarbeit nur in Ausnahmefällen
+### Berufsschule (§9 JArbSchG)
+- Unterricht = Arbeitszeit
+- ab 5 Std. Unterricht = ganzer Tag frei
+- Unterricht vor 9 Uhr = Vortag nur bis 20 Uhr
+
+### Pausen (§11 JArbSchG)
+- Pausen min. 15 Min. am Stück
+- Spätestens nach 4,5 Std. Pause
+- Pausen vorher festlegen
+
+### Wochenendarbeit (§§15-18 JArbSchG)
+- Samstags/Sonntagsarbeit verboten (Ausnahmen möglich)
+- Bei Wochenendarbeit: Ersatzruhetag
+- Min. 2 Samstage + 2 Sonntage pro Monat frei
