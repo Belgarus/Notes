@@ -17,3 +17,8 @@
     
 - [Abschluss der Ausbildung](./abschluss/abschluss.md)
     - [Arbeitszeugnis](./abschluss/arbeitszeugnis.md)
+
+- [Übungen und Zusatz](./uebungen_zusatz/zusatzlinks_uebungen.md)
+    - [Zusatzlinks](./uebungen_zusatz/zusatzlink.md)
+    - [Übungen](./uebungen_zusatz/uebungen.md)
+    - [Übungslösungen](./uebungen_zusatz/uebungs_loesungen.md)
