@@ -1,4 +1,4 @@
-# LF1 - Leistungs Kontrolle duale Berufsausbildung
+# LF1 - Leistungs Kontrolle Duale Berufsausbildung
 
 ---
 

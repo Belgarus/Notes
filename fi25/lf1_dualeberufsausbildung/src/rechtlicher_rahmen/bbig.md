@@ -20,3 +20,6 @@ Das BBiG ist das zentrale Bundesgesetz für die betriebliche Berufsausbildung.
 - Zuständigkeit der Kammern (IHK, Handwerkskammern)
 - Eintragung und Überwachung der Berufsausbildungsverhältnisse
 - Einrichtung von Prüfungsausschüssen
+
+## Zusätzliche Informationen:
+[Berufsbildungsgesetz](https://www.gesetze-im-internet.de/bbig_2005/BBiG.pdf) - Gesetze im Internet

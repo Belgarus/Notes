@@ -30,3 +30,6 @@
 - Samstags/Sonntagsarbeit verboten (Ausnahmen möglich)
 - Bei Wochenendarbeit: Ersatzruhetag
 - Min. 2 Samstage + 2 Sonntage pro Monat frei
+
+## Zusätzliche Informationen:
+[Arbeitszeitgesetz](https://www.gesetze-im-internet.de/arbzg/ArbZG.pdf) - Gesetze im Internet

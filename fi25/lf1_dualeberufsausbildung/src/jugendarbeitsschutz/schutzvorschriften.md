@@ -8,7 +8,8 @@
 ## Urlaub
 - **unter 16 J.**: 30 Werktage
 - **unter 17 J.**: 27 Werktage  
-- **unter 18 J.**: 25 Werktage (§19)
+- **unter 18 J.**: 25 Werktage (§19)  
+- **ab 18 J.**: 24 Werktage
 
 ## Gesundheitsvorsorge
 - **Erstuntersuchung** vor Ausbildungsbeginn (§32)
@@ -20,3 +21,6 @@
 - Züchtigungsverbot (§31)
 - Kein Alkohol oder Tabak für Jugendliche (§31)
 - Besonderer Kündigungsschutz
+
+# Zusatz:
+[Jugendarbeitsschutzgesetz](https://www.gesetze-im-internet.de/jarbschg/JArbSchG.pdf) - Gesetze im Internet

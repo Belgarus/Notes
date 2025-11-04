@@ -23,3 +23,7 @@ Die Ausbildungsordnung legt den verbindlichen inhaltlichen und zeitlichen Rahmen
 ## Aktuelle Zahlen
 - 327 anerkannte Ausbildungsberufe (2024)
 - Jährliche Veröffentlichung durch Bundesinstitut für Berufsbildung
+
+## Zusätzliche Informationen:
+[Ausbildungsordnung](https://www.gesetze-im-internet.de/fiausbv/BJNR025000020.html) - Gesetze im Internet  
+[Fachinformatikerausbildungsverordnung](https://www.gesetze-im-internet.de/fiausbv/BJNR025000020.html) - Gesetze im Internet
