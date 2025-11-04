@@ -155,7 +155,21 @@
 
                 <div id="content" class="content">
                     <main>
-                        
+                        <h1 id="zusammenfassung-der-relevanten-links"><a class="header" href="#zusammenfassung-der-relevanten-links">Zusammenfassung der relevanten Links</a></h1>
+<h3 id="gesetze-im-internet"><a class="header" href="#gesetze-im-internet">Gesetze im Internet:</a></h3>
+<ul>
+<li><a href="https://www.gesetze-im-internet.de/arbzg/ArbZG.pdf">Arbeitszeitgesetz</a></li>
+<li><a href="https://www.gesetze-im-internet.de/fiausbv/BJNR025000020.html">Ausbildungsordnung</a></li>
+<li><a href="https://www.gesetze-im-internet.de/bbig_2005/BBiG.pdf">Berufsbildungsgesetz</a></li>
+<li><a href="https://www.gesetze-im-internet.de/fiausbv/BJNR025000020.html">Fachinformatikerausbildungsverordnung</a></li>
+<li><a href="https://www.gesetze-im-internet.de/jarbschg/JArbSchG.pdf">Jugendarbeitsschutzgesetz</a></li>
+</ul>
+<h3 id="andere"><a class="header" href="#andere">Andere:</a></h3>
+<p>Nicht für Leistungskontrolle Relevant.</p>
+<ul>
+<li><a href="https://johannesloetzsch.github.io/LF4/iug.html">Rolle im eigenem Betrieb LF1</a></li>
+</ul>
+
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -185,6 +199,22 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
