@@ -21,6 +21,10 @@ This section contains the **LF1 Duale Berufsausbildung** mdBook about the German
 - **Source Files**: `fi25/lf1_dualeberufsausbildung/src/`
 - **Built with**: [mdBook](https://rust-lang.github.io/mdBook/index.html)
 
+It also contains the **Overview over the school topic**
+
+- **Live Version**: [View mdBook](https://belgarus.github.io/Notes/fi25/materialien_uebersicht/book/lernfeld2/datensammlung.html)
+
 ## PRV - Private Projects
 This section contains personal works in progress:
 
