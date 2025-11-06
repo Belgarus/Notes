@@ -4,6 +4,6 @@
  - Live: [LF4 mdBook](https://johannesloetzsch.github.io/LF4/)
 
 ## Gemeinsame Notizen
- - Live [Hedgedoc Datei](https://hedgedoc.c3d2.de/LF4)
+ - Live [Hedgedoc Datei](https://hedgedoc.c3d2.de/LF4_Notes)
 
 ## Zusätzliche Links
