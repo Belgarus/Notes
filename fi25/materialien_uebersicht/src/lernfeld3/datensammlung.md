@@ -4,3 +4,4 @@
 - Live: [LF3 HedgeDoc](https://hedgedoc.c3d2.de/LF3)
 
 ## Live Notizen?
+ - Vorschlag: [LF3 Notizen](https://hedgedoc.c3d2.de/LF3_Notes)
