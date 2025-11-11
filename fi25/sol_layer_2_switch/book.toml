@@ -1,11 +1,14 @@
 [book]
 authors = ["Belgarus"]
-language = "en"
+language = "de"
+multilingual = false
 src = "src"
-title = "theme"
+title = "SOL unmanaged Switch"
 
+[preprocessor]
 [preprocessor.mermaid]
 command = "mdbook-mermaid"
 
+[output]
 [output.html]
-additional-js = ["mermaid.min.js", "mermaid-init.js"]
+git-repository-url = "https://github.com/Belgarus/Notes"
