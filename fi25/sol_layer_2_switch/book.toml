@@ -2,4 +2,10 @@
 authors = ["Belgarus"]
 language = "en"
 src = "src"
-title = "sol_layer_2_switch"
+title = "theme"
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output.html]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
