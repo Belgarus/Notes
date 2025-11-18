@@ -31,6 +31,6 @@ Als auch das Routing von Frames innerhalb eines LAN auf Layer 2.
 
 ### Sonstiges
 - Workshop: **SculptOS** + Genode Microkernel-Architektur
-- lesen von **The Art of Deception** - Kevin Mitrick
+- lesen von **The Art of Deception** - Kevin Mitnick
 - lernen von Rust mit Rustbook
 - beschäftigung mit Unix-Philosophie und Virtuallisierung
