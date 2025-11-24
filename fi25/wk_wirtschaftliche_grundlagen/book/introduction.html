@@ -176,6 +176,8 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="vorwort"><a class="header" href="#vorwort">Vorwort</a></h1>
+<p>Inhalte für die Vorbereitung auf eine Klassenarbeit in Wirtschaftskunde.</p>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2016%2F09%2F14%2F11%2F52%2Fbeer-1669298_1280.png&f=1&nofb=1&ipt=7b9328f9e1f00d8816861dc70e6683c6868f3d1e1adad311385060d2f7421364" height="200px"> 
 
                     </main>
 
@@ -200,6 +202,22 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

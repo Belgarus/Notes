@@ -177,7 +177,24 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="vorwort"><a class="header" href="#vorwort">Vorwort</a></h1>
+<p>Inhalte für die Vorbereitung auf eine Klassenarbeit in Wirtschaftskunde.</p>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2016%2F09%2F14%2F11%2F52%2Fbeer-1669298_1280.png&f=1&nofb=1&ipt=7b9328f9e1f00d8816861dc70e6683c6868f3d1e1adad311385060d2f7421364" height="200px"> 
 <div style="break-before: page; page-break-before: always;"></div><h1 id="der-markt-regelt-sich-selbst"><a class="header" href="#der-markt-regelt-sich-selbst">Der Markt Regelt sich Selbst</a></h1>
+<h2 id="was-ist-der-markt"><a class="header" href="#was-ist-der-markt">Was ist der Markt?</a></h2>
+<p>Der <strong>Markt</strong> ist ein Ort, an dem Waren und Dienstleistungen angeboten und nachgefragt werden.</p>
+<p>Der Markt ist ein Ort des Wettbewerbs, da Anbieter miteinander konkurrieren, um die Aufmerksamkeit der Käufer zu gewinnen.</p>
+<h3 id="vollkommener-markt"><a class="header" href="#vollkommener-markt">Vollkommener Markt</a></h3>
+<p>Ein <strong>vollkommener Markt</strong> ist ein theoretisches Modell, in dem alle Marktteilnehmer rational handeln, vollständige Transparenz herrscht, Güter homogen sind und allein der Preis die Kaufentscheidung bestimmt.</p>
+<p>Der vollkommene Markt muss bestimmte Voraussetzungen erfüllen. Tut er dies nicht, gilt er als <strong>unvollkommener Markt</strong>. Zu den Merkmalen gehören:</p>
+<ul>
+<li>Viele Anbieter und Nachfrager (Polypol)</li>
+<li>Homogene <em>(Gleichartige)</em> Güter</li>
+<li>Keine Präferenzen</li>
+<li>Vollständige Information</li>
+<li>Keine Marktzutrittsbarrieren</li>
+<li>Sofortige Anpassung an Änderungen</li>
+<li>Treffen von Angebot und Nachfrage am selben Ort/Zeit</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="wirtschaftliche-grundlagen"><a class="header" href="#wirtschaftliche-grundlagen">Wirtschaftliche Grundlagen</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rechtsformen-und-führung-von-unternehmen"><a class="header" href="#rechtsformen-und-führung-von-unternehmen">Rechtsformen und Führung von Unternehmen</a></h1>
 
@@ -198,6 +215,22 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

@@ -176,6 +176,21 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="der-markt-regelt-sich-selbst"><a class="header" href="#der-markt-regelt-sich-selbst">Der Markt Regelt sich Selbst</a></h1>
+<h2 id="was-ist-der-markt"><a class="header" href="#was-ist-der-markt">Was ist der Markt?</a></h2>
+<p>Der <strong>Markt</strong> ist ein Ort, an dem Waren und Dienstleistungen angeboten und nachgefragt werden.</p>
+<p>Der Markt ist ein Ort des Wettbewerbs, da Anbieter miteinander konkurrieren, um die Aufmerksamkeit der Käufer zu gewinnen.</p>
+<h3 id="vollkommener-markt"><a class="header" href="#vollkommener-markt">Vollkommener Markt</a></h3>
+<p>Ein <strong>vollkommener Markt</strong> ist ein theoretisches Modell, in dem alle Marktteilnehmer rational handeln, vollständige Transparenz herrscht, Güter homogen sind und allein der Preis die Kaufentscheidung bestimmt.</p>
+<p>Der vollkommene Markt muss bestimmte Voraussetzungen erfüllen. Tut er dies nicht, gilt er als <strong>unvollkommener Markt</strong>. Zu den Merkmalen gehören:</p>
+<ul>
+<li>Viele Anbieter und Nachfrager (Polypol)</li>
+<li>Homogene <em>(Gleichartige)</em> Güter</li>
+<li>Keine Präferenzen</li>
+<li>Vollständige Information</li>
+<li>Keine Marktzutrittsbarrieren</li>
+<li>Sofortige Anpassung an Änderungen</li>
+<li>Treffen von Angebot und Nachfrage am selben Ort/Zeit</li>
+</ul>
 
                     </main>
 
@@ -206,6 +221,22 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
