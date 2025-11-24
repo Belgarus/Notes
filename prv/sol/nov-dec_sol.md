@@ -18,6 +18,8 @@ Als auch das Routing von Frames innerhalb eines LAN auf Layer 2.
 - Russlands Krieg gegen Deutschland - Simplicissimus [0:30h]
 - Rust als Erstprache - Linux Tage [erste 0:30h]
 - Ted Talks: Stallman [10min], Joschua Bach [12min] 
+- The Original Sin of Computing [20min]
+- VSCode-GlassWorm [12min]
 
 ### "Hardware" Projekte
 **Thinkpads**:
