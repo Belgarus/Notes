@@ -28,6 +28,7 @@ Als auch das Routing von Frames innerhalb eines LAN auf Layer 2.
  - Ab-und Anlöten der Thunderbolt Anschlüsse
  - NixOS - wiederherstellen meines Beriebsystems
  - RAM Aufrüstug und Deaktivierung nicht benötigter Hardware  
+ - Nachtragende Verschlüsselung meiner Festplatte
 **Anderes**:
  - Ipod: Öffnen, wasserschaden Bekämpfung, Akkuwechsel
 
