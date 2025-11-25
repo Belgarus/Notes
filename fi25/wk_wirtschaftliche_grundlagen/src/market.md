@@ -19,7 +19,7 @@ Der vollkommene Markt muss bestimmte Voraussetzungen erfüllen. Tut er dies nich
 - Sofortige Anpassung an Änderungen
 - Treffen von Angebot und Nachfrage am selben Ort/Zeit
   
-Mehr dazu auf [Studyflix - volkommener Markt](https://studyflix.de/wirtschaft/vollkommener-markt-1892).  
+Mehr dazu auf Studyflix [Volkommener Markt](https://studyflix.de/wirtschaft/vollkommener-markt-1892).  
 
 ## Was ist die Funktion des Preises?
 Der Preis gleicht **Angebot** und **Nachfrage** aus.  
@@ -27,5 +27,10 @@ Die Kaufwünsche aller Nachfrager, die ein Gut zu diesem Preis kaufen wollen, we
 
 ### Was ist ein Gleichgewichtspreis?
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nJV75nUuO1w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; allowfullscreen" width="300px"> </iframe>
+Der **Gleichgewichtspreis** liegt im **Schnittpunkt** von Nachfrage- und Angebotsfunktion. 
+Dabei wollen Anbieter ihre Waren und Erzeugnisse zu einem möglichst hohen Preis absetzen.  
+Sehe dazu Studyflix [Angebot und Nachfrage](https://www.youtube.com/embed/nJV75nUuO1w)  
+
+<img src="https://blog.assets.studyflix.de/wp-content/uploads/2020/03/Gleichgewichtspreis-Kurven-1024x576.png" width="45%">
+<img src="https://blog.assets.studyflix.de/wp-content/uploads/2020/03/Gleichgewichtspreis-Angebots%C3%BCberhang-und-Nachfrage%C3%BCberhang-1024x576.png" width="45%">
 
