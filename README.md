@@ -9,9 +9,11 @@ This repository contains my public notes and serves as a learning platform for M
 │   └── lf1_dualeberufsausbildung
 │   └── materialien_uebersicht
 │   └── sol_layer_2_switch
+│   └── wk_wirtschaftliche_grundlagen
 ├── prv
 │   ├── img
 │   └── math_roadmap
+|   └── meine_SOL
 └── README.md
 ```
 
