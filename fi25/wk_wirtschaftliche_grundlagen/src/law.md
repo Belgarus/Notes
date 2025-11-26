@@ -74,10 +74,42 @@ Das **Handelsregister** ist ein öffentliches Verzeichnis, in dem alle wesentlic
 | **Gegenstand des Unternehmens**       | Sonstige Gesellschafter (Kommanditisten) |
 | **Sonstiges**  (Insolvenzverfahren, laufende Umwandlung der Rechtsform, …)      | Einsehbarkeit weiterer Dokumente |
 
-
 **Hinweis:** Eintragungen können **konstitutiv** (rechtserzeugend) oder **deklaratorisch** (rechtsbezeugend) sein.
+
 ## 2.2 Arten von Kaufläuten
 
-<img src="https://www.lernnetz24.de/img/ai/bw_9_1_kaufmann.svg">
+![Kaufmann](img_kaufmann.svg)
+
 
 *von [Lernnetz 24 - Kaufmannseigenschaft ](https://www.lernnetz24.de/bwl/hinweise/90.html)*
+
+## 3. Arten von Rechtformen
+
+### 3.1 Einzelunternehmung
+
+### 3.1.1. Wahlmöglichkeit des Einzelunternehmers
+**Einzelunternehmer** kann wählen zwischen:
+
+* **Kleingewerbetreibender** – wenn keine kaufmännische Organisation nötig ist
+* **Eingetragener Kaufmann** (e.K.) – freiwillig oder bei größerem Geschäftsbetrieb
+* Alleinige Gründung einer **Kapitalgesellschaft** – GmbH/UG oder AG
+
+### 3.1.2. Kleingewerbetreibender (nicht eingetragen)
+| Merkmal              | Beschreibung                                   |
+| -------------------- | ---------------------------------------------- |
+| **Gründung**         | Anmeldung beim Gewerbeamt und Finanzamt        |
+| **Firma**            | Keine Firma, Geschäfte mit Vor- und Nachname   |
+| **Kapital**          | Keine Mindesthöhe vorgeschrieben               |
+| **Geschäftsführung** | Durch Kleingewerbetreibenden selbst            |
+| **Haftung**          | Unbeschränkt mit Geschäfts- und Privatvermögen |
+| **Gewinnverteilung** | Keine Verteilung notwendig                     |
+| **Organe**           | Keine                                          |
+
+**Besonderheiten / Vereinfachungen beim Kleingewerbetreibenden**
+* Keine Eintragung im Handelsregister
+* Geringere Buchhaltungspflichten
+* Regeln des HGB gelten nicht für den Kleingewerbetreibenden
+* Evtl. Umsatzsteuerbefreiung (Vorjahr max. 22.000 €, aktuelles
+Jahr voraussichtlich max. 50.000 €)
+
+> **Exkurs:** Bei Handelskäufen muss ein Kaufmann Mängel unverzüglich rügen *(reklamieren)*; die Fristen richten sich nach Art des Mangels und können zwischen sofortiger Anzeige und maximal drei Jahren liegen.
