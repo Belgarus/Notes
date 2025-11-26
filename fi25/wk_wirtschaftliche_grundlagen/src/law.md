@@ -78,6 +78,6 @@ Das **Handelsregister** ist ein öffentliches Verzeichnis, in dem alle wesentlic
 **Hinweis:** Eintragungen können **konstitutiv** (rechtserzeugend) oder **deklaratorisch** (rechtsbezeugend) sein.
 ## 2.2 Arten von Kaufläuten
 
-<img src=".\bw_9_1_kaufmann.svg">
+<img src="https://www.lernnetz24.de/img/ai/bw_9_1_kaufmann.svg">
 
-*von [Lernnetz 24 - Kaufmannseigenschaft ](https://www.lernnetz24.de/img/ai/bw_9_1_kaufmann.svg)*
+*von [Lernnetz 24 - Kaufmannseigenschaft ](https://www.lernnetz24.de/bwl/hinweise/90.html)*
