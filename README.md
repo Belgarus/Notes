@@ -26,7 +26,7 @@ It also contains the *Overview over the school topic* and *Selbst Organisiertes 
 
 - **Live Version Overview**: [View mdBook](https://belgarus.github.io/Notes/fi25/materialien_uebersicht/book/lernfeld2/datensammlung.html)
 - **Live Version SOL**: [View mdBook](https://belgarus.github.io/Notes/fi25/sol_layer_2_switch/book)
-
+- **Live Version WK-KA**: [View mdBook](https://belgarus.github.io/Notes/fi25/wk_wirtschaftliche_grundlagen/book)
 ## PRV - Private Projects
 This section contains personal works in progress.
 
