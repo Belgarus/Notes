@@ -1,5 +1,14 @@
 [book]
 authors = ["Belgarus"]
-language = "en"
+language = "de"
+multilingual = false
 src = "src"
 title = "wk_wirtschaftliche_grundlagen"
+
+[preprocessor]
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output]
+[output.html]
+git-repository-url = "https://github.com/Belgarus/Notes"

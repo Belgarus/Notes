@@ -1,5 +1,17 @@
 # Rechtsformen und Führung von Unternehmen
 
+## 1.1 Unternehmenszahlen nach Beschäftigtenzahl
+
+| Merkmal                                   | 0–9 Beschäftigte | 10–49 Beschäftigte | 50–249 Beschäftigte | ≥250 Beschäftigte | Insgesamt |
+|-------------------------------------------|-----------------|------------------|-------------------|-----------------|-----------|
+| **Einzelunternehmer**                      | 1.954.811       | 89.627           | 3.540             | 85              | 2.048.063 |
+| **Personengesellschaften (OHG, KG)**      | 335.851         | 64.122           | 14.322            | 3.231           | 417.526   |
+| **Kapitalgesellschaften (GmbH, AG)**      | 591.177         | 181.460          | 49.919            | 11.334          | 833.890   |
+| **Sonstige Rechtsformen**                  | 132.816         | 27.618           | 7.328             | 2.677           | 170.439   |
+| **Insgesamt**                              | 3.014.655       | 362.827          | 75.109            | 17.327          | 3.469.918 |
+
+*2023 laut [statistica.com - Unternehmen in Deutschland](https://de.statista.com/statistik/daten/studie/237346/umfrage/unternehmen-in-deutschland-nach-rechtsform-und-anzahl-der-beschaeftigten/)*
+
 ## 1.2. Übersicht über die Rechtsformen
 
 <div style="font-family: monospace; white-space: pre;">
@@ -26,4 +38,46 @@
 * **Organisation:** Leitung, Vertretung, Gewinnverteilung
 * **Kosten & Steuern:** Steuerbelastung, Gründungs- und Buchhaltungskosten
 
+## 2.1 Die Firma eines Kaufmannes
+Als Firma wird der Name, unter dem der Kaufmann im Sinne des HGB  
+seine Geschäfte führt, bezeichnet.
+* **Personenfirma** z.B. Jens Große GmbH
+* **Sachfirma** z.B. Betonhandel Dittersdorf OHG
+* **Fantasiefirma** z.B. Grand Unicorn AG
+* **Mischfirma** z.B. Große and friends Betonhandel Dittersdorf OHG
 
+
+| Grundsatz                        | Bedeutung                                                                     |
+|----------------------------------|-------------------------------------------------------------------------------|
+| **Firmenöffentlichkeit**         | Eintragung der Firma ins Handelsregister ist Pflicht.                        |
+| **Firmenbeständigkeit**          | Weiterführung der Firma bei Inhaberwechsel ist möglich.                      |
+| **Firmenausschließbarkeit**      | Firmenname muss sich klar von anderen Firmen unterscheiden.                  |
+| **Irreführungsverbot**           | Firmenname darf nicht über Gesellschaftsverhältnisse täuschen.               |
+| **Offenlegung der Haftungsverhältnisse** | Durch Firmenzusatz und Handelsregistereintrag offenzulegen.          |
+| **Offenlegung der Gesellschaftsverhältnisse** | Ebenfalls durch Firmenzusatz und Handelsregistereintrag sicherzustellen. |
+
+## 2.2 Handelsregister
+Das **Handelsregister** ist ein öffentliches Verzeichnis, in dem alle wesentlichen Informationen über Kaufleute und Unternehmen im Bezirk des jeweiligen Amtsgerichts eingetragen werden.
+- Kleingewerbe und GbRs nicht eintragungspflichtig  
+- Enthält rechtliche und wirtschaftliche Informationen (§15 HGB)  
+- Elektronische Anmeldung, Änderungen und Löschungen  
+- **Abteilungen:**  
+  - A (HRA): Einzelkaufleute, Personengesellschaften, Vereine  
+  - B (HRB): Kapitalgesellschaften
+
+
+| Inhalt nach Handelsregisterverordnung | Beschreibung / Details |
+|--------------------------------------|----------------------|
+| **Firma**                             | Vertretungsberechtige Personens |
+| **Sitz und Geschäftsanschrift**   | Rechtsform des Unternehmens |
+| **Niederlassungen und Anschriften**       | Grund- oder Stammkapital |
+| **Gegenstand des Unternehmens**       | Sonstige Gesellschafter (Kommanditisten) |
+| **Sonstiges**  (Insolvenzverfahren, laufende Umwandlung der Rechtsform, …)      | Einsehbarkeit weiterer Dokumente |
+
+
+**Hinweis:** Eintragungen können **konstitutiv** (rechtserzeugend) oder **deklaratorisch** (rechtsbezeugend) sein.
+## 2.2 Arten von Kaufläuten
+
+<img src=".\bw_9_1_kaufmann.svg">
+
+*von [Lernnetz 24 - Kaufmannseigenschaft ](https://www.lernnetz24.de/img/ai/bw_9_1_kaufmann.svg)*
