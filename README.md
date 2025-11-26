@@ -1,7 +1,5 @@
 # My Notes
 
-This repository contains my public notes and serves as a learning platform for Markdown and mdBook. I will explore various mdBook plugins.
-
 ## Repository Structure
 ```
 .
@@ -30,11 +28,5 @@ It also contains the *Overview over the school topic* and *Selbst Organisiertes 
 - **Live Version SOL**: [View mdBook](https://belgarus.github.io/Notes/fi25/sol_layer_2_switch/book)
 
 ## PRV - Private Projects
-This section contains personal works in progress:
+This section contains personal works in progress.
 
-- **Math Roadmap**: Learning path for mathematics (work in progress)
-- **Wallpapers**: Curated collection of wallpapers with source references
-
----
-
-*Note: This repository evolves as I explore technical writing and documentation tools.*
