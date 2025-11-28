@@ -1,4 +1,4 @@
-# My Notes
+# Notes
 
 ## Repository Structure
 ```
