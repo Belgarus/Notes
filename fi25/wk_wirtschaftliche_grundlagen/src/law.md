@@ -80,7 +80,7 @@ Das **Handelsregister** ist ein öffentliches Verzeichnis, in dem alle wesentlic
 
 ## 2.2 Arten von Kaufläuten
 
-![Kaufmann](./img/img_kaufmann.svg)
+![Kaufmann](img/img_kaufmann.svg)
 
 
 *von [Lernnetz 24 - Kaufmannseigenschaft ](https://www.lernnetz24.de/bwl/hinweise/90.html)*

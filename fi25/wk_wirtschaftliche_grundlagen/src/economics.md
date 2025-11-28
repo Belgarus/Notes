@@ -57,7 +57,7 @@ Weil Ressourcen begrenzt sind, müssen Menschen effizient zusammenarbeiten. Arbe
 **tertiärer Sektor:** Dienstleistungen
 
 ### (Erweiterter) Wirtschaftskreislauf
-<img src="./img/Offener-Wirtschaftskreislauf.png" height="350px">
+<img src="img/Offener-Wirtschaftskreislauf.png" height="350px">
 
 *Von [bilanz junkie - Wirtschaftskreislauf](https://www.bilanz-junkie.de/wp-content/uploads/2020/04/Offener-Wirtschaftskreislauf-1-1024x668.png)*
 
@@ -69,7 +69,7 @@ Weil Ressourcen begrenzt sind, müssen Menschen effizient zusammenarbeiten. Arbe
 | **Nachfrage** | Teil des Bedarfs, der auf dem Markt durch eine Kaufentscheidung realisiert wird |
 
 ### Maslow‘sche Bedürfnispyramide
-<img src="./img/Beduerfnispyramide.png">   
+<img src="img/Beduerfnispyramide.png">   
 
 (**Blau**: Defizitbedürfnisse, **Weiß**: Wachstumsbedürfnisse)  
 *Von [herzbluttigerevents - mitarbeiterzufriedenheit-steigern](https://herzbluttigerevents.de/mitarbeiterzufriedenheit-steigern/)*
