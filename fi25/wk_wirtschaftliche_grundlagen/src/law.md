@@ -1,5 +1,7 @@
 # Rechtsformen und Führung von Unternehmen
 
+> Anscheinend nicht wichtig für Prüfung
+
 ## 1.1 Unternehmenszahlen nach Beschäftigtenzahl
 
 | Merkmal                                   | 0–9 Beschäftigte | 10–49 Beschäftigte | 50–249 Beschäftigte | ≥250 Beschäftigte | Insgesamt |
@@ -78,7 +80,7 @@ Das **Handelsregister** ist ein öffentliches Verzeichnis, in dem alle wesentlic
 
 ## 2.2 Arten von Kaufläuten
 
-![Kaufmann](img_kaufmann.svg)
+![Kaufmann](./img/img_kaufmann.svg)
 
 
 *von [Lernnetz 24 - Kaufmannseigenschaft ](https://www.lernnetz24.de/bwl/hinweise/90.html)*

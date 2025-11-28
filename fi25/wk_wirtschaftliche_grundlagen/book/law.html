@@ -182,6 +182,9 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="rechtsformen-und-führung-von-unternehmen"><a class="header" href="#rechtsformen-und-führung-von-unternehmen">Rechtsformen und Führung von Unternehmen</a></h1>
+<blockquote>
+<p>Anscheinend nicht wichtig für Prüfung</p>
+</blockquote>
 <h2 id="11-unternehmenszahlen-nach-beschäftigtenzahl"><a class="header" href="#11-unternehmenszahlen-nach-beschäftigtenzahl">1.1 Unternehmenszahlen nach Beschäftigtenzahl</a></h2>
 <div class="table-wrapper"><table><thead><tr><th>Merkmal</th><th>0–9 Beschäftigte</th><th>10–49 Beschäftigte</th><th>50–249 Beschäftigte</th><th>≥250 Beschäftigte</th><th>Insgesamt</th></tr></thead><tbody>
 <tr><td><strong>Einzelunternehmer</strong></td><td>1.954.811</td><td>89.627</td><td>3.540</td><td>85</td><td>2.048.063</td></tr>
@@ -257,7 +260,7 @@ seine Geschäfte führt, bezeichnet.</p>
 </div>
 <p><strong>Hinweis:</strong> Eintragungen können <strong>konstitutiv</strong> (rechtserzeugend) oder <strong>deklaratorisch</strong> (rechtsbezeugend) sein.</p>
 <h2 id="22-arten-von-kaufläuten"><a class="header" href="#22-arten-von-kaufläuten">2.2 Arten von Kaufläuten</a></h2>
-<p><img src="img_kaufmann.svg" alt="Kaufmann" /></p>
+<p><img src="./img/img_kaufmann.svg" alt="Kaufmann" /></p>
 <p><em>von <a href="https://www.lernnetz24.de/bwl/hinweise/90.html">Lernnetz 24 - Kaufmannseigenschaft </a></em></p>
 <h2 id="3-arten-von-rechtformen"><a class="header" href="#3-arten-von-rechtformen">3. Arten von Rechtformen</a></h2>
 <h3 id="31-einzelunternehmung"><a class="header" href="#31-einzelunternehmung">3.1 Einzelunternehmung</a></h3>
@@ -314,6 +317,22 @@ Jahr voraussichtlich max. 50.000 €)</li>
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
