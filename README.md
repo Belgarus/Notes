@@ -24,7 +24,7 @@ This section contains the **LF1 Duale Berufsausbildung** mdBook about the German
 
 It also contains the *Overview over the school topic* and *Selbst Organisiertes lernen* (SOL)
 
-- **Live Version Overview**: [View mdBook](https://belgarus.github.io/Notes/fi25/materialien_uebersicht/book/lernfeld2/datensammlung.html)
+- **Live Version Overview**: [View mdBook](https://belgarus.github.io/Notes/fi25/materialien_uebersicht/book/)
 - **Live Version SOL**: [View mdBook](https://belgarus.github.io/Notes/fi25/sol_layer_2_switch/book)
 - **Live Version WK-KA**: [View mdBook](https://belgarus.github.io/Notes/fi25/wk_wirtschaftliche_grundlagen/book)
 ## PRV - Private Projects
