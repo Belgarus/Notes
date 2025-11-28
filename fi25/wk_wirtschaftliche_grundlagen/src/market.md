@@ -2,7 +2,7 @@
 
 ## Was ist der Markt?
 
-Der **Markt** ist ein Ort, an dem Waren und Dienstleistungen angeboten und nachgefragt werden.
+Definition: "Der **Markt** ist der Ort, an dem sich Angebot und Nachfrage von Gütern (Waren und Dienstleistungen) treffen und sich der Preis bildet."
 
 Der Markt ist ein Ort des Wettbewerbs, da Anbieter miteinander konkurrieren, um die Aufmerksamkeit der Käufer zu gewinnen.
 
