@@ -21,16 +21,34 @@ Der vollkommene Markt muss bestimmte Voraussetzungen erfüllen. Tut er dies nich
   
 Mehr dazu auf Studyflix [Volkommener Markt](https://studyflix.de/wirtschaft/vollkommener-markt-1892).  
 
-## Was ist die Funktion des Preises?
-Der Preis gleicht **Angebot** und **Nachfrage** aus.  
-Die Kaufwünsche aller Nachfrager, die ein Gut zu diesem Preis kaufen wollen, werden erfüllt. Ebenso können alle Anbieter, die zu diesem Preis verkaufen wollen, ihre Güter absetzen.
+## Funktion des Preises
+
+Der Preis gleicht **Angebot** und **Nachfrage** aus, sodass Käufer und Anbieter zum jeweiligen Preis handeln können.  
+
+* **Angebot:** Menge an Gütern oder Dienstleistungen, die Produzenten zu einem bestimmten Preis bereitstellen.  
+* **Nachfrage:** Teil des Bedarfs, der auf dem Markt durch Kaufentscheidungen realisiert wird.  
+
+| Funktion                  | Beschreibung                                                                                   |
+|----------------------------|------------------------------------------------------------------------------------------------|
+| Ausgleichsfunktion         | Gleicht Angebot und Nachfrage aus; alle Anbieter und Nachfrager zum Preis können handeln      |
+| Informationsfunktion       | Preisänderungen zeigen Knappheit: steigende Preise → knappes Gut, sinkende Preise → mehr Verfügbarkeit |
+| Lenkungsfunktion           | Lenkt Güter zur bestmöglichen Verwendung; Nachfrager mit höchstem Nutzen und effiziente Anbieter bevorzugt |
+| Ausschaltungsfunktion      | Schließt Marktteilnehmer aus, die den Marktanforderungen nicht genügen                        |
+
+
 
 ### Was ist ein Gleichgewichtspreis?
 
-Der **Gleichgewichtspreis** liegt im **Schnittpunkt** von Nachfrage- und Angebotsfunktion. 
-Dabei wollen Anbieter ihre Waren und Erzeugnisse zu einem möglichst hohen Preis absetzen.  
-Sehe dazu Studyflix [Angebot und Nachfrage](https://www.youtube.com/embed/nJV75nUuO1w)  
+Der **Gleichgewichtspreis** ist der Preis, bei dem **Angebot und Nachfrage übereinstimmen**.    
+An diesem Punkt können Anbieter ihre Waren verkaufen, ohne dass ein Überschuss oder Mangel entsteht.
 
-<img src="https://blog.assets.studyflix.de/wp-content/uploads/2020/03/Gleichgewichtspreis-Kurven-1024x576.png" width="45%">
-<img src="https://blog.assets.studyflix.de/wp-content/uploads/2020/03/Gleichgewichtspreis-Angebots%C3%BCberhang-und-Nachfrage%C3%BCberhang-1024x576.png" width="45%">
 
+<img src="https://blog.assets.studyflix.de/wp-content/uploads/2020/03/Gleichgewichtspreis-Kurven-1024x576.png" width="300px">
+<img src="https://blog.assets.studyflix.de/wp-content/uploads/2020/03/Gleichgewichtspreis-Angebots%C3%BCberhang-und-Nachfrage%C3%BCberhang-1024x576.png" width="300px">
+
+Mehr dazu auf Studyflix [Angebot und Nachfrage](https://www.youtube.com/embed/nJV75nUuO1w)  
+
+### Marktrenten
+
+**Konsumentenrente:** Der Vorteil für Käufer, der entsteht, wenn sie ein Gut günstiger bekommen, als sie bereit gewesen wären zu zahlen.  
+**Produzentenrente:** Der Vorteil für Verkäufer, der entsteht, wenn sie ein Gut teurer verkaufen, als sie minimal dafür verlangen würden.
