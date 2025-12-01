@@ -43,5 +43,5 @@ Schnittpunkt bei Menge 7, Preis 3 €
 
 **C) Preisfixierung**
 
-- Preis 1 € → Nachfrage > Angebot → Nachfrage-Überschuss
-- Preis 4 € → Angebot > Nachfrage → Angebots-Überschuss
+- Preis 1 € → Nachfrage > Angebot → Nachfrageüberhang
+- Preis 4 € → Angebot > Nachfrage → Angebotsüberhang
