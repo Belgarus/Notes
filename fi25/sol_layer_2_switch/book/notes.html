@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html lang="de" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Notizen - SOL unmanaged Switch</title>
+
+
+        <!-- Custom HTML head -->
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({ startOnLoad: true });</script>
+        
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">SOL unmanaged Switch</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/Belgarus/Notes" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="notizen"><a class="header" href="#notizen">Notizen</a></h1>
+<blockquote>
+<p>Dieser Bereich ist nicht wichtig aber zeigt wie wir vorgegangen sind.</p>
+</blockquote>
+<h3 id="nachtrag-anmerkung"><a class="header" href="#nachtrag-anmerkung">Nachtrag, Anmerkung</a></h3>
+<p>In der Recherche ist uns aufgefallen, dass Ethernet über twisted pair  mit GPIO pins nicht direkt umsetzbar ist(<a href="https://hedgedoc.c3d2.de/ztYsm4jpewEOwtVhoz_-trg#Differential">differential signaling</a>)</p>
+<hr />
+<h1 id="design-und-implementierung-eines-layer-2-unmanaged-switches-lernprojekt"><a class="header" href="#design-und-implementierung-eines-layer-2-unmanaged-switches-lernprojekt">Design und Implementierung eines Layer 2 Unmanaged Switches (Lernprojekt)</a></h1>
+<h2 id="vorgehen"><a class="header" href="#vorgehen">Vorgehen</a></h2>
+<ol>
+<li>Über Protokolle(Ethernet, Manchester Kodierung) informieren, Anforderungen festhalten</li>
+<li>Die physische Layer definieren</li>
+<li>richtigen Mikrocontroller / Einplatinencomputer wählen, der den Anforderungen entspricht</li>
+<li>Projekt mit Micropython implementieren</li>
+</ol>
+<h2 id="ethernet-protokoll"><a class="header" href="#ethernet-protokoll">Ethernet Protokoll</a></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/IEEE_802.3">IEEE 802.3</a> ist der Ethernet Standart --&gt; <strong>Details zum Standart liegen hinter einer Paywall</strong>
+<ul>
+<li>beschreibt für jede Übertragungsart/Kabeltyp die technischen Details um eine Kommunikation zu gewährleisten</li>
+</ul>
+</li>
+</ul>
+<p>Die gängigen Ethernet Standarts:</p>
+<div class="table-wrapper"><table><thead><tr><th>Bezeichnung</th><th>Übertragungsmedium</th><th>max. Segmentlänge</th><th>Datenrate (brutto)</th></tr></thead><tbody>
+<tr><td>100Base-TX</td><td>TP-Kabel (2 Adernpaare)</td><td>100 m</td><td>100 MBit/s</td></tr>
+<tr><td>1000Base-T (1GE)</td><td>TP-Kabel (4-Adernpaare)</td><td>100 m</td><td>1.000 MBit/s</td></tr>
+<tr><td>2500Base-T (2G5)</td><td>TP-Kabel (4-Adernpaare)</td><td>100 m</td><td>2.500 MBit/s</td></tr>
+<tr><td>5000Base-T (5GE)</td><td>TP-Kabel (4-Adernpaare)</td><td>100 m</td><td>5.000 MBit/s</td></tr>
+<tr><td>10Base-T (10GE)</td><td>TP-Kabel (4-Adernpaare)</td><td>(Cat6a) 100 m</td><td>10.000 MBit/s</td></tr>
+</tbody></table>
+</div>
+<h3 id="twisted-pair"><a class="header" href="#twisted-pair">Twisted Pair</a></h3>
+<ul>
+<li>8 Adern -&gt; 4 Aderpaare</li>
+<li>jedes Aderpaar kann ein Bit übertragen</li>
+</ul>
+<h4 id="differential-signaling"><a class="header" href="#differential-signaling">Differential Signaling</a></h4>
+<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdocs.arduino.cc%2Fstatic%2F93c4d19bd041de1817cbb7e9dad2223c%2F29114%2Fdifferential_signal.png&amp;f=1&amp;nofb=1&amp;ipt=eb87c87d293852ba81190198299627ddbca8753b7fc06524fdd5dd19a056ac66" alt=" Differential Signaling" /></p>
+<ul>
+<li>überträgt auf einer Ader das normale Signal und auf der anderen Ader das invertierte Signal</li>
+<li>falls eine Störung von z.B. +0,5 Volt zu irgendeinem Zeitraum  auftritt wirkt diese auf beide Adern und Signale</li>
+<li>Durch Störungen bleibt die Differenz der Signale gleich --&gt; es gehen keine Informationen verloren (Man könnte oben im Bild an einer Stelle beide Signale gleich verändern, die differnz bleibt gleich!)</li>
+</ul>
+<p><strong>Problem: Bei Twisted Pair werden kleinere Spannungen von (+1,25V -1,25V oder +1V -1V) benötigt und Frequenzen von 16MHZ GPIO Switch Speed</strong></p>
+<h2 id="manchester-kodierung"><a class="header" href="#manchester-kodierung">Manchester Kodierung</a></h2>
+<p>Bei der Datenübertragung ist die Manchester-Codierung eine Form der digitalen Codierung, bei der der Zustand eines Datenbits (0 oder 1) durch den Übergang von einem Spannungspegel (V) zum anderen dargestellt wird.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Manchester_encoding_both_conventions.svg/570px-Manchester_encoding_both_conventions.svg.png" height="200px">
+<p>-&gt; Codierungsart wird im Header festgelegt
+z.B. <em>IEEE 802.3</em> oder <em>G. E. Thomas</em> (Original)</p>
+<p><strong>Vorteil:</strong></p>
+<ul>
+<li>hohe Zuverlaessigkeit</li>
+</ul>
+<p><strong>Nachteil:</strong></p>
+<ul>
+<li>mehr Bitübertragung als Bitstrom ohne Taktsignal</li>
+</ul>
+<hr />
+<h1 id="simulation-eines-layer-2-unmanaged-switches-lernprojekt"><a class="header" href="#simulation-eines-layer-2-unmanaged-switches-lernprojekt">Simulation eines Layer-2 Unmanaged Switches (Lernprojekt)</a></h1>
+<h2 id="vorgehen-1"><a class="header" href="#vorgehen-1">Vorgehen</a></h2>
+<ol>
+<li>
+<p>Erkenntnisse aus vorheriger Recherche festhalten</p>
+</li>
+<li>
+<p>Anforderungen festhalten</p>
+<ul>
+<li>welche Aufgaben hat Layer 1+2 (Switch und Endgeräte)</li>
+<li>welche Funktionalität soll die Simulation haben</li>
+<li>Wie technisch/physikalisch soll implementiert werden</li>
+<li>Eingabe ? Ausgabe ? -&gt; über terminal, Textdateien ?</li>
+<li>Zeitbasiert Simulation oder Eventbasierte simulation ?</li>
+</ul>
+</li>
+<li>
+<p>Software Projekt planen</p>
+<ul>
+<li>Aufteilen in Teilbereiche(z.B. Ein Ausgabe, Netzwerkkomponenten, Kodierungen, Nachrichten, Leitungen, ...) --&gt; möglichst modular</li>
+<li>(UML Klassendiagramm ???)</li>
+</ul>
+</li>
+<li>
+<p>Software Projekt umsetzen</p>
+<ul>
+<li>Implementierung alleinstehender Klassen</li>
+<li>Implementierung zusammenhängender Klassen</li>
+<li>(Testen ???)</li>
+</ul>
+</li>
+</ol>
+<h2 id="1-erkenntnisse-vorheriger-recherchen"><a class="header" href="#1-erkenntnisse-vorheriger-recherchen">1. Erkenntnisse vorheriger Recherchen</a></h2>
+<ul>
+<li>Aufbau von Ethernet Frames ist stark Standartabhängig --&gt; Es gibt viele Ethernet Standarts, CSMA/CD wird überall verwendet</li>
+<li>Es werden Leitungscodes verwendet, welche den Takt und Daten gleichzeitig übertragen -&gt; <a href="https://en.wikipedia.org/wiki/Manchester_code">Manchester Code</a>(verwendet in älteren Standarts) und <a href="https://en.wikipedia.org/wiki/4B5B">4B5B Code</a>(aktuelle Standarts setzen diese Kodierung um)</li>
+<li>Twisted Pair Kabel benutzen <a href="https://hedgedoc.c3d2.de/ztYsm4jpewEOwtVhoz_-trg#Differential-Signaling">Differential Signaling</a> und Rasperry pi, Arduino könen das nicht umsetzen</li>
+</ul>
+<h2 id="2-anforderung-an-die-simulation"><a class="header" href="#2-anforderung-an-die-simulation">2. Anforderung an die Simulation</a></h2>
+<h3 id="technische-anforderungen"><a class="header" href="#technische-anforderungen">technische Anforderungen</a></h3>
+<ul>
+<li>
+<p>Eventbasierte Simulation, teschnische Details (Layer1) werden abstrahiert</p>
+</li>
+<li>
+<p>Sendevorgang der Endgeräte</p>
+<ol>
+<li>Eingabe von Text für den Payload(evtl über txt Dateien oder TerminalInput) und in Binär mit ASCII kodieren</li>
+<li>Zerteilen des langen Textes in einzelne Segmente (für Payload)</li>
+<li>Frame entsprechend befüllen (MAC Addressen, Länge, Payload,...)</li>
+<li><a href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check">CRC</a> Prüfsumme berechnen und anhängen</li>
+<li>Präambel und SFD anfügen</li>
+<li>Prüfen ob die Leitung frei ist -&gt; Paket senden</li>
+<li>(optional Wenn es ein Frame crash gibt Jam Signal senden und Frame neu senden)</li>
+</ol>
+</li>
+<li>
+<p>Empfangsvorgang der Endgeräte</p>
+<ol>
+<li>Frame mit CRC prüfen --&gt; evtl Fehler korrigieren oder Frame verwerfen, ...</li>
+<li>Ziel Mac prüfen --&gt; sonst verwerfen</li>
+<li>Payload entnehmen, Daten zusammenfügen</li>
+<li>Binärdaten mit ASCII dekodieren und ausgeben</li>
+</ol>
+</li>
+<li>
+<p>(optional Leitung)</p>
+<ul>
+<li>signalisiert crashes an Endgeräte</li>
+<li>signalisiert alle verbundenen Geräte, wenn ein Frame eingeht</li>
+<li>Bitfehler simulieren</li>
+</ul>
+</li>
+<li>
+<p>Switch</p>
+<ol>
+<li>Frame und Port über dem Empfangen wurde speichern</li>
+<li>CRC prüfen --&gt; evtl Fehler korrigieren oder verwerfen, ...</li>
+<li>in Tabelle schauen, ob Empfangs-Port mit Absender-Mac verknüpft ist, ggf. in die Tabelle eintragen</li>
+<li>in Tabelle schauen, ob Empfangs-Mac in der Tabelle steht:
+<ul>
+<li>wenn ja: Frame über hinterlegten Port senden (es sei denn Empfangsport = Zielport; Dann nicht)</li>
+<li>wenn nein: Frame über alle Ports (außer Empfangsport) senden</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="einfuehrung_sol.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="funktionsweise.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="einfuehrung_sol.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="funktionsweise.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

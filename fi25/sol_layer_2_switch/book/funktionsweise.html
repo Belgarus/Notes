@@ -1,0 +1,371 @@
+<!DOCTYPE HTML>
+<html lang="de" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Funktionsweise - SOL unmanaged Switch</title>
+
+
+        <!-- Custom HTML head -->
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({ startOnLoad: true });</script>
+        
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">SOL unmanaged Switch</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/Belgarus/Notes" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="funktionsweise-layer-2-switch"><a class="header" href="#funktionsweise-layer-2-switch">Funktionsweise Layer 2 Switch</a></h1>
+<h2 id="recap-ethernet"><a class="header" href="#recap-ethernet">Recap Ethernet</a></h2>
+<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.flukenetworks.com%2Fsites%2Fdefault%2Ffiles%2Fblog%2Fethernetbacktobasic01_1.png&amp;f=1&amp;nofb=1&amp;ipt=88cc91253a6c972604b462015979af18ec41666926ddde6551b1688bbf81ae4c" alt="Ethernet Frame" /></p>
+<div class="table-wrapper"><table><thead><tr><th>Feld</th><th>Zweck</th></tr></thead><tbody>
+<tr><td><strong>7 Byte Präamble</strong>:</td><td>dient zur Taktsynchronisation, Bytes haben alle den gleiche Inhalt "10101010"</td></tr>
+<tr><td><strong>SFD</strong>:</td><td>Markiert Beginn des Frame Headers, enthält "10101011"</td></tr>
+<tr><td><strong>Destination Mac Address</strong>:</td><td>Enthält die Mac Addresse des Empfängers (Ziel)</td></tr>
+<tr><td><strong>Source Mac Address</strong></td><td>Enthält die Mac Addresse des sendenden Gerätes</td></tr>
+<tr><td><strong>Length / Type</strong></td><td>Gibt die Länge der Nutzdaten an oder bei moderneren Protokollen den Typ des Ethernet Frames</td></tr>
+<tr><td><strong>Data</strong></td><td>Enthält die eigentlichen Nutzdaten</td></tr>
+<tr><td><strong>CRC</strong></td><td>Enthält eine CRC-Checksum, zum überprüfen ob Bits gekippt sind (ähnlich wie die Quersumme einer Zahl)</td></tr>
+</tbody></table>
+</div>
+<h3 id="sendevorgang-empfangsvorgang-nur-kabel-also-csmacd"><a class="header" href="#sendevorgang-empfangsvorgang-nur-kabel-also-csmacd">Sendevorgang, Empfangsvorgang (nur Kabel also CSMA/CD)</a></h3>
+<ol>
+<li>Endgerät bereitet Ethernet Frame vor (z.B. Mac Addressen werden eingetragen, ...)</li>
+<li>Die physische Leitung wird abgehört, wenn diese frei ist werden die Daten Bitweise übertragen</li>
+<li>Der Empfänger speichert einzelne Bits ab, bis das Frame vollständig übertragen ist</li>
+<li>Der Empfänger überprüft das Frame mit der CRC-Checksum --&gt; falls es Fehlerhaft ist, wird das Frame verworfen (höhere Schichten müssen damit rechnen, dass Frames verloren gehen)</li>
+<li>Der Empfänger vergleicht die Ziel Mac-Addresse mit der eigenen Mac-Addresse --&gt; stimmt diese nicht überein wird das Paket verworfen</li>
+<li>Höhere Schichten verarbeiten die Nutzdaten</li>
+</ol>
+<h3 id="mögliche-fehler-die-auftreten-können"><a class="header" href="#mögliche-fehler-die-auftreten-können">mögliche Fehler, die auftreten können</a></h3>
+<ol>
+<li>
+<p>Wenn Geräte gleichzeitig senden kollidieren Signale</p>
+<ul>
+<li>alle aktiven Netzwerkgeräte können das erkennen und senden ein Jam-Signal, damit wissen alle Geräte in der Kollisionsdomäne, dass eine Kollision aufgetreten ist und stoppen den Sendevorgang. Nach einer bestimmten Zeit, wird die Leitung wieder abgehört und wenn möglich erneut gesendet</li>
+</ul>
+</li>
+<li>
+<p>Durch Elektromagnetische Strahlung werden Spannungen in den Leiter induziert und verursachen Störungen --&gt; z.B. kippt ein Bit von 1 auf 0</p>
+<ul>
+<li>wird vom Empfänger meistens als Fehler erkannt, durch CRC</li>
+</ul>
+</li>
+</ol>
+<h2 id="aufgaben-hub-vs-switch"><a class="header" href="#aufgaben-hub-vs-switch">Aufgaben (Hub vs Switch)</a></h2>
+<h3 id="hub-layer1"><a class="header" href="#hub-layer1">Hub (Layer1)</a></h3>
+<ul>
+<li>Alle angeschlossenen Geräte werden physisch miteinander verbunden</li>
+<li>die Signale, die ein Gerät sendet werden an alle Teilnehmer verteilt</li>
+<li>keine Überprüfung der Signale und Frames</li>
+</ul>
+<h3 id="switch-layer2"><a class="header" href="#switch-layer2">Switch (Layer2)</a></h3>
+<ul>
+<li>Frames werden vom Switch zwischengespeichert und analysiert, bei Fehlern wird das Paket verworfen</li>
+<li>Switch führt eine interne Tabelle, welche einer Mac-Addresse einen Port zuordnet
+<ul>
+<li>Bei Inbetriebnahme "lernt" der Switch welche Mac Addressen hinter welchem Port liegen</li>
+<li>Wenn für eine Ziel Mac Addresse kein Eintrag in der Tabelle vorliegt wird das Frame über alle Ports gesendet</li>
+<li>Wenn es einen Eintrag der Ziel Mac Addresse gibt, wird das Frame nur über den hinterlegten Port weitergeleitet</li>
+</ul>
+</li>
+</ul>
+<h2 id="switch---frame-weiterleitung"><a class="header" href="#switch---frame-weiterleitung">Switch - Frame Weiterleitung</a></h2>
+<ol>
+<li>Switch empfängt Bitweise ein Frame und merkt sich den Port über den das Frame empfangen wurde</li>
+<li>Switch prüft CRC Checksum, wenn falsch wird das Frame verworfen</li>
+<li>Switch trägt die Sender-Mac Addresse und den Port(über dem Enmpfangen wurde) in die Tabelle ein</li>
+<li>Switch sucht Empfänger-Mac und den hinterlegten Port
+<ul>
+<li>Wenn es einen Eintrag gibt sendet der Switch das Frame nur über den hinterlegten Port</li>
+<li>Wenn es keinen Eintrag gibt sendet der Switch das Frame an alle Ports(außer dem Eingangsport des Frames in den Switch)</li>
+</ul>
+</li>
+</ol>
+<h2 id="beispiel-switch-frameweiterleitung"><a class="header" href="#beispiel-switch-frameweiterleitung">Beispiel Switch Frameweiterleitung</a></h2>
+<p><img src="https://github.com/robertulrich21/layer2SwitchLearningProcess/blob/main/step0.png?raw=true" width=400 ></img></p>
+<p>Die Tabellen unter den Switches speichern die Mac - Port Zuweisung, welche die Switche beim weiterleiten von Frames lernen</p>
+<h3 id="1-pc1-sendet-ein-frame-an-pc5"><a class="header" href="#1-pc1-sendet-ein-frame-an-pc5">1. PC1 sendet ein Frame an PC5</a></h3>
+<h4 id="11-pc1-sendet-das-frame-über-das-angeschlossene-kabe-an-pc2-und-switch1"><a class="header" href="#11-pc1-sendet-das-frame-über-das-angeschlossene-kabe-an-pc2-und-switch1">1.1 PC1 sendet das Frame über das angeschlossene Kabe an PC2 und Switch1.</a></h4>
+<p><img src="https://github.com/robertulrich21/layer2SwitchLearningProcess/blob/main/step1.png?raw=true" width=400 ></img></p>
+<ol>
+<li>PC1 erstellt Frame und trägt alle Daten ein, darunter Ziel-Mac(vom PC5), Sender-Mac(die eigene).</li>
+<li>PC1 sendet das Frame über das angeschlossene Kabel.
+--&gt;PC2 und Switch1 erhalten es</li>
+<li>PC2 verwirft es, weil die Ziel-Mac des Frames nicht mit der vom PC2 übereinstimmt.</li>
+<li>Switch1 speichert das Frame im Buffer</li>
+</ol>
+<h4 id="12-switch1-leitet-das-frame-weiter"><a class="header" href="#12-switch1-leitet-das-frame-weiter">1.2 Switch1 leitet das Frame weiter</a></h4>
+<p><img src="https://github.com/robertulrich21/layer2SwitchLearningProcess/blob/main/step2.png?raw=true" width=400 ></img></p>
+<ol>
+<li>Switch1 weiß jetzt, über welchen Port PC1 verbunden ist, da PC1 gerade ein  Frame(welches die Mac von PC1 enthält) über den Port gesendet hat. Die Mac Addresse und der Port werden in die Tabelle eingetragen</li>
+<li>Switch1 vergleicht die Ziel-Mac des Frames mit den Einträgen der Mac-Port Tabelle. Es gab kein Match --&gt; das Frame wird über alle Ports(außer dem Empfangsport) weitergeleitet.</li>
+<li>PC3 und PC4 verwerfen das Frame, da die Ziel Mac-Addresse des Frames nicht mit der eigenen Mac-Addresse übereinstimmmt.</li>
+<li>Switch2 speichert das Frame im Buffer</li>
+</ol>
+<h4 id="13-switch-2-leitet-das-frame-weiter"><a class="header" href="#13-switch-2-leitet-das-frame-weiter">1.3 Switch 2 leitet das Frame weiter</a></h4>
+<p><img src="https://github.com/robertulrich21/layer2SwitchLearningProcess/blob/main/step3.png?raw=true" width=400 ></img></p>
+<ol>
+<li>
+<p>Switch2 trägt die Sender-Mac des Frames und den Port über den das Frame empfangen wurde in die Mac-Port Tabelle ein</p>
+</li>
+<li>
+<p>Switch2 sucht nach Eintrag der Ziel-Mac Addresse in der Mac-Port Tabelle</p>
+<ul>
+<li>da es keinen gibt wird das Frame über alle Ports(außer dem Empfangsport) weitergeleitet</li>
+</ul>
+</li>
+<li>
+<p>PC6 verwirft das Frame, da eigene Mac und Ziel-Mac des Frames nicht übereinstimmen</p>
+</li>
+<li>
+<p>PC5 akzeptiert das Frame, da die eigene Mac und die Ziel-Mac des Frames übererinstimmen -&gt; Die Daten können jetzt von höheren OSI-Layern verwendet werden</p>
+</li>
+</ol>
+<h3 id="2-pc5-sendet-ein-frame-an-pc1"><a class="header" href="#2-pc5-sendet-ein-frame-an-pc1">2. PC5 sendet ein Frame an PC1</a></h3>
+<h4 id="21-pc5-sendet-das-frame-über-das-angeschlossene-kabel-an-switch2"><a class="header" href="#21-pc5-sendet-das-frame-über-das-angeschlossene-kabel-an-switch2">2.1 PC5 sendet das Frame über das angeschlossene Kabel an Switch2</a></h4>
+<p><img src="https://github.com/robertulrich21/layer2SwitchLearningProcess/blob/main/step4.png?raw=true" width=400 ></img></p>
+<ol>
+<li>
+<p>PC5 erstellt Frame, trägt als Ziel Mac die vom PC1 ein, als Sender Mac die eigene Mac und alle anderen Felder.</p>
+</li>
+<li>
+<p>PC5 sendet das Frame über das Kabel</p>
+</li>
+<li>
+<p>Switch2 speichert das Frame im Buffer und überprüft die CRC Checksumme und verwirft das Frame falls diese falsch ist</p>
+</li>
+</ol>
+<h4 id="22-switch2-leitet-das-frame-weiter"><a class="header" href="#22-switch2-leitet-das-frame-weiter">2.2 Switch2 leitet das Frame weiter</a></h4>
+<p><img src="https://github.com/robertulrich21/layer2SwitchLearningProcess/blob/main/step5.png?raw=true" width=400 ></img></p>
+<ol>
+<li>Switch2 nimmt PC5 in die Mac-Port Tabelle auf</li>
+<li>Switch2 findet die Ziel Mac Addresse des Frames in der Tabelle</li>
+<li>Switch2 sendet das Frame nur über den in der Tabelle hinterlegten Port --&gt; Port 1</li>
+<li>Switch1 speichert das Frame im Buffer und überprüft die CRC Checksumme und verwirft das Frame falls diese falsch ist</li>
+</ol>
+<h4 id="23-switch1-leitet-das-frame-weiter"><a class="header" href="#23-switch1-leitet-das-frame-weiter">2.3 Switch1 leitet das Frame weiter</a></h4>
+<p><img src="https://github.com/robertulrich21/layer2SwitchLearningProcess/blob/main/step6.png?raw=true" width=400 ></img></p>
+<ol>
+<li>Switch1 nimmt PC5 in die Mac-Port Tabelle auf</li>
+<li>Switch1 findet die Ziel Mac Addresse des Frames in der Tabelle</li>
+<li>Switch1 sendet das Frame nur über den in der Tabelle hinterlegten Port --&gt; Port 1</li>
+<li>PC2 empfängt das Frame und verwirft es, weil Ziel Mac des Frames und die eigene Mac Addresse nicht übereinstimmen</li>
+<li>PC1 empfängt und akzeptiert das Frame, da die Mac Addressen übereinstimmen</li>
+</ol>
+<h3 id="3-pc4-sendet-ein-frame-an-pc5"><a class="header" href="#3-pc4-sendet-ein-frame-an-pc5">3. PC4 sendet ein Frame an PC5</a></h3>
+<h4 id="31-pc5-sendet-das-frame-über-das-angeschlossene-kabel-an-switch2"><a class="header" href="#31-pc5-sendet-das-frame-über-das-angeschlossene-kabel-an-switch2">3.1 PC5 sendet das Frame über das angeschlossene Kabel an Switch2</a></h4>
+<p><img src="https://github.com/robertulrich21/layer2SwitchLearningProcess/blob/main/step7.png?raw=true" width=400 ></img></p>
+<ol>
+<li>PC4 erstellt Frame, trägt als Ziel Mac die vom PC5 ein, als Sender Mac die eigene Mac und alle anderen Felder.</li>
+<li>PC4 sendet das Frame über das Kabel</li>
+<li>Switch1 speichert das Frame im Buffer und überprüft die CRC Checksumme und verwirft das Frame falls diese falsch ist</li>
+</ol>
+<h4 id="32-switch1-leitet-das-frame-weiter"><a class="header" href="#32-switch1-leitet-das-frame-weiter">3.2 Switch1 leitet das Frame weiter</a></h4>
+<p><img src="https://github.com/robertulrich21/layer2SwitchLearningProcess/blob/main/step8.png?raw=true" width=400 ></img></p>
+<ol>
+<li>Switch1 nimmt PC4 in die Mac-Port Tabelle auf</li>
+<li>Switch1 findet die Ziel Mac Addresse des Frames in der Tabelle</li>
+<li>Switch1 sendet das Frame nur über den in der Tabelle hinterlegten Port --&gt; Port 3</li>
+<li>Switch2 speichert das Frame im Buffer und überprüft die CRC Checksumme und verwirft das Frame falls diese falsch ist</li>
+</ol>
+<h4 id="33-switch2-leitet-das-frame-weiter"><a class="header" href="#33-switch2-leitet-das-frame-weiter">3.3 Switch2 leitet das Frame weiter</a></h4>
+<p><img src="https://github.com/robertulrich21/layer2SwitchLearningProcess/blob/main/step9.png?raw=true" width=400 ></img></p>
+<ol>
+<li>Switch2 nimmt PC4 in die Mac-Port Tabelle auf</li>
+<li>Switch2 findet die Ziel Mac Addresse des Frames in der Tabelle</li>
+<li>Switch2 sendet das Frame nur über den in der Tabelle hinterlegten Port --&gt; Port 2</li>
+<li>PC1 empfängt und akzeptiert das Frame, da die Mac Addressen übereinstimmen</li>
+</ol>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="notes.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="notes.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
