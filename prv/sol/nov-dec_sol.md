@@ -14,7 +14,7 @@ Verstehen und Simulieren der Funktionsweise eines Layer 2 Switches in Zusammenar
 - Vollständige Dokumentation als [mdBook](https://belgarus.github.io/Notes/fi25/sol_layer_2_switch/book/)
 ---
 ## Zusätzliche Lerninhalte
-### Videos und Podcasts (ca. 9 Stunden)
+### Videos und Podcasts
 - WR.156 Ortsgespräch mit Joscha Bach über KI und Kognitionswissenschaft (2:30h)
 - Interview mit Prof. Dr. Andreas Pfitzmann über Datenschutz und IT-Sicherheit (1:40h)
 - Simplicissimus: "Putins Bären" – Analyse russischer Desinformation (1h)
