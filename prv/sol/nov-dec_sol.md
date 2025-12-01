@@ -1,13 +1,15 @@
 # Meine SOL LF2
-Hier stichpunktartig die wichtigsten Inhalte meiner SOL und zusätzliche bearbeitete Materialien
+Hier stichpunktartig die wichtigsten Inhalte meiner SOL und zusätzliche bearbeitete Materialien.
 
 ## Haupt Projekt
 ### Eigenes Ziel
 Das Hauptprojekt war, in Zusammenarbeit mit R.,das verstehen und simulieren eines Layer 2 Switches.   
 Als auch das Routing von Frames innerhalb eines LAN auf Layer 2.
 
+R. hat fast die gesamte Arbeit gemacht und alles übersichtlich niedergeschrieben.
+
 ### Inhalte
-- 3 Hedge Docs mit Material Sammlung und Plannung
+- 4 Hedge Docs mit Material Sammlung und Plannung
 - live MdBook mit klarer Zielumsetzung
 
 ## Zusätziche bearbeitete Materialien
@@ -32,5 +34,5 @@ Als auch das Routing von Frames innerhalb eines LAN auf Layer 2.
 ### Sonstiges
 - Workshop: **SculptOS** + Genode Microkernel-Architektur
 - lesen von **The Art of Deception** - Kevin Mitnick
-- lernen von Rust mit Rustbook
-- beschäftigung mit Unix-Philosophie und Virtuallisierung
+- lernen von Rust mit Rustbook und schreiben eines CLI-_Programmes
+- beschäftigung mit Unix-Philosophie, Compilern & Virtuallisierung
