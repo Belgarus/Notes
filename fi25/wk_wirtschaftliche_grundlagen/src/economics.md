@@ -30,8 +30,7 @@ graph TD
 **Dispositive** Faktoren sind die planenden und steuernden Tätigkeiten, die alles zusammenbringen.
 
 ### Ökonomische Prinzipien (Wirtschaftlichkeitsprinzip)
-Das ökonomische Prinzip besagt, dass Wirtschaftssubjekte ihre Mittel so einsetzen, dass ein möglichst gutes Verhältnis zwischen Aufwand und Ergebnis entsteht.
-
+Das ökonomische Prinzip besagt, dass Ressourcen so eingesetzt werden sollten, dass ein möglichst gutes Verhältnis zwischen Aufwand und Ergebnis entsteht.
 - **Minimalprinzip:** Mit möglichst wenig Mitteln ein vorgegebenes Ziel erreichen.  
 - **Maximalprinzip:** Mit gegebenen Mitteln das Maximale erreichen.  
 - **Optimumprinzip:** Das beste Verhältnis zwischen eingesetzten Mitteln und erzieltem Ergebnis finden.  
@@ -116,8 +115,7 @@ Betriebstypologien sind Klassifikationen von Unternehmen nach Merkmalen wie z.B.
 </div>
 
 ### Ökonomische, soziale und ökologische Ziele von Unternehmen
-Unternehmen verfolgen ökonomische, soziale und ökologische Ziele, die jedoch oft in Konflikt zueinander stehen   
-– deshalb müssen Prioritäten gesetzt und Kompromisse gefunden werden.
+Unternehmen verfolgen ökonomische, soziale und ökologische Ziele, die jedoch oft in Konflikt zueinander stehen – deshalb müssen Prioritäten gesetzt und Kompromisse gefunden werden.
 
 | Ökonomische Ziele              | Soziale Ziele                          | Ökologische Ziele                    |
 |--------------------------------|----------------------------------------|-------------------------------------|
