@@ -1,5 +1,9 @@
 [book]
 authors = ["Belgarus"]
-language = "en"
+language = "de"
 src = "src"
 title = "materialien_uebersicht"
+
+[output]
+[output.html]
+git-repository-url = "https://github.com/Belgarus/Notes"

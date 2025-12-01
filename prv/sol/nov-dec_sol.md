@@ -20,6 +20,8 @@ R. hat fast die gesamte Arbeit gemacht und alles übersichtlich niedergeschriebe
 - Russlands Krieg gegen Deutschland - Simplicissimus [0:30h]
 - Rust als Erstprache - Linux Tage [erste 0:30h]
 - Ted Talks: Stallman [10min], Joschua Bach [12min] 
+- The Original Sin of Computing [20min]
+- VSCode-GlassWorm [12min]
 
 ### "Hardware" Projekte
 **Thinkpads**:
@@ -28,6 +30,7 @@ R. hat fast die gesamte Arbeit gemacht und alles übersichtlich niedergeschriebe
  - Ab-und Anlöten der Thunderbolt Anschlüsse
  - NixOS - wiederherstellen meines Beriebsystems
  - RAM Aufrüstug und Deaktivierung nicht benötigter Hardware  
+ - Nachtragende Verschlüsselung meiner Festplatte
 **Anderes**:
  - Ipod: Öffnen, wasserschaden Bekämpfung, Akkuwechsel
 

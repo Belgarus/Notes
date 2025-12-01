@@ -1,0 +1,536 @@
+<!DOCTYPE HTML>
+<html lang="de" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>wk_wirtschaftliche_grundlagen</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({ startOnLoad: true });</script>
+        
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">wk_wirtschaftliche_grundlagen</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/Belgarus/Notes" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="vorwort"><a class="header" href="#vorwort">Vorwort</a></h1>
+<p>Inhalte für die Vorbereitung auf eine Klassenarbeit in Wirtschaftskunde.</p>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2016%2F09%2F14%2F11%2F52%2Fbeer-1669298_1280.png&f=1&nofb=1&ipt=7b9328f9e1f00d8816861dc70e6683c6868f3d1e1adad311385060d2f7421364" height="200px"> 
+<div style="break-before: page; page-break-before: always;"></div><h1 id="der-markt-regelt-sich-selbst"><a class="header" href="#der-markt-regelt-sich-selbst">Der Markt Regelt sich Selbst</a></h1>
+<h2 id="was-ist-der-markt"><a class="header" href="#was-ist-der-markt">Was ist der Markt?</a></h2>
+<p>Der <strong>Markt</strong> ist der Ort, an dem sich Angebot und Nachfrage von Gütern (Waren und Dienstleistungen) treffen und sich der Preis bildet.</p>
+<p>Der Markt ist ein Ort des Wettbewerbs, da Anbieter miteinander konkurrieren, um die Aufmerksamkeit der Käufer zu gewinnen.</p>
+<h3 id="vollkommener-markt"><a class="header" href="#vollkommener-markt">Vollkommener Markt</a></h3>
+<p>Ein <strong>vollkommener Markt</strong> ist ein theoretisches Modell, in dem alle Marktteilnehmer rational handeln, vollständige Transparenz herrscht, Güter homogen sind und allein der Preis die Kaufentscheidung bestimmt.</p>
+<p>Der vollkommene Markt muss bestimmte Voraussetzungen erfüllen. Tut er dies nicht, gilt er als <strong>unvollkommener Markt</strong>. Zu den Merkmalen gehören:</p>
+<ul>
+<li>Viele Anbieter und Nachfrager (Polypol)</li>
+<li>Homogene <em>(Gleichartige)</em> Güter</li>
+<li>Keine Präferenzen</li>
+<li>Vollständige Information</li>
+<li>Keine Marktzutrittsbarrieren</li>
+<li>Sofortige Anpassung an Änderungen</li>
+<li>Treffen von Angebot und Nachfrage am selben Ort/Zeit</li>
+</ul>
+<p>Mehr dazu auf Studyflix <a href="https://studyflix.de/wirtschaft/vollkommener-markt-1892">Volkommener Markt</a>.</p>
+<h2 id="funktion-des-preises"><a class="header" href="#funktion-des-preises">Funktion des Preises</a></h2>
+<p>Der Preis gleicht <strong>Angebot</strong> und <strong>Nachfrage</strong> aus, sodass Käufer und Anbieter zum jeweiligen Preis handeln können.</p>
+<ul>
+<li><strong>Angebot:</strong> Menge an Gütern oder Dienstleistungen, die Produzenten zu einem bestimmten Preis bereitstellen.</li>
+<li><strong>Nachfrage:</strong> Teil des Bedarfs, der auf dem Markt durch Kaufentscheidungen realisiert wird.</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>Funktion</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td>Ausgleichsfunktion</td><td>Gleicht Angebot und Nachfrage aus; alle Anbieter und Nachfrager zum Preis können handeln</td></tr>
+<tr><td>Informationsfunktion</td><td>Preisänderungen zeigen Knappheit: steigende Preise → knappes Gut, sinkende Preise → mehr Verfügbarkeit</td></tr>
+<tr><td>Lenkungsfunktion</td><td>Lenkt Güter zur bestmöglichen Verwendung; Nachfrager mit höchstem Nutzen und effiziente Anbieter bevorzugt</td></tr>
+<tr><td>Ausschaltungsfunktion</td><td>Schließt Marktteilnehmer aus, die den Marktanforderungen nicht genügen</td></tr>
+</tbody></table>
+</div>
+<h3 id="was-ist-ein-gleichgewichtspreis"><a class="header" href="#was-ist-ein-gleichgewichtspreis">Was ist ein Gleichgewichtspreis?</a></h3>
+<p>Der <strong>Gleichgewichtspreis</strong> ist der Preis, bei dem <strong>Angebot und Nachfrage übereinstimmen</strong>.<br />
+An diesem Punkt können Anbieter ihre Waren verkaufen, ohne dass ein Überschuss oder Mangel entsteht.</p>
+<img src="https://blog.assets.studyflix.de/wp-content/uploads/2020/03/Gleichgewichtspreis-Kurven-1024x576.png" width="300px">
+<img src="https://blog.assets.studyflix.de/wp-content/uploads/2020/03/Gleichgewichtspreis-Angebots%C3%BCberhang-und-Nachfrage%C3%BCberhang-1024x576.png" width="300px">
+<p>Mehr dazu auf Studyflix <a href="https://www.youtube.com/embed/nJV75nUuO1w">Angebot und Nachfrage</a></p>
+<h3 id="marktrenten"><a class="header" href="#marktrenten">Marktrenten</a></h3>
+<p><strong>Konsumentenrente:</strong> Der Vorteil für Käufer, der entsteht, wenn sie ein Gut günstiger bekommen, als sie bereit gewesen wären zu zahlen.<br />
+<strong>Produzentenrente:</strong> Der Vorteil für Verkäufer, der entsteht, wenn sie ein Gut teurer verkaufen, als sie minimal dafür verlangen würden.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="beispielaufgabe"><a class="header" href="#beispielaufgabe">Beispielaufgabe</a></h1>
+<h3 id="angebot-und-nachfrage"><a class="header" href="#angebot-und-nachfrage">Angebot und Nachfrage:</a></h3>
+<p>Angebot und Nachfrage von Erdbeerkuchen</p>
+<pre><code>| Preis (€) | Nachfrage | Angebot |
+| --------- | --------- | ------- |
+| 0         | 12        | 0       |
+| 1         | 11        | 2       |
+| 2         | 9         | 4       |
+| 3         | 7         | 7       |
+| 4         | 2         | 8       |
+| 5         | 0         | 10      |
+</code></pre>
+<hr />
+<p><strong>a)</strong></p>
+<pre><code>Preis (€)
+5 |        \  / 
+4 |         X  
+3 |       /  \
+2 |     /     \
+1 |   /        \
+0 | /           \   
+   -------------------
+    0 2 4 6 8 10  Menge
+</code></pre>
+<p><strong>Legende:</strong><br />
+/ = Angebot (steigend)<br />
+\ = Nachfrage (fallend)<br />
+Schnittpunkt bei Menge 7, Preis 3 €</p>
+<hr />
+<p><strong>B) Gleichgewicht</strong></p>
+<ul>
+<li>Menge: 7 Kuchen</li>
+<li>Preis: 3 €</li>
+<li>Umsatz: 7 * 3 € = 21 €</li>
+</ul>
+<hr />
+<p><strong>C) Preisfixierung</strong></p>
+<ul>
+<li>Preis 1 € → Nachfrage &gt; Angebot → Nachfrage-Überschuss</li>
+<li>Preis 4 € → Angebot &gt; Nachfrage → Angebots-Überschuss</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="wirtschaftliche-grundlagen"><a class="header" href="#wirtschaftliche-grundlagen">Wirtschaftliche Grundlagen</a></h1>
+<h2 id="was-ist-wirtschaft"><a class="header" href="#was-ist-wirtschaft">Was ist Wirtschaft?</a></h2>
+<p>Plannvoller Umgang mit knappen Ressourcen zu bestmöglichen Befriedigung unbegrenzter Bedürfnisse.</p>
+<blockquote>
+<p><strong>Problem:</strong> knappe Ressourcen / unbegrenzte Bedürfnisse</p>
+</blockquote>
+<h3 id="betriebswirtschaftliche-produktionsfaktoren"><a class="header" href="#betriebswirtschaftliche-produktionsfaktoren">Betriebswirtschaftliche Produktionsfaktoren</a></h3>
+<p>Betriebswirtschaftliche Produktionsfaktoren sind die in Unternehmen eingesetzten Mittel, die gemeinsam zur Erstellung von Gütern und Dienstleistungen beitragen.</p>
+<pre class="mermaid">graph TD
+
+    A[Betriebswirtschaftliche&lt;br&gt;Produktionsfaktoren]
+
+    %% Hauptäste
+    A --&gt; B[Dispositive Faktoren]
+    A --&gt; C[Elementarfaktoren]
+
+    %% Dispositive Faktoren unterteilt
+    B --&gt; B1[Leitung, Führungskräfte]
+
+    %% Elementarfaktoren unterteilt
+    C --&gt; C1[Ausführende Arbeit]
+    C --&gt; C2[Betriebsmittel]
+    C --&gt; C3[Werkstoffe]
+
+</pre>
+<h3 id="Ökonomische-prinzipien-wirtschaftlichkeitsprinzip"><a class="header" href="#Ökonomische-prinzipien-wirtschaftlichkeitsprinzip">Ökonomische Prinzipien (Wirtschaftlichkeitsprinzip)</a></h3>
+<p>Das ökonomische Prinzip besagt, dass Wirtschaftssubjekte ihre Mittel so einsetzen, dass ein möglichst gutes Verhältnis zwischen Aufwand und Ergebnis entsteht.</p>
+<ul>
+<li><strong>Minimalprinzip:</strong> Mit möglichst wenig Mitteln ein vorgegebenes Ziel erreichen.</li>
+<li><strong>Maximalprinzip:</strong> Mit gegebenen Mitteln das Maximale erreichen.</li>
+<li><strong>Optimumprinzip:</strong> Verhältnis zwischen Ertrag und Mitteleinsatz Optionen.</li>
+</ul>
+<h3 id="knappheit-verlangt-wirtschaften-bedeutet-arbeitsteilung"><a class="header" href="#knappheit-verlangt-wirtschaften-bedeutet-arbeitsteilung">Knappheit verlangt Wirtschaften bedeutet Arbeitsteilung:</a></h3>
+<p>Weil Ressourcen begrenzt sind, müssen Menschen effizient zusammenarbeiten. Arbeitsteilung ermöglicht, Aufgaben aufzuteilen und dadurch Zeit, Kosten und Aufwand zu sparen.</p>
+<ul>
+<li><strong>Innerfamiliär</strong> – Aufgabenverteilung innerhalb der Familie</li>
+<li><strong>Betrieblich</strong> – Aufteilung von Arbeitsprozessen im Unternehmen</li>
+<li><strong>Beruflich</strong> – Spezialisierung auf bestimmte Berufe oder Tätigkeiten</li>
+<li><strong>Volkswirtschaftlich</strong> – Arbeitsteilung zwischen Branchen innerhalb eines Landes</li>
+<li><strong>International</strong> – Spezialisierung und Austausch zwischen Ländern</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>Vorteile der Arbeitsteilung</th><th>Nachteile der Arbeitsteilung</th></tr></thead><tbody>
+<tr><td>Höhere Produktivität</td><td>Abhängigkeiten</td></tr>
+<tr><td>Kostenvorteile</td><td>Monotone Tätigkeiten</td></tr>
+<tr><td>Bessere Qualität</td><td>Höhere Störanfälligkeit</td></tr>
+<tr><td>Spezialisierung</td><td>Verlust ganzheitlicher Fähigkeiten</td></tr>
+</tbody></table>
+</div>
+<h3 id="3-sektoren-modell-einer-volkswirtschaft"><a class="header" href="#3-sektoren-modell-einer-volkswirtschaft">3 Sektoren-Modell einer Volkswirtschaft</a></h3>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Fourastie.png/375px-Fourastie.png" width="300px">  
+<p><strong>Primärer Sektor:</strong> Rohstoffgewinnung, <strong>Sekundärer Sektor:</strong> Rohstoffverarbeitung,<br />
+<strong>tertiärer Sektor:</strong> Dienstleistungen</p>
+<h3 id="erweiterter-wirtschaftskreislauf"><a class="header" href="#erweiterter-wirtschaftskreislauf">(Erweiterter) Wirtschaftskreislauf</a></h3>
+<img src="img/Offener-Wirtschaftskreislauf.png" height="350px">
+<p><em>Von <a href="https://www.bilanz-junkie.de/wp-content/uploads/2020/04/Offener-Wirtschaftskreislauf-1-1024x668.png">bilanz junkie - Wirtschaftskreislauf</a></em></p>
+<h3 id="bedürfnisse-bedarf-und-nachfrage"><a class="header" href="#bedürfnisse-bedarf-und-nachfrage">Bedürfnisse, Bedarf und Nachfrage</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Begriff</th><th>Definition</th></tr></thead><tbody>
+<tr><td><strong>Bedürfnisse</strong></td><td>Gefühl eines Mangels, mit dem Wunsch, diesen zu beseitigen</td></tr>
+<tr><td><strong>Bedarf</strong></td><td>Mit Geld abgedecktes (kaufkraftgestütztes) Verlangen nach Gütern zur Befriedigung der Bedürfnisse</td></tr>
+<tr><td><strong>Nachfrage</strong></td><td>Teil des Bedarfs, der auf dem Markt durch eine Kaufentscheidung realisiert wird</td></tr>
+</tbody></table>
+</div>
+<h3 id="maslowsche-bedürfnispyramide"><a class="header" href="#maslowsche-bedürfnispyramide">Maslow‘sche Bedürfnispyramide</a></h3>
+<img src="img/Beduerfnispyramide.png">   
+<p>(<strong>Blau</strong>: Defizitbedürfnisse, <strong>Weiß</strong>: Wachstumsbedürfnisse)<br />
+<em>Von <a href="https://herzbluttigerevents.de/mitarbeiterzufriedenheit-steigern/">herzbluttigerevents - mitarbeiterzufriedenheit-steigern</a></em></p>
+<h3 id="arten-von-gütern"><a class="header" href="#arten-von-gütern">Arten von Gütern</a></h3>
+<pre class="mermaid">graph TD
+    G[Güterarten]
+    FG[Freie Güter]
+    WG[Wirtschaftsgüter]
+    MG[Materielle Güter]
+    IMG[Inmaterielle Güter]
+    KG[Konsumgüter]
+    PG[Produktionsgüter]
+    R[Rechte]
+    DL[Dienstleistungen]
+
+    %% Beziehungen
+    G --&gt; FG
+    G --&gt; WG
+    WG --&gt; MG
+    WG --&gt; IMG
+    MG --&gt; KG
+    MG --&gt; PG
+    IMG --&gt; R
+    IMG --&gt; DL
+</pre>
+<h3 id="betriebstypologien"><a class="header" href="#betriebstypologien">Betriebstypologien</a></h3>
+<p>Betriebstypologien sind Klassifikationen von Unternehmen nach Merkmalen wie z.B. Größe.</p>
+<div style="font-family: monospace; white-space: pre;">
+.
+<span style="color: #c7b198;">Betriebstypologien</span>
+├── Privat oder Staatlich
+├── Größe
+├── Rechtsform
+├── Branche
+└── ...
+</div>
+<h3 id="Ökonomische-soziale-und-ökologische-ziele-von-unternehmen"><a class="header" href="#Ökonomische-soziale-und-ökologische-ziele-von-unternehmen">Ökonomische, soziale und ökologische Ziele von Unternehmen</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Ökonomische Ziele</th><th>Soziale Ziele</th><th>Ökologische Ziele</th></tr></thead><tbody>
+<tr><td>Gewinnmaximierung</td><td>Gutes Betriebsklima</td><td>Vermeidung von Abfällen</td></tr>
+<tr><td>Rentabilität</td><td>Mitarbeiterzufriedenheit</td><td>Einsparung von Energie</td></tr>
+<tr><td>Absatz- und Umsatzsteigerung</td><td>Förderung der Gleichberechtigung</td><td>Nachhaltigkeit</td></tr>
+<tr><td>Erhöhung des Marktanteils</td><td>Schaffung/Erhalt von Arbeitsplätzen</td><td>Umweltverträglichkeit</td></tr>
+<tr><td>Produktivität</td><td>Ausbau sozialer Leistungen</td><td>Recycling</td></tr>
+<tr><td>Senkung der Kosten</td><td>Vereinbarkeit von Beruf und Familie</td><td>Umweltfreundliche Produkte</td></tr>
+<tr><td>Beseitigung der Konkurrenz</td><td>Zahlung angemessener Vergütung</td><td>Umstieg auf erneuerbare Energien</td></tr>
+<tr><td>Kundenzufriedenheit</td><td>Sponsoring sozialer Projekte</td><td>Dämmung der Gebäude</td></tr>
+<tr><td>…</td><td>…</td><td>…</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="rechtsformen-und-führung-von-unternehmen"><a class="header" href="#rechtsformen-und-führung-von-unternehmen">Rechtsformen und Führung von Unternehmen</a></h1>
+<blockquote>
+<p>Anscheinend nicht wichtig für Prüfung</p>
+</blockquote>
+<h2 id="11-unternehmenszahlen-nach-beschäftigtenzahl"><a class="header" href="#11-unternehmenszahlen-nach-beschäftigtenzahl">1.1 Unternehmenszahlen nach Beschäftigtenzahl</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Merkmal</th><th>0–9 Beschäftigte</th><th>10–49 Beschäftigte</th><th>50–249 Beschäftigte</th><th>≥250 Beschäftigte</th><th>Insgesamt</th></tr></thead><tbody>
+<tr><td><strong>Einzelunternehmer</strong></td><td>1.954.811</td><td>89.627</td><td>3.540</td><td>85</td><td>2.048.063</td></tr>
+<tr><td><strong>Personengesellschaften (OHG, KG)</strong></td><td>335.851</td><td>64.122</td><td>14.322</td><td>3.231</td><td>417.526</td></tr>
+<tr><td><strong>Kapitalgesellschaften (GmbH, AG)</strong></td><td>591.177</td><td>181.460</td><td>49.919</td><td>11.334</td><td>833.890</td></tr>
+<tr><td><strong>Sonstige Rechtsformen</strong></td><td>132.816</td><td>27.618</td><td>7.328</td><td>2.677</td><td>170.439</td></tr>
+<tr><td><strong>Insgesamt</strong></td><td>3.014.655</td><td>362.827</td><td>75.109</td><td>17.327</td><td>3.469.918</td></tr>
+</tbody></table>
+</div>
+<p><em>2023 laut <a href="https://de.statista.com/statistik/daten/studie/237346/umfrage/unternehmen-in-deutschland-nach-rechtsform-und-anzahl-der-beschaeftigten/">statistica.com - Unternehmen in Deutschland</a></em></p>
+<h2 id="12-Übersicht-über-die-rechtsformen"><a class="header" href="#12-Übersicht-über-die-rechtsformen">1.2. Übersicht über die Rechtsformen</a></h2>
+<div style="font-family: monospace; white-space: pre;">
+.
+<span style="color: #c7b198;">Rechtsformen von Unternehmen</span>
+├── <span style="color: #596e79;">Einzelunternehmen</span>
+│   ├── Kleingewerbetreibender
+│   └── Eingetragener Kaufmann (e.K.)
+├── <span style="color: #596e79;">Personengesellschaften</span>
+│   ├── Gesellschaft bürgerlichen Rechts (GbR)
+│   ├── Offene Handelsgesellschaft (OHG)
+│   └── Kommanditgesellschaft (KG)
+├── <span style="color: #596e79;">Kapitalgesellschaften</span>
+│   ├── Gesellschaft mit beschränkter Haftung (GmbH)
+│   ├── Unternehmergesellschaft (haftungsbeschränkt) (UG)
+│   └── Aktiengesellschaft (AG)
+└── <span style="color: #596e79;">Genossenschaften</span>
+</div>
+<h2 id="13-kriterien-zur-wahl-der-rechtsform"><a class="header" href="#13-kriterien-zur-wahl-der-rechtsform">1.3. Kriterien zur Wahl der Rechtsform</a></h2>
+<ul>
+<li><strong>Finanzen:</strong> Kapitalaufbringung, Finanzierungsmöglichkeiten</li>
+<li><strong>Haftung:</strong> Wer haftet? Umfang der Haftung</li>
+<li><strong>Organisation:</strong> Leitung, Vertretung, Gewinnverteilung</li>
+<li><strong>Kosten &amp; Steuern:</strong> Steuerbelastung, Gründungs- und Buchhaltungskosten</li>
+</ul>
+<h2 id="21-die-firma-eines-kaufmannes"><a class="header" href="#21-die-firma-eines-kaufmannes">2.1 Die Firma eines Kaufmannes</a></h2>
+<p>Als Firma wird der Name, unter dem der Kaufmann im Sinne des HGB<br />
+seine Geschäfte führt, bezeichnet.</p>
+<ul>
+<li><strong>Personenfirma</strong> z.B. Jens Große GmbH</li>
+<li><strong>Sachfirma</strong> z.B. Betonhandel Dittersdorf OHG</li>
+<li><strong>Fantasiefirma</strong> z.B. Grand Unicorn AG</li>
+<li><strong>Mischfirma</strong> z.B. Große and friends Betonhandel Dittersdorf OHG</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>Grundsatz</th><th>Bedeutung</th></tr></thead><tbody>
+<tr><td><strong>Firmenöffentlichkeit</strong></td><td>Eintragung der Firma ins Handelsregister ist Pflicht.</td></tr>
+<tr><td><strong>Firmenbeständigkeit</strong></td><td>Weiterführung der Firma bei Inhaberwechsel ist möglich.</td></tr>
+<tr><td><strong>Firmenausschließbarkeit</strong></td><td>Firmenname muss sich klar von anderen Firmen unterscheiden.</td></tr>
+<tr><td><strong>Irreführungsverbot</strong></td><td>Firmenname darf nicht über Gesellschaftsverhältnisse täuschen.</td></tr>
+<tr><td><strong>Offenlegung der Haftungsverhältnisse</strong></td><td>Durch Firmenzusatz und Handelsregistereintrag offenzulegen.</td></tr>
+<tr><td><strong>Offenlegung der Gesellschaftsverhältnisse</strong></td><td>Ebenfalls durch Firmenzusatz und Handelsregistereintrag sicherzustellen.</td></tr>
+</tbody></table>
+</div>
+<h2 id="22-handelsregister"><a class="header" href="#22-handelsregister">2.2 Handelsregister</a></h2>
+<p>Das <strong>Handelsregister</strong> ist ein öffentliches Verzeichnis, in dem alle wesentlichen Informationen über Kaufleute und Unternehmen im Bezirk des jeweiligen Amtsgerichts eingetragen werden.</p>
+<ul>
+<li>Kleingewerbe und GbRs nicht eintragungspflichtig</li>
+<li>Enthält rechtliche und wirtschaftliche Informationen (§15 HGB)</li>
+<li>Elektronische Anmeldung, Änderungen und Löschungen</li>
+<li><strong>Abteilungen:</strong>
+<ul>
+<li>A (HRA): Einzelkaufleute, Personengesellschaften, Vereine</li>
+<li>B (HRB): Kapitalgesellschaften</li>
+</ul>
+</li>
+</ul>
+<div class="table-wrapper"><table><thead><tr><th>Inhalt nach Handelsregisterverordnung</th><th>Beschreibung / Details</th></tr></thead><tbody>
+<tr><td><strong>Firma</strong></td><td>Vertretungsberechtige Personens</td></tr>
+<tr><td><strong>Sitz und Geschäftsanschrift</strong></td><td>Rechtsform des Unternehmens</td></tr>
+<tr><td><strong>Niederlassungen und Anschriften</strong></td><td>Grund- oder Stammkapital</td></tr>
+<tr><td><strong>Gegenstand des Unternehmens</strong></td><td>Sonstige Gesellschafter (Kommanditisten)</td></tr>
+<tr><td><strong>Sonstiges</strong>  (Insolvenzverfahren, laufende Umwandlung der Rechtsform, …)</td><td>Einsehbarkeit weiterer Dokumente</td></tr>
+</tbody></table>
+</div>
+<p><strong>Hinweis:</strong> Eintragungen können <strong>konstitutiv</strong> (rechtserzeugend) oder <strong>deklaratorisch</strong> (rechtsbezeugend) sein.</p>
+<h2 id="22-arten-von-kaufläuten"><a class="header" href="#22-arten-von-kaufläuten">2.2 Arten von Kaufläuten</a></h2>
+<p><img src="img/img_kaufmann.svg" alt="Kaufmann" /></p>
+<p><em>von <a href="https://www.lernnetz24.de/bwl/hinweise/90.html">Lernnetz 24 - Kaufmannseigenschaft </a></em></p>
+<h2 id="3-arten-von-rechtformen"><a class="header" href="#3-arten-von-rechtformen">3. Arten von Rechtformen</a></h2>
+<h3 id="31-einzelunternehmung"><a class="header" href="#31-einzelunternehmung">3.1 Einzelunternehmung</a></h3>
+<h3 id="311-wahlmöglichkeit-des-einzelunternehmers"><a class="header" href="#311-wahlmöglichkeit-des-einzelunternehmers">3.1.1. Wahlmöglichkeit des Einzelunternehmers</a></h3>
+<p><strong>Einzelunternehmer</strong> kann wählen zwischen:</p>
+<ul>
+<li><strong>Kleingewerbetreibender</strong> – wenn keine kaufmännische Organisation nötig ist</li>
+<li><strong>Eingetragener Kaufmann</strong> (e.K.) – freiwillig oder bei größerem Geschäftsbetrieb</li>
+<li>Alleinige Gründung einer <strong>Kapitalgesellschaft</strong> – GmbH/UG oder AG</li>
+</ul>
+<h3 id="312-kleingewerbetreibender-nicht-eingetragen"><a class="header" href="#312-kleingewerbetreibender-nicht-eingetragen">3.1.2. Kleingewerbetreibender (nicht eingetragen)</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Merkmal</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td><strong>Gründung</strong></td><td>Anmeldung beim Gewerbeamt und Finanzamt</td></tr>
+<tr><td><strong>Firma</strong></td><td>Keine Firma, Geschäfte mit Vor- und Nachname</td></tr>
+<tr><td><strong>Kapital</strong></td><td>Keine Mindesthöhe vorgeschrieben</td></tr>
+<tr><td><strong>Geschäftsführung</strong></td><td>Durch Kleingewerbetreibenden selbst</td></tr>
+<tr><td><strong>Haftung</strong></td><td>Unbeschränkt mit Geschäfts- und Privatvermögen</td></tr>
+<tr><td><strong>Gewinnverteilung</strong></td><td>Keine Verteilung notwendig</td></tr>
+<tr><td><strong>Organe</strong></td><td>Keine</td></tr>
+</tbody></table>
+</div>
+<p><strong>Besonderheiten / Vereinfachungen beim Kleingewerbetreibenden</strong></p>
+<ul>
+<li>Keine Eintragung im Handelsregister</li>
+<li>Geringere Buchhaltungspflichten</li>
+<li>Regeln des HGB gelten nicht für den Kleingewerbetreibenden</li>
+<li>Evtl. Umsatzsteuerbefreiung (Vorjahr max. 22.000 €, aktuelles
+Jahr voraussichtlich max. 50.000 €)</li>
+</ul>
+<blockquote>
+<p><strong>Exkurs:</strong> Bei Handelskäufen muss ein Kaufmann Mängel unverzüglich rügen <em>(reklamieren)</em>; die Fristen richten sich nach Art des Mangels und können zwischen sofortiger Anzeige und maximal drei Jahren liegen.</p>
+</blockquote>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+
+    </div>
+    </body>
+</html>
