@@ -5,6 +5,8 @@ Das Unternehmen und die Rolle im eigenen Betrieb beschreiben
 
  - [Duale Ausbildung mdBook](https://belgarus.github.io/Notes/fi25/lf1_dualeberufsausbildung/book/)
 
+# Lernfeld 2
+Hedgedoc: [LF2](https://hedgedoc.c3d2.de/LF2)
 
 # Lernfeld 3 
 Clients in Netzwerke einbinden
