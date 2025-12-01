@@ -25,8 +25,8 @@ Mehr dazu auf Studyflix [Volkommener Markt](https://studyflix.de/wirtschaft/voll
 
 Der Preis gleicht **Angebot** und **Nachfrage** aus, sodass Käufer und Anbieter zum jeweiligen Preis handeln können.  
 
-* **Angebot:** Menge an Gütern oder Dienstleistungen, die Produzenten zu einem bestimmten Preis bereitstellen.  
-* **Nachfrage:** Teil des Bedarfs, der auf dem Markt durch Kaufentscheidungen realisiert wird.  
+* **Angebot:** Die Menge an Produkten oder Dienstleistungen, die Verkäufer zu einem bestimmten Preis verkaufen möchten.
+* **Nachfrage:** Die Menge an Produkten oder Dienstleistungen, die Käufer zu einem bestimmten Preis kaufen möchten.
 
 | Funktion                  | Beschreibung                                                                                   |
 |----------------------------|------------------------------------------------------------------------------------------------|
