@@ -26,15 +26,17 @@ graph TD
     C --> C3[Werkstoffe]
 
 ```
+**Elementarfaktoren** sind die grundlegenden Bausteine, die ein Unternehmen für die Produktion braucht  
+**Dispositive** Faktoren sind die planenden und steuernden Tätigkeiten, die alles zusammenbringen.
 
 ### Ökonomische Prinzipien (Wirtschaftlichkeitsprinzip)
 Das ökonomische Prinzip besagt, dass Wirtschaftssubjekte ihre Mittel so einsetzen, dass ein möglichst gutes Verhältnis zwischen Aufwand und Ergebnis entsteht.
 
 - **Minimalprinzip:** Mit möglichst wenig Mitteln ein vorgegebenes Ziel erreichen.  
 - **Maximalprinzip:** Mit gegebenen Mitteln das Maximale erreichen.  
-- **Optimumprinzip:** Verhältnis zwischen Ertrag und Mitteleinsatz Optionen.  
+- **Optimumprinzip:** Das beste Verhältnis zwischen eingesetzten Mitteln und erzieltem Ergebnis finden.  
 
-### Knappheit verlangt Wirtschaften bedeutet Arbeitsteilung:
+### Wie Ressourcenknappheit zur Arbeitsteilung führt:
 Weil Ressourcen begrenzt sind, müssen Menschen effizient zusammenarbeiten. Arbeitsteilung ermöglicht, Aufgaben aufzuteilen und dadurch Zeit, Kosten und Aufwand zu sparen.
 
 - **Innerfamiliär** – Aufgabenverteilung innerhalb der Familie  
@@ -64,7 +66,7 @@ Weil Ressourcen begrenzt sind, müssen Menschen effizient zusammenarbeiten. Arbe
 ### Bedürfnisse, Bedarf und Nachfrage
 | Begriff     | Definition |
 |------------|------------|
-| **Bedürfnisse** | Gefühl eines Mangels, mit dem Wunsch, diesen zu beseitigen |
+| **Bedürfniss** | Gefühl eines Mangels, mit dem Wunsch, diesen zu beseitigen |
 | **Bedarf** | Mit Geld abgedecktes (kaufkraftgestütztes) Verlangen nach Gütern zur Befriedigung der Bedürfnisse |
 | **Nachfrage** | Teil des Bedarfs, der auf dem Markt durch eine Kaufentscheidung realisiert wird |
 
@@ -75,6 +77,7 @@ Weil Ressourcen begrenzt sind, müssen Menschen effizient zusammenarbeiten. Arbe
 *Von [herzbluttigerevents - mitarbeiterzufriedenheit-steigern](https://herzbluttigerevents.de/mitarbeiterzufriedenheit-steigern/)*
 
 ### Arten von Gütern
+Die Klassifikation von Gütern hilft zu verstehen, welche Ressourcen knapp sind und wie sie in der Wirtschaft verwendet werden.
 
 ```mermaid
 graph TD
@@ -98,6 +101,7 @@ graph TD
     IMG --> R
     IMG --> DL
 ```
+Nur Wirtschaftsgüter haben einen Preis – ihre weitere Unterteilung zeigt, ob sie direkt konsumiert oder zur Produktion weiterer Güter eingesetzt werden.
 
 ### Betriebstypologien
 Betriebstypologien sind Klassifikationen von Unternehmen nach Merkmalen wie z.B. Größe.
@@ -112,6 +116,9 @@ Betriebstypologien sind Klassifikationen von Unternehmen nach Merkmalen wie z.B.
 </div>
 
 ### Ökonomische, soziale und ökologische Ziele von Unternehmen
+Unternehmen verfolgen ökonomische, soziale und ökologische Ziele, die jedoch oft in Konflikt zueinander stehen   
+– deshalb müssen Prioritäten gesetzt und Kompromisse gefunden werden.
+
 | Ökonomische Ziele              | Soziale Ziele                          | Ökologische Ziele                    |
 |--------------------------------|----------------------------------------|-------------------------------------|
 | Gewinnmaximierung               | Gutes Betriebsklima                     | Vermeidung von Abfällen             |
