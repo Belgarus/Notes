@@ -1,5 +1,4 @@
 # Summary
-[Einführung SOL](./einfuehrung_sol.md)
-[Funktionsweise](./funktionsweise.md)
-
-
+- [Einführung SOL](einfuehrung_sol.md)
+    - [Notizen](notes.md)
+- [Funktionsweise](funktionsweise.md)

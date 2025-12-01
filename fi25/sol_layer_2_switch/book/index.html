@@ -163,7 +163,7 @@
                     <main>
                         <h1 id="einführung"><a class="header" href="#einführung">Einführung</a></h1>
 <p>R. und N. hatten für das <em>Selbstorganisierte lernen</em>  (SOL) die Idee einen umanaged Layer 2 Switch zu bauen oder simmulieren.</p>
-<p><img src="IMG_0215.jpg" alt="img" /></p>
+<img src="IMG_0215.jpg" height="300px">
 <h2 id="ziel-naiv-deprecated-version-1"><a class="header" href="#ziel-naiv-deprecated-version-1">Ziel (naiv, deprecated, Version 1)</a></h2>
 <ul>
 <li>Mit GPIO und Microcontroller/RPI einen Layer 2 Switch bauen, welcher mit Pcs über Twisted Pair kommunizieren kann</li>
@@ -193,13 +193,65 @@
     SW --&gt;|Unicast| E[Empfaenger]
     SW -.-&gt;|kein Frame| A[Anderes Geraet]
 </pre>
+<h2 id="ziel-version-2"><a class="header" href="#ziel-version-2">Ziel (Version 2)</a></h2>
+<ul>
+<li>eine Simulation für einen Layer-2 Netzwerkswitch bauen, Netzwerk ist fest vorgegeben (2 Netzwerkgeräte, 1 Switch)</li>
+<li>(Optional) Netzwerk variabel aufbauen</li>
+<li>(Optional) GUI</li>
+</ul>
+<p><strong>Vorteile:</strong></p>
+<ul>
+<li>Konzepte verstehen unabhängig von technischen Implementierungen</li>
+<li>wir können entscheiden auf welchen Level abstrahiert wird</li>
+</ul>
+<p><strong>Nachteile:</strong></p>
+<ul>
+<li>keine Kontrolle(durch Probe) möglich, ob Ethernet Standart korrekt umgesetzt wurde</li>
+</ul>
+<h3 id="vorgehen-1"><a class="header" href="#vorgehen-1">Vorgehen</a></h3>
+<ol>
+<li>
+<p>Erkenntnisse aus vorheriger Recherche festhalten</p>
+</li>
+<li>
+<p>Anforderungen festhalten</p>
+<ul>
+<li>welche Aufgaben hat Layer 1+2 (Switch und Endgeräte)</li>
+<li>welche Funktionalität soll die Simulation haben</li>
+<li>Wie technisch/physikalisch soll implementiert werden</li>
+<li>Eingabe ? Ausgabe ? -&gt; über terminal, Textdateien ?</li>
+<li>Zeitbasiert Simulation oder Eventbasierte simulation ?</li>
+</ul>
+</li>
+<li>
+<p>Software Projekt planen</p>
+<ul>
+<li>Aufteilen in Teilbereiche(z.B. Ein Ausgabe, Netzwerkkomponenten, Kodierungen, Nachrichten, Leitungen, ...) --&gt; möglichst modular</li>
+<li>(UML Klassendiagramm ???)</li>
+</ul>
+</li>
+<li>
+<p>Software Projekt umsetzen</p>
+<ul>
+<li>Implementierung alleinstehender Klassen</li>
+<li>Implementierung zusammenhängender Klassen</li>
+<li>(Testen ???)</li>
+</ul>
+</li>
+</ol>
+<h3 id="anforderung-1"><a class="header" href="#anforderung-1">Anforderung</a></h3>
+<ul>
+<li>funktionierende Simulation eines Layer 2 Switches und Endgeräte</li>
+<li>Dokumentation in Hedgedoc (Übertragung in mdBook)</li>
+</ul>
+<p><em>Hinweis: die Bilder in Funktionsweise stammen aus dem Repo von R.: <a href="https://github.com/robertulrich21/layer2SwitchLearningProcess/">layer 2 switch learning process</a></em></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
 
-                            <a rel="next prefetch" href="funktionsweise.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="notes.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -210,29 +262,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
 
-                    <a rel="next prefetch" href="funktionsweise.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="notes.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

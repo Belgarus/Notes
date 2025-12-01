@@ -164,7 +164,7 @@
                     <main>
                         <h1 id="einführung"><a class="header" href="#einführung">Einführung</a></h1>
 <p>R. und N. hatten für das <em>Selbstorganisierte lernen</em>  (SOL) die Idee einen umanaged Layer 2 Switch zu bauen oder simmulieren.</p>
-<p><img src="IMG_0215.jpg" alt="img" /></p>
+<img src="IMG_0215.jpg" height="300px">
 <h2 id="ziel-naiv-deprecated-version-1"><a class="header" href="#ziel-naiv-deprecated-version-1">Ziel (naiv, deprecated, Version 1)</a></h2>
 <ul>
 <li>Mit GPIO und Microcontroller/RPI einen Layer 2 Switch bauen, welcher mit Pcs über Twisted Pair kommunizieren kann</li>
@@ -194,6 +194,205 @@
     SW --&gt;|Unicast| E[Empfaenger]
     SW -.-&gt;|kein Frame| A[Anderes Geraet]
 </pre>
+<h2 id="ziel-version-2"><a class="header" href="#ziel-version-2">Ziel (Version 2)</a></h2>
+<ul>
+<li>eine Simulation für einen Layer-2 Netzwerkswitch bauen, Netzwerk ist fest vorgegeben (2 Netzwerkgeräte, 1 Switch)</li>
+<li>(Optional) Netzwerk variabel aufbauen</li>
+<li>(Optional) GUI</li>
+</ul>
+<p><strong>Vorteile:</strong></p>
+<ul>
+<li>Konzepte verstehen unabhängig von technischen Implementierungen</li>
+<li>wir können entscheiden auf welchen Level abstrahiert wird</li>
+</ul>
+<p><strong>Nachteile:</strong></p>
+<ul>
+<li>keine Kontrolle(durch Probe) möglich, ob Ethernet Standart korrekt umgesetzt wurde</li>
+</ul>
+<h3 id="vorgehen-1"><a class="header" href="#vorgehen-1">Vorgehen</a></h3>
+<ol>
+<li>
+<p>Erkenntnisse aus vorheriger Recherche festhalten</p>
+</li>
+<li>
+<p>Anforderungen festhalten</p>
+<ul>
+<li>welche Aufgaben hat Layer 1+2 (Switch und Endgeräte)</li>
+<li>welche Funktionalität soll die Simulation haben</li>
+<li>Wie technisch/physikalisch soll implementiert werden</li>
+<li>Eingabe ? Ausgabe ? -&gt; über terminal, Textdateien ?</li>
+<li>Zeitbasiert Simulation oder Eventbasierte simulation ?</li>
+</ul>
+</li>
+<li>
+<p>Software Projekt planen</p>
+<ul>
+<li>Aufteilen in Teilbereiche(z.B. Ein Ausgabe, Netzwerkkomponenten, Kodierungen, Nachrichten, Leitungen, ...) --&gt; möglichst modular</li>
+<li>(UML Klassendiagramm ???)</li>
+</ul>
+</li>
+<li>
+<p>Software Projekt umsetzen</p>
+<ul>
+<li>Implementierung alleinstehender Klassen</li>
+<li>Implementierung zusammenhängender Klassen</li>
+<li>(Testen ???)</li>
+</ul>
+</li>
+</ol>
+<h3 id="anforderung-1"><a class="header" href="#anforderung-1">Anforderung</a></h3>
+<ul>
+<li>funktionierende Simulation eines Layer 2 Switches und Endgeräte</li>
+<li>Dokumentation in Hedgedoc (Übertragung in mdBook)</li>
+</ul>
+<p><em>Hinweis: die Bilder in Funktionsweise stammen aus dem Repo von R.: <a href="https://github.com/robertulrich21/layer2SwitchLearningProcess/">layer 2 switch learning process</a></em></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="notizen"><a class="header" href="#notizen">Notizen</a></h1>
+<blockquote>
+<p>Dieser Bereich ist nicht wichtig aber zeigt wie wir vorgegangen sind.</p>
+</blockquote>
+<h3 id="nachtrag-anmerkung"><a class="header" href="#nachtrag-anmerkung">Nachtrag, Anmerkung</a></h3>
+<p>In der Recherche ist uns aufgefallen, dass Ethernet über twisted pair  mit GPIO pins nicht direkt umsetzbar ist(<a href="https://hedgedoc.c3d2.de/ztYsm4jpewEOwtVhoz_-trg#Differential">differential signaling</a>)</p>
+<hr />
+<h1 id="design-und-implementierung-eines-layer-2-unmanaged-switches-lernprojekt"><a class="header" href="#design-und-implementierung-eines-layer-2-unmanaged-switches-lernprojekt">Design und Implementierung eines Layer 2 Unmanaged Switches (Lernprojekt)</a></h1>
+<h2 id="vorgehen-2"><a class="header" href="#vorgehen-2">Vorgehen</a></h2>
+<ol>
+<li>Über Protokolle(Ethernet, Manchester Kodierung) informieren, Anforderungen festhalten</li>
+<li>Die physische Layer definieren</li>
+<li>richtigen Mikrocontroller / Einplatinencomputer wählen, der den Anforderungen entspricht</li>
+<li>Projekt mit Micropython implementieren</li>
+</ol>
+<h2 id="ethernet-protokoll"><a class="header" href="#ethernet-protokoll">Ethernet Protokoll</a></h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/IEEE_802.3">IEEE 802.3</a> ist der Ethernet Standart --&gt; <strong>Details zum Standart liegen hinter einer Paywall</strong>
+<ul>
+<li>beschreibt für jede Übertragungsart/Kabeltyp die technischen Details um eine Kommunikation zu gewährleisten</li>
+</ul>
+</li>
+</ul>
+<p>Die gängigen Ethernet Standarts:</p>
+<div class="table-wrapper"><table><thead><tr><th>Bezeichnung</th><th>Übertragungsmedium</th><th>max. Segmentlänge</th><th>Datenrate (brutto)</th></tr></thead><tbody>
+<tr><td>100Base-TX</td><td>TP-Kabel (2 Adernpaare)</td><td>100 m</td><td>100 MBit/s</td></tr>
+<tr><td>1000Base-T (1GE)</td><td>TP-Kabel (4-Adernpaare)</td><td>100 m</td><td>1.000 MBit/s</td></tr>
+<tr><td>2500Base-T (2G5)</td><td>TP-Kabel (4-Adernpaare)</td><td>100 m</td><td>2.500 MBit/s</td></tr>
+<tr><td>5000Base-T (5GE)</td><td>TP-Kabel (4-Adernpaare)</td><td>100 m</td><td>5.000 MBit/s</td></tr>
+<tr><td>10Base-T (10GE)</td><td>TP-Kabel (4-Adernpaare)</td><td>(Cat6a) 100 m</td><td>10.000 MBit/s</td></tr>
+</tbody></table>
+</div>
+<h3 id="twisted-pair"><a class="header" href="#twisted-pair">Twisted Pair</a></h3>
+<ul>
+<li>8 Adern -&gt; 4 Aderpaare</li>
+<li>jedes Aderpaar kann ein Bit übertragen</li>
+</ul>
+<h4 id="differential-signaling"><a class="header" href="#differential-signaling">Differential Signaling</a></h4>
+<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdocs.arduino.cc%2Fstatic%2F93c4d19bd041de1817cbb7e9dad2223c%2F29114%2Fdifferential_signal.png&amp;f=1&amp;nofb=1&amp;ipt=eb87c87d293852ba81190198299627ddbca8753b7fc06524fdd5dd19a056ac66" alt=" Differential Signaling" /></p>
+<ul>
+<li>überträgt auf einer Ader das normale Signal und auf der anderen Ader das invertierte Signal</li>
+<li>falls eine Störung von z.B. +0,5 Volt zu irgendeinem Zeitraum  auftritt wirkt diese auf beide Adern und Signale</li>
+<li>Durch Störungen bleibt die Differenz der Signale gleich --&gt; es gehen keine Informationen verloren (Man könnte oben im Bild an einer Stelle beide Signale gleich verändern, die differnz bleibt gleich!)</li>
+</ul>
+<p><strong>Problem: Bei Twisted Pair werden kleinere Spannungen von (+1,25V -1,25V oder +1V -1V) benötigt und Frequenzen von 16MHZ GPIO Switch Speed</strong></p>
+<h2 id="manchester-kodierung"><a class="header" href="#manchester-kodierung">Manchester Kodierung</a></h2>
+<p>Bei der Datenübertragung ist die Manchester-Codierung eine Form der digitalen Codierung, bei der der Zustand eines Datenbits (0 oder 1) durch den Übergang von einem Spannungspegel (V) zum anderen dargestellt wird.</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Manchester_encoding_both_conventions.svg/570px-Manchester_encoding_both_conventions.svg.png" height="200px">
+<p>-&gt; Codierungsart wird im Header festgelegt
+z.B. <em>IEEE 802.3</em> oder <em>G. E. Thomas</em> (Original)</p>
+<p><strong>Vorteil:</strong></p>
+<ul>
+<li>hohe Zuverlaessigkeit</li>
+</ul>
+<p><strong>Nachteil:</strong></p>
+<ul>
+<li>mehr Bitübertragung als Bitstrom ohne Taktsignal</li>
+</ul>
+<hr />
+<h1 id="simulation-eines-layer-2-unmanaged-switches-lernprojekt"><a class="header" href="#simulation-eines-layer-2-unmanaged-switches-lernprojekt">Simulation eines Layer-2 Unmanaged Switches (Lernprojekt)</a></h1>
+<h2 id="vorgehen-3"><a class="header" href="#vorgehen-3">Vorgehen</a></h2>
+<ol>
+<li>
+<p>Erkenntnisse aus vorheriger Recherche festhalten</p>
+</li>
+<li>
+<p>Anforderungen festhalten</p>
+<ul>
+<li>welche Aufgaben hat Layer 1+2 (Switch und Endgeräte)</li>
+<li>welche Funktionalität soll die Simulation haben</li>
+<li>Wie technisch/physikalisch soll implementiert werden</li>
+<li>Eingabe ? Ausgabe ? -&gt; über terminal, Textdateien ?</li>
+<li>Zeitbasiert Simulation oder Eventbasierte simulation ?</li>
+</ul>
+</li>
+<li>
+<p>Software Projekt planen</p>
+<ul>
+<li>Aufteilen in Teilbereiche(z.B. Ein Ausgabe, Netzwerkkomponenten, Kodierungen, Nachrichten, Leitungen, ...) --&gt; möglichst modular</li>
+<li>(UML Klassendiagramm ???)</li>
+</ul>
+</li>
+<li>
+<p>Software Projekt umsetzen</p>
+<ul>
+<li>Implementierung alleinstehender Klassen</li>
+<li>Implementierung zusammenhängender Klassen</li>
+<li>(Testen ???)</li>
+</ul>
+</li>
+</ol>
+<h2 id="1-erkenntnisse-vorheriger-recherchen"><a class="header" href="#1-erkenntnisse-vorheriger-recherchen">1. Erkenntnisse vorheriger Recherchen</a></h2>
+<ul>
+<li>Aufbau von Ethernet Frames ist stark Standartabhängig --&gt; Es gibt viele Ethernet Standarts, CSMA/CD wird überall verwendet</li>
+<li>Es werden Leitungscodes verwendet, welche den Takt und Daten gleichzeitig übertragen -&gt; <a href="https://en.wikipedia.org/wiki/Manchester_code">Manchester Code</a>(verwendet in älteren Standarts) und <a href="https://en.wikipedia.org/wiki/4B5B">4B5B Code</a>(aktuelle Standarts setzen diese Kodierung um)</li>
+<li>Twisted Pair Kabel benutzen <a href="https://hedgedoc.c3d2.de/ztYsm4jpewEOwtVhoz_-trg#Differential-Signaling">Differential Signaling</a> und Rasperry pi, Arduino könen das nicht umsetzen</li>
+</ul>
+<h2 id="2-anforderung-an-die-simulation"><a class="header" href="#2-anforderung-an-die-simulation">2. Anforderung an die Simulation</a></h2>
+<h3 id="technische-anforderungen"><a class="header" href="#technische-anforderungen">technische Anforderungen</a></h3>
+<ul>
+<li>
+<p>Eventbasierte Simulation, teschnische Details (Layer1) werden abstrahiert</p>
+</li>
+<li>
+<p>Sendevorgang der Endgeräte</p>
+<ol>
+<li>Eingabe von Text für den Payload(evtl über txt Dateien oder TerminalInput) und in Binär mit ASCII kodieren</li>
+<li>Zerteilen des langen Textes in einzelne Segmente (für Payload)</li>
+<li>Frame entsprechend befüllen (MAC Addressen, Länge, Payload,...)</li>
+<li><a href="https://en.wikipedia.org/wiki/Cyclic_redundancy_check">CRC</a> Prüfsumme berechnen und anhängen</li>
+<li>Präambel und SFD anfügen</li>
+<li>Prüfen ob die Leitung frei ist -&gt; Paket senden</li>
+<li>(optional Wenn es ein Frame crash gibt Jam Signal senden und Frame neu senden)</li>
+</ol>
+</li>
+<li>
+<p>Empfangsvorgang der Endgeräte</p>
+<ol>
+<li>Frame mit CRC prüfen --&gt; evtl Fehler korrigieren oder Frame verwerfen, ...</li>
+<li>Ziel Mac prüfen --&gt; sonst verwerfen</li>
+<li>Payload entnehmen, Daten zusammenfügen</li>
+<li>Binärdaten mit ASCII dekodieren und ausgeben</li>
+</ol>
+</li>
+<li>
+<p>(optional Leitung)</p>
+<ul>
+<li>signalisiert crashes an Endgeräte</li>
+<li>signalisiert alle verbundenen Geräte, wenn ein Frame eingeht</li>
+<li>Bitfehler simulieren</li>
+</ul>
+</li>
+<li>
+<p>Switch</p>
+<ol>
+<li>Frame und Port über dem Empfangen wurde speichern</li>
+<li>CRC prüfen --&gt; evtl Fehler korrigieren oder verwerfen, ...</li>
+<li>in Tabelle schauen, ob Empfangs-Port mit Absender-Mac verknüpft ist, ggf. in die Tabelle eintragen</li>
+<li>in Tabelle schauen, ob Empfangs-Mac in der Tabelle steht:
+<ul>
+<li>wenn ja: Frame über hinterlegten Port senden (es sei denn Empfangsport = Zielport; Dann nicht)</li>
+<li>wenn nein: Frame über alle Ports (außer Empfangsport) senden</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="funktionsweise-layer-2-switch"><a class="header" href="#funktionsweise-layer-2-switch">Funktionsweise Layer 2 Switch</a></h1>
 <h2 id="recap-ethernet"><a class="header" href="#recap-ethernet">Recap Ethernet</a></h2>
 <p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.flukenetworks.com%2Fsites%2Fdefault%2Ffiles%2Fblog%2Fethernetbacktobasic01_1.png&amp;f=1&amp;nofb=1&amp;ipt=88cc91253a6c972604b462015979af18ec41666926ddde6551b1688bbf81ae4c" alt="Ethernet Frame" /></p>
@@ -374,22 +573,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
