@@ -33,6 +33,7 @@ Verstehen und Simulieren der Funktionsweise eines Layer 2 Switches in Zusammenar
 - Wiederherstellung und Konfiguration von NixOS
 - RAM-Aufrüstung und Deaktivierung nicht benötigter Hardware-Komponenten
 - Nachträgliche Vollverschlüsselung der Festplatte
+  
 **Weitere Hardware:**
 - iPod Classic: Öffnung, Wasserschadenbeseitigung, Akkuwechsel
 
