@@ -1,41 +1,43 @@
-# Meine SOL LF2
-Hier stichpunktartig die wichtigsten Inhalte meiner SOL und zusätzliche bearbeitete Materialien.
+# Selbstorganisiertes Lernen LF2 – November/Dezember
+Dokumentation der Lerninhalte und bearbeiteten Projekte während der SOL-Phase.
 
-## Haupt Projekt
-### Eigenes Ziel
-Das Hauptprojekt war, in Zusammenarbeit mit R.,das verstehen und simulieren eines Layer 2 Switches.   
-Als auch das Routing von Frames innerhalb eines LAN auf Layer 2.
+## Hauptprojekt: Layer 2 Switch
+### Zielsetzung
+Verstehen und Simulieren der Funktionsweise eines Layer 2 Switches in Zusammenarbeit mit R.
 
-R. hat fast die gesamte Arbeit gemacht und alles übersichtlich niedergeschrieben.
+### Aufgabenverteilung
+- **R.**: Erarbeitung der Funktionsweise, Hauptverantwortung für technische Inhalte und meiste Arbeit
+- **Ich**: Mitarbeit an den Notiz-HedgeDocs, Übertragung und Aufbereitung der Inhalte ins mdBook-Format
 
-### Inhalte
-- 4 Hedge Docs mit Material Sammlung und Plannung
-- live MdBook mit klarer Zielumsetzung
+### Ergebnis
+- 4 HedgeDoc-Dokumente mit Materialsammlung und Projektplanung
+- Vollständige Dokumentation als [mdBook](https://belgarus.github.io/Notes/fi25/sol_layer_2_switch/book/)
+---
+## Zusätzliche Lerninhalte
+### Videos und Podcasts (ca. 9 Stunden)
+- WR.156 Ortsgespräch mit Joscha Bach über KI und Kognitionswissenschaft (2:30h)
+- Interview mit Prof. Dr. Andreas Pfitzmann über Datenschutz und IT-Sicherheit (1:40h)
+- Simplicissimus: "Putins Bären" – Analyse russischer Desinformation (1h)
+- Simplicissimus: "Russlands Krieg gegen Deutschland" – Hybride Kriegsführung (0:30h)
+- Linux-Tage: "Rust als Erstsprache" – Einführung in moderne Systemprogrammierung (0:30h)
+- "The Original Sin of Computing" – Sicherheitsarchitektur (20min)
+- TED Talks: Joscha Bach (12min)
+- "VSCode-GlassWorm" – Supply-Chain-Angriffe (12min)
+- TED Talks: Richard Stallman (10min)
 
-## Zusätziche bearbeitete Materialien
-### Videos und Podcasts
-- Interview mit Prof. Dr. Andreas Pfitzmann [1:40h]
-- WR. 156 Ortsgespräch - Joschua Bach [2:30h]
-- Putins Bären - Simplicissimus [1h]
-- Russlands Krieg gegen Deutschland - Simplicissimus [0:30h]
-- Rust als Erstprache - Linux Tage [erste 0:30h]
-- Ted Talks: Stallman [10min], Joschua Bach [12min] 
-- The Original Sin of Computing [20min]
-- VSCode-GlassWorm [12min]
+### Hardware-Projekte
+**ThinkPad-Wartung und -Optimierung:**
+- Diagnose und Behebung von Batterie- und Akkuproblemen auf Chip-Ebene
+- Austausch und Löten einer neuen BIOS-Batterie
+- Reparatur der Thunderbolt-Anschlüsse (Löten)
+- Wiederherstellung und Konfiguration von NixOS
+- RAM-Aufrüstung und Deaktivierung nicht benötigter Hardware-Komponenten
+- Nachträgliche Vollverschlüsselung der Festplatte
+**Weitere Hardware:**
+- iPod Classic: Öffnung, Wasserschadenbeseitigung, Akkuwechsel
 
-### "Hardware" Projekte
-**Thinkpads**:
- - Batterie und Akku Troubleshooting auf Chips
- - Wechseln und Löten einer neuen BIOS-Batterie
- - Ab-und Anlöten der Thunderbolt Anschlüsse
- - NixOS - wiederherstellen meines Beriebsystems
- - RAM Aufrüstug und Deaktivierung nicht benötigter Hardware  
- - Nachtragende Verschlüsselung meiner Festplatte
-**Anderes**:
- - Ipod: Öffnen, wasserschaden Bekämpfung, Akkuwechsel
-
-### Sonstiges
-- Workshop: **SculptOS** + Genode Microkernel-Architektur
-- lesen von **The Art of Deception** - Kevin Mitnick
-- lernen von Rust mit Rustbook und schreiben eines CLI-_Programmes
-- beschäftigung mit Unix-Philosophie, Compilern & Virtuallisierung
+### Softwareentwicklung und IT-Sicherheit
+- **Rust-Programmierung**: Durcharbeiten des Rust Book, Entwicklung mehrerer CLI-Programme
+- Workshop: **SculptOS** mit Genode
+- Lektüre: **"The Art of Deception"** von Kevin Mitnick (Social Engineering)
+- Vertiefung in Unix-Philosophie, Compiler-Funktionsweise und Virtualisierug
