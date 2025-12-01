@@ -1,7 +1,8 @@
 # Einführung
 
-R. und N. hatten für das *Selbstorganisierte lernen*  (SOL) die Idee einen Layer 2 Switch zu bauen oder simmulieren.  
-Doch an dieser Stelle wussten sie noch nicht was alles auf sie zukommen würde :,) ...
+R. und N. hatten für das *Selbstorganisierte lernen*  (SOL) die Idee einen umanaged Layer 2 Switch zu bauen oder simmulieren.  
+
+![img](IMG_0215.jpg)
 
 ## Ziel (naiv, deprecated, Version 1)
 
