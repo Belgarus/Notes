@@ -1,6 +1,9 @@
 # Notes
 
+**Built with**: [mdBook](https://rust-lang.github.io/mdBook/index.html)
+
 ## Repository Structure
+
 ```
 .
 ├── fi25
@@ -15,18 +18,20 @@
 └── README.md
 ```
 
-## FI25 - Vocational Training Documentation
-This section contains the **LF1 Duale Berufsausbildung** mdBook about the German dual education system.
 
-- **Live Version**: [View mdBook](https://belgarus.github.io/Notes/fi25/lf1_dualeberufsausbildung/book/gliederung.html)
-- **Source Files**: `fi25/lf1_dualeberufsausbildung/src/`
-- **Built with**: [mdBook](https://rust-lang.github.io/mdBook/index.html)
+## FI25 – Vocational Training Documentation
 
-It also contains the *Overview over the school topic* and *Selbst Organisiertes lernen* (SOL)
+mdBooks related to German vocational training (Fachinformatiker).
 
-<mark>Live <a href="https://belgarus.github.io/Notes/fi25/materialien_uebersicht/book/">"Materialien Übersicht"</a></mark>
-- **Live Version SOL**: [View mdBook](https://belgarus.github.io/Notes/fi25/sol_layer_2_switch/book)
-- **Live Version WK-KA**: [View mdBook](https://belgarus.github.io/Notes/fi25/wk_wirtschaftliche_grundlagen/book)
-## PRV - Private Projects
-This section contains personal works in progress.
+- **LF1 – Dual Vocational Training**  
+  https://belgarus.github.io/Notes/fi25/lf1_dualeberufsausbildung/book/
+- **Materials Overview**  
+  https://belgarus.github.io/Notes/fi25/materialien_uebersicht/book/
+- **SOL – Layer 2 Switch**  
+  https://belgarus.github.io/Notes/fi25/sol_layer_2_switch/book
+- **Business & Economics Basics**  
+  https://belgarus.github.io/Notes/fi25/wk_wirtschaftliche_grundlagen/book
 
+## PRV – Private Projects
+
+Personal notes and learning projects (work in progress).
