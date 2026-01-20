@@ -7,13 +7,14 @@
 ```
 .
 ├── fi25
-│   └── lf1_dualeberufsausbildung
-│   └── materialien_uebersicht
-│   └── sol_layer_2_switch
-│   └── wk_wirtschaftliche_grundlagen
+│   ├──  lf1_dualeberufsausbildung
+│   ├──  materialien_uebersicht
+│   ├──  sol_layer_2_switch
+│   ├──  wk_wirtschaftliche_grundlagen
+│   └──  gk_law
 ├── prv
 │   ├── img
-│   └── math_roadmap
+│   ├──  math_roadmap
 |   └── meine_SOL
 └── README.md
 ```
