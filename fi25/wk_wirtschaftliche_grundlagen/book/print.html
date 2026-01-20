@@ -40,11 +40,23 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc.js"></script>
     </head>
     <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
     <div id="body-container">
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script>
@@ -85,10 +97,13 @@
                 sidebar = sidebar || 'visible';
             } else {
                 sidebar = 'hidden';
+                sidebar_toggle.checked = false;
             }
-            sidebar_toggle.checked = sidebar === 'visible';
-            html.classList.remove('sidebar-visible');
-            html.classList.add("sidebar-" + sidebar);
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
         </script>
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
@@ -122,7 +137,7 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
                     </div>
@@ -142,7 +157,12 @@
 
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
                     </form>
                     <div id="searchresults-outer" class="searchresults-outer hidden">
                         <div id="searchresults-header" class="searchresults-header"></div>
@@ -253,7 +273,7 @@ Schnittpunkt bei Menge 7, Preis 3 €</p>
 </blockquote>
 <h3 id="betriebswirtschaftliche-produktionsfaktoren"><a class="header" href="#betriebswirtschaftliche-produktionsfaktoren">Betriebswirtschaftliche Produktionsfaktoren</a></h3>
 <p>Betriebswirtschaftliche Produktionsfaktoren sind die in Unternehmen eingesetzten Mittel, die gemeinsam zur Erstellung von Gütern und Dienstleistungen beitragen.</p>
-<pre class="mermaid">graph TD
+<pre><code class="language-mermaid">graph TD
 
     A[Betriebswirtschaftliche&lt;br&gt;Produktionsfaktoren]
 
@@ -269,7 +289,7 @@ Schnittpunkt bei Menge 7, Preis 3 €</p>
     C --&gt; C2[Betriebsmittel]
     C --&gt; C3[Werkstoffe]
 
-</pre>
+</code></pre>
 <p><strong>Elementarfaktoren</strong> sind die grundlegenden Bausteine, die ein Unternehmen für die Produktion braucht<br />
 <strong>Dispositive</strong> Faktoren sind die planenden und steuernden Tätigkeiten, die alles zusammenbringen.</p>
 <h3 id="Ökonomische-prinzipien-wirtschaftlichkeitsprinzip"><a class="header" href="#Ökonomische-prinzipien-wirtschaftlichkeitsprinzip">Ökonomische Prinzipien (Wirtschaftlichkeitsprinzip)</a></h3>
@@ -315,7 +335,7 @@ Schnittpunkt bei Menge 7, Preis 3 €</p>
 <em>Von <a href="https://herzbluttigerevents.de/mitarbeiterzufriedenheit-steigern/">herzbluttigerevents - mitarbeiterzufriedenheit-steigern</a></em></p>
 <h3 id="arten-von-gütern"><a class="header" href="#arten-von-gütern">Arten von Gütern</a></h3>
 <p>Die Klassifikation von Gütern hilft zu verstehen, welche Ressourcen knapp sind und wie sie in der Wirtschaft verwendet werden.</p>
-<pre class="mermaid">graph TD
+<pre><code class="language-mermaid">graph TD
     G[Güterarten]
     FG[Freie Güter]
     WG[Wirtschaftsgüter]
@@ -335,7 +355,7 @@ Schnittpunkt bei Menge 7, Preis 3 €</p>
     MG --&gt; PG
     IMG --&gt; R
     IMG --&gt; DL
-</pre>
+</code></pre>
 <p>Nur Wirtschaftsgüter haben einen Preis – ihre weitere Unterteilung zeigt, ob sie direkt konsumiert oder zur Produktion weiterer Güter eingesetzt werden.</p>
 <h3 id="betriebstypologien"><a class="header" href="#betriebstypologien">Betriebstypologien</a></h3>
 <p>Betriebstypologien sind Klassifikationen von Unternehmen nach Merkmalen wie z.B. Größe.</p>
@@ -514,6 +534,7 @@ Jahr voraussichtlich max. 50.000 €)</li>
             window.setTimeout(window.print, 100);
         });
         </script>
+
 
     </div>
     </body>
