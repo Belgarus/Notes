@@ -32,4 +32,5 @@ Alle Deutschen haben das Recht, Vereine und Gesellschaften zu bilden; Vereinigun
 ### Artikel 10 - Brief-, Post- und Fernmeldegeheimnis
 Das Brief-, Post- und Fernmeldegeheimnis ist unverletzlich und schützt die vertrauliche Kommunikation vor staatlichen Eingriffen, soweit keine gesetzlichen Ausnahmen bestehen.
 
-
+### Artikel 11 - Freizügigkeit
+Alle Deutschen dürfen sich im gesamten Bundesgebiet frei bewegen, ihren Wohn- und Aufenthaltsort frei wählen.
