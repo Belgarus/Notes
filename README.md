@@ -24,14 +24,8 @@
 
 mdBooks related to German vocational training (Fachinformatiker).
 
-- **Materials Overview**  
-  https://belgarus.github.io/Notes/fi25/materialien_uebersicht/book/
-- **LF1 – Dual Vocational Training**  
-  https://belgarus.github.io/Notes/fi25/lf1_dualeberufsausbildung/book/
-- **SOL – Layer 2 Switch**  
-  https://belgarus.github.io/Notes/fi25/sol_layer_2_switch/book
-- **Business & Economics Basics**  
-  https://belgarus.github.io/Notes/fi25/wk_wirtschaftliche_grundlagen/book
+- [**Material Overview**](https://belgarus.github.io/Notes/fi25/materialien_uebersicht/book/)
+- [**SOL – Layer 2 Switch**](https://belgarus.github.io/Notes/fi25/sol_layer_2_switch/book)
 
 ## PRV – Private Projects
 
