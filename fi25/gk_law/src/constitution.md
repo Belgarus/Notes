@@ -34,3 +34,6 @@ Das Brief-, Post- und Fernmeldegeheimnis ist unverletzlich und schützt die vert
 
 ### Artikel 11 - Freizügigkeit
 Alle Deutschen dürfen sich im gesamten Bundesgebiet frei bewegen, ihren Wohn- und Aufenthaltsort frei wählen.
+
+### Artikel 12 - Berufsfreiheit
+Alle Deutschen haben das Recht, Beruf, Arbeitsplatz und Ausbildungsstätte frei zu wählen. Die Berufsausübung kann durch Gesetz oder auf Grundlage eines Gesetzes geregelt werden; Zwangsarbeit ist unzulässig, außer im Rahmen einer gerichtlich angeordneten Freiheitsentziehung.
