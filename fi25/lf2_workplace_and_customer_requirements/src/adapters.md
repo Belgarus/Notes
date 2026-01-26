@@ -12,3 +12,12 @@ Bild Quelle: [notebooksbilliger.de](https://img.notebooksbilliger.de/images/misc
 <img src="https://www.reichelt.de/reicheltpedia/images/b/b5/Backpanel-Anschl%C3%BCsse.jpg" height="350px">
 
 Bild Quelle: [reichelt.de](https://www.reichelt.de/reicheltpedia/images/b/b5/Backpanel-Anschl%C3%BCsse.jpg)
+
+### Unterstützte Anschlüsse & Bildraten
+
+| Auflösung & Hz | Anschlüsse |
+|----------------|------------|
+| 4K @ 60Hz      | HDMI 2.0+ (ab 2013)<br>DisplayPort 1.2+ (ab 2010)<br>USB-C/Thunderbolt 3+ (ab 2015) |
+| 4K @ 120Hz     | HDMI 2.1+ (ab 2017)<br>DisplayPort 1.3+ (ab 2014) |
+| 8K @ 60Hz      | HDMI 2.1+ (ab 2017)<br>DisplayPort 1.4+ (ab 2016)<br>Thunderbolt 4+ (ab 2015) |
+| 8K @ 120Hz     | HDMI 2.2 (ab 2024)<br>DisplayPort 2.0+ (ab 2019)<br>Thunderbolt 5 (ab 2023) |
