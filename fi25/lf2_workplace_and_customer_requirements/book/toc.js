@@ -8,7 +8,7 @@ class MDBookSidebarScrollbox extends HTMLElement {
         super();
     }
     connectedCallback() {
-        this.innerHTML = '<ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Einführung</a></li><li class="chapter-item expanded "><a href="hardware.html"><strong aria-hidden="true">1.</strong> Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="adapters.html"><strong aria-hidden="true">1.1.</strong> Adapter</a></li><li class="chapter-item expanded "><a href="motherboard.html"><strong aria-hidden="true">1.2.</strong> Motherboard</a></li></ol></li><li class="chapter-item expanded "><a href="datatransfer.html"><strong aria-hidden="true">2.</strong> Datenübertragung</a></li></ol>';
+        this.innerHTML = '<ol class="chapter"><li class="chapter-item expanded affix "><a href="introduction.html">Einführung</a></li><li class="chapter-item expanded "><a href="hardware.html"><strong aria-hidden="true">1.</strong> 🖥️ Hardware</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="adapters.html"><strong aria-hidden="true">1.1.</strong> Adapter</a></li><li class="chapter-item expanded "><a href="motherboard.html"><strong aria-hidden="true">1.2.</strong> Motherboard</a></li></ol></li><li class="chapter-item expanded "><a href="datatransfer.html"><strong aria-hidden="true">2.</strong> Datenübertragung</a></li><li class="chapter-item expanded "><a href="cloud.html"><strong aria-hidden="true">3.</strong> ☁️ Cloud</a></li></ol>';
         // Set the current, active page, and reveal it if it's hidden
         let current_page = document.location.href.toString().split("#")[0].split("?")[0];
         if (current_page.endsWith("/")) {
