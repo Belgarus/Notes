@@ -8,8 +8,8 @@ Das Unternehmen und die Rolle im eigenen Betrieb beschreiben
 # Lernfeld 2
 Arbeitsplatz nach Kundenwunsch ausstatten
 
- - [LF2 KA - Zusammenfassung](https://belgarus.github.io/Notes/fi25/lf2_workplace_and_customer_requirements/)
- 
+ - [LF2 KA - Zusammenfassung](https://belgarus.github.io/Notes/fi25/lf2_workplace_and_customer_requirements/book/)
+
 Hedgedoc Notizen:
  - [LF2 Notizen](https://hedgedoc.c3d2.de/LF2)
 
