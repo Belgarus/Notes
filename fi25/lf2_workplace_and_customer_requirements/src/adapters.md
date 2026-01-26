@@ -1,10 +1,10 @@
 # Adapter
-## Different Adapter Types
+## Verschiedene Adapter Typen
 <img src="adapters.jpeg" height="750px">
 
 Bild Quelle: [prrcomputers](https://www.prrcomputers.com/wp-content/uploads/2020/08/Ultimate-Connectors-scaled.jpg)
 
-## Important Mainboard Adapters
+## Wichtige Mainboard Adapter
 <img src="https://img.notebooksbilliger.de/images/misc/GA-Z87X-SLI_panel.jpg" height="250px">
 
 Bild Quelle: [notebooksbilliger.de](https://img.notebooksbilliger.de/images/misc/GA-Z87X-SLI_panel.jpg)

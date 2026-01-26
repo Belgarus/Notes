@@ -9,7 +9,7 @@ Auf dem Mainboard befinden sich die jeweiligen Bausteine (z. B. der Prozessorsoc
 ## Bestandteile der Hauptplatine
 <img src="https://www.heise.de/select/ct/2016/3/1454312896436123/contentimages/ct0316Mainboard_89509-mtk_IG.jpg" height="550px">
 
-Bild von: [heise.de](https://www.heise.de/elect/ct/2016/3/1454312896436123/)
+Bild Quelle: [heise.de](https://www.heise.de/elect/ct/2016/3/1454312896436123/)
 
 ### Wichtigste Komponenten eines Mainboard
 **Wichtigste Komponenten eines Motherboards (kurz & übersichtlich):**
