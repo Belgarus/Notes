@@ -8,6 +8,8 @@
 .
 ├── fi25
 │   ├──  lf1_dualeberufsausbildung
+│   ├──  lf2_workplace_and_customer_requirements 
+│   ├──  lf4_cheatsheet.md
 │   ├──  materialien_uebersicht
 │   ├──  sol_layer_2_switch
 │   ├──  wk_wirtschaftliche_grundlagen
