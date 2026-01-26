@@ -6,8 +6,12 @@ Das Unternehmen und die Rolle im eigenen Betrieb beschreiben
  - [Duale Ausbildung mdBook](https://belgarus.github.io/Notes/fi25/lf1_dualeberufsausbildung/book/)
 
 # Lernfeld 2
+Arbeitsplatz nach Kundenwunsch ausstatten
+
  - [LF2 KA - Zusammenfassung](https://belgarus.github.io/Notes/fi25/lf2_workplace_and_customer_requirements/)
-Hedgedoc: [LF2](https://hedgedoc.c3d2.de/LF2)
+ 
+Hedgedoc Notizen:
+ - [LF2 Notizen](https://hedgedoc.c3d2.de/LF2)
 
 # Lernfeld 3 
 Clients in Netzwerke einbinden
