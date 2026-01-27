@@ -11,4 +11,3 @@ Jeder Deutsche darf sich friedlich und ohne Waffen versammeln.
 **Artikel 9 – Vereinigungsfreiheit**  
 Jeder Deutsche darf Vereine und Gruppen gründen oder ihnen beitreten, solange sie die Verfassung respektieren.  
 **Beispiel:** Freund*innen gründen einen Volleyballverein, um gemeinsam zu spielen.
-
