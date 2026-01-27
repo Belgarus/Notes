@@ -1,7 +1,5 @@
 # Notes
 
-**Built with**: [mdBook](https://rust-lang.github.io/mdBook/index.html)
-
 ## Repository Structure
 
 ```
@@ -32,3 +30,7 @@ mdBooks related to German vocational training (Fachinformatiker).
 ## PRV – Private Projects
 
 Personal notes and learning projects (work in progress).
+
+---
+
+**Built with**: [mdBook](https://rust-lang.github.io/mdBook/index.html)
