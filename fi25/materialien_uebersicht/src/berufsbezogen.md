@@ -22,5 +22,4 @@ Clients in Netzwerke einbinden
  Schutzbedarfsanalyse im eigenen Arbeitsbereich durchführen
 
  - [LF4 Lehrer mdBook](https://johannesloetzsch.github.io/LF4/)
-
  - Live: [LF4 Notizen](https://hedgedoc.c3d2.de/LF4_Notes)
