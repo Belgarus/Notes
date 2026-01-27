@@ -15,7 +15,7 @@ Bild Quelle: [reichelt.de](https://www.reichelt.de/reicheltpedia/images/b/b5/Bac
 
 ### Unterstützte Anschlüsse & Bildraten
 
-| Auflösung & Hz | Anschlüsse |
+| Auflösung & Hz | Anschlüsse |s
 |----------------|------------|
 | 4K @ 60Hz      | HDMI 2.0+ (ab 2013)<br>DisplayPort 1.2+ (ab 2010)<br>USB-C/Thunderbolt 3+ (ab 2015) |
 | 4K @ 120Hz     | HDMI 2.1+ (ab 2017)<br>DisplayPort 1.3+ (ab 2014) |
