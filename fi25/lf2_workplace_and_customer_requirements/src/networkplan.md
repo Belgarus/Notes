@@ -3,10 +3,15 @@
 ## Legende
 **Nr**. - Vorgangsnummer  
 **D.** - Vorgangsdauer  
-**FAZ** - Frühster Anfangszeitpunkt  
-**SAZ** - Spätester Anfangszeitpunkt  
-**FEZ** - Frühster Endzeitpunkt  
-**SEZ** - Spätester Endzeitpunkt  
+**FAZ** - frühster Anfangszeitpunkt   
+**FEZ** - frühster Endzeitpunkt  
+**SAZ** - spätester Anfangszeitpunkt   
+**SEZ** - spätester Endzeitpunkt  
+
+<img src="legende.jpeg" width="280">
+
+**GP** - Gesamtpuffer  
+**FP** - freie Puffer
 
 ## Kritischer Pfad
 Der kritische Pfad ist die Abfolge aller Vorgänge vom Projektstart bis zum Projektende, deren Gesamtpuffer = 0 ist.
