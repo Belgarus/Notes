@@ -1,5 +1,9 @@
 [book]
 authors = ["Belgarus"]
-language = "en"
+language = "de"
 src = "src"
 title = "gk_law"
+
+[output]
+[output.html]
+git-repository-url = "https://github.com/Belgarus/Notes"
