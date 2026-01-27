@@ -6,5 +6,6 @@
     - [Motherboard](./motherboard.md)
 - [Datenübertragung](./datatransfer.md)
 - [Cloud](./cloud.md)
-- [Lizensen und Bezahlmodelle](./licenses.md)
+    - [Lizensen und Bezahlmodelle](./licenses.md)
+- [Netzplan und Gantt](./networkplan.md)
 
