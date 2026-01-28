@@ -13,4 +13,4 @@
 **Hertz** = **1s**   
 → 44.100 Hz bedeutet:  
 
-44.100 Samples pro Sekunde pro Kanal
+44.100 Abtastungen pro Sekunde pro Kanal
