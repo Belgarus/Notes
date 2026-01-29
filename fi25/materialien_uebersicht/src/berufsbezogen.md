@@ -16,6 +16,7 @@ Clients in Netzwerke einbinden
 
 - Live: [LF3 Lehrer HedgeDoc](https://hedgedoc.c3d2.de/LF3)
 - Live: [LF3 Notizen](https://hedgedoc.c3d2.de/LF3_Notes)
+- [LF3 - Zusammenfassung](https://belgarus.github.io/Notes/fi25/lf3_networking/book/)
 - [SOL – Layer 2 Switch mdbook](https://belgarus.github.io/Notes/fi25/sol_layer_2_switch/book)
 
  # Lernfeld 4 
