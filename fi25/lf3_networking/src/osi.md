@@ -1,5 +1,10 @@
 # OSI Modell
 
+## Learning Apps
+- [Ordne die Schichten richtig zu](https://learningapps.org/watch?v=p5cbar58k26)
+- [Ordne die OSI- Layer in die jeweiligen Schichten des DoD-Modells](https://learningapps.org/watch?v=pyyktdao526)
+- [Ordne alle Elemente richtig in der Tabelle zu](https://learningapps.org/watch?v=pshbepuek26)
+
 ## Die sieben Schichten des OSI-Modells
 **Open Systems Interconnection model**
 
@@ -22,6 +27,7 @@
 |3|Transport|Transport|Ermöglicht die Ende-zu-Ende-Kommunikation zwischen Anwendungen, nutzt Portnummern und sorgt je nach Protokoll für zuverlässige oder schnelle Übertragung (z. B. TCP, UDP).|4|
 |2|Internet|Internet|Übernimmt logische Adressierung und Routing von Datenpaketen zwischen verschiedenen Netzwerken (z. B. IP, ICMP).|3|
 |1|Network Access|Netzzugang / Netzwerkzugriff|Steuert den Zugriff auf das physische Netzwerk und die Übertragung über das Medium, z. B. Ethernet oder WLAN, inklusive MAC-Adressierung und Frame-Übertragung.|2-1|
+
 ## Eselsbrücken
 
 **Von 7 bis 1 (Englisch)**
