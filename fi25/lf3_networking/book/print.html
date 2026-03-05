@@ -183,27 +183,37 @@
 <p>Zusammenfassung für die Klassenarbeit in LF3.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="osi-modell"><a class="header" href="#osi-modell">OSI Modell</a></h1>
 <h2 id="die-sieben-schichten-des-osi-modells"><a class="header" href="#die-sieben-schichten-des-osi-modells">Die sieben Schichten des OSI-Modells</a></h2>
-<div class="table-wrapper"><table><thead><tr><th>OSI-Schicht Nummer</th><th>OSI-Schicht Name (Englisch)</th><th>OSI-Schicht Name (Deutsch)</th><th>Protokollbeispiele</th><th>Kopplungselemente</th></tr></thead><tbody>
-<tr><td>7</td><td>Application</td><td>Anwendung</td><td>DHCP, DNS, FTP, HTTP, HTTPS</td><td>Gateway, Content-Switch, Proxy, Layer-4-7-Switch</td></tr>
-<tr><td>6</td><td>Presentation</td><td>Darstellung</td><td>DHCP, DNS, FTP, HTTP, HTTPS</td><td>Gateway, Content-Switch, Proxy, Layer-4-7-Switch</td></tr>
-<tr><td>5</td><td>Session</td><td>Sitzung</td><td>DHCP, DNS, FTP, HTTP, HTTPS</td><td>Gateway, Content-Switch, Proxy, Layer-4-7-Switch</td></tr>
-<tr><td>4</td><td>Transport</td><td>Transport</td><td>TCP, UDP</td><td>Gateway, Content-Switch, Proxy, Layer-4-7-Switch</td></tr>
-<tr><td>3</td><td>Network</td><td>Vermittlung</td><td>IP</td><td>Router, Layer-3-Switch</td></tr>
-<tr><td>2</td><td>Data Link</td><td>Sicherung</td><td>Ethernet</td><td>Bridge, Layer-2-Switch, Wireless Access Point</td></tr>
-<tr><td>1</td><td>Physical</td><td>Bitübertragung</td><td></td><td>Netzwerkkabel, Repeater, Hub</td></tr>
+<p><strong>Open Systems Interconnection model</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>OSI-Schicht</th><th>OSI-Schicht Name (Englisch)</th><th>OSI-Schicht Name (Deutsch)</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td>7</td><td>Application</td><td>Anwendung</td><td>Stellt Netzwerkdienste für Anwendungen bereit und ermöglicht Programmen (z. B. Webbrowser, Mailprogramme) den Zugriff auf Netzwerkprotokolle wie HTTP oder SMTP.</td></tr>
+<tr><td>6</td><td>Presentation</td><td>Darstellung</td><td>Sorgt für eine einheitliche Darstellung der Daten, z. B. durch Formatumwandlung, Verschlüsselung/Entschlüsselung und Kompression.</td></tr>
+<tr><td>5</td><td>Session</td><td>Sitzung</td><td>Steuert Aufbau, Verwaltung und Beenden von Sitzungen (Verbindungen) zwischen zwei Kommunikationspartnern und synchronisiert den Datenaustausch.</td></tr>
+<tr><td>4</td><td>Transport</td><td>Transport</td><td>Gewährleistet eine Ende-zu-Ende-Kommunikation zwischen Anwendungen, übernimmt Segmentierung der Daten, Portadressierung sowie Fehler- und Flusskontrolle (z. B. TCP/UDP).</td></tr>
+<tr><td>3</td><td>Network</td><td>Vermittlung</td><td>Sorgt für logische Adressierung und Routing, damit Datenpakete über mehrere Netzwerke hinweg zum Ziel gelangen (z. B. IP).</td></tr>
+<tr><td>2</td><td>Data Link</td><td>Sicherung</td><td>Organisiert die Übertragung zwischen direkt verbundenen Geräten, bildet Frames, nutzt MAC-Adressen und erkennt Übertragungsfehler.</td></tr>
+<tr><td>1</td><td>Physical</td><td>Bitübertragung</td><td>Überträgt rohe Bits über das physische Medium und definiert elektrische, mechanische und signaltechnische Eigenschaften von Kabeln und Schnittstellen.</td></tr>
 </tbody></table>
 </div>
-<h3 id="eselsbrücken"><a class="header" href="#eselsbrücken">Eselsbrücken</a></h3>
-<h4 id="von-7-bis-1-englisch"><a class="header" href="#von-7-bis-1-englisch">Von 7 bis 1 (Englisch)</a></h4>
+<h2 id="die-4-schichten-des-dod-modells"><a class="header" href="#die-4-schichten-des-dod-modells">Die 4 Schichten des DoD-Modells</a></h2>
+<p><strong>Department of Defense model</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>DoD-Schicht Nummer</th><th>DoD-Schicht Name (Englisch)</th><th>DoD-Schicht Name (Deutsch)</th><th>Beschreibung</th><th>OSI</th></tr></thead><tbody>
+<tr><td>4</td><td>Application</td><td>Anwendung</td><td>Stellt Netzwerkdienste für Anwendungen bereit und enthält Protokolle für Benutzerprogramme, z. B. HTTP, FTP, SMTP oder DNS.</td><td>7-5</td></tr>
+<tr><td>3</td><td>Transport</td><td>Transport</td><td>Ermöglicht die Ende-zu-Ende-Kommunikation zwischen Anwendungen, nutzt Portnummern und sorgt je nach Protokoll für zuverlässige oder schnelle Übertragung (z. B. TCP, UDP).</td><td>4</td></tr>
+<tr><td>2</td><td>Internet</td><td>Internet</td><td>Übernimmt logische Adressierung und Routing von Datenpaketen zwischen verschiedenen Netzwerken (z. B. IP, ICMP).</td><td>3</td></tr>
+<tr><td>1</td><td>Network Access</td><td>Netzzugang / Netzwerkzugriff</td><td>Steuert den Zugriff auf das physische Netzwerk und die Übertragung über das Medium, z. B. Ethernet oder WLAN, inklusive MAC-Adressierung und Frame-Übertragung.</td><td>2-1</td></tr>
+</tbody></table>
+</div>
+<h2 id="eselsbrücken"><a class="header" href="#eselsbrücken">Eselsbrücken</a></h2>
+<p><strong>Von 7 bis 1 (Englisch)</strong></p>
 <pre><code>Alle Pfarrer saufen Tequila nach der Predigt
 </code></pre>
-<h4 id="von-7-bis-1-deutsch"><a class="header" href="#von-7-bis-1-deutsch">Von 7 bis 1 (Deutsch)</a></h4>
-<pre><code>Alle deutschen Studenten trinken verschiedene Sorten Bier
+<p><strong>Von 7 bis 1 (Deutsch)</strong></p>
+<pre><code>Alle deutschen Schüller trinken vormittags schon Bier
 </code></pre>
-<h4 id="von-1-bis-7-englisch"><a class="header" href="#von-1-bis-7-englisch">Von 1 bis 7 (Englisch)</a></h4>
+<p><strong>Von 1 bis 7 (Englisch)</strong></p>
 <pre><code>Please Do Not Throw Salami Pizza Away
 </code></pre>
-<h2 id="links-"><a class="header" href="#links-">Links 🔗</a></h2>
+<h2 id="links"><a class="header" href="#links">Links</a></h2>
 <p><a href="https://de.wikipedia.org/wiki/OSI-Modell">Wikipedia</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ethernet--zugriff"><a class="header" href="#ethernet--zugriff">Ethernet &amp; Zugriff</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="protokolle"><a class="header" href="#protokolle">Protokolle</a></h1>
@@ -229,6 +239,8 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ipv6-subnetting"><a class="header" href="#ipv6-subnetting">IPv6 Subnetting</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hubswitchrouter"><a class="header" href="#hubswitchrouter">HUB/Switch/Router</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rechnen"><a class="header" href="#rechnen">Rechnen</a></h1>
+<h2 id="datenmengen-berechnen--Übertragungsraten-berechnen"><a class="header" href="#datenmengen-berechnen--Übertragungsraten-berechnen">Datenmengen berechnen / Übertragungsraten berechnen</a></h2>
+<h2 id="datenmengen-berechnen--Übertragungsraten-berechnen-1"><a class="header" href="#datenmengen-berechnen--Übertragungsraten-berechnen-1"># Datenmengen berechnen / Übertragungsraten berechnen</a></h2>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="Übertragungsmedien--verkabelung"><a class="header" href="#Übertragungsmedien--verkabelung">Übertragungsmedien &amp; Verkabelung</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="kupfer--glasfaser"><a class="header" href="#kupfer--glasfaser">Kupfer &amp; Glasfaser</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="strukturierte-verkabelung--normen"><a class="header" href="#strukturierte-verkabelung--normen">Strukturierte Verkabelung + Normen</a></h1>
