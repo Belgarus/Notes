@@ -1,4 +1,4 @@
-# Protokolle
+# Netzwerkprotokolle
 
 ## Learning Apps
 - [Netzwerkprotokolle Teil 1](https://learningapps.org/watch?v=py91sh1ij26)
