@@ -8,7 +8,10 @@
 
 
         <!-- Custom HTML head -->
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({ startOnLoad: true });</script>
         
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -221,8 +224,172 @@
 </code></pre>
 <h2 id="links"><a class="header" href="#links">Links</a></h2>
 <p><a href="https://de.wikipedia.org/wiki/OSI-Modell">Wikipedia</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="osi-layers-1-2--3"><a class="header" href="#osi-layers-1-2--3">OSI Layers 1, 2 &amp; 3</a></h1>
+<h2 id="layer-1--bitübertragungsschicht"><a class="header" href="#layer-1--bitübertragungsschicht">Layer 1 – Bitübertragungsschicht</a></h2>
+<p>Die <strong>Bitübertragungsschicht (Physical Layer)</strong> ist die unterste Schicht des OSI-Modells.<br />
+Sie definiert, <strong>wie Bits physisch über ein Übertragungsmedium übertragen werden</strong>.</p>
+<p><strong>Übertragungseinheit:</strong> Bit</p>
+<hr />
+<h3 id="minimalbeispiel"><a class="header" href="#minimalbeispiel">Minimalbeispiel</a></h3>
+<pre class="mermaid">graph LR
+    S[Sender] --&gt;|Übertragungsmedium| SW[Empfänger]
+</pre>
+<p><strong>Beispiel:</strong></p>
+<pre class="mermaid">graph LR
+    S[PC 1] --&gt;|Glasfaserkabel| SW[PC 2]
+</pre>
+<p><strong>Mögliche Übertragungsmedien:</strong></p>
+<ul>
+<li>Kupferkabel (Twisted Pair / Ethernet)</li>
+<li>Glasfaser</li>
+<li>Funk (WLAN)</li>
+</ul>
+<hr />
+<h3 id="aufgaben-von-layer-1"><a class="header" href="#aufgaben-von-layer-1">Aufgaben von Layer 1</a></h3>
+<ul>
+<li>Definition von <strong>Kabeln und Steckern</strong> (z. B. RJ45)</li>
+<li>Definition der <strong>Signalübertragung</strong> (elektrisch, optisch, Funk)</li>
+<li><strong>Bitübertragung</strong></li>
+<li>Festlegung von <strong>Übertragungsraten</strong> (z. B. 1 Gbit/s)</li>
+</ul>
+<h3 id="geräte-auf-layer-1"><a class="header" href="#geräte-auf-layer-1">Geräte auf Layer 1</a></h3>
+<p><strong>Passive Komponenten</strong></p>
+<ul>
+<li>Kabel</li>
+<li>Stecker</li>
+<li>Hub (verteilt Signal an alle Ports)</li>
+<li>Repeater (Signalverstärkung)</li>
+</ul>
+<hr />
+<h2 id="fehlersuche-vw-fs"><a class="header" href="#fehlersuche-vw-fs">Fehlersuche (VW-FS)</a></h2>
+<p><strong>Typische Probleme:</strong></p>
+<ul>
+<li>Kabel nicht eingesteckt</li>
+<li>Stecker locker</li>
+<li>Kabel defekt</li>
+<li>keine physische Verbindung</li>
+</ul>
+<p><strong>Prüfen:</strong></p>
+<ul>
+<li>LEDs an Netzwerkkarte oder Switch</li>
+<li>Kabeltester verwenden</li>
+</ul>
+<hr />
+<h3 id="Überprüfung-unter-linux"><a class="header" href="#Überprüfung-unter-linux">Überprüfung unter Linux</a></h3>
+<p>Physische Netzwerkverbindungen können mit folgendem Befehl geprüft werden:</p>
+<pre><code class="language-bash">ip link
+</code></pre>
+<blockquote>
+<h3 id="prüfungsfragen"><a class="header" href="#prüfungsfragen">Prüfungsfragen</a></h3>
+<ul>
+<li>Welche Übertragungseinheit hat Layer 1?</li>
+<li>Nennen Sie zwei Geräte, die auf Layer 1 arbeiten.</li>
+<li>Welche Aufgaben hat die Bitübertragungsschicht?</li>
+<li>Was bedeutet NO-CARRIER bei einer Netzwerkschnittstelle?</li>
+</ul>
+</blockquote>
+<h2 id="layer-2--sicherungsschicht-data-link"><a class="header" href="#layer-2--sicherungsschicht-data-link">Layer 2 – Sicherungsschicht (Data Link)</a></h2>
+<p>Layer 2 organisiert die <strong>Kommunikation innerhalb eines lokalen Netzwerks (LAN)</strong>.<br />
+Er sorgt dafür, dass <strong>Frames an das richtige Gerät im selben Netzwerk gesendet werden</strong>.</p>
+<p><strong>Übertragungseinheit:</strong> Frame<br />
+<strong>Adressierung:</strong> MAC-Adresse</p>
+<hr />
+<h3 id="grundprinzip"><a class="header" href="#grundprinzip">Grundprinzip</a></h3>
+<pre class="mermaid">graph LR
+    S[Sender] --&gt;|Frame zu MAC: DD:EE:FF| SW[Layer 2 Switch]
+    SW --&gt;|Unicast| E[Empfänger]
+    SW -.-&gt;|kein Frame| A[Anderes Gerät]
+</pre>
+<p>Mehrere Geräte sind in einem <strong>LAN</strong> verbunden.</p>
+<p>Ziel von Layer 2:</p>
+<ul>
+<li>Jeder <strong>Frame erreicht nur das Zielgerät</strong></li>
+<li>unnötiger Netzwerkverkehr wird reduziert</li>
+</ul>
+<hr />
+<h3 id="geräte-auf-layer-2"><a class="header" href="#geräte-auf-layer-2">Geräte auf Layer 2</a></h3>
+<p><strong>Netzwerkkarte (NIC)</strong></p>
+<ul>
+<li>besitzt eine <strong>MAC-Adresse</strong></li>
+</ul>
+<p><strong>Switch</strong></p>
+<ul>
+<li>verbindet viele Geräte im LAN</li>
+<li>hat mehrere <strong>Ports</strong></li>
+<li>leitet Frames nur zum <strong>richtigen Zielport</strong></li>
+</ul>
+<p>Ein Switch <strong>trennt Kollisionsdomänen</strong> zwischen seinen Ports.</p>
+<hr />
+<h3 id="hub-vs-switch"><a class="header" href="#hub-vs-switch">Hub vs. Switch</a></h3>
+<p><strong>Hub (Layer 1)</strong></p>
+<ul>
+<li>sendet Signale an <strong>alle Geräte</strong></li>
+<li>viele <strong>Kollisionen</strong></li>
+<li>ineffizient</li>
+</ul>
+<p><strong>Switch (Layer 2)</strong></p>
+<ul>
+<li>nutzt <strong>MAC-Adressen</strong></li>
+<li>sendet Frames <strong>nur an das Zielgerät</strong></li>
+<li>reduziert Netzwerkverkehr</li>
+</ul>
+<hr />
+<h3 id="zugriffsverfahren"><a class="header" href="#zugriffsverfahren">Zugriffsverfahren</a></h3>
+<p>Wenn mehrere Geräte ein Medium nutzen:</p>
+<ul>
+<li><strong>CSMA/CD</strong> → Ethernet (Kabel)</li>
+<li><strong>CSMA/CA</strong> → WLAN</li>
+</ul>
+<p><strong>Kollisionsdomäne:</strong>
+Bereich eines Netzwerks, in dem <strong>Datenkollisionen auftreten können</strong>.</p>
+<hr />
+<h3 id="ethernet"><a class="header" href="#ethernet">Ethernet</a></h3>
+<p>Wichtigstes Protokoll auf Layer 2.</p>
+<p>Aufgaben:</p>
+<ul>
+<li>Aufbau des <strong>Ethernet-Frames</strong></li>
+<li><strong>MAC-Adressierung</strong></li>
+<li><strong>Fehlererkennung</strong> (Prüfsumme / FCS)</li>
+</ul>
+<hr />
+<h3 id="typische-topologie"><a class="header" href="#typische-topologie">Typische Topologie</a></h3>
+<p>Heute meist:</p>
+<ul>
+<li><strong>Stern</strong></li>
+<li><strong>verzweigter Stern</strong></li>
+</ul>
+<p>Switches bilden den Mittelpunkt des Netzwerks.</p>
+<hr />
+<h2 id="fehlersuche"><a class="header" href="#fehlersuche">Fehlersuche</a></h2>
+<h3 id="mac-adresse-anzeigen"><a class="header" href="#mac-adresse-anzeigen">MAC-Adresse anzeigen</a></h3>
+<p><strong>Windows</strong></p>
+<pre><code class="language-cmd">ipconfig /all
+</code></pre>
+<p><strong>Linux</strong></p>
+<pre><code class="language-bash">ip link
+</code></pre>
+<hr />
+<h2 id="prüfungsfragen-1"><a class="header" href="#prüfungsfragen-1">Prüfungsfragen</a></h2>
+<ul>
+<li>Welche <strong>Übertragungseinheit</strong> hat Layer 2?</li>
+<li>Welche <strong>Adressierung</strong> wird verwendet?</li>
+<li>Welche Aufgabe hat ein <strong>Switch</strong>?</li>
+<li>Was ist der Unterschied zwischen <strong>Hub und Switch</strong>?</li>
+<li>Was ist eine <strong>Kollisionsdomäne</strong>?</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ethernet--zugriff"><a class="header" href="#ethernet--zugriff">Ethernet &amp; Zugriff</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="netzwerkprotokolle"><a class="header" href="#netzwerkprotokolle">Netzwerkprotokolle</a></h1>
+<h2 id="recap-ethernet"><a class="header" href="#recap-ethernet">Recap Ethernet</a></h2>
+<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.flukenetworks.com%2Fsites%2Fdefault%2Ffiles%2Fblog%2Fethernetbacktobasic01_1.png&amp;f=1&amp;nofb=1&amp;ipt=88cc91253a6c972604b462015979af18ec41666926ddde6551b1688bbf81ae4c" alt="Ethernet Frame" /></p>
+<div class="table-wrapper"><table><thead><tr><th>Feld</th><th>Zweck</th></tr></thead><tbody>
+<tr><td><strong>7 Byte Präamble</strong>:</td><td>dient zur Taktsynchronisation, Bytes haben alle den gleiche Inhalt "10101010"</td></tr>
+<tr><td><strong>SFD</strong>:</td><td>Markiert Beginn des Frame Headers, enthält "10101011"</td></tr>
+<tr><td><strong>Destination Mac Address</strong>:</td><td>Enthält die Mac Addresse des Empfängers (Ziel)</td></tr>
+<tr><td><strong>Source Mac Address</strong></td><td>Enthält die Mac Addresse des sendenden Gerätes</td></tr>
+<tr><td><strong>Length / Type</strong></td><td>Gibt die Länge der Nutzdaten an oder bei moderneren Protokollen den Typ des Ethernet Frames</td></tr>
+<tr><td><strong>Data</strong></td><td>Enthält die eigentlichen Nutzdaten</td></tr>
+<tr><td><strong>CRC</strong></td><td>Enthält eine CRC-Checksum, zum überprüfen ob Bits gekippt sind (ähnlich wie die Quersumme einer Zahl)</td></tr>
+</tbody></table>
+</div><div style="break-before: page; page-break-before: always;"></div><h1 id="netzwerkprotokolle"><a class="header" href="#netzwerkprotokolle">Netzwerkprotokolle</a></h1>
 <h2 id="learning-apps-1"><a class="header" href="#learning-apps-1">Learning Apps</a></h2>
 <ul>
 <li><a href="https://learningapps.org/watch?v=py91sh1ij26">Netzwerkprotokolle Teil 1</a></li>
@@ -256,6 +423,20 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="Übertragungsmedien--verkabelung"><a class="header" href="#Übertragungsmedien--verkabelung">Übertragungsmedien &amp; Verkabelung</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="kupfer--glasfaser"><a class="header" href="#kupfer--glasfaser">Kupfer &amp; Glasfaser</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="strukturierte-verkabelung--normen"><a class="header" href="#strukturierte-verkabelung--normen">Strukturierte Verkabelung + Normen</a></h1>
+<h2 id="fehlerkollisonserkennung"><a class="header" href="#fehlerkollisonserkennung">Fehler/Kollisonserkennung</a></h2>
+<p>Entweder Oder:</p>
+<p><strong>CSMA/Collison Detection</strong>
+-&gt; Erkennung von Bit-Kollisionen (Kabel)</p>
+<p><strong>CSMA/Collison Avoidence</strong>
+-&gt; Verhindern von Kollisionen durch Protokoll (Kabel und Funk)</p>
+<ul>
+<li><strong>CS:</strong> Carrier Sense (Träger-Zustandserkennung)</li>
+<li><strong>MA:</strong> Multiple Access (Mehrfachzugriff)</li>
+<li><strong>CD:</strong> Collison Detection (Kollisions-Erkennung)</li>
+<li><strong>CA:</strong> Collison Avoidence (Kollisions-Verhinderung)</li>
+</ul>
+<p>Kollision erkannt = definiertes Störsignal (JAM)</p>
+<p>Unterbrochene Datenübertragung wird mehrmals (festgelegte Anzahl) erneut versucht, mit einer zufälligen Wartezeit</p>
 
                     </main>
 

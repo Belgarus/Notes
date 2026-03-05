@@ -7,7 +7,10 @@
 
 
         <!-- Custom HTML head -->
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({ startOnLoad: true });</script>
         
+
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
@@ -179,12 +182,23 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="ethernet--zugriff"><a class="header" href="#ethernet--zugriff">Ethernet &amp; Zugriff</a></h1>
-
+<h2 id="recap-ethernet"><a class="header" href="#recap-ethernet">Recap Ethernet</a></h2>
+<p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.flukenetworks.com%2Fsites%2Fdefault%2Ffiles%2Fblog%2Fethernetbacktobasic01_1.png&amp;f=1&amp;nofb=1&amp;ipt=88cc91253a6c972604b462015979af18ec41666926ddde6551b1688bbf81ae4c" alt="Ethernet Frame" /></p>
+<div class="table-wrapper"><table><thead><tr><th>Feld</th><th>Zweck</th></tr></thead><tbody>
+<tr><td><strong>7 Byte Präamble</strong>:</td><td>dient zur Taktsynchronisation, Bytes haben alle den gleiche Inhalt "10101010"</td></tr>
+<tr><td><strong>SFD</strong>:</td><td>Markiert Beginn des Frame Headers, enthält "10101011"</td></tr>
+<tr><td><strong>Destination Mac Address</strong>:</td><td>Enthält die Mac Addresse des Empfängers (Ziel)</td></tr>
+<tr><td><strong>Source Mac Address</strong></td><td>Enthält die Mac Addresse des sendenden Gerätes</td></tr>
+<tr><td><strong>Length / Type</strong></td><td>Gibt die Länge der Nutzdaten an oder bei moderneren Protokollen den Typ des Ethernet Frames</td></tr>
+<tr><td><strong>Data</strong></td><td>Enthält die eigentlichen Nutzdaten</td></tr>
+<tr><td><strong>CRC</strong></td><td>Enthält eine CRC-Checksum, zum überprüfen ob Bits gekippt sind (ähnlich wie die Quersumme einer Zahl)</td></tr>
+</tbody></table>
+</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="osi.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="osi_bottom.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
@@ -198,7 +212,7 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="osi.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="osi_bottom.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 

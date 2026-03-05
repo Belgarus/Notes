@@ -4,6 +4,10 @@ language = "de"
 src = "src"
 title = "lf3_networking"
 
+[preprocessor]
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
 [output]
 [output.html]
 git-repository-url = "https://github.com/Belgarus/Notes" 
