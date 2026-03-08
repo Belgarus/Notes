@@ -156,7 +156,7 @@ Wichtigstes Protokoll auf Layer 2.
 
 Aufgaben:
 
-* Aufbau des **Ethernet-Frames**
+* Aufbau des [**Ethernet-Frames**](https://belgarus.github.io/Notes/fi25/lf3_networking/book/ethernet.html)
 * **MAC-Adressierung**
 * **Fehlererkennung** (Prüfsumme / FCS)
 
@@ -164,10 +164,7 @@ Aufgaben:
 
 ### Typische Topologie
 
-Heute meist:
-
-* **Stern**
-* **verzweigter Stern**
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnetizenstechnologies.com%2Fwp-content%2Fuploads%2F2025%2F01%2FNetwork-Topology.png&f=1&nofb=1&ipt=30f98bdc252bf03b77f7ea02bbf4f02e3411ddbdc4ce764c098492063ccd9097" height="400px">
 
 Switches bilden den Mittelpunkt des Netzwerks.
 
@@ -186,7 +183,7 @@ ipconfig /all
 **Linux**
 
 ```bash
-ip link
+ifconfig -a # Lists all networkinterfaces + their MAC adresses
 ```
 
 ---

@@ -13,3 +13,7 @@
 |**Length / Type**|Gibt die Länge der Nutzdaten an oder bei moderneren Protokollen den Typ des Ethernet Frames|
 |**Data**|Enthält die eigentlichen Nutzdaten|
 |**CRC**|Enthält eine CRC-Checksum, zum überprüfen ob Bits gekippt sind (ähnlich wie die Quersumme einer Zahl)|
+
+
+### Ausblick: Nochmal sehr gut erklärt
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SJE2lFR5utM?si=IYAtPxPipkWz6nSV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

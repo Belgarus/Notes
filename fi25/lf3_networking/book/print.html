@@ -120,7 +120,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky">
                     <div class="left-buttons">
                         <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -231,13 +231,13 @@ Sie definiert, <strong>wie Bits physisch über ein Übertragungsmedium übertrag
 <p><strong>Übertragungseinheit:</strong> Bit</p>
 <hr />
 <h3 id="minimalbeispiel"><a class="header" href="#minimalbeispiel">Minimalbeispiel</a></h3>
-<pre class="mermaid">graph LR
+<pre><code class="language-mermaid">graph LR
     S[Sender] --&gt;|Übertragungsmedium| SW[Empfänger]
-</pre>
+</code></pre>
 <p><strong>Beispiel:</strong></p>
-<pre class="mermaid">graph LR
+<pre><code class="language-mermaid">graph LR
     S[PC 1] --&gt;|Glasfaserkabel| SW[PC 2]
-</pre>
+</code></pre>
 <p><strong>Mögliche Übertragungsmedien:</strong></p>
 <ul>
 <li>Kupferkabel (Twisted Pair / Ethernet)</li>
@@ -295,11 +295,11 @@ Er sorgt dafür, dass <strong>Frames an das richtige Gerät im selben Netzwerk g
 <strong>Adressierung:</strong> MAC-Adresse</p>
 <hr />
 <h3 id="grundprinzip"><a class="header" href="#grundprinzip">Grundprinzip</a></h3>
-<pre class="mermaid">graph LR
+<pre><code class="language-mermaid">graph LR
     S[Sender] --&gt;|Frame zu MAC: DD:EE:FF| SW[Layer 2 Switch]
     SW --&gt;|Unicast| E[Empfänger]
     SW -.-&gt;|kein Frame| A[Anderes Gerät]
-</pre>
+</code></pre>
 <p>Mehrere Geräte sind in einem <strong>LAN</strong> verbunden.</p>
 <p>Ziel von Layer 2:</p>
 <ul>
@@ -347,17 +347,13 @@ Bereich eines Netzwerks, in dem <strong>Datenkollisionen auftreten können</stro
 <p>Wichtigstes Protokoll auf Layer 2.</p>
 <p>Aufgaben:</p>
 <ul>
-<li>Aufbau des <strong>Ethernet-Frames</strong></li>
+<li>Aufbau des <a href="https://belgarus.github.io/Notes/fi25/lf3_networking/book/ethernet.html"><strong>Ethernet-Frames</strong></a></li>
 <li><strong>MAC-Adressierung</strong></li>
 <li><strong>Fehlererkennung</strong> (Prüfsumme / FCS)</li>
 </ul>
 <hr />
 <h3 id="typische-topologie"><a class="header" href="#typische-topologie">Typische Topologie</a></h3>
-<p>Heute meist:</p>
-<ul>
-<li><strong>Stern</strong></li>
-<li><strong>verzweigter Stern</strong></li>
-</ul>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnetizenstechnologies.com%2Fwp-content%2Fuploads%2F2025%2F01%2FNetwork-Topology.png&f=1&nofb=1&ipt=30f98bdc252bf03b77f7ea02bbf4f02e3411ddbdc4ce764c098492063ccd9097" height="400px">
 <p>Switches bilden den Mittelpunkt des Netzwerks.</p>
 <hr />
 <h2 id="fehlersuche"><a class="header" href="#fehlersuche">Fehlersuche</a></h2>
@@ -366,7 +362,7 @@ Bereich eines Netzwerks, in dem <strong>Datenkollisionen auftreten können</stro
 <pre><code class="language-cmd">ipconfig /all
 </code></pre>
 <p><strong>Linux</strong></p>
-<pre><code class="language-bash">ip link
+<pre><code class="language-bash">ifconfig -a # Lists all networkinterfaces + their MAC adresses
 </code></pre>
 <hr />
 <h2 id="prüfungsfragen-1"><a class="header" href="#prüfungsfragen-1">Prüfungsfragen</a></h2>
@@ -389,7 +385,9 @@ Bereich eines Netzwerks, in dem <strong>Datenkollisionen auftreten können</stro
 <tr><td><strong>Data</strong></td><td>Enthält die eigentlichen Nutzdaten</td></tr>
 <tr><td><strong>CRC</strong></td><td>Enthält eine CRC-Checksum, zum überprüfen ob Bits gekippt sind (ähnlich wie die Quersumme einer Zahl)</td></tr>
 </tbody></table>
-</div><div style="break-before: page; page-break-before: always;"></div><h1 id="netzwerkprotokolle"><a class="header" href="#netzwerkprotokolle">Netzwerkprotokolle</a></h1>
+</div>
+<h3 id="ausblick-nochmal-sehr-gut-erklärt"><a class="header" href="#ausblick-nochmal-sehr-gut-erklärt">Ausblick: Nochmal sehr gut erklärt</a></h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/SJE2lFR5utM?si=IYAtPxPipkWz6nSV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><div style="break-before: page; page-break-before: always;"></div><h1 id="netzwerkprotokolle"><a class="header" href="#netzwerkprotokolle">Netzwerkprotokolle</a></h1>
 <h2 id="learning-apps-1"><a class="header" href="#learning-apps-1">Learning Apps</a></h2>
 <ul>
 <li><a href="https://learningapps.org/watch?v=py91sh1ij26">Netzwerkprotokolle Teil 1</a></li>
@@ -455,6 +453,22 @@ Bereich eines Netzwerks, in dem <strong>Datenkollisionen auftreten können</stro
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
