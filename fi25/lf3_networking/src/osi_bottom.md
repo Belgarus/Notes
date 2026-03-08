@@ -142,8 +142,8 @@ Ein Switch **trennt Kollisionsdomänen** zwischen seinen Ports.
 
 Wenn mehrere Geräte ein Medium nutzen:
 
-* **CSMA/CD** → Ethernet (Kabel)
-* **CSMA/CA** → WLAN
+* **CSMA/CD** → Collision Detection
+* **CSMA/CA** → Collision Avoidance
 
 **Kollisionsdomäne:**
 Bereich eines Netzwerks, in dem **Datenkollisionen auftreten können**.
@@ -195,3 +195,59 @@ ifconfig -a # Lists all networkinterfaces + their MAC adresses
 * Welche Aufgabe hat ein **Switch**?
 * Was ist der Unterschied zwischen **Hub und Switch**?
 * Was ist eine **Kollisionsdomäne**?
+
+# Layer 3
+=> Zusammenschluss Mehrerer Netze (LANS und Internet-Wolke (WAN, GAN)) 
+
+**Ziel**  
+Schnellste, effizienteste Route über mehrere hierarchische Netze (LAN → MAN → WAN → GAN) zum Zielhost finden.
+
+![](https://raw.githubusercontent.com/johannesloetzsch/LF4/refs/heads/main/src/img/Diagramm_Router.png)
+
+Router (auch Gateway) verbindet unterschiedliche Netze und leitet Pakete weiter.
+Adressierung
+
+### Umsetzung  
+
+**Adressierung**  
+- IPv4‑Adresse (32 Bit) wird durch die Subnetzmaske in Netz‑ und Hostanteil geteilt.
+- Netz‑ID = IP & Subnetzmaske (Host‑Bits = 0).
+- Broadcast‑ID = alle Host‑Bits = 1.
+
+**Übertragungseinheit**
+- Paket – Größe begrenzt durch die MTU (Maximum Transmission Unit) des jeweiligen Netzes.
+
+**Wichtige Protokolle**
+- IP, ICMP (Fehlermeldungen), IPSec (Verschlüsselung), ARP (IP ↔ MAC‑Auflösung).
+
+**Adressbereiche**
+- Öffentliche Adressen – von IANA vergeben, global routbar.
+- Private Adressen – nicht im Internet routbar (NAT nötig):
+    - 10.0.0.0/8
+    - 172.16.0.0/12
+    - 192.168.0.0/16
+
+**CIDR**  
+Classeless Inter‑Domain Routing – flexible Präfix‑Notation (z. B. 192.168.1.0/24) ersetzt alte Klassen A/B/C.
+
+**Subnetzgrößen**
+- Mehr 1‑Bits in der Maske → mehr Netze, weniger Host‑Adressen pro Netz.
+- Weniger 1‑Bits → weniger Netze, mehr Hosts.
+- Pro Subnetz mindestens 2 nutzbare Host‑Adressen (wegen Netz‑‑ und Broadcast‑ID).
+
+**Diagnose‑Tools**
+```bash
+ipconfig (Windows) / ifconfig (Linux) # lokale IP‑Konfiguration anzeigen.
+ping <IP> # Erreichbarkeit prüfen.
+tracert / traceroute <IP> # Wegverfolgung der Pakete.
+arp -a # ARP‑Cache anzeigen.
+```
+
+**Besondere Adresse**
+127.0.0.1 – Loopback/localhost, dient zur internen Kommunikation des eigenen Rechners.
+
+**Praktische Fehlersuche‑Schritte**
+- IP‑Konfiguration prüfen (ipconfig/ifconfig).
+- Erreichbarkeit testen (ping).
+- Wegverfolgung durchführen (tracert/traceroute).
+- ARP‑Einträge kontrollieren (arp -a).
