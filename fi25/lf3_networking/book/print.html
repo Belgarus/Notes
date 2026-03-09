@@ -450,6 +450,8 @@ arp -a # ARP‑Cache anzeigen.
 <li><a href="https://learningapps.org/watch?v=pnhoox2o526">Netzwerkprotokolle Teil 2</a></li>
 <li><a href="https://learningapps.org/watch?v=pw04m421c26">Protokolle -&gt; DoD-Schichten zuordnen</a></li>
 </ul>
+<h2 id="was-sind-protokolle"><a class="header" href="#was-sind-protokolle">Was sind Protokolle?</a></h2>
+<p>Protokolle definieren Regeln und Standards, die die Kommunikation und den Datenaustausch zwischen Geräten oder Systemen regeln.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="dynamic-host-configuration-protocol"><a class="header" href="#dynamic-host-configuration-protocol">Dynamic Host Configuration Protocol</a></h1>
 <p>Weist Geräten innerhalb des Netzwerks automatisch IP-Adressen zu ( die ganze IP-Konfiguration).<br />
 <strong>Ports:</strong> 67, 68, <strong>Layer</strong>: 7</p>
@@ -467,10 +469,24 @@ arp -a # ARP‑Cache anzeigen.
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="adresen"><a class="header" href="#adresen">Adresen</a></h1>
 <p>Wichtig: IPv4, IPv6 &amp; Mac-Adressen</p>
 <h3 id="cmd---ipconfig--ipconfig-all"><a class="header" href="#cmd---ipconfig--ipconfig-all">cmd - ipconfig | ipconfig /all</a></h3>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="hubswitchrouter"><a class="header" href="#hubswitchrouter">HUB/Switch/Router</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="rechnen"><a class="header" href="#rechnen">Rechnen</a></h1>
-<h2 id="datenmengen-berechnen--Übertragungsraten-berechnen"><a class="header" href="#datenmengen-berechnen--Übertragungsraten-berechnen">Datenmengen berechnen / Übertragungsraten berechnen</a></h2>
-<h2 id="datenmengen-berechnen--Übertragungsraten-berechnen-1"><a class="header" href="#datenmengen-berechnen--Übertragungsraten-berechnen-1"># Datenmengen berechnen / Übertragungsraten berechnen</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="hub-switch-und-router"><a class="header" href="#hub-switch-und-router">Hub, Switch und Router</a></h1>
+<h2 id="hub"><a class="header" href="#hub">Hub</a></h2>
+<p>Ein <strong>Hub</strong> (Englisch für „Nabe“ oder „Knotenpunkt“) ist ein Netzwerkgerät, das <strong>mehrere Hosts innerhalb eines Ethernets miteinander verbindet</strong>. In der Netzwerktechnik dient er als Verteiler für die Datenpakete. Hubs arbeiten auf Schicht 1 (Bitübertragungsschicht) des OSI-Modells. Ihre Funktion ist rein auf das Verteilen beschränkt. Sie sind somit nichts anderes als eine einfache Form von Switches oder Routern.</p>
+<h2 id="switch"><a class="header" href="#switch">Switch</a></h2>
+<p>Ein <strong>Netzwerk-Switch</strong> ist ein Gerät, das mehrere Computer, Drucker oder andere Netzwerkgeräte miteinander verbindet. Man könnte ihn sich wie eine Art Verteiler vorstellen, der aber nicht einfach nur alle Signale gleichzeitig weiterleitet, sondern ganz gezielt entscheidet, wohin die Datenpakete geschickt werden.</p>
+<p>Während ein Hub noch stumpf alles an jedes angeschlossene Gerät schickt, ist ein Switch viel intelligenter. Er „merkt sich“, welches Gerät an welchem Anschluss steckt, und kann dadurch Datenpakete direkt zustellen. So landen die Informationen dort, wo sie gebraucht werden, ohne dass die anderen Geräte gestört werden.</p>
+<h3 id="layer-2-vs-layer-3-switch"><a class="header" href="#layer-2-vs-layer-3-switch">Layer 2 vs Layer 3 Switch</a></h3>
+<p>Ein <strong>Layer-2-Switch</strong> leitet die Datenpakete auf Basis der MAC-Adressen (OSI-Layer-2) weiter.
+Ein <strong>Layer-3-Switch</strong> hingegen liest die Ziel-IP-Adresse aus dem Header des IP-Pakets und leitet es zum richtigen Port, er routet also auf OSI-Layer-3.<br />
+(Ein Layer-4-Switch kann auch andere Informationen aus dem Header verwenden.)</p>
+<p>Mehr dazu: <a href="https://belgarus.github.io/Notes/fi25/sol_layer_2_switch/book/funktionsweise.html">Layer 2 Switch erklärt</a></p>
+<h2 id="router"><a class="header" href="#router">Router</a></h2>
+<p>Der <strong>Router</strong> verbindet mindestens zwei Netzwerke (z. B. lokales LAN mit dem Internet/WAN) und entscheidet basierend auf IP-Adressen, wohin Datenpakete gesendet werden. Er arbeitet damit auf der Vermittlungsschicht (Schicht 3) des OSI-Modells.</p>
+<h2 id="videos"><a class="header" href="#videos">Videos</a></h2>
+<p><strong>Deutsche Erklärung:</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zFfattg5gd8?si=OlTNwH1FHUcyjI_x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<p><strong>Englische Erklärung</strong></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ofjsh_E4HFY?si=pun-5hahw668RQZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><div style="break-before: page; page-break-before: always;"></div><h1 id="datenmengen-berechnen--Übertragungsraten-berechnen"><a class="header" href="#datenmengen-berechnen--Übertragungsraten-berechnen">Datenmengen berechnen / Übertragungsraten berechnen</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="Übertragungsmedien--verkabelung"><a class="header" href="#Übertragungsmedien--verkabelung">Übertragungsmedien &amp; Verkabelung</a></h1>
 <h2 id="kupfer--glasfaser"><a class="header" href="#kupfer--glasfaser">Kupfer &amp; Glasfaser</a></h2>
 <h1 id="strukturierte-verkabelung--normen"><a class="header" href="#strukturierte-verkabelung--normen">Strukturierte Verkabelung + Normen</a></h1>
