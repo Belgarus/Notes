@@ -359,7 +359,7 @@ Bereich eines Netzwerks, in dem <strong>Datenkollisionen auftreten können</stro
 <h2 id="fehlersuche"><a class="header" href="#fehlersuche">Fehlersuche</a></h2>
 <h3 id="mac-adresse-anzeigen"><a class="header" href="#mac-adresse-anzeigen">MAC-Adresse anzeigen</a></h3>
 <p><strong>Windows</strong></p>
-<pre><code class="language-cmd">ipconfig /all
+<pre><code class="language-powershell">ipconfig /all
 </code></pre>
 <p><strong>Linux</strong></p>
 <pre><code class="language-bash">ifconfig -a # Lists all networkinterfaces + their MAC adresses
@@ -467,16 +467,13 @@ arp -a # ARP‑Cache anzeigen.
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="adresen"><a class="header" href="#adresen">Adresen</a></h1>
 <p>Wichtig: IPv4, IPv6 &amp; Mac-Adressen</p>
 <h3 id="cmd---ipconfig--ipconfig-all"><a class="header" href="#cmd---ipconfig--ipconfig-all">cmd - ipconfig | ipconfig /all</a></h3>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="macadressen"><a class="header" href="#macadressen">MacAdressen</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ipv4-subnetting"><a class="header" href="#ipv4-subnetting">IPv4 Subnetting</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="ipv6-subnetting"><a class="header" href="#ipv6-subnetting">IPv6 Subnetting</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hubswitchrouter"><a class="header" href="#hubswitchrouter">HUB/Switch/Router</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rechnen"><a class="header" href="#rechnen">Rechnen</a></h1>
 <h2 id="datenmengen-berechnen--Übertragungsraten-berechnen"><a class="header" href="#datenmengen-berechnen--Übertragungsraten-berechnen">Datenmengen berechnen / Übertragungsraten berechnen</a></h2>
 <h2 id="datenmengen-berechnen--Übertragungsraten-berechnen-1"><a class="header" href="#datenmengen-berechnen--Übertragungsraten-berechnen-1"># Datenmengen berechnen / Übertragungsraten berechnen</a></h2>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="Übertragungsmedien--verkabelung"><a class="header" href="#Übertragungsmedien--verkabelung">Übertragungsmedien &amp; Verkabelung</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="kupfer--glasfaser"><a class="header" href="#kupfer--glasfaser">Kupfer &amp; Glasfaser</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="strukturierte-verkabelung--normen"><a class="header" href="#strukturierte-verkabelung--normen">Strukturierte Verkabelung + Normen</a></h1>
+<h2 id="kupfer--glasfaser"><a class="header" href="#kupfer--glasfaser">Kupfer &amp; Glasfaser</a></h2>
+<h1 id="strukturierte-verkabelung--normen"><a class="header" href="#strukturierte-verkabelung--normen">Strukturierte Verkabelung + Normen</a></h1>
 <h2 id="fehlerkollisonserkennung"><a class="header" href="#fehlerkollisonserkennung">Fehler/Kollisonserkennung</a></h2>
 <p>Entweder Oder:</p>
 <p><strong>CSMA/Collison Detection</strong>
@@ -509,22 +506,6 @@ arp -a # ARP‑Cache anzeigen.
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

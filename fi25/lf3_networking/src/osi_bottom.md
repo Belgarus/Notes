@@ -176,7 +176,7 @@ Switches bilden den Mittelpunkt des Netzwerks.
 
 **Windows**
 
-```cmd
+```powershell
 ipconfig /all
 ```
 

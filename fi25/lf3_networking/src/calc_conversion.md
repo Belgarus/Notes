@@ -1,1 +1,0 @@
-# Binär / Dezimal / Hex

@@ -1,1 +1,0 @@
-# CSMA/CD - Kollision - Jam

@@ -1,1 +1,0 @@
-# Primär / Sekundär / Tertiärbereich

@@ -1,1 +1,0 @@
-# Datenmengen & Übertragungsraten

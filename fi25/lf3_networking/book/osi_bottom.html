@@ -316,7 +316,7 @@ Bereich eines Netzwerks, in dem <strong>Datenkollisionen auftreten können</stro
 <h2 id="fehlersuche"><a class="header" href="#fehlersuche">Fehlersuche</a></h2>
 <h3 id="mac-adresse-anzeigen"><a class="header" href="#mac-adresse-anzeigen">MAC-Adresse anzeigen</a></h3>
 <p><strong>Windows</strong></p>
-<pre><code class="language-cmd">ipconfig /all
+<pre><code class="language-powershell">ipconfig /all
 </code></pre>
 <p><strong>Linux</strong></p>
 <pre><code class="language-bash">ifconfig -a # Lists all networkinterfaces + their MAC adresses
@@ -416,22 +416,6 @@ arp -a # ARP‑Cache anzeigen.
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
