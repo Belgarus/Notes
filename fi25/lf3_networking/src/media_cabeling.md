@@ -1,8 +1,6 @@
 # Übertragungsmedien & Verkabelung
 
-# Kupfer & Glasfaser
-
-# Strukturierte Verkabelung + Normen
+## Strukturierte Verkabelung + Normen
 
 ## Fehler/Kollisonserkennung
 Entweder Oder:
@@ -22,7 +20,7 @@ Kollision erkannt = definiertes Störsignal (JAM)
 
 Unterbrochene Datenübertragung wird mehrmals (festgelegte Anzahl) erneut versucht, mit einer zufälligen Wartezeit
 
-# Netzwerkmedien
+# Netzwerkmedien: Kupfer & Glasfaser
 
 ## leitungsgebundene
 - Elektrische Signale (Kupferleitung)
@@ -39,6 +37,38 @@ Unterbrochene Datenübertragung wird mehrmals (festgelegte Anzahl) erneut versuc
 - Optische Übertragung
     * Laserlink
 
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Famericanfibertek.com%2Fwp-content%2Fuploads%2F2019%2F03%2FMM-vs-SM-2.jpg&f=1&nofb=1&ipt=34aa9b107f19d141815ab6cf8f14c72eb214c8af6c216e2cd54450c89f1d7050">
+
+### Multimode-Lichtwellenleiter
+**Multimode-Lichtwellenleiter** haben einer größeren Kern- durchmesser, was bedeutet, dass **mehrere Lichtstrahlen gleichzeitig** im Inneren des Kabels übertragen werden können. Multimode-Fasern haben typischerweise eine **kürzere Übertragungsreichweite** als Singlemode-Fasern.
+Bis 2.000 Meter länge.  
+
+**Vorteile**
+- geringerer Aufwand bei der Herstellung der Glasfasern
+- einfachere Verbindungstechnik aufgrund des größeren Kerndurchmessers
+- Fasern mit Stufenindex- und Gradientenindexprofil verfügbar
+
+**Nachteile**
+- größere Signaldämpfung und Laufzeitverschiebung
+- geringere maximale Bandbreiten
+- nur kürzere Distanzen überbrückbar
+- Verstärker oder Signalaufbereiter bei größeren Distanzen notwendig
+
+### Singlemode-Lichtwellenleiter
+**Singlemode-Lichtwellenleiter** haben einen kleineren Kern- durchmesser, was bedeutet, dass **nur ein einzelner Lichtstrahl** durch das Kabel übertragen wird. Singlemode-Fasern haben eine deutlich **größere Übertragungsreichweite** als Multimode- Fasern.
+Bis 10.000 Meter Länge.  
+
+**Vorteile**
+- geringe Dämpfung des Signals
+- kaum Laufzeitverschiebungen
+- große Distanzen überbrückbar
+- hohe Bandbreiten
+
+**Nachteile**
+- teurere Laser zur Einspeisung des Lichts notwendig
+- größerer Aufwand bei der Herstellung der Glasfasern aufgrund des sehr kleinen Faserkerns
+- hohe Präzision beim Verbinden der Glasfasern durch Stecker oder beim Spleißen notwendig
+
 # Abkürzung Schirmungsart
 - **UTP** steht für **Unshielded Twisted Pair** -> Kabel ohne äußere Abschirmung 
     * **U/UTP** = exakte Normbezeichnung (ISO/IEC)
@@ -54,8 +84,20 @@ Unterbrochene Datenübertragung wird mehrmals (festgelegte Anzahl) erneut versuc
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/SUTP-Kabel.svg/500px-SUTP-Kabel.svg.png" width="200px">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/S-FTP-Kabel.svg/500px-S-FTP-Kabel.svg.png" width="200px">  
 
-**SF/UTP**:<img src="https://www.universalnetworks.co.uk/wp-content/uploads/2020/02/SFUTP-Copper-Cable-300x149.jpg" width="250px">  **F/UTP**:<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdintek.com.tw%2Fimages%2F2025%2F07%2F14%2Ffutp-image-for-article-photoroom.png&f=1&nofb=1&ipt=77dfbd3ba4b09725b79e928bf6ca24129ef2c497c5d612a4ce3e2a7b3a822151" width="350px">
+**SF/UTP**:<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0106%2F6339%2F5391%2Ffiles%2F1024x340-4_f025a65c-d7ad-44b1-80a4-6d0c704414fe_1024x1024.jpg%3Fv%3D1676525020&f=1&nofb=1&ipt=3a592a991ce4c39efc5d4283b21646410c29e301a7d5bd77b859c57515b6cf1d" width="450px">   
+**F/UTP**:<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdintek.com.tw%2Fimages%2F2025%2F07%2F14%2Ffutp-image-for-article-photoroom.png&f=1&nofb=1&ipt=77dfbd3ba4b09725b79e928bf6ca24129ef2c497c5d612a4ce3e2a7b3a822151" width="450px">
 
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femeasy.be%2Fwp-content%2Fuploads%2F2021%2F04%2FDiff-utp-type.jpg&f=1&nofb=1&ipt=178d3b84ab6d598e43d62ee8f8c013aac1f04054c650b0068e7c462d9b136c87">
 
-# CAT Kabel
+# CAT Kabel 5-8
+## Vorteile von Lichtwellenleitern
+- hohe Übertragungsraten
+- sehr hohe Reichweite
+- keine Beeinflussung durch äußere elektrische oder elektromagnetische Störfelder
+- höhe Abhörsicherheit
+
+## Nachteile von Lichtwellenleitern
+- hohe Empfindlichkeit gegenüber mechanischer Belastung
+- teurer als Kupferkabel
+- Power over Ethernet ist nicht möglich
+
