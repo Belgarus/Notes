@@ -220,6 +220,33 @@ Präfix (vom RA) + Interface-ID (vom Gerät)
 <li><strong>Multicast</strong>: Gruppe von Empfängern</li>
 <li><strong>Anycast</strong>: ein beliebiger Empfänger innerhalb einer Gruppe</li>
 </ul>
+<blockquote>
+<p>Mit welchem Befehl kannst du die Erreichbarkeit eines Servers überprüfen?</p>
+</blockquote>
+<pre><code class="language-bash">ping beispiel.de
+</code></pre>
+<p>-&gt; TTL: Time To Live</p>
+<blockquote>
+<p>Mit welchem Befehl kannst du die Hops (Route) zu einem Server überprüfen?</p>
+</blockquote>
+<pre><code class="language-bash">traceroute beispiel.de
+</code></pre>
+<p>-&gt; maximal 30 Hops</p>
+<blockquote>
+<p>Mit welchem Befehl kann ich in der Eingabeaufforderung meine <strong>MAC-Adresse</strong> (Layer 2) anzeigen?</p>
+</blockquote>
+<pre><code class="language-bash">ipconfig /all
+</code></pre>
+<h3 id="ipv6-kürzung"><a class="header" href="#ipv6-kürzung">IPv6 Kürzung</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Regel</th><th>Original</th><th>Gekürzt</th></tr></thead><tbody>
+<tr><td>Führende Nullen weglassen</td><td><code>2001:0db8:0000:0001</code></td><td><code>2001:db8:0:1</code></td></tr>
+<tr><td>Aufeinanderfolgende Null-Gruppen → <code>::</code></td><td><code>2001:0000:0000:0000:0000:0000:0000:0001</code></td><td><code>2001::1</code></td></tr>
+<tr><td><code>::</code> nur <strong>einmal</strong> verwenden</td><td><code>2001:0000:0000:0001:0000:0000:0020:0001</code></td><td><code>2001::1:0:0:20:1</code></td></tr>
+<tr><td><code>::</code> ersetzt die <strong>längste</strong> Null-Sequenz</td><td><code>2001:0000:0000:0001:0000:0000:0000:0001</code></td><td><code>2001:0:0:1::1</code></td></tr>
+</tbody></table>
+</div>
+<p><strong>Merke:</strong> <code>::</code> darf nur <strong>einmal</strong> pro Adresse vorkommen, sonst ist die Adresse nicht eindeutig parsebar.<br />
+Bei gleichstand Links vor Rechts.</p>
 
                     </main>
 

@@ -37,3 +37,31 @@ Präfix (vom RA) + Interface-ID (vom Gerät)
 - **Unicast**: einzelnes Ziel
 - **Multicast**: Gruppe von Empfängern
 - **Anycast**: ein beliebiger Empfänger innerhalb einer Gruppe
+
+> Mit welchem Befehl kannst du die Erreichbarkeit eines Servers überprüfen?
+```bash
+ping beispiel.de
+```
+-> TTL: Time To Live
+
+> Mit welchem Befehl kannst du die Hops (Route) zu einem Server überprüfen?
+``` bash
+traceroute beispiel.de
+```
+-> maximal 30 Hops
+
+> Mit welchem Befehl kann ich in der Eingabeaufforderung meine **MAC-Adresse** (Layer 2) anzeigen?
+``` bash
+ipconfig /all
+```
+
+### IPv6 Kürzung
+| Regel | Original | Gekürzt |
+|---|---|---|
+| Führende Nullen weglassen | `2001:0db8:0000:0001` | `2001:db8:0:1` |
+| Aufeinanderfolgende Null-Gruppen → `::` | `2001:0000:0000:0000:0000:0000:0000:0001` | `2001::1` |
+| `::` nur **einmal** verwenden | `2001:0000:0000:0001:0000:0000:0020:0001` | `2001::1:0:0:20:1` |
+| `::` ersetzt die **längste** Null-Sequenz | `2001:0000:0000:0001:0000:0000:0000:0001` | `2001:0:0:1::1` |
+
+**Merke:** `::` darf nur **einmal** pro Adresse vorkommen, sonst ist die Adresse nicht eindeutig parsebar.   
+Bei gleichstand Links vor Rechts.

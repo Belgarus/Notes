@@ -518,6 +518,33 @@ Präfix (vom RA) + Interface-ID (vom Gerät)
 <li><strong>Multicast</strong>: Gruppe von Empfängern</li>
 <li><strong>Anycast</strong>: ein beliebiger Empfänger innerhalb einer Gruppe</li>
 </ul>
+<blockquote>
+<p>Mit welchem Befehl kannst du die Erreichbarkeit eines Servers überprüfen?</p>
+</blockquote>
+<pre><code class="language-bash">ping beispiel.de
+</code></pre>
+<p>-&gt; TTL: Time To Live</p>
+<blockquote>
+<p>Mit welchem Befehl kannst du die Hops (Route) zu einem Server überprüfen?</p>
+</blockquote>
+<pre><code class="language-bash">traceroute beispiel.de
+</code></pre>
+<p>-&gt; maximal 30 Hops</p>
+<blockquote>
+<p>Mit welchem Befehl kann ich in der Eingabeaufforderung meine <strong>MAC-Adresse</strong> (Layer 2) anzeigen?</p>
+</blockquote>
+<pre><code class="language-bash">ipconfig /all
+</code></pre>
+<h3 id="ipv6-kürzung"><a class="header" href="#ipv6-kürzung">IPv6 Kürzung</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Regel</th><th>Original</th><th>Gekürzt</th></tr></thead><tbody>
+<tr><td>Führende Nullen weglassen</td><td><code>2001:0db8:0000:0001</code></td><td><code>2001:db8:0:1</code></td></tr>
+<tr><td>Aufeinanderfolgende Null-Gruppen → <code>::</code></td><td><code>2001:0000:0000:0000:0000:0000:0000:0001</code></td><td><code>2001::1</code></td></tr>
+<tr><td><code>::</code> nur <strong>einmal</strong> verwenden</td><td><code>2001:0000:0000:0001:0000:0000:0020:0001</code></td><td><code>2001::1:0:0:20:1</code></td></tr>
+<tr><td><code>::</code> ersetzt die <strong>längste</strong> Null-Sequenz</td><td><code>2001:0000:0000:0001:0000:0000:0000:0001</code></td><td><code>2001:0:0:1::1</code></td></tr>
+</tbody></table>
+</div>
+<p><strong>Merke:</strong> <code>::</code> darf nur <strong>einmal</strong> pro Adresse vorkommen, sonst ist die Adresse nicht eindeutig parsebar.<br />
+Bei gleichstand Links vor Rechts.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hub-switch-und-router"><a class="header" href="#hub-switch-und-router">Hub, Switch und Router</a></h1>
 <h2 id="hub"><a class="header" href="#hub">Hub</a></h2>
 <p>Ein <strong>Hub</strong> (Englisch für „Nabe“ oder „Knotenpunkt“) ist ein Netzwerkgerät, das <strong>mehrere Hosts innerhalb eines Ethernets miteinander verbindet</strong>. In der Netzwerktechnik dient er als Verteiler für die Datenpakete. Hubs arbeiten auf Schicht 1 (Bitübertragungsschicht) des OSI-Modells. Ihre Funktion ist rein auf das Verteilen beschränkt. Sie sind somit nichts anderes als eine einfache Form von Switches oder Routern.</p>
@@ -535,8 +562,25 @@ Ein <strong>Layer-3-Switch</strong> hingegen liest die Ziel-IP-Adresse aus dem H
 <p><strong>Deutsche Erklärung:</strong></p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/zFfattg5gd8?si=OlTNwH1FHUcyjI_x" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <p><strong>Englische Erklärung</strong></p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Ofjsh_E4HFY?si=pun-5hahw668RQZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><div style="break-before: page; page-break-before: always;"></div><h1 id="datenmengen-berechnen--Übertragungsraten-berechnen"><a class="header" href="#datenmengen-berechnen--Übertragungsraten-berechnen">Datenmengen berechnen / Übertragungsraten berechnen</a></h1>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Ofjsh_E4HFY?si=pun-5hahw668RQZI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><div style="break-before: page; page-break-before: always;"></div><h1 id="datenmengen-berechnen"><a class="header" href="#datenmengen-berechnen">Datenmengen berechnen</a></h1>
 <h2 id="dezimal-hexadezimal-und--binär-umrechnungen"><a class="header" href="#dezimal-hexadezimal-und--binär-umrechnungen">Dezimal, Hexadezimal und  Binär Umrechnungen</a></h2>
+<p>Ummrechnung sollte man können.
+Hoffentlich würd davon ausgegangen das wir dass das zu einfach für uns ist ;)</p>
+<h1 id="datenübertragung"><a class="header" href="#datenübertragung">Datenübertragung</a></h1>
+<h3 id="datengrößen"><a class="header" href="#datengrößen">Datengrößen</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Dezimal (SI)</th><th>Abk.</th><th>Umrechnung</th><th>Binär (IEC)</th><th>Abk.</th><th>Umrechnung</th></tr></thead><tbody>
+<tr><td>Bit</td><td>b</td><td>–</td><td>Bit</td><td>b</td><td>–</td></tr>
+<tr><td>Byte</td><td>B</td><td>8 bit</td><td>Byte</td><td>B</td><td>8 bit</td></tr>
+<tr><td>Kilobyte</td><td>KB</td><td>1.000 B (10³ B)</td><td>Kibibyte</td><td>KiB</td><td>1.024 B (2¹⁰ B)</td></tr>
+<tr><td>Megabyte</td><td>MB</td><td>1.000 KB (10⁶ B)</td><td>Mebibyte</td><td>MiB</td><td>1.024 KiB (2²⁰ B)</td></tr>
+<tr><td>Gigabyte</td><td>GB</td><td>1.000 MB (10⁹ B)</td><td>Gibibyte</td><td>GiB</td><td>1.024 MiB (2³⁰ B)</td></tr>
+<tr><td>Terabyte</td><td>TB</td><td>1.000 GB (10¹² B)</td><td>Tebibyte</td><td>TiB</td><td>1.024 GiB (2⁴⁰ B)</td></tr>
+</tbody></table>
+</div>
+<h3 id="rolle-von-hertz-hz-in-aufgaben"><a class="header" href="#rolle-von-hertz-hz-in-aufgaben">Rolle von Hertz (Hz) in Aufgaben</a></h3>
+<p><strong>Hertz</strong> = <strong>1s</strong><br />
+→ 44.100 Hz bedeutet:<br />
+44.100 Abtastungen pro Sekunde pro Kanal</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="Übertragungsmedien--verkabelung"><a class="header" href="#Übertragungsmedien--verkabelung">Übertragungsmedien &amp; Verkabelung</a></h1>
 <h2 id="strukturierte-verkabelung--normen"><a class="header" href="#strukturierte-verkabelung--normen">Strukturierte Verkabelung + Normen</a></h2>
 <h2 id="fehlerkollisonserkennung"><a class="header" href="#fehlerkollisonserkennung">Fehler/Kollisonserkennung</a></h2>
