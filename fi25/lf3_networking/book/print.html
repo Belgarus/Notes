@@ -477,8 +477,9 @@ arp -a # ARP‑Cache anzeigen.
 <p><strong>Was heißt es wenn du eine 169.254. ... /16 APIPA Adresse bekommen hast?</strong></p>
 </blockquote>
 <ul>
-<li>Der DHCP Server ist im Netzwerk nicht erreichbar</li>
+<li>Der DHCP Server ist im Netzwerk nicht erreichbar. Kein Internetzugang.</li>
 </ul>
+<p><strong>APIPA</strong> (Automatic Private IP Addressing) ist ein Mechanismus in Windows-Systemen, der automatisch eine IP-Adresse aus dem Bereich 169.254.0.0 bis 169.254.255.255 vergibt, wenn kein DHCP-Server gefunden wird. APIPA führt eine ARP-Prüfung und wenn möglich eine automatische DHCP-Rückkehr aus.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="adresen"><a class="header" href="#adresen">Adresen</a></h1>
 <p>Wichtig: IPv4, IPv6 &amp; Mac-Adressen</p>
 <h3 id="cmd---ipconfig--ipconfig-all"><a class="header" href="#cmd---ipconfig--ipconfig-all">cmd - ipconfig | ipconfig /all</a></h3>
@@ -545,6 +546,23 @@ Präfix (vom RA) + Interface-ID (vom Gerät)
 </div>
 <p><strong>Merke:</strong> <code>::</code> darf nur <strong>einmal</strong> pro Adresse vorkommen, sonst ist die Adresse nicht eindeutig parsebar.<br />
 Bei gleichstand Links vor Rechts.</p>
+<h1 id="ipv4"><a class="header" href="#ipv4">IPv4</a></h1>
+<p>32 Bit ~ 4,2 mrd Adressen</p>
+<h3 id="private-adressen"><a class="header" href="#private-adressen">Private Adressen</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>IP-Adresse</th><th>Bereich</th><th>Subnetzmaske</th><th>Klasse</th><th>Verwendung</th></tr></thead><tbody>
+<tr><td>10.0.0.0</td><td>10.0.0.0 bis 10.255.255.255</td><td>255.0.0.0</td><td>A</td><td>sehr große Netzwerke</td></tr>
+<tr><td>172.16.0.0</td><td>172.16.0.0 bis 172.31.255.255</td><td>255.240.0.0</td><td>B</td><td>mittlere bis große Netzwerke</td></tr>
+<tr><td>192.168.0.0</td><td>192.168.0.0 bis 192.168.255.255</td><td>255.255.255.0</td><td>C</td><td>kleine bis mittlere Netzwerke</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li><strong>Loopback-Adresse : 127.0.0.1 (von IANA festgelegt)</strong>
+<ul>
+<li>Testen von eigener Netzwerkfähigkeit</li>
+<li>keine physischen Pakete bei PING</li>
+</ul>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hub-switch-und-router"><a class="header" href="#hub-switch-und-router">Hub, Switch und Router</a></h1>
 <h2 id="hub"><a class="header" href="#hub">Hub</a></h2>
 <p>Ein <strong>Hub</strong> (Englisch für „Nabe“ oder „Knotenpunkt“) ist ein Netzwerkgerät, das <strong>mehrere Hosts innerhalb eines Ethernets miteinander verbindet</strong>. In der Netzwerktechnik dient er als Verteiler für die Datenpakete. Hubs arbeiten auf Schicht 1 (Bitübertragungsschicht) des OSI-Modells. Ihre Funktion ist rein auf das Verteilen beschränkt. Sie sind somit nichts anderes als eine einfache Form von Switches oder Routern.</p>
@@ -597,6 +615,9 @@ Hoffentlich würd davon ausgegangen das wir dass das zu einfach für uns ist ;)<
 </ul>
 <p>Kollision erkannt = definiertes Störsignal (JAM)</p>
 <p>Unterbrochene Datenübertragung wird mehrmals (festgelegte Anzahl) erneut versucht, mit einer zufälligen Wartezeit</p>
+<blockquote>
+<p>CSMA/CD regelt den Netzzugriff: Zuerst wird die Leitung abgehört (Carrier Sense). Wenn frei ist, wird gesendet.Tritt dabei eine Kollision auf (Collision Detection), wird sofort ein JAM-Signal gesendet, um alle Stationen über die Kollision zu informieren und den Sendevorgang abzubrechen</p>
+</blockquote>
 <h1 id="netzwerkmedien-kupfer--glasfaser"><a class="header" href="#netzwerkmedien-kupfer--glasfaser">Netzwerkmedien: Kupfer &amp; Glasfaser</a></h1>
 <h2 id="leitungsgebundene"><a class="header" href="#leitungsgebundene">leitungsgebundene</a></h2>
 <ul>

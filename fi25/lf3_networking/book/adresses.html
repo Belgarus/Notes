@@ -247,6 +247,23 @@ Präfix (vom RA) + Interface-ID (vom Gerät)
 </div>
 <p><strong>Merke:</strong> <code>::</code> darf nur <strong>einmal</strong> pro Adresse vorkommen, sonst ist die Adresse nicht eindeutig parsebar.<br />
 Bei gleichstand Links vor Rechts.</p>
+<h1 id="ipv4"><a class="header" href="#ipv4">IPv4</a></h1>
+<p>32 Bit ~ 4,2 mrd Adressen</p>
+<h3 id="private-adressen"><a class="header" href="#private-adressen">Private Adressen</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>IP-Adresse</th><th>Bereich</th><th>Subnetzmaske</th><th>Klasse</th><th>Verwendung</th></tr></thead><tbody>
+<tr><td>10.0.0.0</td><td>10.0.0.0 bis 10.255.255.255</td><td>255.0.0.0</td><td>A</td><td>sehr große Netzwerke</td></tr>
+<tr><td>172.16.0.0</td><td>172.16.0.0 bis 172.31.255.255</td><td>255.240.0.0</td><td>B</td><td>mittlere bis große Netzwerke</td></tr>
+<tr><td>192.168.0.0</td><td>192.168.0.0 bis 192.168.255.255</td><td>255.255.255.0</td><td>C</td><td>kleine bis mittlere Netzwerke</td></tr>
+</tbody></table>
+</div>
+<ul>
+<li><strong>Loopback-Adresse : 127.0.0.1 (von IANA festgelegt)</strong>
+<ul>
+<li>Testen von eigener Netzwerkfähigkeit</li>
+<li>keine physischen Pakete bei PING</li>
+</ul>
+</li>
+</ul>
 
                     </main>
 

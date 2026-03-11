@@ -65,3 +65,16 @@ ipconfig /all
 
 **Merke:** `::` darf nur **einmal** pro Adresse vorkommen, sonst ist die Adresse nicht eindeutig parsebar.   
 Bei gleichstand Links vor Rechts.
+
+# IPv4
+32 Bit ~ 4,2 mrd Adressen
+### Private Adressen
+|IP-Adresse|Bereich|Subnetzmaske|Klasse|Verwendung|
+|--------|--------|--------|--------|--------|
+|10.0.0.0|10.0.0.0 bis 10.255.255.255|255.0.0.0|A|sehr große Netzwerke|
+|172.16.0.0|172.16.0.0 bis 172.31.255.255|255.240.0.0|B|mittlere bis große Netzwerke|
+|192.168.0.0|192.168.0.0 bis 192.168.255.255|255.255.255.0|C|kleine bis mittlere Netzwerke|
+
+- **Loopback-Adresse : 127.0.0.1 (von IANA festgelegt)**
+    - Testen von eigener Netzwerkfähigkeit
+    - keine physischen Pakete bei PING

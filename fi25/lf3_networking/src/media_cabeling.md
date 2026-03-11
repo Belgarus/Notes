@@ -20,6 +20,8 @@ Kollision erkannt = definiertes Störsignal (JAM)
 
 Unterbrochene Datenübertragung wird mehrmals (festgelegte Anzahl) erneut versucht, mit einer zufälligen Wartezeit
 
+> CSMA/CD regelt den Netzzugriff: Zuerst wird die Leitung abgehört (Carrier Sense). Wenn frei ist, wird gesendet.Tritt dabei eine Kollision auf (Collision Detection), wird sofort ein JAM-Signal gesendet, um alle Stationen über die Kollision zu informieren und den Sendevorgang abzubrechen
+
 # Netzwerkmedien: Kupfer & Glasfaser
 
 ## leitungsgebundene

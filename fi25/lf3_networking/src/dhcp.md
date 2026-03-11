@@ -23,4 +23,6 @@ Bild Quelle: [networkingsignal.com](https://www.networkingsignal.com/wp-content/
 - IP-Adresse, Subnetzmaske, DNS-Server
 
 > **Was heißt es wenn du eine 169.254. ... /16 APIPA Adresse bekommen hast?**
-- Der DHCP Server ist im Netzwerk nicht erreichbar
+- Der DHCP Server ist im Netzwerk nicht erreichbar. Kein Internetzugang.
+
+**APIPA** (Automatic Private IP Addressing) ist ein Mechanismus in Windows-Systemen, der automatisch eine IP-Adresse aus dem Bereich 169.254.0.0 bis 169.254.255.255 vergibt, wenn kein DHCP-Server gefunden wird. APIPA führt eine ARP-Prüfung und wenn möglich eine automatische DHCP-Rückkehr aus. 
