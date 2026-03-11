@@ -90,6 +90,20 @@ Bis 10.000 Meter Länge.
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femeasy.be%2Fwp-content%2Fuploads%2F2021%2F04%2FDiff-utp-type.jpg&f=1&nofb=1&ipt=178d3b84ab6d598e43d62ee8f8c013aac1f04054c650b0068e7c462d9b136c87">
 
 # CAT Kabel 5-8
+Ein **CAT-Kabel** (Category-Kabel) ist ein Twisted-Pair-Netzwerkkabel – die Adern sind paarweise verdrillt, um elektromagnetische Störungen zu reduzieren.
+
+| Kabel | Frequenz | Datenrate |
+|---|---|---|
+| CAT 5 | 100 MHz | 100 Mbit/s |
+| CAT 5e | 100 MHz | 1 Gbit/s |
+| CAT 6 | 250 MHz | 1 Gbit/s (10G bis 55m) |
+| CAT 6a | 500 MHz | 10 Gbit/s |
+| CAT 7 | 600 MHz | 10 Gbit/s |
+| CAT 8 | 2.000 MHz | 25–40 Gbit/s |
+
+**Merke:** Ab CAT 6a für Neuinstallationen empfohlen.
+
+
 ## Vorteile von Lichtwellenleitern
 - hohe Übertragungsraten
 - sehr hohe Reichweite
