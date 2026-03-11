@@ -18,6 +18,11 @@ Entweder Oder:
 
 Kollision erkannt = definiertes Störsignal (JAM)
 
+> Was ist die Kollisionsdomäne?
+Eine Kollisionsdomäne ist der Bereich eines Netzwerks, in dem Datenkollisionen auftreten können, wenn mehrere Geräte gleichzeitig dasselbe Medium nutzen.
+
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.elektronik-kompendium.de%2Fsites%2Fnet%2Fbilder%2F14061814.gif&f=1&nofb=1&ipt=d4f16cd99ff9bc167e0fb25b7cf6d798c0e2780928b353ec3cb8094fbad2f2bb">
+
 Unterbrochene Datenübertragung wird mehrmals (festgelegte Anzahl) erneut versucht, mit einer zufälligen Wartezeit
 
 > CSMA/CD regelt den Netzzugriff: Zuerst wird die Leitung abgehört (Carrier Sense). Wenn frei ist, wird gesendet.Tritt dabei eine Kollision auf (Collision Detection), wird sofort ein JAM-Signal gesendet, um alle Stationen über die Kollision zu informieren und den Sendevorgang abzubrechen
