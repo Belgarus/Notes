@@ -184,6 +184,42 @@
                         <h1 id="adresen"><a class="header" href="#adresen">Adresen</a></h1>
 <p>Wichtig: IPv4, IPv6 &amp; Mac-Adressen</p>
 <h3 id="cmd---ipconfig--ipconfig-all"><a class="header" href="#cmd---ipconfig--ipconfig-all">cmd - ipconfig | ipconfig /all</a></h3>
+<h2 id="ipv6"><a class="header" href="#ipv6">IPv6</a></h2>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ipxo.com%2Fapp%2Fuploads%2F2024%2F07%2Fipv6-address-structure.png&f=1&nofb=1&ipt=04109b64c05aec0ada48b549e35a1e9cc973900b1f6de591ee879fc4b42b3bcd" height="250px">
+<p>Pro 4rer Block 2¹⁶ Adressen (16 Bit).
+Insgesamt hat eine IPV6 Adresse 128 Bit.</p>
+<blockquote>
+<p>Ein Gerät tritt einem Netzwerk bei und muss wissen, wie es sich konfigurieren soll. Das passiert in zwei Stufen:</p>
+</blockquote>
+<ol>
+<li><strong>Link-local</strong> – automatisch generierte lokale Adresse (nur im selben Netzwerksegment erreichbar), der Router schickt nur den Präfix (<code>fe80::/10</code>)</li>
+<li><strong>SLAAC</strong> (Stateless Address Autoconfiguration) – das Gerät konfiguriert sich selbst vollständig ohne DHCP-Server, durch:
+<ul>
+<li><strong>RS</strong> (Router Solicitation) – Gerät fragt den Router</li>
+<li><strong>RA</strong> (Router Advertisement) – Router antwortet mit allem was das Gerät braucht: Präfix, Gateway, DNS</li>
+</ul>
+</li>
+</ol>
+<pre><code>Ablauf:
+Gerät                          Router
+  |                               |
+  |----RS (Router Solicitation)--&gt;|
+  |&lt;---RA (Router Advertisement)--|
+  |    - Routing/ID-Präfix        |
+  |    - Gateway                  |
+  |    - DNS                      |
+  |                               |
+  v
+Gerät baut IPv6-Adresse selbst:
+Präfix (vom RA) + Interface-ID (vom Gerät)
+</code></pre>
+<h2 id="adressarten-empfänger"><a class="header" href="#adressarten-empfänger">Adressarten Empfänger</a></h2>
+<ul>
+<li><strong>Broadcast</strong>: alle Teilnehmer eines Netzwerks</li>
+<li><strong>Unicast</strong>: einzelnes Ziel</li>
+<li><strong>Multicast</strong>: Gruppe von Empfängern</li>
+<li><strong>Anycast</strong>: ein beliebiger Empfänger innerhalb einer Gruppe</li>
+</ul>
 
                     </main>
 

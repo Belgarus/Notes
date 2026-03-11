@@ -18,3 +18,9 @@ Bild Quelle: [networkingsignal.com](https://www.networkingsignal.com/wp-content/
 | **O**  | Offer       | DHCP-Server bietet eine freie IP-Adresse an |
 | **R**  | Request     | Client fordert eine der angebotenen IP-Adressen an |
 | **A**  | Acknowledge | Server bestätigt und weist die IP-Adresse zu |
+
+> **Was gehört alles zu IP-Configuration dazu?**
+- IP-Adresse, Subnetzmaske, DNS-Server
+
+> **Was heißt es wenn du eine 169.254. ... /16 APIPA Adresse bekommen hast?**
+- Der DHCP Server ist im Netzwerk nicht erreichbar
