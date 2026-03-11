@@ -1,4 +1,7 @@
 # OSI Layers 1, 2 & 3
+
+> **⚠️I Ich bin mit dem Part nicht fertig geworden bzw. habe KI benutzt also noch mal nachprüfen im Hedgedoc [Hedgedoc LF3](https://hedgedoc.c3d2.de/LF3_Notes?view#%F0%9F%9B%91Layer-1)**
+
 ## Layer 1 – Bitübertragungsschicht
 
 Die **Bitübertragungsschicht (Physical Layer)** ist die unterste Schicht des OSI-Modells.  
