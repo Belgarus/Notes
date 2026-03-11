@@ -18,6 +18,10 @@ Mehr dazu: [Layer 2 Switch erklärt](https://belgarus.github.io/Notes/fi25/sol_l
 ## Router
 Der **Router** verbindet mindestens zwei Netzwerke (z. B. lokales LAN mit dem Internet/WAN) und entscheidet basierend auf IP-Adressen, wohin Datenpakete gesendet werden. Er arbeitet damit auf der Vermittlungsschicht (Schicht 3) des OSI-Modells.
 
+## Aktive vs Passive Netzwerkkomponenten
+- **aktive Netzwerkkomponenten** benötigen eine Stromversorgung
+- **passive Netzwerkkomponenten** benötigen keine Stromversorgung
+
 ## Videos 
 
 **Deutsche Erklärung:**

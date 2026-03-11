@@ -7,6 +7,13 @@ Wichtig: IPv4, IPv6 & Mac-Adressen
 ## IPv6
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ipxo.com%2Fapp%2Fuploads%2F2024%2F07%2Fipv6-address-structure.png&f=1&nofb=1&ipt=04109b64c05aec0ada48b549e35a1e9cc973900b1f6de591ee879fc4b42b3bcd" height="250px">
 
+Der **Routing-Präfix**, oder auch Netzwerkpräfix, identifiziert das Netzwerk oder den Subnetzbereich in einer IPv6-Adresse. Er wird normalerweise vom Internetdienst- anbieter (ISP) zugewiesen.  
+
+Die **Subnetz-ID** wird verwendet, um innerhalb eines größeren Netzwerks oder Subnetzes spezifische Teilnetze zu identifizieren. Sie wird normalerweise von den Netzwerk- administratoren definiert, um ihre internen Netzwerksegmente zu segmentieren und zu verwalten.
+
+Die **Interface-ID** identifiziert ein bestimmtes Gerät oder eine Netzwerkschnittstelle innerhalb eines Subnetzes. Sie wird normalerweise automatisch generiert oder manuell
+zugewiesen.
+
 Pro 4rer Block 2¹⁶ Adressen (16 Bit).
 Insgesamt hat eine IPV6 Adresse 128 Bit.
 
@@ -78,3 +85,5 @@ Bei gleichstand Links vor Rechts.
 - **Loopback-Adresse : 127.0.0.1 (von IANA festgelegt)**
     - Testen von eigener Netzwerkfähigkeit
     - keine physischen Pakete bei PING
+
+

@@ -122,3 +122,22 @@ Ein **CAT-Kabel** (Category-Kabel) ist ein Twisted-Pair-Netzwerkkabel – die Ad
 - teurer als Kupferkabel
 - Power over Ethernet ist nicht möglich
 
+## Bereiche der strukturierten Verkabelung
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage3.slideserve.com%2F6507184%2Fslide18-l.jpg&f=1&nofb=1&ipt=1f39132a19ea1d62d5d7bb63088086979776e0c31f87cd67b998aac8a5efd96d">
+
+# Strukturierte Verkabelung
+
+| Bereich | Auch genannt | Verbindet | Max. Kabel |
+|---|---|---|---|
+| **Primär** | Standortverkabelung | Gebäude untereinander | GF: 2.000 m / TP+VDSL: 900 m |
+| **Sekundär** | Gebäudeverkabelung | Gebäudeverteiler → Etagenverteiler | GF: 2.000 m / TP: 100 m |
+| **Tertiär** | Etagenverkabelung | Etagenverteiler → Anschlussdose | GF: 2.000 m / TP: 100 m (90m fest + 10m Patch) |
+
+GF = Glasfaserkabel, TP = Twisted-Pair-Kabel  
+> **Faustregel Primär:** 50% Reserve zum aktuellen Bedarf einplanen.
+
+### Ziele der strukturierten Verkabelung
+- Schaffung einer zuverlässigen Grundlage für zukünftige Netzwerke
+- Einfache Installation von Netzwerkkomponenten
+- Möglichkeit flexibler Erweiterungen
+- einheitliche und allgemein gültige Verkabelungsstruktur

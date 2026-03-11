@@ -17,3 +17,13 @@
 
 ### Ausblick: Nochmal sehr gut erklärt
 <iframe width="560" height="315" src="https://www.youtube.com/embed/SJE2lFR5utM?si=IYAtPxPipkWz6nSV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+### Power over Ethernet
+**Power over Ethernet** (PoE) bezeichnet ein Verfahren, welches durch die IEEE-Standards definiert ist und mit dem Netzwerk- geräte über das Ethernet-Kabel des lokalen Netzwerks mit Strom versorgt werden können.
+Es gibt verschiedene Standards für PoE.
+
+**Typische Verbraucher für PoE sind:**
+- IP-Telefonie
+- Wireless Access Points (WAP)
+- IP-Kameras
+- Zeiterfassungsterminals
