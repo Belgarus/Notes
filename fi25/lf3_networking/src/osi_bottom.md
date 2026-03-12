@@ -1,256 +1,130 @@
 # OSI Layers 1, 2 & 3
 
-> **⚠️I Ich bin mit dem Part nicht fertig geworden bzw. habe KI benutzt also noch mal nachprüfen im Hedgedoc [Hedgedoc LF3](https://hedgedoc.c3d2.de/LF3_Notes?view#%F0%9F%9B%91Layer-1)**
+> **⚠️ Hinweis:** Diesen Part noch mal im [Hedgedoc LF3](https://hedgedoc.c3d2.de/LF3_Notes?view#%F0%9F%9B%91Layer-1) nachprüfen.
 
-## Layer 1 – Bitübertragungsschicht
+---
 
-Die **Bitübertragungsschicht (Physical Layer)** ist die unterste Schicht des OSI-Modells.  
-Sie definiert, **wie Bits physisch über ein Übertragungsmedium übertragen werden**.
+## Layer 1 – Bitübertragungsschicht (Physical Layer)
+
+Die unterste Schicht des OSI-Modells. Sie definiert, **wie Bits physisch über ein Übertragungsmedium übertragen werden**.
 
 **Übertragungseinheit:** Bit
 
----
+**Aufgaben:**
+- Definition von Kabeln und Steckern (z. B. RJ45)
+- Definition der Signalübertragung (elektrisch, optisch, Funk)
+- Festlegung von Übertragungsraten (z. B. 1 Gbit/s)
 
-### Minimalbeispiel
-```mermaid
-graph LR
-    S[Sender] -->|Übertragungsmedium| SW[Empfänger]
-```
+**Übertragungsmedien:** Kupferkabel (Twisted Pair), Glasfaser, Funk (WLAN)
 
-**Beispiel:**
+**Geräte auf Layer 1:**
 
-```mermaid
-graph LR
-    S[PC 1] -->|Glasfaserkabel| SW[PC 2]
-```
+| Gerät | Funktion |
+|---|---|
+| Kabel / Stecker | passive Signalleitung |
+| Hub | verteilt Signal an **alle** Ports |
+| Repeater | Signalverstärkung über längere Strecken |
 
-**Mögliche Übertragungsmedien:**
+### Fehlersuche Layer 1
 
-- Kupferkabel (Twisted Pair / Ethernet)
-- Glasfaser
-- Funk (WLAN)
-
----
-
-### Aufgaben von Layer 1
-
-- Definition von **Kabeln und Steckern** (z. B. RJ45)
-- Definition der **Signalübertragung** (elektrisch, optisch, Funk)
-- **Bitübertragung**
-- Festlegung von **Übertragungsraten** (z. B. 1 Gbit/s)
-
-
-### Geräte auf Layer 1
-
-**Passive Komponenten**
-
-- Kabel
-- Stecker
-- Hub (verteilt Signal an alle Ports)
-- Repeater (Signalverstärkung)
-
----
-
-## Fehlersuche (VW-FS)
-
-**Typische Probleme:**
-
-- Kabel nicht eingesteckt
-- Stecker locker
-- Kabel defekt
-- keine physische Verbindung
-
-**Prüfen:**
-
-- LEDs an Netzwerkkarte oder Switch
-- Kabeltester verwenden
-
----
-
-### Überprüfung unter Linux
-
-Physische Netzwerkverbindungen können mit folgendem Befehl geprüft werden:
-
+Typische Probleme: Kabel nicht eingesteckt, Stecker locker, Kabel defekt.
 ```bash
-ip link
+ip link       # Physische Verbindung unter Linux prüfen
 ```
+Auf NO-CARRIER achten → keine physische Verbindung vorhanden.
 
-> ### Prüfungsfragen
-> - Welche Übertragungseinheit hat Layer 1?
-> - Nennen Sie zwei Geräte, die auf Layer 1 arbeiten.
-> - Welche Aufgaben hat die Bitübertragungsschicht?
-> - Was bedeutet NO-CARRIER bei einer Netzwerkschnittstelle?
+> **Prüfungsfragen:** Welche Übertragungseinheit hat Layer 1? | Nennen Sie zwei Geräte auf Layer 1. | Was bedeutet NO-CARRIER?
 
-## Layer 2 – Sicherungsschicht (Data Link)
+---
 
-Layer 2 organisiert die **Kommunikation innerhalb eines lokalen Netzwerks (LAN)**.  
-Er sorgt dafür, dass **Frames an das richtige Gerät im selben Netzwerk gesendet werden**.
+## Layer 2 – Sicherungsschicht (Data Link Layer)
+
+Organisiert die **Kommunikation innerhalb eines lokalen Netzwerks (LAN)**. Sorgt dafür, dass Frames gezielt an das richtige Gerät im selben Netzwerk gesendet werden.
 
 **Übertragungseinheit:** Frame  
-**Adressierung:** MAC-Adresse
+**Adressierung:** MAC-Adresse (48 Bit, hardwareseitig vergeben)
 
----
+**Aufgaben:**
+- Aufbau und Auswertung von [Ethernet-Frames](https://belgarus.github.io/Notes/fi25/lf3_networking/book/ethernet.html)
+- MAC-Adressierung innerhalb eines LANs
+- Fehlererkennung via Prüfsumme (FCS)
+- Zugriffskontrolle auf das Übertragungsmedium (CSMA/CD, CSMA/CA)
 
-### Grundprinzip
+**Geräte auf Layer 2:**
 
-```mermaid
-graph LR
-    S[Sender] -->|Frame zu MAC: DD:EE:FF| SW[Layer 2 Switch]
-    SW -->|Unicast| E[Empfänger]
-    SW -.->|kein Frame| A[Anderes Gerät]
-````
-
-Mehrere Geräte sind in einem **LAN** verbunden.
-
-Ziel von Layer 2:
-
-* Jeder **Frame erreicht nur das Zielgerät**
-* unnötiger Netzwerkverkehr wird reduziert
-
----
-
-### Geräte auf Layer 2
-
-**Netzwerkkarte (NIC)**
-
-* besitzt eine **MAC-Adresse**
-
-**Switch**
-
-* verbindet viele Geräte im LAN
-* hat mehrere **Ports**
-* leitet Frames nur zum **richtigen Zielport**
-
-Ein Switch **trennt Kollisionsdomänen** zwischen seinen Ports.
-
----
+| Gerät | Funktion |
+|---|---|
+| Netzwerkkarte (NIC) | besitzt MAC-Adresse, sendet/empfängt Frames |
+| Switch | leitet Frames gezielt zum Zielport, trennt Kollisionsdomänen |
 
 ### Hub vs. Switch
 
-**Hub (Layer 1)**
-
-* sendet Signale an **alle Geräte**
-* viele **Kollisionen**
-* ineffizient
-
-**Switch (Layer 2)**
-
-* nutzt **MAC-Adressen**
-* sendet Frames **nur an das Zielgerät**
-* reduziert Netzwerkverkehr
-
----
-
-### Zugriffsverfahren
-
-Wenn mehrere Geräte ein Medium nutzen:
-
-* **CSMA/CD** → Collision Detection
-* **CSMA/CA** → Collision Avoidance
-
-**Kollisionsdomäne:**
-Bereich eines Netzwerks, in dem **Datenkollisionen auftreten können**.
-
----
-
-### Ethernet
-
-Wichtigstes Protokoll auf Layer 2.
-
-Aufgaben:
-
-* Aufbau des [**Ethernet-Frames**](https://belgarus.github.io/Notes/fi25/lf3_networking/book/ethernet.html)
-* **MAC-Adressierung**
-* **Fehlererkennung** (Prüfsumme / FCS)
-
----
-
-### Typische Topologie
+| | **Hub (Layer 1)** | **Switch (Layer 2)** |
+|---|---|---|
+| Weiterleitung | an **alle** Ports | nur an **Zielport** |
+| Adressierung | keine | MAC-Adresse |
+| Kollisionen | häufig | keine (pro Port eigene Domäne) |
+| Effizienz | gering | hoch |
 
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnetizenstechnologies.com%2Fwp-content%2Fuploads%2F2025%2F01%2FNetwork-Topology.png&f=1&nofb=1&ipt=30f98bdc252bf03b77f7ea02bbf4f02e3411ddbdc4ce764c098492063ccd9097" height="400px">
 
-Switches bilden den Mittelpunkt des Netzwerks.
-
----
-
-## Fehlersuche
-
-### MAC-Adresse anzeigen
-
-**Windows**
-
+### Fehlersuche Layer 2
 ```powershell
-ipconfig /all
+ipconfig /all          # MAC-Adresse anzeigen (Windows)
 ```
-
-**Linux**
-
 ```bash
-ifconfig -a # Lists all networkinterfaces + their MAC adresses
+ifconfig -a            # MAC-Adresse anzeigen (Linux)
 ```
+
+> **Prüfungsfragen:** Welche Übertragungseinheit hat Layer 2? | Welche Adressierung wird verwendet? | Unterschied Hub vs. Switch? | Was ist eine Kollisionsdomäne?
 
 ---
 
-## Prüfungsfragen
+## Layer 3 – Vermittlungsschicht (Network Layer)
 
-* Welche **Übertragungseinheit** hat Layer 2?
-* Welche **Adressierung** wird verwendet?
-* Welche Aufgabe hat ein **Switch**?
-* Was ist der Unterschied zwischen **Hub und Switch**?
-* Was ist eine **Kollisionsdomäne**?
+Verantwortlich für den **Zusammenschluss mehrerer Netze** (LAN → MAN → WAN → GAN) und die **Wegfindung von Paketen zum Zielhost**.
 
-# Layer 3
-=> Zusammenschluss Mehrerer Netze (LANS und Internet-Wolke (WAN, GAN)) 
-
-**Ziel**  
-Schnellste, effizienteste Route über mehrere hierarchische Netze (LAN → MAN → WAN → GAN) zum Zielhost finden.
+**Übertragungseinheit:** Paket (Größe durch MTU begrenzt)  
+**Adressierung:** IP-Adresse (IPv4: 32 Bit, IPv6: 128 Bit)
 
 ![](https://raw.githubusercontent.com/johannesloetzsch/LF4/refs/heads/main/src/img/Diagramm_Router.png)
 
-Router (auch Gateway) verbindet unterschiedliche Netze und leitet Pakete weiter.
-Adressierung
+**Gerät auf Layer 3:** Router (auch: Gateway) – verbindet unterschiedliche Netze und leitet Pakete anhand der IP-Adresse weiter.
 
-### Umsetzung  
+**Wichtige Protokolle:**
 
-**Adressierung**  
-- IPv4‑Adresse (32 Bit) wird durch die Subnetzmaske in Netz‑ und Hostanteil geteilt.
-- Netz‑ID = IP & Subnetzmaske (Host‑Bits = 0).
-- Broadcast‑ID = alle Host‑Bits = 1.
+| Protokoll | Funktion |
+|---|---|
+| IP | Adressierung und Weiterleitung von Paketen |
+| ICMP | Fehlermeldungen und Diagnose (z. B. ping) |
+| ARP | Auflösung IP ↔ MAC-Adresse |
+| IPSec | Verschlüsselung auf IP-Ebene |
 
-**Übertragungseinheit**
-- Paket – Größe begrenzt durch die MTU (Maximum Transmission Unit) des jeweiligen Netzes.
+### IPv4-Adressierung
 
-**Wichtige Protokolle**
-- IP, ICMP (Fehlermeldungen), IPSec (Verschlüsselung), ARP (IP ↔ MAC‑Auflösung).
+- IPv4-Adresse (32 Bit) wird durch die **Subnetzmaske** in Netz- und Hostanteil geteilt
+- **Netz-ID:** IP `&` Subnetzmaske (alle Host-Bits = 0)
+- **Broadcast-ID:** alle Host-Bits = 1
+- **CIDR:** flexible Präfix-Notation (z. B. `192.168.1.0/24`) ersetzt die alten Klassen A/B/C
+- Mehr 1-Bits in der Maske → mehr Netze, weniger Hosts pro Netz (und umgekehrt)
+- Pro Subnetz sind mind. 2 Adressen reserviert (Netz-ID + Broadcast)
 
-**Adressbereiche**
-- Öffentliche Adressen – von IANA vergeben, global routbar.
-- Private Adressen – nicht im Internet routbar (NAT nötig):
-    - 10.0.0.0/8
-    - 172.16.0.0/12
-    - 192.168.0.0/16
+### Adressbereiche
 
-**CIDR**  
-Classeless Inter‑Domain Routing – flexible Präfix‑Notation (z. B. 192.168.1.0/24) ersetzt alte Klassen A/B/C.
+| Bereich | Adressraum | Bemerkung |
+|---|---|---|
+| Öffentlich | — | von IANA vergeben, global routbar |
+| Privat A | 10.0.0.0/8 | nicht im Internet routbar (NAT nötig) |
+| Privat B | 172.16.0.0/12 | nicht im Internet routbar (NAT nötig) |
+| Privat C | 192.168.0.0/16 | nicht im Internet routbar (NAT nötig) |
+| Loopback | 127.0.0.1 | interne Kommunikation (localhost) |
 
-**Subnetzgrößen**
-- Mehr 1‑Bits in der Maske → mehr Netze, weniger Host‑Adressen pro Netz.
-- Weniger 1‑Bits → weniger Netze, mehr Hosts.
-- Pro Subnetz mindestens 2 nutzbare Host‑Adressen (wegen Netz‑‑ und Broadcast‑ID).
-
-**Diagnose‑Tools**
+### Diagnose-Tools & Fehlersuche
 ```bash
-ipconfig (Windows) / ifconfig (Linux) # lokale IP‑Konfiguration anzeigen.
-ping <IP> # Erreichbarkeit prüfen.
-tracert / traceroute <IP> # Wegverfolgung der Pakete.
-arp -a # ARP‑Cache anzeigen.
+ipconfig / ifconfig    # Lokale IP-Konfiguration anzeigen
+ping <IP>              # Erreichbarkeit prüfen
+tracert / traceroute   # Wegverfolgung der Pakete (max. 30 Hops)
+arp -a                 # ARP-Cache anzeigen (IP ↔ MAC)
 ```
 
-**Besondere Adresse**
-127.0.0.1 – Loopback/localhost, dient zur internen Kommunikation des eigenen Rechners.
-
-**Praktische Fehlersuche‑Schritte**
-- IP‑Konfiguration prüfen (ipconfig/ifconfig).
-- Erreichbarkeit testen (ping).
-- Wegverfolgung durchführen (tracert/traceroute).
-- ARP‑Einträge kontrollieren (arp -a).
+Empfohlene Reihenfolge bei der Fehlersuche: IP-Konfiguration prüfen → Erreichbarkeit testen → Wegverfolgung → ARP-Einträge kontrollieren.

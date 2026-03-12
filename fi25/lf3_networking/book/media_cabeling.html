@@ -182,157 +182,140 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="Übertragungsmedien--verkabelung"><a class="header" href="#Übertragungsmedien--verkabelung">Übertragungsmedien &amp; Verkabelung</a></h1>
-<h2 id="strukturierte-verkabelung--normen"><a class="header" href="#strukturierte-verkabelung--normen">Strukturierte Verkabelung + Normen</a></h2>
-<h2 id="fehlerkollisonserkennung"><a class="header" href="#fehlerkollisonserkennung">Fehler/Kollisonserkennung</a></h2>
-<p>Entweder Oder:</p>
-<p><strong>CSMA/Collison Detection</strong>
--&gt; Erkennung von Bit-Kollisionen (Kabel)</p>
-<p><strong>CSMA/Collison Avoidence</strong>
--&gt; Verhindern von Kollisionen durch Protokoll (Kabel und Funk)</p>
+<hr />
+<h2 id="netzwerkmedien"><a class="header" href="#netzwerkmedien">Netzwerkmedien</a></h2>
+<h3 id="leitungsgebunden"><a class="header" href="#leitungsgebunden">Leitungsgebunden</a></h3>
 <ul>
-<li><strong>CS:</strong> Carrier Sense (Träger-Zustandserkennung)</li>
-<li><strong>MA:</strong> Multiple Access (Mehrfachzugriff)</li>
-<li><strong>CD:</strong> Collison Detection (Kollisions-Erkennung)</li>
-<li><strong>CA:</strong> Collison Avoidence (Kollisions-Verhinderung)</li>
-</ul>
-<p>Kollision erkannt = definiertes Störsignal (JAM)</p>
-<blockquote>
-<p>Was ist die Kollisionsdomäne?
-Eine Kollisionsdomäne ist der Bereich eines Netzwerks, in dem Datenkollisionen auftreten können, wenn mehrere Geräte gleichzeitig dasselbe Medium nutzen.</p>
-</blockquote>
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.elektronik-kompendium.de%2Fsites%2Fnet%2Fbilder%2F14061814.gif&f=1&nofb=1&ipt=d4f16cd99ff9bc167e0fb25b7cf6d798c0e2780928b353ec3cb8094fbad2f2bb">
-<p>Unterbrochene Datenübertragung wird mehrmals (festgelegte Anzahl) erneut versucht, mit einer zufälligen Wartezeit</p>
-<blockquote>
-<p>CSMA/CD regelt den Netzzugriff: Zuerst wird die Leitung abgehört (Carrier Sense). Wenn frei ist, wird gesendet.Tritt dabei eine Kollision auf (Collision Detection), wird sofort ein JAM-Signal gesendet, um alle Stationen über die Kollision zu informieren und den Sendevorgang abzubrechen</p>
-</blockquote>
-<h1 id="netzwerkmedien-kupfer--glasfaser"><a class="header" href="#netzwerkmedien-kupfer--glasfaser">Netzwerkmedien: Kupfer &amp; Glasfaser</a></h1>
-<h2 id="leitungsgebundene"><a class="header" href="#leitungsgebundene">leitungsgebundene</a></h2>
+<li><strong>Elektrische Signale</strong> (Kupfer)
 <ul>
-<li>Elektrische Signale (Kupferleitung)
-<ul>
-<li>Twistet-Pair-Leitung</li>
+<li>Twisted-Pair-Leitung</li>
 <li>Koaxial-Leitung</li>
 </ul>
 </li>
-<li>Optische Signale (Lichtwellenleiter)
+<li><strong>Optische Signale</strong> (Lichtwellenleiter)
 <ul>
 <li>Multimode-Faser</li>
 <li>Singlemode-Faser</li>
 </ul>
 </li>
 </ul>
-<h2 id="nicht-leitungsgebundene"><a class="header" href="#nicht-leitungsgebundene">nicht leitungsgebundene</a></h2>
+<h3 id="nicht-leitungsgebunden"><a class="header" href="#nicht-leitungsgebunden">Nicht leitungsgebunden</a></h3>
 <ul>
-<li>Funk Übertragung
+<li><strong>Funk</strong>
 <ul>
-<li>WLAN / Wifi</li>
+<li>WLAN / WiFi</li>
 <li>Richtfunk</li>
 </ul>
 </li>
-<li>Optische Übertragung
+<li><strong>Optisch</strong>
 <ul>
 <li>Laserlink</li>
 </ul>
 </li>
 </ul>
+<hr />
+<h2 id="kollisionserkennung-csma"><a class="header" href="#kollisionserkennung-csma">Kollisionserkennung (CSMA)</a></h2>
+<p><strong>Entweder:</strong><br />
+<strong>CSMA/CD</strong> (Collision Detection) – Erkennung von Bit-Kollisionen → für Kabel<br />
+<strong>Oder:</strong><br />
+<strong>CSMA/CA</strong> (Collision Avoidance) – Verhindern von Kollisionen durch Protokoll → für Kabel und Funk</p>
+<div class="table-wrapper"><table><thead><tr><th>Kürzel</th><th>Bedeutung</th></tr></thead><tbody>
+<tr><td><strong>CS</strong></td><td>Carrier Sense (Träger-Zustandserkennung)</td></tr>
+<tr><td><strong>MA</strong></td><td>Multiple Access (Mehrfachzugriff)</td></tr>
+<tr><td><strong>CD</strong></td><td>Collision Detection (Kollisions-Erkennung)</td></tr>
+<tr><td><strong>CA</strong></td><td>Collision Avoidance (Kollisions-Verhinderung)</td></tr>
+</tbody></table>
+</div>
+<p><strong>Ablauf CSMA/CD:</strong> Leitung abhören → wenn frei: senden → bei Kollision: JAM-Signal senden → Übertragung abbrechen → erneut versuchen (zufällige Wartezeit, festgelegte Anzahl).</p>
+<blockquote>
+<p><strong>Kollisionsdomäne:</strong> Bereich eines Netzwerks, in dem Datenkollisionen auftreten können, wenn mehrere Geräte gleichzeitig dasselbe Medium nutzen.</p>
+</blockquote>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.elektronik-kompendium.de%2Fsites%2Fnet%2Fbilder%2F14061814.gif&f=1&nofb=1&ipt=d4f16cd99ff9bc167e0fb25b7cf6d798c0e2780928b353ec3cb8094fbad2f2bb">
+<hr />
+<h2 id="glasfaser-multimode-vs-singlemode"><a class="header" href="#glasfaser-multimode-vs-singlemode">Glasfaser: Multimode vs. Singlemode</a></h2>
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Famericanfibertek.com%2Fwp-content%2Fuploads%2F2019%2F03%2FMM-vs-SM-2.jpg&f=1&nofb=1&ipt=34aa9b107f19d141815ab6cf8f14c72eb214c8af6c216e2cd54450c89f1d7050">
-<h3 id="multimode-lichtwellenleiter"><a class="header" href="#multimode-lichtwellenleiter">Multimode-Lichtwellenleiter</a></h3>
-<p><strong>Multimode-Lichtwellenleiter</strong> haben einer größeren Kern- durchmesser, was bedeutet, dass <strong>mehrere Lichtstrahlen gleichzeitig</strong> im Inneren des Kabels übertragen werden können. Multimode-Fasern haben typischerweise eine <strong>kürzere Übertragungsreichweite</strong> als Singlemode-Fasern.
-Bis 2.000 Meter länge.</p>
-<p><strong>Vorteile</strong></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th><strong>Multimode</strong></th><th><strong>Singlemode</strong></th></tr></thead><tbody>
+<tr><td>Kerndurchmesser</td><td>größer</td><td>kleiner</td></tr>
+<tr><td>Lichtstrahlen</td><td>mehrere gleichzeitig</td><td>nur einer</td></tr>
+<tr><td>Reichweite</td><td>bis 2.000 m</td><td>bis 10.000 m</td></tr>
+<tr><td>Bandbreite</td><td>geringer</td><td>höher</td></tr>
+<tr><td>Dämpfung</td><td>größer</td><td>geringer</td></tr>
+<tr><td>Kosten</td><td>günstiger</td><td>teurer</td></tr>
+</tbody></table>
+</div>
 <ul>
-<li>geringerer Aufwand bei der Herstellung der Glasfasern</li>
-<li>einfachere Verbindungstechnik aufgrund des größeren Kerndurchmessers</li>
-<li>Fasern mit Stufenindex- und Gradientenindexprofil verfügbar</li>
-</ul>
-<p><strong>Nachteile</strong></p>
-<ul>
-<li>größere Signaldämpfung und Laufzeitverschiebung</li>
-<li>geringere maximale Bandbreiten</li>
-<li>nur kürzere Distanzen überbrückbar</li>
-<li>Verstärker oder Signalaufbereiter bei größeren Distanzen notwendig</li>
-</ul>
-<h3 id="singlemode-lichtwellenleiter"><a class="header" href="#singlemode-lichtwellenleiter">Singlemode-Lichtwellenleiter</a></h3>
-<p><strong>Singlemode-Lichtwellenleiter</strong> haben einen kleineren Kern- durchmesser, was bedeutet, dass <strong>nur ein einzelner Lichtstrahl</strong> durch das Kabel übertragen wird. Singlemode-Fasern haben eine deutlich <strong>größere Übertragungsreichweite</strong> als Multimode- Fasern.
-Bis 10.000 Meter Länge.</p>
-<p><strong>Vorteile</strong></p>
-<ul>
-<li>geringe Dämpfung des Signals</li>
-<li>kaum Laufzeitverschiebungen</li>
-<li>große Distanzen überbrückbar</li>
-<li>hohe Bandbreiten</li>
-</ul>
-<p><strong>Nachteile</strong></p>
-<ul>
-<li>teurere Laser zur Einspeisung des Lichts notwendig</li>
-<li>größerer Aufwand bei der Herstellung der Glasfasern aufgrund des sehr kleinen Faserkerns</li>
-<li>hohe Präzision beim Verbinden der Glasfasern durch Stecker oder beim Spleißen notwendig</li>
-</ul>
-<h1 id="abkürzung-schirmungsart"><a class="header" href="#abkürzung-schirmungsart">Abkürzung Schirmungsart</a></h1>
-<ul>
-<li><strong>UTP</strong> steht für <strong>Unshielded Twisted Pair</strong> -&gt; Kabel ohne äußere Abschirmung
-<ul>
-<li><strong>U/UTP</strong> = exakte Normbezeichnung (ISO/IEC)</li>
-<li>In der Praxis werden sie oft gleich verwendet, technisch ist U/UTP die präzisere Angabe.</li>
-</ul>
+<li>
+<p><strong>Vorteile Multimode:</strong> Einfachere Verbindungstechnik, günstigere Herstellung, Stufen- und Gradientenindexprofil verfügbar.</p>
 </li>
-<li><strong>FTP</strong> steht für <strong>Foiled Twisted Pair</strong> -&gt; Jedes Adernpaar mit einer Metallfolie abgeschirmt</li>
-<li><strong>S-FTP</strong> steht für <strong>Screened Foiled Twisted Pair</strong> -&gt; Jedes Adernpaar mit einer Metallfolie abgeschirmt + eine Gesamtabschirmung um alle Adernpaare</li>
-<li><strong>U-FTP</strong> steht für <strong>Unshielded Foiled Twisted Pair</strong> -&gt; Jedes Adernpaar mit einer Metallfolie abgeschirmt, aber keine Gesamtabschirmung</li>
-<li><strong>F/UTP</strong> steht für <strong>Foiled Unshielded Twisted Pair</strong> -&gt; Eine gemeinsame Metallfolie um alle Adernpaare, aber keine Abschirmung der einzelnen Paare</li>
-<li><strong>SF/UTP</strong> steht für <strong>Screened Foiled Unshielded Twisted Pair</strong> -&gt; Geflechtschirm + Metallfolie als Gesamtabschirmung um alle Adernpaare, aber keine Paarabschirmung</li>
+<li>
+<p><strong>Nachteile Multimode:</strong> Größere Signaldämpfung, Laufzeitverschiebung, nur kürzere Distanzen.</p>
+</li>
+<li>
+<p><strong>Vorteile Singlemode:</strong> Geringe Dämpfung, kaum Laufzeitverschiebungen, hohe Bandbreiten, große Distanzen.</p>
+</li>
+<li>
+<p><strong>Nachteile Singlemode:</strong> Teurere Laser, aufwändigere Herstellung, hohe Präzision beim Verbinden nötig.</p>
+</li>
 </ul>
-<h3 id="need-to-know"><a class="header" href="#need-to-know">Need to Know:</a></h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/UTP-Kabel.svg/500px-UTP-Kabel.svg.png" width="200px">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/SUTP-Kabel.svg/500px-SUTP-Kabel.svg.png" width="200px">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/S-FTP-Kabel.svg/500px-S-FTP-Kabel.svg.png" width="200px">  
-<p><strong>SF/UTP</strong>:<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0106%2F6339%2F5391%2Ffiles%2F1024x340-4_f025a65c-d7ad-44b1-80a4-6d0c704414fe_1024x1024.jpg%3Fv%3D1676525020&f=1&nofb=1&ipt=3a592a991ce4c39efc5d4283b21646410c29e301a7d5bd77b859c57515b6cf1d" width="450px"><br />
-<strong>F/UTP</strong>:<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdintek.com.tw%2Fimages%2F2025%2F07%2F14%2Ffutp-image-for-article-photoroom.png&f=1&nofb=1&ipt=77dfbd3ba4b09725b79e928bf6ca24129ef2c497c5d612a4ce3e2a7b3a822151" width="450px"></p>
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femeasy.be%2Fwp-content%2Fuploads%2F2021%2F04%2FDiff-utp-type.jpg&f=1&nofb=1&ipt=178d3b84ab6d598e43d62ee8f8c013aac1f04054c650b0068e7c462d9b136c87">
-<h1 id="cat-kabel-5-8"><a class="header" href="#cat-kabel-5-8">CAT Kabel 5-8</a></h1>
-<p>Ein <strong>CAT-Kabel</strong> (Category-Kabel) ist ein Twisted-Pair-Netzwerkkabel – die Adern sind paarweise verdrillt, um elektromagnetische Störungen zu reduzieren.</p>
+<h3 id="allgemeine-vor--und-nachteile-von-lichtwellenleitern"><a class="header" href="#allgemeine-vor--und-nachteile-von-lichtwellenleitern">Allgemeine Vor- und Nachteile von Lichtwellenleitern</a></h3>
+<ul>
+<li><strong>Vorteile:</strong> hohe Übertragungsraten, sehr hohe Reichweite, keine elektromagnetischen Störeinflüsse, höhere Abhörsicherheit.</li>
+<li><strong>Nachteile:</strong> hohe mechanische Empfindlichkeit, teurer als Kupfer, kein Power over Ethernet möglich.</li>
+</ul>
+<hr />
+<h2 id="cat-kabel-twisted-pair"><a class="header" href="#cat-kabel-twisted-pair">CAT-Kabel (Twisted-Pair)</a></h2>
+<p>Ein <strong>CAT-Kabel</strong> ist ein Twisted-Pair-Netzwerkkabel – die Adern sind paarweise verdrillt, um elektromagnetische Störungen zu reduzieren.</p>
 <div class="table-wrapper"><table><thead><tr><th>Kabel</th><th>Frequenz</th><th>Datenrate</th></tr></thead><tbody>
 <tr><td>CAT 5</td><td>100 MHz</td><td>100 Mbit/s</td></tr>
 <tr><td>CAT 5e</td><td>100 MHz</td><td>1 Gbit/s</td></tr>
-<tr><td>CAT 6</td><td>250 MHz</td><td>1 Gbit/s (10G bis 55m)</td></tr>
+<tr><td>CAT 6</td><td>250 MHz</td><td>1 Gbit/s (10G bis 55 m)</td></tr>
 <tr><td>CAT 6a</td><td>500 MHz</td><td>10 Gbit/s</td></tr>
 <tr><td>CAT 7</td><td>600 MHz</td><td>10 Gbit/s</td></tr>
 <tr><td>CAT 8</td><td>2.000 MHz</td><td>25–40 Gbit/s</td></tr>
 </tbody></table>
 </div>
+<blockquote>
 <p><strong>Merke:</strong> Ab CAT 6a für Neuinstallationen empfohlen.</p>
-<h2 id="vorteile-von-lichtwellenleitern"><a class="header" href="#vorteile-von-lichtwellenleitern">Vorteile von Lichtwellenleitern</a></h2>
-<ul>
-<li>hohe Übertragungsraten</li>
-<li>sehr hohe Reichweite</li>
-<li>keine Beeinflussung durch äußere elektrische oder elektromagnetische Störfelder</li>
-<li>höhe Abhörsicherheit</li>
-</ul>
-<h2 id="nachteile-von-lichtwellenleitern"><a class="header" href="#nachteile-von-lichtwellenleitern">Nachteile von Lichtwellenleitern</a></h2>
-<ul>
-<li>hohe Empfindlichkeit gegenüber mechanischer Belastung</li>
-<li>teurer als Kupferkabel</li>
-<li>Power over Ethernet ist nicht möglich</li>
-</ul>
-<h2 id="bereiche-der-strukturierten-verkabelung"><a class="header" href="#bereiche-der-strukturierten-verkabelung">Bereiche der strukturierten Verkabelung</a></h2>
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage3.slideserve.com%2F6507184%2Fslide18-l.jpg&f=1&nofb=1&ipt=1f39132a19ea1d62d5d7bb63088086979776e0c31f87cd67b998aac8a5efd96d">
-<h1 id="strukturierte-verkabelung"><a class="header" href="#strukturierte-verkabelung">Strukturierte Verkabelung</a></h1>
-<div class="table-wrapper"><table><thead><tr><th>Bereich</th><th>Auch genannt</th><th>Verbindet</th><th>Max. Kabel</th></tr></thead><tbody>
-<tr><td><strong>Primär</strong></td><td>Standortverkabelung</td><td>Gebäude untereinander</td><td>GF: 2.000 m / TP+VDSL: 900 m</td></tr>
-<tr><td><strong>Sekundär</strong></td><td>Gebäudeverkabelung</td><td>Gebäudeverteiler → Etagenverteiler</td><td>GF: 2.000 m / TP: 100 m</td></tr>
-<tr><td><strong>Tertiär</strong></td><td>Etagenverkabelung</td><td>Etagenverteiler → Anschlussdose</td><td>GF: 2.000 m / TP: 100 m (90m fest + 10m Patch)</td></tr>
+</blockquote>
+<hr />
+<h2 id="schirmungsarten-twisted-pair"><a class="header" href="#schirmungsarten-twisted-pair">Schirmungsarten (Twisted-Pair)</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Kürzel</th><th>Ausgeschrieben</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td><strong>U/UTP</strong></td><td>Unshielded Twisted Pair</td><td>Keine Abschirmung</td></tr>
+<tr><td><strong>F/UTP</strong></td><td>Foiled Unshielded Twisted Pair</td><td>Gemeinsame Metallfolie um alle Paare</td></tr>
+<tr><td><strong>U/FTP</strong></td><td>Unshielded Foiled Twisted Pair</td><td>Jedes Paar einzeln mit Folie, keine Gesamtabschirmung</td></tr>
+<tr><td><strong>S/FTP</strong></td><td>Screened Foiled Twisted Pair</td><td>Jedes Paar mit Folie + Geflechtschirm gesamt</td></tr>
+<tr><td><strong>SF/UTP</strong></td><td>Screened Foiled Unshielded Twisted Pair</td><td>Geflechtschirm + Metallfolie gesamt, keine Paarabschirmung</td></tr>
 </tbody></table>
 </div>
-<p>GF = Glasfaserkabel, TP = Twisted-Pair-Kabel</p>
 <blockquote>
-<p><strong>Faustregel Primär:</strong> 50% Reserve zum aktuellen Bedarf einplanen.</p>
+<p>UTP und U/UTP werden in der Praxis oft gleich verwendet – U/UTP ist die präzisere ISO/IEC-Normbezeichnung.</p>
 </blockquote>
-<h3 id="ziele-der-strukturierten-verkabelung"><a class="header" href="#ziele-der-strukturierten-verkabelung">Ziele der strukturierten Verkabelung</a></h3>
+<p><strong>Bilder:</strong></p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/UTP-Kabel.svg/500px-UTP-Kabel.svg.png" width="200px">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/SUTP-Kabel.svg/500px-SUTP-Kabel.svg.png" width="200px">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/S-FTP-Kabel.svg/500px-S-FTP-Kabel.svg.png" width="200px">
+<p><strong>SF/UTP:</strong> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0106%2F6339%2F5391%2Ffiles%2F1024x340-4_f025a65c-d7ad-44b1-80a4-6d0c704414fe_1024x1024.jpg%3Fv%3D1676525020&f=1&nofb=1&ipt=3a592a991ce4c39efc5d4283b21646410c29e301a7d5bd77b859c57515b6cf1d" width="450px"><br />
+<strong>F/UTP:</strong> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdintek.com.tw%2Fimages%2F2025%2F07%2F14%2Ffutp-image-for-article-photoroom.png&f=1&nofb=1&ipt=77dfbd3ba4b09725b79e928bf6ca24129ef2c497c5d612a4ce3e2a7b3a822151" width="450px"></p>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femeasy.be%2Fwp-content%2Fuploads%2F2021%2F04%2FDiff-utp-type.jpg&f=1&nofb=1&ipt=178d3b84ab6d598e43d62ee8f8c013aac1f04054c650b0068e7c462d9b136c87">
+<hr />
+<h2 id="strukturierte-verkabelung"><a class="header" href="#strukturierte-verkabelung">Strukturierte Verkabelung</a></h2>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage3.slideserve.com%2F6507184%2Fslide18-l.jpg&f=1&nofb=1&ipt=1f39132a19ea1d62d5d7bb63088086979776e0c31f87cd67b998aac8a5efd96d">
+<div class="table-wrapper"><table><thead><tr><th>Bereich</th><th>Auch genannt</th><th>Verbindet</th><th>Max. Kabellänge</th></tr></thead><tbody>
+<tr><td><strong>Primär</strong></td><td>Standortverkabelung</td><td>Gebäude untereinander</td><td>GF: 2.000 m / TP+VDSL: 900 m</td></tr>
+<tr><td><strong>Sekundär</strong></td><td>Gebäudeverkabelung</td><td>Gebäudeverteiler → Etagenverteiler</td><td>GF: 2.000 m / TP: 100 m</td></tr>
+<tr><td><strong>Tertiär</strong></td><td>Etagenverkabelung</td><td>Etagenverteiler → Anschlussdose</td><td>GF: 2.000 m / TP: 100 m (90 m fest + 10 m Patch)</td></tr>
+</tbody></table>
+</div>
+<p>GF = Glasfaser, TP = Twisted-Pair</p>
+<blockquote>
+<p><strong>Faustregel Primär:</strong> 50 % Reserve zum aktuellen Bedarf einplanen.</p>
+</blockquote>
+<p><strong>Ziele der strukturierten Verkabelung:</strong></p>
 <ul>
-<li>Schaffung einer zuverlässigen Grundlage für zukünftige Netzwerke</li>
+<li>Zuverlässige Grundlage für zukünftige Netzwerke</li>
 <li>Einfache Installation von Netzwerkkomponenten</li>
-<li>Möglichkeit flexibler Erweiterungen</li>
-<li>einheitliche und allgemein gültige Verkabelungsstruktur</li>
+<li>Flexible Erweiterbarkeit</li>
+<li>Einheitliche, allgemeingültige Verkabelungsstruktur</li>
 </ul>
 
                     </main>

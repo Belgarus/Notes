@@ -181,26 +181,29 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="adresen"><a class="header" href="#adresen">Adresen</a></h1>
-<p>Wichtig: IPv4, IPv6 &amp; Mac-Adressen</p>
-<h3 id="cmd---ipconfig--ipconfig-all"><a class="header" href="#cmd---ipconfig--ipconfig-all">cmd - ipconfig | ipconfig /all</a></h3>
+                        <h1 id="adressen"><a class="header" href="#adressen">Adressen</a></h1>
+<blockquote>
+<p><strong>Wichtig:</strong> IPv4, IPv6 &amp; MAC-Adressen<br />
+Befehle: <code>ipconfig</code> / <code>ipconfig /all</code></p>
+</blockquote>
+<hr />
 <h2 id="ipv6"><a class="header" href="#ipv6">IPv6</a></h2>
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ipxo.com%2Fapp%2Fuploads%2F2024%2F07%2Fipv6-address-structure.png&f=1&nofb=1&ipt=04109b64c05aec0ada48b549e35a1e9cc973900b1f6de591ee879fc4b42b3bcd" height="250px">
-<p>Der <strong>Routing-Präfix</strong>, oder auch Netzwerkpräfix, identifiziert das Netzwerk oder den Subnetzbereich in einer IPv6-Adresse. Er wird normalerweise vom Internetdienst- anbieter (ISP) zugewiesen.</p>
-<p>Die <strong>Subnetz-ID</strong> wird verwendet, um innerhalb eines größeren Netzwerks oder Subnetzes spezifische Teilnetze zu identifizieren. Sie wird normalerweise von den Netzwerk- administratoren definiert, um ihre internen Netzwerksegmente zu segmentieren und zu verwalten.</p>
-<p>Die <strong>Interface-ID</strong> identifiziert ein bestimmtes Gerät oder eine Netzwerkschnittstelle innerhalb eines Subnetzes. Sie wird normalerweise automatisch generiert oder manuell
-zugewiesen.</p>
-<p>Pro 4rer Block 2¹⁶ Adressen (16 Bit).
-Insgesamt hat eine IPV6 Adresse 128 Bit.</p>
-<blockquote>
-<p>Ein Gerät tritt einem Netzwerk bei und muss wissen, wie es sich konfigurieren soll. Das passiert in zwei Stufen:</p>
-</blockquote>
+<p>Eine IPv6-Adresse hat <strong>128 Bit</strong> und besteht aus drei Teilen:</p>
+<ul>
+<li><strong>Routing-Präfix</strong> – identifiziert das Netzwerk/Subnetz; wird vom ISP zugewiesen</li>
+<li><strong>Subnetz-ID</strong> – segmentiert interne Netzwerkbereiche; von Netzwerkadministratoren definiert</li>
+<li><strong>Interface-ID</strong> – identifiziert ein einzelnes Gerät/Interface; automatisch generiert oder manuell zugewiesen</li>
+</ul>
+<p>Pro 4er-Block: 2¹⁶ Adressen (16 Bit).</p>
+<h3 id="adresskonfiguration-slaac"><a class="header" href="#adresskonfiguration-slaac">Adresskonfiguration (SLAAC)</a></h3>
+<p>Ein Gerät, das einem Netzwerk beitritt, konfiguriert sich in zwei Stufen:</p>
 <ol>
-<li><strong>Link-local</strong> – automatisch generierte lokale Adresse (nur im selben Netzwerksegment erreichbar), der Router schickt nur den Präfix (<code>fe80::/10</code>)</li>
-<li><strong>SLAAC</strong> (Stateless Address Autoconfiguration) – das Gerät konfiguriert sich selbst vollständig ohne DHCP-Server, durch:
+<li><strong>Link-local</strong> – automatisch generierte lokale Adresse (nur im selben Netzwerksegment erreichbar), Präfix: <code>fe80::/10</code></li>
+<li><strong>SLAAC</strong> (Stateless Address Autoconfiguration) – vollständige Selbstkonfiguration ohne DHCP-Server:
 <ul>
 <li><strong>RS</strong> (Router Solicitation) – Gerät fragt den Router</li>
-<li><strong>RA</strong> (Router Advertisement) – Router antwortet mit allem was das Gerät braucht: Präfix, Gateway, DNS</li>
+<li><strong>RA</strong> (Router Advertisement) – Router antwortet mit Präfix, Gateway und DNS</li>
 </ul>
 </li>
 </ol>
@@ -217,31 +220,7 @@ Gerät                          Router
 Gerät baut IPv6-Adresse selbst:
 Präfix (vom RA) + Interface-ID (vom Gerät)
 </code></pre>
-<h2 id="adressarten-empfänger"><a class="header" href="#adressarten-empfänger">Adressarten Empfänger</a></h2>
-<ul>
-<li><strong>Broadcast</strong>: alle Teilnehmer eines Netzwerks</li>
-<li><strong>Unicast</strong>: einzelnes Ziel</li>
-<li><strong>Multicast</strong>: Gruppe von Empfängern</li>
-<li><strong>Anycast</strong>: ein beliebiger Empfänger innerhalb einer Gruppe</li>
-</ul>
-<blockquote>
-<p>Mit welchem Befehl kannst du die Erreichbarkeit eines Servers überprüfen?</p>
-</blockquote>
-<pre><code class="language-bash">ping beispiel.de
-</code></pre>
-<p>-&gt; TTL: Time To Live</p>
-<blockquote>
-<p>Mit welchem Befehl kannst du die Hops (Route) zu einem Server überprüfen?</p>
-</blockquote>
-<pre><code class="language-bash">traceroute beispiel.de
-</code></pre>
-<p>-&gt; maximal 30 Hops</p>
-<blockquote>
-<p>Mit welchem Befehl kann ich in der Eingabeaufforderung meine <strong>MAC-Adresse</strong> (Layer 2) anzeigen?</p>
-</blockquote>
-<pre><code class="language-bash">ipconfig /all
-</code></pre>
-<h3 id="ipv6-kürzung"><a class="header" href="#ipv6-kürzung">IPv6 Kürzung</a></h3>
+<h3 id="ipv6-kürzungsregeln"><a class="header" href="#ipv6-kürzungsregeln">IPv6-Kürzungsregeln</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>Regel</th><th>Original</th><th>Gekürzt</th></tr></thead><tbody>
 <tr><td>Führende Nullen weglassen</td><td><code>2001:0db8:0000:0001</code></td><td><code>2001:db8:0:1</code></td></tr>
 <tr><td>Aufeinanderfolgende Null-Gruppen → <code>::</code></td><td><code>2001:0000:0000:0000:0000:0000:0000:0001</code></td><td><code>2001::1</code></td></tr>
@@ -249,25 +228,48 @@ Präfix (vom RA) + Interface-ID (vom Gerät)
 <tr><td><code>::</code> ersetzt die <strong>längste</strong> Null-Sequenz</td><td><code>2001:0000:0000:0001:0000:0000:0000:0001</code></td><td><code>2001:0:0:1::1</code></td></tr>
 </tbody></table>
 </div>
-<p><strong>Merke:</strong> <code>::</code> darf nur <strong>einmal</strong> pro Adresse vorkommen, sonst ist die Adresse nicht eindeutig parsebar.<br />
-Bei gleichstand Links vor Rechts.</p>
-<h1 id="ipv4"><a class="header" href="#ipv4">IPv4</a></h1>
-<p>32 Bit ~ 4,2 mrd Adressen</p>
-<h3 id="private-adressen"><a class="header" href="#private-adressen">Private Adressen</a></h3>
+<blockquote>
+<p><strong>Merke:</strong> <code>::</code> darf nur <strong>einmal</strong> pro Adresse vorkommen, sonst ist sie nicht eindeutig parsebar.<br />
+Bei Gleichstand: links vor rechts.</p>
+</blockquote>
+<hr />
+<h2 id="ipv4"><a class="header" href="#ipv4">IPv4</a></h2>
+<p><strong>32 Bit</strong> ~ 4,2 Mrd. Adressen</p>
+<h3 id="private-adressbereiche"><a class="header" href="#private-adressbereiche">Private Adressbereiche</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>IP-Adresse</th><th>Bereich</th><th>Subnetzmaske</th><th>Klasse</th><th>Verwendung</th></tr></thead><tbody>
-<tr><td>10.0.0.0</td><td>10.0.0.0 bis 10.255.255.255</td><td>255.0.0.0</td><td>A</td><td>sehr große Netzwerke</td></tr>
-<tr><td>172.16.0.0</td><td>172.16.0.0 bis 172.31.255.255</td><td>255.240.0.0</td><td>B</td><td>mittlere bis große Netzwerke</td></tr>
-<tr><td>192.168.0.0</td><td>192.168.0.0 bis 192.168.255.255</td><td>255.255.255.0</td><td>C</td><td>kleine bis mittlere Netzwerke</td></tr>
+<tr><td>10.0.0.0</td><td>10.0.0.0 – 10.255.255.255</td><td>255.0.0.0</td><td>A</td><td>sehr große Netzwerke</td></tr>
+<tr><td>172.16.0.0</td><td>172.16.0.0 – 172.31.255.255</td><td>255.240.0.0</td><td>B</td><td>mittlere bis große Netzwerke</td></tr>
+<tr><td>192.168.0.0</td><td>192.168.0.0 – 192.168.255.255</td><td>255.255.255.0</td><td>C</td><td>kleine bis mittlere Netzwerke</td></tr>
 </tbody></table>
 </div>
 <ul>
-<li><strong>Loopback-Adresse : 127.0.0.1 (von IANA festgelegt)</strong>
+<li><strong>Loopback-Adresse: <code>127.0.0.1</code></strong> (von IANA festgelegt)
 <ul>
-<li>Testen von eigener Netzwerkfähigkeit</li>
-<li>keine physischen Pakete bei PING</li>
+<li>Testen der eigenen Netzwerkfähigkeit</li>
+<li>Keine physischen Pakete beim PING</li>
 </ul>
 </li>
 </ul>
+<hr />
+<h2 id="adressarten-nach-empfänger"><a class="header" href="#adressarten-nach-empfänger">Adressarten nach Empfänger</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Typ</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td><strong>Broadcast</strong></td><td>Alle Teilnehmer eines Netzwerks</td></tr>
+<tr><td><strong>Unicast</strong></td><td>Einzelnes Ziel</td></tr>
+<tr><td><strong>Multicast</strong></td><td>Gruppe von Empfängern</td></tr>
+<tr><td><strong>Anycast</strong></td><td>Ein beliebiger Empfänger innerhalb einer Gruppe</td></tr>
+</tbody></table>
+</div>
+<hr />
+<h2 id="nützliche-befehle"><a class="header" href="#nützliche-befehle">Nützliche Befehle</a></h2>
+<p><strong>Erreichbarkeit eines Servers prüfen</strong> (→ TTL: Time To Live):</p>
+<pre><code class="language-bash">ping beispiel.de
+</code></pre>
+<p><strong>Route/Hops zu einem Server prüfen</strong> (→ max. 30 Hops):</p>
+<pre><code class="language-bash">traceroute beispiel.de
+</code></pre>
+<p><strong>MAC-Adresse anzeigen</strong> (Layer 2):</p>
+<pre><code class="language-bash">ipconfig /all
+</code></pre>
 
                     </main>
 

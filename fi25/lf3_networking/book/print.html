@@ -226,212 +226,108 @@
 <p><a href="https://de.wikipedia.org/wiki/OSI-Modell">Wikipedia</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="osi-layers-1-2--3"><a class="header" href="#osi-layers-1-2--3">OSI Layers 1, 2 &amp; 3</a></h1>
 <blockquote>
-<p><strong>⚠️I Ich bin mit dem Part nicht fertig geworden bzw. habe KI benutzt also noch mal nachprüfen im Hedgedoc <a href="https://hedgedoc.c3d2.de/LF3_Notes?view#%F0%9F%9B%91Layer-1">Hedgedoc LF3</a></strong></p>
+<p><strong>⚠️ Hinweis:</strong> Diesen Part noch mal im <a href="https://hedgedoc.c3d2.de/LF3_Notes?view#%F0%9F%9B%91Layer-1">Hedgedoc LF3</a> nachprüfen.</p>
 </blockquote>
-<h2 id="layer-1--bitübertragungsschicht"><a class="header" href="#layer-1--bitübertragungsschicht">Layer 1 – Bitübertragungsschicht</a></h2>
-<p>Die <strong>Bitübertragungsschicht (Physical Layer)</strong> ist die unterste Schicht des OSI-Modells.<br />
-Sie definiert, <strong>wie Bits physisch über ein Übertragungsmedium übertragen werden</strong>.</p>
+<hr />
+<h2 id="layer-1--bitübertragungsschicht-physical-layer"><a class="header" href="#layer-1--bitübertragungsschicht-physical-layer">Layer 1 – Bitübertragungsschicht (Physical Layer)</a></h2>
+<p>Die unterste Schicht des OSI-Modells. Sie definiert, <strong>wie Bits physisch über ein Übertragungsmedium übertragen werden</strong>.</p>
 <p><strong>Übertragungseinheit:</strong> Bit</p>
-<hr />
-<h3 id="minimalbeispiel"><a class="header" href="#minimalbeispiel">Minimalbeispiel</a></h3>
-<pre><code class="language-mermaid">graph LR
-    S[Sender] --&gt;|Übertragungsmedium| SW[Empfänger]
+<p><strong>Aufgaben:</strong></p>
+<ul>
+<li>Definition von Kabeln und Steckern (z. B. RJ45)</li>
+<li>Definition der Signalübertragung (elektrisch, optisch, Funk)</li>
+<li>Festlegung von Übertragungsraten (z. B. 1 Gbit/s)</li>
+</ul>
+<p><strong>Übertragungsmedien:</strong> Kupferkabel (Twisted Pair), Glasfaser, Funk (WLAN)</p>
+<p><strong>Geräte auf Layer 1:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Gerät</th><th>Funktion</th></tr></thead><tbody>
+<tr><td>Kabel / Stecker</td><td>passive Signalleitung</td></tr>
+<tr><td>Hub</td><td>verteilt Signal an <strong>alle</strong> Ports</td></tr>
+<tr><td>Repeater</td><td>Signalverstärkung über längere Strecken</td></tr>
+</tbody></table>
+</div>
+<h3 id="fehlersuche-layer-1"><a class="header" href="#fehlersuche-layer-1">Fehlersuche Layer 1</a></h3>
+<p>Typische Probleme: Kabel nicht eingesteckt, Stecker locker, Kabel defekt.</p>
+<pre><code class="language-bash">ip link       # Physische Verbindung unter Linux prüfen
 </code></pre>
-<p><strong>Beispiel:</strong></p>
-<pre><code class="language-mermaid">graph LR
-    S[PC 1] --&gt;|Glasfaserkabel| SW[PC 2]
+<p>Auf NO-CARRIER achten → keine physische Verbindung vorhanden.</p>
+<blockquote>
+<p><strong>Prüfungsfragen:</strong> Welche Übertragungseinheit hat Layer 1? | Nennen Sie zwei Geräte auf Layer 1. | Was bedeutet NO-CARRIER?</p>
+</blockquote>
+<hr />
+<h2 id="layer-2--sicherungsschicht-data-link-layer"><a class="header" href="#layer-2--sicherungsschicht-data-link-layer">Layer 2 – Sicherungsschicht (Data Link Layer)</a></h2>
+<p>Organisiert die <strong>Kommunikation innerhalb eines lokalen Netzwerks (LAN)</strong>. Sorgt dafür, dass Frames gezielt an das richtige Gerät im selben Netzwerk gesendet werden.</p>
+<p><strong>Übertragungseinheit:</strong> Frame<br />
+<strong>Adressierung:</strong> MAC-Adresse (48 Bit, hardwareseitig vergeben)</p>
+<p><strong>Aufgaben:</strong></p>
+<ul>
+<li>Aufbau und Auswertung von <a href="https://belgarus.github.io/Notes/fi25/lf3_networking/book/ethernet.html">Ethernet-Frames</a></li>
+<li>MAC-Adressierung innerhalb eines LANs</li>
+<li>Fehlererkennung via Prüfsumme (FCS)</li>
+<li>Zugriffskontrolle auf das Übertragungsmedium (CSMA/CD, CSMA/CA)</li>
+</ul>
+<p><strong>Geräte auf Layer 2:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Gerät</th><th>Funktion</th></tr></thead><tbody>
+<tr><td>Netzwerkkarte (NIC)</td><td>besitzt MAC-Adresse, sendet/empfängt Frames</td></tr>
+<tr><td>Switch</td><td>leitet Frames gezielt zum Zielport, trennt Kollisionsdomänen</td></tr>
+</tbody></table>
+</div>
+<h3 id="hub-vs-switch"><a class="header" href="#hub-vs-switch">Hub vs. Switch</a></h3>
+<div class="table-wrapper"><table><thead><tr><th></th><th><strong>Hub (Layer 1)</strong></th><th><strong>Switch (Layer 2)</strong></th></tr></thead><tbody>
+<tr><td>Weiterleitung</td><td>an <strong>alle</strong> Ports</td><td>nur an <strong>Zielport</strong></td></tr>
+<tr><td>Adressierung</td><td>keine</td><td>MAC-Adresse</td></tr>
+<tr><td>Kollisionen</td><td>häufig</td><td>keine (pro Port eigene Domäne)</td></tr>
+<tr><td>Effizienz</td><td>gering</td><td>hoch</td></tr>
+</tbody></table>
+</div><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnetizenstechnologies.com%2Fwp-content%2Fuploads%2F2025%2F01%2FNetwork-Topology.png&f=1&nofb=1&ipt=30f98bdc252bf03b77f7ea02bbf4f02e3411ddbdc4ce764c098492063ccd9097" height="400px">
+<h3 id="fehlersuche-layer-2"><a class="header" href="#fehlersuche-layer-2">Fehlersuche Layer 2</a></h3>
+<pre><code class="language-powershell">ipconfig /all          # MAC-Adresse anzeigen (Windows)
 </code></pre>
-<p><strong>Mögliche Übertragungsmedien:</strong></p>
-<ul>
-<li>Kupferkabel (Twisted Pair / Ethernet)</li>
-<li>Glasfaser</li>
-<li>Funk (WLAN)</li>
-</ul>
-<hr />
-<h3 id="aufgaben-von-layer-1"><a class="header" href="#aufgaben-von-layer-1">Aufgaben von Layer 1</a></h3>
-<ul>
-<li>Definition von <strong>Kabeln und Steckern</strong> (z. B. RJ45)</li>
-<li>Definition der <strong>Signalübertragung</strong> (elektrisch, optisch, Funk)</li>
-<li><strong>Bitübertragung</strong></li>
-<li>Festlegung von <strong>Übertragungsraten</strong> (z. B. 1 Gbit/s)</li>
-</ul>
-<h3 id="geräte-auf-layer-1"><a class="header" href="#geräte-auf-layer-1">Geräte auf Layer 1</a></h3>
-<p><strong>Passive Komponenten</strong></p>
-<ul>
-<li>Kabel</li>
-<li>Stecker</li>
-<li>Hub (verteilt Signal an alle Ports)</li>
-<li>Repeater (Signalverstärkung)</li>
-</ul>
-<hr />
-<h2 id="fehlersuche-vw-fs"><a class="header" href="#fehlersuche-vw-fs">Fehlersuche (VW-FS)</a></h2>
-<p><strong>Typische Probleme:</strong></p>
-<ul>
-<li>Kabel nicht eingesteckt</li>
-<li>Stecker locker</li>
-<li>Kabel defekt</li>
-<li>keine physische Verbindung</li>
-</ul>
-<p><strong>Prüfen:</strong></p>
-<ul>
-<li>LEDs an Netzwerkkarte oder Switch</li>
-<li>Kabeltester verwenden</li>
-</ul>
-<hr />
-<h3 id="Überprüfung-unter-linux"><a class="header" href="#Überprüfung-unter-linux">Überprüfung unter Linux</a></h3>
-<p>Physische Netzwerkverbindungen können mit folgendem Befehl geprüft werden:</p>
-<pre><code class="language-bash">ip link
+<pre><code class="language-bash">ifconfig -a            # MAC-Adresse anzeigen (Linux)
 </code></pre>
 <blockquote>
-<h3 id="prüfungsfragen"><a class="header" href="#prüfungsfragen">Prüfungsfragen</a></h3>
-<ul>
-<li>Welche Übertragungseinheit hat Layer 1?</li>
-<li>Nennen Sie zwei Geräte, die auf Layer 1 arbeiten.</li>
-<li>Welche Aufgaben hat die Bitübertragungsschicht?</li>
-<li>Was bedeutet NO-CARRIER bei einer Netzwerkschnittstelle?</li>
-</ul>
+<p><strong>Prüfungsfragen:</strong> Welche Übertragungseinheit hat Layer 2? | Welche Adressierung wird verwendet? | Unterschied Hub vs. Switch? | Was ist eine Kollisionsdomäne?</p>
 </blockquote>
-<h2 id="layer-2--sicherungsschicht-data-link"><a class="header" href="#layer-2--sicherungsschicht-data-link">Layer 2 – Sicherungsschicht (Data Link)</a></h2>
-<p>Layer 2 organisiert die <strong>Kommunikation innerhalb eines lokalen Netzwerks (LAN)</strong>.<br />
-Er sorgt dafür, dass <strong>Frames an das richtige Gerät im selben Netzwerk gesendet werden</strong>.</p>
-<p><strong>Übertragungseinheit:</strong> Frame<br />
-<strong>Adressierung:</strong> MAC-Adresse</p>
 <hr />
-<h3 id="grundprinzip"><a class="header" href="#grundprinzip">Grundprinzip</a></h3>
-<pre><code class="language-mermaid">graph LR
-    S[Sender] --&gt;|Frame zu MAC: DD:EE:FF| SW[Layer 2 Switch]
-    SW --&gt;|Unicast| E[Empfänger]
-    SW -.-&gt;|kein Frame| A[Anderes Gerät]
-</code></pre>
-<p>Mehrere Geräte sind in einem <strong>LAN</strong> verbunden.</p>
-<p>Ziel von Layer 2:</p>
-<ul>
-<li>Jeder <strong>Frame erreicht nur das Zielgerät</strong></li>
-<li>unnötiger Netzwerkverkehr wird reduziert</li>
-</ul>
-<hr />
-<h3 id="geräte-auf-layer-2"><a class="header" href="#geräte-auf-layer-2">Geräte auf Layer 2</a></h3>
-<p><strong>Netzwerkkarte (NIC)</strong></p>
-<ul>
-<li>besitzt eine <strong>MAC-Adresse</strong></li>
-</ul>
-<p><strong>Switch</strong></p>
-<ul>
-<li>verbindet viele Geräte im LAN</li>
-<li>hat mehrere <strong>Ports</strong></li>
-<li>leitet Frames nur zum <strong>richtigen Zielport</strong></li>
-</ul>
-<p>Ein Switch <strong>trennt Kollisionsdomänen</strong> zwischen seinen Ports.</p>
-<hr />
-<h3 id="hub-vs-switch"><a class="header" href="#hub-vs-switch">Hub vs. Switch</a></h3>
-<p><strong>Hub (Layer 1)</strong></p>
-<ul>
-<li>sendet Signale an <strong>alle Geräte</strong></li>
-<li>viele <strong>Kollisionen</strong></li>
-<li>ineffizient</li>
-</ul>
-<p><strong>Switch (Layer 2)</strong></p>
-<ul>
-<li>nutzt <strong>MAC-Adressen</strong></li>
-<li>sendet Frames <strong>nur an das Zielgerät</strong></li>
-<li>reduziert Netzwerkverkehr</li>
-</ul>
-<hr />
-<h3 id="zugriffsverfahren"><a class="header" href="#zugriffsverfahren">Zugriffsverfahren</a></h3>
-<p>Wenn mehrere Geräte ein Medium nutzen:</p>
-<ul>
-<li><strong>CSMA/CD</strong> → Collision Detection</li>
-<li><strong>CSMA/CA</strong> → Collision Avoidance</li>
-</ul>
-<p><strong>Kollisionsdomäne:</strong>
-Bereich eines Netzwerks, in dem <strong>Datenkollisionen auftreten können</strong>.</p>
-<hr />
-<h3 id="ethernet"><a class="header" href="#ethernet">Ethernet</a></h3>
-<p>Wichtigstes Protokoll auf Layer 2.</p>
-<p>Aufgaben:</p>
-<ul>
-<li>Aufbau des <a href="https://belgarus.github.io/Notes/fi25/lf3_networking/book/ethernet.html"><strong>Ethernet-Frames</strong></a></li>
-<li><strong>MAC-Adressierung</strong></li>
-<li><strong>Fehlererkennung</strong> (Prüfsumme / FCS)</li>
-</ul>
-<hr />
-<h3 id="typische-topologie"><a class="header" href="#typische-topologie">Typische Topologie</a></h3>
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnetizenstechnologies.com%2Fwp-content%2Fuploads%2F2025%2F01%2FNetwork-Topology.png&f=1&nofb=1&ipt=30f98bdc252bf03b77f7ea02bbf4f02e3411ddbdc4ce764c098492063ccd9097" height="400px">
-<p>Switches bilden den Mittelpunkt des Netzwerks.</p>
-<hr />
-<h2 id="fehlersuche"><a class="header" href="#fehlersuche">Fehlersuche</a></h2>
-<h3 id="mac-adresse-anzeigen"><a class="header" href="#mac-adresse-anzeigen">MAC-Adresse anzeigen</a></h3>
-<p><strong>Windows</strong></p>
-<pre><code class="language-powershell">ipconfig /all
-</code></pre>
-<p><strong>Linux</strong></p>
-<pre><code class="language-bash">ifconfig -a # Lists all networkinterfaces + their MAC adresses
-</code></pre>
-<hr />
-<h2 id="prüfungsfragen-1"><a class="header" href="#prüfungsfragen-1">Prüfungsfragen</a></h2>
-<ul>
-<li>Welche <strong>Übertragungseinheit</strong> hat Layer 2?</li>
-<li>Welche <strong>Adressierung</strong> wird verwendet?</li>
-<li>Welche Aufgabe hat ein <strong>Switch</strong>?</li>
-<li>Was ist der Unterschied zwischen <strong>Hub und Switch</strong>?</li>
-<li>Was ist eine <strong>Kollisionsdomäne</strong>?</li>
-</ul>
-<h1 id="layer-3"><a class="header" href="#layer-3">Layer 3</a></h1>
-<p>=&gt; Zusammenschluss Mehrerer Netze (LANS und Internet-Wolke (WAN, GAN))</p>
-<p><strong>Ziel</strong><br />
-Schnellste, effizienteste Route über mehrere hierarchische Netze (LAN → MAN → WAN → GAN) zum Zielhost finden.</p>
+<h2 id="layer-3--vermittlungsschicht-network-layer"><a class="header" href="#layer-3--vermittlungsschicht-network-layer">Layer 3 – Vermittlungsschicht (Network Layer)</a></h2>
+<p>Verantwortlich für den <strong>Zusammenschluss mehrerer Netze</strong> (LAN → MAN → WAN → GAN) und die <strong>Wegfindung von Paketen zum Zielhost</strong>.</p>
+<p><strong>Übertragungseinheit:</strong> Paket (Größe durch MTU begrenzt)<br />
+<strong>Adressierung:</strong> IP-Adresse (IPv4: 32 Bit, IPv6: 128 Bit)</p>
 <p><img src="https://raw.githubusercontent.com/johannesloetzsch/LF4/refs/heads/main/src/img/Diagramm_Router.png" alt="" /></p>
-<p>Router (auch Gateway) verbindet unterschiedliche Netze und leitet Pakete weiter.
-Adressierung</p>
-<h3 id="umsetzung"><a class="header" href="#umsetzung">Umsetzung</a></h3>
-<p><strong>Adressierung</strong></p>
+<p><strong>Gerät auf Layer 3:</strong> Router (auch: Gateway) – verbindet unterschiedliche Netze und leitet Pakete anhand der IP-Adresse weiter.</p>
+<p><strong>Wichtige Protokolle:</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Protokoll</th><th>Funktion</th></tr></thead><tbody>
+<tr><td>IP</td><td>Adressierung und Weiterleitung von Paketen</td></tr>
+<tr><td>ICMP</td><td>Fehlermeldungen und Diagnose (z. B. ping)</td></tr>
+<tr><td>ARP</td><td>Auflösung IP ↔ MAC-Adresse</td></tr>
+<tr><td>IPSec</td><td>Verschlüsselung auf IP-Ebene</td></tr>
+</tbody></table>
+</div>
+<h3 id="ipv4-adressierung"><a class="header" href="#ipv4-adressierung">IPv4-Adressierung</a></h3>
 <ul>
-<li>IPv4‑Adresse (32 Bit) wird durch die Subnetzmaske in Netz‑ und Hostanteil geteilt.</li>
-<li>Netz‑ID = IP &amp; Subnetzmaske (Host‑Bits = 0).</li>
-<li>Broadcast‑ID = alle Host‑Bits = 1.</li>
+<li>IPv4-Adresse (32 Bit) wird durch die <strong>Subnetzmaske</strong> in Netz- und Hostanteil geteilt</li>
+<li><strong>Netz-ID:</strong> IP <code>&amp;</code> Subnetzmaske (alle Host-Bits = 0)</li>
+<li><strong>Broadcast-ID:</strong> alle Host-Bits = 1</li>
+<li><strong>CIDR:</strong> flexible Präfix-Notation (z. B. <code>192.168.1.0/24</code>) ersetzt die alten Klassen A/B/C</li>
+<li>Mehr 1-Bits in der Maske → mehr Netze, weniger Hosts pro Netz (und umgekehrt)</li>
+<li>Pro Subnetz sind mind. 2 Adressen reserviert (Netz-ID + Broadcast)</li>
 </ul>
-<p><strong>Übertragungseinheit</strong></p>
-<ul>
-<li>Paket – Größe begrenzt durch die MTU (Maximum Transmission Unit) des jeweiligen Netzes.</li>
-</ul>
-<p><strong>Wichtige Protokolle</strong></p>
-<ul>
-<li>IP, ICMP (Fehlermeldungen), IPSec (Verschlüsselung), ARP (IP ↔ MAC‑Auflösung).</li>
-</ul>
-<p><strong>Adressbereiche</strong></p>
-<ul>
-<li>Öffentliche Adressen – von IANA vergeben, global routbar.</li>
-<li>Private Adressen – nicht im Internet routbar (NAT nötig):
-<ul>
-<li>10.0.0.0/8</li>
-<li>172.16.0.0/12</li>
-<li>192.168.0.0/16</li>
-</ul>
-</li>
-</ul>
-<p><strong>CIDR</strong><br />
-Classeless Inter‑Domain Routing – flexible Präfix‑Notation (z. B. 192.168.1.0/24) ersetzt alte Klassen A/B/C.</p>
-<p><strong>Subnetzgrößen</strong></p>
-<ul>
-<li>Mehr 1‑Bits in der Maske → mehr Netze, weniger Host‑Adressen pro Netz.</li>
-<li>Weniger 1‑Bits → weniger Netze, mehr Hosts.</li>
-<li>Pro Subnetz mindestens 2 nutzbare Host‑Adressen (wegen Netz‑‑ und Broadcast‑ID).</li>
-</ul>
-<p><strong>Diagnose‑Tools</strong></p>
-<pre><code class="language-bash">ipconfig (Windows) / ifconfig (Linux) # lokale IP‑Konfiguration anzeigen.
-ping &lt;IP&gt; # Erreichbarkeit prüfen.
-tracert / traceroute &lt;IP&gt; # Wegverfolgung der Pakete.
-arp -a # ARP‑Cache anzeigen.
+<h3 id="adressbereiche"><a class="header" href="#adressbereiche">Adressbereiche</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Bereich</th><th>Adressraum</th><th>Bemerkung</th></tr></thead><tbody>
+<tr><td>Öffentlich</td><td>—</td><td>von IANA vergeben, global routbar</td></tr>
+<tr><td>Privat A</td><td>10.0.0.0/8</td><td>nicht im Internet routbar (NAT nötig)</td></tr>
+<tr><td>Privat B</td><td>172.16.0.0/12</td><td>nicht im Internet routbar (NAT nötig)</td></tr>
+<tr><td>Privat C</td><td>192.168.0.0/16</td><td>nicht im Internet routbar (NAT nötig)</td></tr>
+<tr><td>Loopback</td><td>127.0.0.1</td><td>interne Kommunikation (localhost)</td></tr>
+</tbody></table>
+</div>
+<h3 id="diagnose-tools--fehlersuche"><a class="header" href="#diagnose-tools--fehlersuche">Diagnose-Tools &amp; Fehlersuche</a></h3>
+<pre><code class="language-bash">ipconfig / ifconfig    # Lokale IP-Konfiguration anzeigen
+ping &lt;IP&gt;              # Erreichbarkeit prüfen
+tracert / traceroute   # Wegverfolgung der Pakete (max. 30 Hops)
+arp -a                 # ARP-Cache anzeigen (IP ↔ MAC)
 </code></pre>
-<p><strong>Besondere Adresse</strong>
-127.0.0.1 – Loopback/localhost, dient zur internen Kommunikation des eigenen Rechners.</p>
-<p><strong>Praktische Fehlersuche‑Schritte</strong></p>
-<ul>
-<li>IP‑Konfiguration prüfen (ipconfig/ifconfig).</li>
-<li>Erreichbarkeit testen (ping).</li>
-<li>Wegverfolgung durchführen (tracert/traceroute).</li>
-<li>ARP‑Einträge kontrollieren (arp -a).</li>
-</ul>
+<p>Empfohlene Reihenfolge bei der Fehlersuche: IP-Konfiguration prüfen → Erreichbarkeit testen → Wegverfolgung → ARP-Einträge kontrollieren.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="ethernet--zugriff"><a class="header" href="#ethernet--zugriff">Ethernet &amp; Zugriff</a></h1>
 <h2 id="recap-ethernet"><a class="header" href="#recap-ethernet">Recap Ethernet</a></h2>
 <p><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.flukenetworks.com%2Fsites%2Fdefault%2Ffiles%2Fblog%2Fethernetbacktobasic01_1.png&amp;f=1&amp;nofb=1&amp;ipt=88cc91253a6c972604b462015979af18ec41666926ddde6551b1688bbf81ae4c" alt="Ethernet Frame" /></p>
@@ -494,26 +390,29 @@ Es gibt verschiedene Standards für PoE.</p>
 <li>Der DHCP Server ist im Netzwerk nicht erreichbar. Kein Internetzugang.</li>
 </ul>
 <p><strong>APIPA</strong> (Automatic Private IP Addressing) ist ein Mechanismus in Windows-Systemen, der automatisch eine IP-Adresse aus dem Bereich 169.254.0.0 bis 169.254.255.255 vergibt, wenn kein DHCP-Server gefunden wird. APIPA führt eine ARP-Prüfung und wenn möglich eine automatische DHCP-Rückkehr aus.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="adresen"><a class="header" href="#adresen">Adresen</a></h1>
-<p>Wichtig: IPv4, IPv6 &amp; Mac-Adressen</p>
-<h3 id="cmd---ipconfig--ipconfig-all"><a class="header" href="#cmd---ipconfig--ipconfig-all">cmd - ipconfig | ipconfig /all</a></h3>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="adressen"><a class="header" href="#adressen">Adressen</a></h1>
+<blockquote>
+<p><strong>Wichtig:</strong> IPv4, IPv6 &amp; MAC-Adressen<br />
+Befehle: <code>ipconfig</code> / <code>ipconfig /all</code></p>
+</blockquote>
+<hr />
 <h2 id="ipv6"><a class="header" href="#ipv6">IPv6</a></h2>
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ipxo.com%2Fapp%2Fuploads%2F2024%2F07%2Fipv6-address-structure.png&f=1&nofb=1&ipt=04109b64c05aec0ada48b549e35a1e9cc973900b1f6de591ee879fc4b42b3bcd" height="250px">
-<p>Der <strong>Routing-Präfix</strong>, oder auch Netzwerkpräfix, identifiziert das Netzwerk oder den Subnetzbereich in einer IPv6-Adresse. Er wird normalerweise vom Internetdienst- anbieter (ISP) zugewiesen.</p>
-<p>Die <strong>Subnetz-ID</strong> wird verwendet, um innerhalb eines größeren Netzwerks oder Subnetzes spezifische Teilnetze zu identifizieren. Sie wird normalerweise von den Netzwerk- administratoren definiert, um ihre internen Netzwerksegmente zu segmentieren und zu verwalten.</p>
-<p>Die <strong>Interface-ID</strong> identifiziert ein bestimmtes Gerät oder eine Netzwerkschnittstelle innerhalb eines Subnetzes. Sie wird normalerweise automatisch generiert oder manuell
-zugewiesen.</p>
-<p>Pro 4rer Block 2¹⁶ Adressen (16 Bit).
-Insgesamt hat eine IPV6 Adresse 128 Bit.</p>
-<blockquote>
-<p>Ein Gerät tritt einem Netzwerk bei und muss wissen, wie es sich konfigurieren soll. Das passiert in zwei Stufen:</p>
-</blockquote>
+<p>Eine IPv6-Adresse hat <strong>128 Bit</strong> und besteht aus drei Teilen:</p>
+<ul>
+<li><strong>Routing-Präfix</strong> – identifiziert das Netzwerk/Subnetz; wird vom ISP zugewiesen</li>
+<li><strong>Subnetz-ID</strong> – segmentiert interne Netzwerkbereiche; von Netzwerkadministratoren definiert</li>
+<li><strong>Interface-ID</strong> – identifiziert ein einzelnes Gerät/Interface; automatisch generiert oder manuell zugewiesen</li>
+</ul>
+<p>Pro 4er-Block: 2¹⁶ Adressen (16 Bit).</p>
+<h3 id="adresskonfiguration-slaac"><a class="header" href="#adresskonfiguration-slaac">Adresskonfiguration (SLAAC)</a></h3>
+<p>Ein Gerät, das einem Netzwerk beitritt, konfiguriert sich in zwei Stufen:</p>
 <ol>
-<li><strong>Link-local</strong> – automatisch generierte lokale Adresse (nur im selben Netzwerksegment erreichbar), der Router schickt nur den Präfix (<code>fe80::/10</code>)</li>
-<li><strong>SLAAC</strong> (Stateless Address Autoconfiguration) – das Gerät konfiguriert sich selbst vollständig ohne DHCP-Server, durch:
+<li><strong>Link-local</strong> – automatisch generierte lokale Adresse (nur im selben Netzwerksegment erreichbar), Präfix: <code>fe80::/10</code></li>
+<li><strong>SLAAC</strong> (Stateless Address Autoconfiguration) – vollständige Selbstkonfiguration ohne DHCP-Server:
 <ul>
 <li><strong>RS</strong> (Router Solicitation) – Gerät fragt den Router</li>
-<li><strong>RA</strong> (Router Advertisement) – Router antwortet mit allem was das Gerät braucht: Präfix, Gateway, DNS</li>
+<li><strong>RA</strong> (Router Advertisement) – Router antwortet mit Präfix, Gateway und DNS</li>
 </ul>
 </li>
 </ol>
@@ -530,31 +429,7 @@ Gerät                          Router
 Gerät baut IPv6-Adresse selbst:
 Präfix (vom RA) + Interface-ID (vom Gerät)
 </code></pre>
-<h2 id="adressarten-empfänger"><a class="header" href="#adressarten-empfänger">Adressarten Empfänger</a></h2>
-<ul>
-<li><strong>Broadcast</strong>: alle Teilnehmer eines Netzwerks</li>
-<li><strong>Unicast</strong>: einzelnes Ziel</li>
-<li><strong>Multicast</strong>: Gruppe von Empfängern</li>
-<li><strong>Anycast</strong>: ein beliebiger Empfänger innerhalb einer Gruppe</li>
-</ul>
-<blockquote>
-<p>Mit welchem Befehl kannst du die Erreichbarkeit eines Servers überprüfen?</p>
-</blockquote>
-<pre><code class="language-bash">ping beispiel.de
-</code></pre>
-<p>-&gt; TTL: Time To Live</p>
-<blockquote>
-<p>Mit welchem Befehl kannst du die Hops (Route) zu einem Server überprüfen?</p>
-</blockquote>
-<pre><code class="language-bash">traceroute beispiel.de
-</code></pre>
-<p>-&gt; maximal 30 Hops</p>
-<blockquote>
-<p>Mit welchem Befehl kann ich in der Eingabeaufforderung meine <strong>MAC-Adresse</strong> (Layer 2) anzeigen?</p>
-</blockquote>
-<pre><code class="language-bash">ipconfig /all
-</code></pre>
-<h3 id="ipv6-kürzung"><a class="header" href="#ipv6-kürzung">IPv6 Kürzung</a></h3>
+<h3 id="ipv6-kürzungsregeln"><a class="header" href="#ipv6-kürzungsregeln">IPv6-Kürzungsregeln</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>Regel</th><th>Original</th><th>Gekürzt</th></tr></thead><tbody>
 <tr><td>Führende Nullen weglassen</td><td><code>2001:0db8:0000:0001</code></td><td><code>2001:db8:0:1</code></td></tr>
 <tr><td>Aufeinanderfolgende Null-Gruppen → <code>::</code></td><td><code>2001:0000:0000:0000:0000:0000:0000:0001</code></td><td><code>2001::1</code></td></tr>
@@ -562,25 +437,48 @@ Präfix (vom RA) + Interface-ID (vom Gerät)
 <tr><td><code>::</code> ersetzt die <strong>längste</strong> Null-Sequenz</td><td><code>2001:0000:0000:0001:0000:0000:0000:0001</code></td><td><code>2001:0:0:1::1</code></td></tr>
 </tbody></table>
 </div>
-<p><strong>Merke:</strong> <code>::</code> darf nur <strong>einmal</strong> pro Adresse vorkommen, sonst ist die Adresse nicht eindeutig parsebar.<br />
-Bei gleichstand Links vor Rechts.</p>
-<h1 id="ipv4"><a class="header" href="#ipv4">IPv4</a></h1>
-<p>32 Bit ~ 4,2 mrd Adressen</p>
-<h3 id="private-adressen"><a class="header" href="#private-adressen">Private Adressen</a></h3>
+<blockquote>
+<p><strong>Merke:</strong> <code>::</code> darf nur <strong>einmal</strong> pro Adresse vorkommen, sonst ist sie nicht eindeutig parsebar.<br />
+Bei Gleichstand: links vor rechts.</p>
+</blockquote>
+<hr />
+<h2 id="ipv4"><a class="header" href="#ipv4">IPv4</a></h2>
+<p><strong>32 Bit</strong> ~ 4,2 Mrd. Adressen</p>
+<h3 id="private-adressbereiche"><a class="header" href="#private-adressbereiche">Private Adressbereiche</a></h3>
 <div class="table-wrapper"><table><thead><tr><th>IP-Adresse</th><th>Bereich</th><th>Subnetzmaske</th><th>Klasse</th><th>Verwendung</th></tr></thead><tbody>
-<tr><td>10.0.0.0</td><td>10.0.0.0 bis 10.255.255.255</td><td>255.0.0.0</td><td>A</td><td>sehr große Netzwerke</td></tr>
-<tr><td>172.16.0.0</td><td>172.16.0.0 bis 172.31.255.255</td><td>255.240.0.0</td><td>B</td><td>mittlere bis große Netzwerke</td></tr>
-<tr><td>192.168.0.0</td><td>192.168.0.0 bis 192.168.255.255</td><td>255.255.255.0</td><td>C</td><td>kleine bis mittlere Netzwerke</td></tr>
+<tr><td>10.0.0.0</td><td>10.0.0.0 – 10.255.255.255</td><td>255.0.0.0</td><td>A</td><td>sehr große Netzwerke</td></tr>
+<tr><td>172.16.0.0</td><td>172.16.0.0 – 172.31.255.255</td><td>255.240.0.0</td><td>B</td><td>mittlere bis große Netzwerke</td></tr>
+<tr><td>192.168.0.0</td><td>192.168.0.0 – 192.168.255.255</td><td>255.255.255.0</td><td>C</td><td>kleine bis mittlere Netzwerke</td></tr>
 </tbody></table>
 </div>
 <ul>
-<li><strong>Loopback-Adresse : 127.0.0.1 (von IANA festgelegt)</strong>
+<li><strong>Loopback-Adresse: <code>127.0.0.1</code></strong> (von IANA festgelegt)
 <ul>
-<li>Testen von eigener Netzwerkfähigkeit</li>
-<li>keine physischen Pakete bei PING</li>
+<li>Testen der eigenen Netzwerkfähigkeit</li>
+<li>Keine physischen Pakete beim PING</li>
 </ul>
 </li>
 </ul>
+<hr />
+<h2 id="adressarten-nach-empfänger"><a class="header" href="#adressarten-nach-empfänger">Adressarten nach Empfänger</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Typ</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td><strong>Broadcast</strong></td><td>Alle Teilnehmer eines Netzwerks</td></tr>
+<tr><td><strong>Unicast</strong></td><td>Einzelnes Ziel</td></tr>
+<tr><td><strong>Multicast</strong></td><td>Gruppe von Empfängern</td></tr>
+<tr><td><strong>Anycast</strong></td><td>Ein beliebiger Empfänger innerhalb einer Gruppe</td></tr>
+</tbody></table>
+</div>
+<hr />
+<h2 id="nützliche-befehle"><a class="header" href="#nützliche-befehle">Nützliche Befehle</a></h2>
+<p><strong>Erreichbarkeit eines Servers prüfen</strong> (→ TTL: Time To Live):</p>
+<pre><code class="language-bash">ping beispiel.de
+</code></pre>
+<p><strong>Route/Hops zu einem Server prüfen</strong> (→ max. 30 Hops):</p>
+<pre><code class="language-bash">traceroute beispiel.de
+</code></pre>
+<p><strong>MAC-Adresse anzeigen</strong> (Layer 2):</p>
+<pre><code class="language-bash">ipconfig /all
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="hub-switch-und-router"><a class="header" href="#hub-switch-und-router">Hub, Switch und Router</a></h1>
 <h2 id="hub"><a class="header" href="#hub">Hub</a></h2>
 <p>Ein <strong>Hub</strong> (Englisch für „Nabe“ oder „Knotenpunkt“) ist ein Netzwerkgerät, das <strong>mehrere Hosts innerhalb eines Ethernets miteinander verbindet</strong>. In der Netzwerktechnik dient er als Verteiler für die Datenpakete. Hubs arbeiten auf Schicht 1 (Bitübertragungsschicht) des OSI-Modells. Ihre Funktion ist rein auf das Verteilen beschränkt. Sie sind somit nichts anderes als eine einfache Form von Switches oder Routern.</p>
@@ -623,157 +521,140 @@ Hoffentlich würd davon ausgegangen das wir dass das zu einfach für uns ist ;)<
 → 44.100 Hz bedeutet:<br />
 44.100 Abtastungen pro Sekunde pro Kanal</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="Übertragungsmedien--verkabelung"><a class="header" href="#Übertragungsmedien--verkabelung">Übertragungsmedien &amp; Verkabelung</a></h1>
-<h2 id="strukturierte-verkabelung--normen"><a class="header" href="#strukturierte-verkabelung--normen">Strukturierte Verkabelung + Normen</a></h2>
-<h2 id="fehlerkollisonserkennung"><a class="header" href="#fehlerkollisonserkennung">Fehler/Kollisonserkennung</a></h2>
-<p>Entweder Oder:</p>
-<p><strong>CSMA/Collison Detection</strong>
--&gt; Erkennung von Bit-Kollisionen (Kabel)</p>
-<p><strong>CSMA/Collison Avoidence</strong>
--&gt; Verhindern von Kollisionen durch Protokoll (Kabel und Funk)</p>
+<hr />
+<h2 id="netzwerkmedien"><a class="header" href="#netzwerkmedien">Netzwerkmedien</a></h2>
+<h3 id="leitungsgebunden"><a class="header" href="#leitungsgebunden">Leitungsgebunden</a></h3>
 <ul>
-<li><strong>CS:</strong> Carrier Sense (Träger-Zustandserkennung)</li>
-<li><strong>MA:</strong> Multiple Access (Mehrfachzugriff)</li>
-<li><strong>CD:</strong> Collison Detection (Kollisions-Erkennung)</li>
-<li><strong>CA:</strong> Collison Avoidence (Kollisions-Verhinderung)</li>
-</ul>
-<p>Kollision erkannt = definiertes Störsignal (JAM)</p>
-<blockquote>
-<p>Was ist die Kollisionsdomäne?
-Eine Kollisionsdomäne ist der Bereich eines Netzwerks, in dem Datenkollisionen auftreten können, wenn mehrere Geräte gleichzeitig dasselbe Medium nutzen.</p>
-</blockquote>
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.elektronik-kompendium.de%2Fsites%2Fnet%2Fbilder%2F14061814.gif&f=1&nofb=1&ipt=d4f16cd99ff9bc167e0fb25b7cf6d798c0e2780928b353ec3cb8094fbad2f2bb">
-<p>Unterbrochene Datenübertragung wird mehrmals (festgelegte Anzahl) erneut versucht, mit einer zufälligen Wartezeit</p>
-<blockquote>
-<p>CSMA/CD regelt den Netzzugriff: Zuerst wird die Leitung abgehört (Carrier Sense). Wenn frei ist, wird gesendet.Tritt dabei eine Kollision auf (Collision Detection), wird sofort ein JAM-Signal gesendet, um alle Stationen über die Kollision zu informieren und den Sendevorgang abzubrechen</p>
-</blockquote>
-<h1 id="netzwerkmedien-kupfer--glasfaser"><a class="header" href="#netzwerkmedien-kupfer--glasfaser">Netzwerkmedien: Kupfer &amp; Glasfaser</a></h1>
-<h2 id="leitungsgebundene"><a class="header" href="#leitungsgebundene">leitungsgebundene</a></h2>
+<li><strong>Elektrische Signale</strong> (Kupfer)
 <ul>
-<li>Elektrische Signale (Kupferleitung)
-<ul>
-<li>Twistet-Pair-Leitung</li>
+<li>Twisted-Pair-Leitung</li>
 <li>Koaxial-Leitung</li>
 </ul>
 </li>
-<li>Optische Signale (Lichtwellenleiter)
+<li><strong>Optische Signale</strong> (Lichtwellenleiter)
 <ul>
 <li>Multimode-Faser</li>
 <li>Singlemode-Faser</li>
 </ul>
 </li>
 </ul>
-<h2 id="nicht-leitungsgebundene"><a class="header" href="#nicht-leitungsgebundene">nicht leitungsgebundene</a></h2>
+<h3 id="nicht-leitungsgebunden"><a class="header" href="#nicht-leitungsgebunden">Nicht leitungsgebunden</a></h3>
 <ul>
-<li>Funk Übertragung
+<li><strong>Funk</strong>
 <ul>
-<li>WLAN / Wifi</li>
+<li>WLAN / WiFi</li>
 <li>Richtfunk</li>
 </ul>
 </li>
-<li>Optische Übertragung
+<li><strong>Optisch</strong>
 <ul>
 <li>Laserlink</li>
 </ul>
 </li>
 </ul>
+<hr />
+<h2 id="kollisionserkennung-csma"><a class="header" href="#kollisionserkennung-csma">Kollisionserkennung (CSMA)</a></h2>
+<p><strong>Entweder:</strong><br />
+<strong>CSMA/CD</strong> (Collision Detection) – Erkennung von Bit-Kollisionen → für Kabel<br />
+<strong>Oder:</strong><br />
+<strong>CSMA/CA</strong> (Collision Avoidance) – Verhindern von Kollisionen durch Protokoll → für Kabel und Funk</p>
+<div class="table-wrapper"><table><thead><tr><th>Kürzel</th><th>Bedeutung</th></tr></thead><tbody>
+<tr><td><strong>CS</strong></td><td>Carrier Sense (Träger-Zustandserkennung)</td></tr>
+<tr><td><strong>MA</strong></td><td>Multiple Access (Mehrfachzugriff)</td></tr>
+<tr><td><strong>CD</strong></td><td>Collision Detection (Kollisions-Erkennung)</td></tr>
+<tr><td><strong>CA</strong></td><td>Collision Avoidance (Kollisions-Verhinderung)</td></tr>
+</tbody></table>
+</div>
+<p><strong>Ablauf CSMA/CD:</strong> Leitung abhören → wenn frei: senden → bei Kollision: JAM-Signal senden → Übertragung abbrechen → erneut versuchen (zufällige Wartezeit, festgelegte Anzahl).</p>
+<blockquote>
+<p><strong>Kollisionsdomäne:</strong> Bereich eines Netzwerks, in dem Datenkollisionen auftreten können, wenn mehrere Geräte gleichzeitig dasselbe Medium nutzen.</p>
+</blockquote>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.elektronik-kompendium.de%2Fsites%2Fnet%2Fbilder%2F14061814.gif&f=1&nofb=1&ipt=d4f16cd99ff9bc167e0fb25b7cf6d798c0e2780928b353ec3cb8094fbad2f2bb">
+<hr />
+<h2 id="glasfaser-multimode-vs-singlemode"><a class="header" href="#glasfaser-multimode-vs-singlemode">Glasfaser: Multimode vs. Singlemode</a></h2>
 <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Famericanfibertek.com%2Fwp-content%2Fuploads%2F2019%2F03%2FMM-vs-SM-2.jpg&f=1&nofb=1&ipt=34aa9b107f19d141815ab6cf8f14c72eb214c8af6c216e2cd54450c89f1d7050">
-<h3 id="multimode-lichtwellenleiter"><a class="header" href="#multimode-lichtwellenleiter">Multimode-Lichtwellenleiter</a></h3>
-<p><strong>Multimode-Lichtwellenleiter</strong> haben einer größeren Kern- durchmesser, was bedeutet, dass <strong>mehrere Lichtstrahlen gleichzeitig</strong> im Inneren des Kabels übertragen werden können. Multimode-Fasern haben typischerweise eine <strong>kürzere Übertragungsreichweite</strong> als Singlemode-Fasern.
-Bis 2.000 Meter länge.</p>
-<p><strong>Vorteile</strong></p>
+<div class="table-wrapper"><table><thead><tr><th></th><th><strong>Multimode</strong></th><th><strong>Singlemode</strong></th></tr></thead><tbody>
+<tr><td>Kerndurchmesser</td><td>größer</td><td>kleiner</td></tr>
+<tr><td>Lichtstrahlen</td><td>mehrere gleichzeitig</td><td>nur einer</td></tr>
+<tr><td>Reichweite</td><td>bis 2.000 m</td><td>bis 10.000 m</td></tr>
+<tr><td>Bandbreite</td><td>geringer</td><td>höher</td></tr>
+<tr><td>Dämpfung</td><td>größer</td><td>geringer</td></tr>
+<tr><td>Kosten</td><td>günstiger</td><td>teurer</td></tr>
+</tbody></table>
+</div>
 <ul>
-<li>geringerer Aufwand bei der Herstellung der Glasfasern</li>
-<li>einfachere Verbindungstechnik aufgrund des größeren Kerndurchmessers</li>
-<li>Fasern mit Stufenindex- und Gradientenindexprofil verfügbar</li>
-</ul>
-<p><strong>Nachteile</strong></p>
-<ul>
-<li>größere Signaldämpfung und Laufzeitverschiebung</li>
-<li>geringere maximale Bandbreiten</li>
-<li>nur kürzere Distanzen überbrückbar</li>
-<li>Verstärker oder Signalaufbereiter bei größeren Distanzen notwendig</li>
-</ul>
-<h3 id="singlemode-lichtwellenleiter"><a class="header" href="#singlemode-lichtwellenleiter">Singlemode-Lichtwellenleiter</a></h3>
-<p><strong>Singlemode-Lichtwellenleiter</strong> haben einen kleineren Kern- durchmesser, was bedeutet, dass <strong>nur ein einzelner Lichtstrahl</strong> durch das Kabel übertragen wird. Singlemode-Fasern haben eine deutlich <strong>größere Übertragungsreichweite</strong> als Multimode- Fasern.
-Bis 10.000 Meter Länge.</p>
-<p><strong>Vorteile</strong></p>
-<ul>
-<li>geringe Dämpfung des Signals</li>
-<li>kaum Laufzeitverschiebungen</li>
-<li>große Distanzen überbrückbar</li>
-<li>hohe Bandbreiten</li>
-</ul>
-<p><strong>Nachteile</strong></p>
-<ul>
-<li>teurere Laser zur Einspeisung des Lichts notwendig</li>
-<li>größerer Aufwand bei der Herstellung der Glasfasern aufgrund des sehr kleinen Faserkerns</li>
-<li>hohe Präzision beim Verbinden der Glasfasern durch Stecker oder beim Spleißen notwendig</li>
-</ul>
-<h1 id="abkürzung-schirmungsart"><a class="header" href="#abkürzung-schirmungsart">Abkürzung Schirmungsart</a></h1>
-<ul>
-<li><strong>UTP</strong> steht für <strong>Unshielded Twisted Pair</strong> -&gt; Kabel ohne äußere Abschirmung
-<ul>
-<li><strong>U/UTP</strong> = exakte Normbezeichnung (ISO/IEC)</li>
-<li>In der Praxis werden sie oft gleich verwendet, technisch ist U/UTP die präzisere Angabe.</li>
-</ul>
+<li>
+<p><strong>Vorteile Multimode:</strong> Einfachere Verbindungstechnik, günstigere Herstellung, Stufen- und Gradientenindexprofil verfügbar.</p>
 </li>
-<li><strong>FTP</strong> steht für <strong>Foiled Twisted Pair</strong> -&gt; Jedes Adernpaar mit einer Metallfolie abgeschirmt</li>
-<li><strong>S-FTP</strong> steht für <strong>Screened Foiled Twisted Pair</strong> -&gt; Jedes Adernpaar mit einer Metallfolie abgeschirmt + eine Gesamtabschirmung um alle Adernpaare</li>
-<li><strong>U-FTP</strong> steht für <strong>Unshielded Foiled Twisted Pair</strong> -&gt; Jedes Adernpaar mit einer Metallfolie abgeschirmt, aber keine Gesamtabschirmung</li>
-<li><strong>F/UTP</strong> steht für <strong>Foiled Unshielded Twisted Pair</strong> -&gt; Eine gemeinsame Metallfolie um alle Adernpaare, aber keine Abschirmung der einzelnen Paare</li>
-<li><strong>SF/UTP</strong> steht für <strong>Screened Foiled Unshielded Twisted Pair</strong> -&gt; Geflechtschirm + Metallfolie als Gesamtabschirmung um alle Adernpaare, aber keine Paarabschirmung</li>
+<li>
+<p><strong>Nachteile Multimode:</strong> Größere Signaldämpfung, Laufzeitverschiebung, nur kürzere Distanzen.</p>
+</li>
+<li>
+<p><strong>Vorteile Singlemode:</strong> Geringe Dämpfung, kaum Laufzeitverschiebungen, hohe Bandbreiten, große Distanzen.</p>
+</li>
+<li>
+<p><strong>Nachteile Singlemode:</strong> Teurere Laser, aufwändigere Herstellung, hohe Präzision beim Verbinden nötig.</p>
+</li>
 </ul>
-<h3 id="need-to-know"><a class="header" href="#need-to-know">Need to Know:</a></h3>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/UTP-Kabel.svg/500px-UTP-Kabel.svg.png" width="200px">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/SUTP-Kabel.svg/500px-SUTP-Kabel.svg.png" width="200px">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/S-FTP-Kabel.svg/500px-S-FTP-Kabel.svg.png" width="200px">  
-<p><strong>SF/UTP</strong>:<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0106%2F6339%2F5391%2Ffiles%2F1024x340-4_f025a65c-d7ad-44b1-80a4-6d0c704414fe_1024x1024.jpg%3Fv%3D1676525020&f=1&nofb=1&ipt=3a592a991ce4c39efc5d4283b21646410c29e301a7d5bd77b859c57515b6cf1d" width="450px"><br />
-<strong>F/UTP</strong>:<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdintek.com.tw%2Fimages%2F2025%2F07%2F14%2Ffutp-image-for-article-photoroom.png&f=1&nofb=1&ipt=77dfbd3ba4b09725b79e928bf6ca24129ef2c497c5d612a4ce3e2a7b3a822151" width="450px"></p>
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femeasy.be%2Fwp-content%2Fuploads%2F2021%2F04%2FDiff-utp-type.jpg&f=1&nofb=1&ipt=178d3b84ab6d598e43d62ee8f8c013aac1f04054c650b0068e7c462d9b136c87">
-<h1 id="cat-kabel-5-8"><a class="header" href="#cat-kabel-5-8">CAT Kabel 5-8</a></h1>
-<p>Ein <strong>CAT-Kabel</strong> (Category-Kabel) ist ein Twisted-Pair-Netzwerkkabel – die Adern sind paarweise verdrillt, um elektromagnetische Störungen zu reduzieren.</p>
+<h3 id="allgemeine-vor--und-nachteile-von-lichtwellenleitern"><a class="header" href="#allgemeine-vor--und-nachteile-von-lichtwellenleitern">Allgemeine Vor- und Nachteile von Lichtwellenleitern</a></h3>
+<ul>
+<li><strong>Vorteile:</strong> hohe Übertragungsraten, sehr hohe Reichweite, keine elektromagnetischen Störeinflüsse, höhere Abhörsicherheit.</li>
+<li><strong>Nachteile:</strong> hohe mechanische Empfindlichkeit, teurer als Kupfer, kein Power over Ethernet möglich.</li>
+</ul>
+<hr />
+<h2 id="cat-kabel-twisted-pair"><a class="header" href="#cat-kabel-twisted-pair">CAT-Kabel (Twisted-Pair)</a></h2>
+<p>Ein <strong>CAT-Kabel</strong> ist ein Twisted-Pair-Netzwerkkabel – die Adern sind paarweise verdrillt, um elektromagnetische Störungen zu reduzieren.</p>
 <div class="table-wrapper"><table><thead><tr><th>Kabel</th><th>Frequenz</th><th>Datenrate</th></tr></thead><tbody>
 <tr><td>CAT 5</td><td>100 MHz</td><td>100 Mbit/s</td></tr>
 <tr><td>CAT 5e</td><td>100 MHz</td><td>1 Gbit/s</td></tr>
-<tr><td>CAT 6</td><td>250 MHz</td><td>1 Gbit/s (10G bis 55m)</td></tr>
+<tr><td>CAT 6</td><td>250 MHz</td><td>1 Gbit/s (10G bis 55 m)</td></tr>
 <tr><td>CAT 6a</td><td>500 MHz</td><td>10 Gbit/s</td></tr>
 <tr><td>CAT 7</td><td>600 MHz</td><td>10 Gbit/s</td></tr>
 <tr><td>CAT 8</td><td>2.000 MHz</td><td>25–40 Gbit/s</td></tr>
 </tbody></table>
 </div>
+<blockquote>
 <p><strong>Merke:</strong> Ab CAT 6a für Neuinstallationen empfohlen.</p>
-<h2 id="vorteile-von-lichtwellenleitern"><a class="header" href="#vorteile-von-lichtwellenleitern">Vorteile von Lichtwellenleitern</a></h2>
-<ul>
-<li>hohe Übertragungsraten</li>
-<li>sehr hohe Reichweite</li>
-<li>keine Beeinflussung durch äußere elektrische oder elektromagnetische Störfelder</li>
-<li>höhe Abhörsicherheit</li>
-</ul>
-<h2 id="nachteile-von-lichtwellenleitern"><a class="header" href="#nachteile-von-lichtwellenleitern">Nachteile von Lichtwellenleitern</a></h2>
-<ul>
-<li>hohe Empfindlichkeit gegenüber mechanischer Belastung</li>
-<li>teurer als Kupferkabel</li>
-<li>Power over Ethernet ist nicht möglich</li>
-</ul>
-<h2 id="bereiche-der-strukturierten-verkabelung"><a class="header" href="#bereiche-der-strukturierten-verkabelung">Bereiche der strukturierten Verkabelung</a></h2>
-<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage3.slideserve.com%2F6507184%2Fslide18-l.jpg&f=1&nofb=1&ipt=1f39132a19ea1d62d5d7bb63088086979776e0c31f87cd67b998aac8a5efd96d">
-<h1 id="strukturierte-verkabelung"><a class="header" href="#strukturierte-verkabelung">Strukturierte Verkabelung</a></h1>
-<div class="table-wrapper"><table><thead><tr><th>Bereich</th><th>Auch genannt</th><th>Verbindet</th><th>Max. Kabel</th></tr></thead><tbody>
-<tr><td><strong>Primär</strong></td><td>Standortverkabelung</td><td>Gebäude untereinander</td><td>GF: 2.000 m / TP+VDSL: 900 m</td></tr>
-<tr><td><strong>Sekundär</strong></td><td>Gebäudeverkabelung</td><td>Gebäudeverteiler → Etagenverteiler</td><td>GF: 2.000 m / TP: 100 m</td></tr>
-<tr><td><strong>Tertiär</strong></td><td>Etagenverkabelung</td><td>Etagenverteiler → Anschlussdose</td><td>GF: 2.000 m / TP: 100 m (90m fest + 10m Patch)</td></tr>
+</blockquote>
+<hr />
+<h2 id="schirmungsarten-twisted-pair"><a class="header" href="#schirmungsarten-twisted-pair">Schirmungsarten (Twisted-Pair)</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Kürzel</th><th>Ausgeschrieben</th><th>Beschreibung</th></tr></thead><tbody>
+<tr><td><strong>U/UTP</strong></td><td>Unshielded Twisted Pair</td><td>Keine Abschirmung</td></tr>
+<tr><td><strong>F/UTP</strong></td><td>Foiled Unshielded Twisted Pair</td><td>Gemeinsame Metallfolie um alle Paare</td></tr>
+<tr><td><strong>U/FTP</strong></td><td>Unshielded Foiled Twisted Pair</td><td>Jedes Paar einzeln mit Folie, keine Gesamtabschirmung</td></tr>
+<tr><td><strong>S/FTP</strong></td><td>Screened Foiled Twisted Pair</td><td>Jedes Paar mit Folie + Geflechtschirm gesamt</td></tr>
+<tr><td><strong>SF/UTP</strong></td><td>Screened Foiled Unshielded Twisted Pair</td><td>Geflechtschirm + Metallfolie gesamt, keine Paarabschirmung</td></tr>
 </tbody></table>
 </div>
-<p>GF = Glasfaserkabel, TP = Twisted-Pair-Kabel</p>
 <blockquote>
-<p><strong>Faustregel Primär:</strong> 50% Reserve zum aktuellen Bedarf einplanen.</p>
+<p>UTP und U/UTP werden in der Praxis oft gleich verwendet – U/UTP ist die präzisere ISO/IEC-Normbezeichnung.</p>
 </blockquote>
-<h3 id="ziele-der-strukturierten-verkabelung"><a class="header" href="#ziele-der-strukturierten-verkabelung">Ziele der strukturierten Verkabelung</a></h3>
+<p><strong>Bilder:</strong></p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/UTP-Kabel.svg/500px-UTP-Kabel.svg.png" width="200px">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/SUTP-Kabel.svg/500px-SUTP-Kabel.svg.png" width="200px">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/S-FTP-Kabel.svg/500px-S-FTP-Kabel.svg.png" width="200px">
+<p><strong>SF/UTP:</strong> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0106%2F6339%2F5391%2Ffiles%2F1024x340-4_f025a65c-d7ad-44b1-80a4-6d0c704414fe_1024x1024.jpg%3Fv%3D1676525020&f=1&nofb=1&ipt=3a592a991ce4c39efc5d4283b21646410c29e301a7d5bd77b859c57515b6cf1d" width="450px"><br />
+<strong>F/UTP:</strong> <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fdintek.com.tw%2Fimages%2F2025%2F07%2F14%2Ffutp-image-for-article-photoroom.png&f=1&nofb=1&ipt=77dfbd3ba4b09725b79e928bf6ca24129ef2c497c5d612a4ce3e2a7b3a822151" width="450px"></p>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Femeasy.be%2Fwp-content%2Fuploads%2F2021%2F04%2FDiff-utp-type.jpg&f=1&nofb=1&ipt=178d3b84ab6d598e43d62ee8f8c013aac1f04054c650b0068e7c462d9b136c87">
+<hr />
+<h2 id="strukturierte-verkabelung"><a class="header" href="#strukturierte-verkabelung">Strukturierte Verkabelung</a></h2>
+<img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage3.slideserve.com%2F6507184%2Fslide18-l.jpg&f=1&nofb=1&ipt=1f39132a19ea1d62d5d7bb63088086979776e0c31f87cd67b998aac8a5efd96d">
+<div class="table-wrapper"><table><thead><tr><th>Bereich</th><th>Auch genannt</th><th>Verbindet</th><th>Max. Kabellänge</th></tr></thead><tbody>
+<tr><td><strong>Primär</strong></td><td>Standortverkabelung</td><td>Gebäude untereinander</td><td>GF: 2.000 m / TP+VDSL: 900 m</td></tr>
+<tr><td><strong>Sekundär</strong></td><td>Gebäudeverkabelung</td><td>Gebäudeverteiler → Etagenverteiler</td><td>GF: 2.000 m / TP: 100 m</td></tr>
+<tr><td><strong>Tertiär</strong></td><td>Etagenverkabelung</td><td>Etagenverteiler → Anschlussdose</td><td>GF: 2.000 m / TP: 100 m (90 m fest + 10 m Patch)</td></tr>
+</tbody></table>
+</div>
+<p>GF = Glasfaser, TP = Twisted-Pair</p>
+<blockquote>
+<p><strong>Faustregel Primär:</strong> 50 % Reserve zum aktuellen Bedarf einplanen.</p>
+</blockquote>
+<p><strong>Ziele der strukturierten Verkabelung:</strong></p>
 <ul>
-<li>Schaffung einer zuverlässigen Grundlage für zukünftige Netzwerke</li>
+<li>Zuverlässige Grundlage für zukünftige Netzwerke</li>
 <li>Einfache Installation von Netzwerkkomponenten</li>
-<li>Möglichkeit flexibler Erweiterungen</li>
-<li>einheitliche und allgemein gültige Verkabelungsstruktur</li>
+<li>Flexible Erweiterbarkeit</li>
+<li>Einheitliche, allgemeingültige Verkabelungsstruktur</li>
 </ul>
 
                     </main>
