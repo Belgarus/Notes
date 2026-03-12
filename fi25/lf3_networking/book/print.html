@@ -474,7 +474,7 @@ Bei Gleichstand: links vor rechts.</p>
 <pre><code class="language-bash">ping beispiel.de
 </code></pre>
 <p><strong>Route/Hops zu einem Server prüfen</strong> (→ max. 30 Hops):</p>
-<pre><code class="language-bash">traceroute beispiel.de
+<pre><code class="language-bash">tracert beispiel.de # traceroute auf linux
 </code></pre>
 <p><strong>MAC-Adresse anzeigen</strong> (Layer 2):</p>
 <pre><code class="language-bash">ipconfig /all
@@ -674,6 +674,22 @@ Hoffentlich würd davon ausgegangen das wir dass das zu einfach für uns ist ;)<
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 

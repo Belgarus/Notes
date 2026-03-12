@@ -92,7 +92,7 @@ ping beispiel.de
 
 **Route/Hops zu einem Server prüfen** (→ max. 30 Hops):
 ```bash
-traceroute beispiel.de
+tracert beispiel.de # traceroute auf linux
 ```
 
 **MAC-Adresse anzeigen** (Layer 2):
