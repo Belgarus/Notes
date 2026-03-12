@@ -1,4 +1,9 @@
 # Notes
+## FI25 – Vocational Training Documentation
+
+mdBooks related to German vocational training (Fachinformatiker).
+
+- [**Material Overview**](https://belgarus.github.io/Notes/fi25/materialien_uebersicht/book/)
 
 ## Repository Structure
 
@@ -18,13 +23,6 @@
 |   └── meine_SOL
 └── README.md
 ```
-
-
-## FI25 – Vocational Training Documentation
-
-mdBooks related to German vocational training (Fachinformatiker).
-
-- [**Material Overview**](https://belgarus.github.io/Notes/fi25/materialien_uebersicht/book/)
 
 ## PRV – Private Projects
 
