@@ -24,3 +24,7 @@ Clients in Netzwerke einbinden
 
  - [LF4 Lehrer mdBook](https://johannesloetzsch.github.io/LF4/)
  - Live: [LF4 Notizen](https://hedgedoc.c3d2.de/LF4_Notes)
+
+# Lernfeld 7
+Cyber-physische Systeme ergänzen
+- [LF7 Lehrer mdBook](https://github.com/johannesloetzsch/LF7)
