@@ -30,6 +30,8 @@ Clients in Netzwerke einbinden
 # Lernfeld 6
 Serviceanfragen bearbeiten
 
+- [LF6 Serviceanfragen und Raci Matrix mdBook](https://belgarus.github.io/Notes/fi25/lf6_service_requests/book/)
+
 # Lernfeld 7
 Cyber-physische Systeme ergänzen
 - [LF7 Lehrer mdBook](https://github.com/johannesloetzsch/LF7)
