@@ -7,7 +7,7 @@ mdBooks related to German vocational training (Fachinformatik).
 
 ## Repository Structure
 
-``` bash
+``` powershell
 fi25/
 ├── gk_law/
 ├── lf1_dualeberufsausbildung/
