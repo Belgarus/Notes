@@ -7,26 +7,16 @@ mdBooks related to German vocational training (Fachinformatiker).
 
 ## Repository Structure
 
+``` bash
+fi25/
+├── gk_law/
+├── lf1_dualeberufsausbildung/
+├── lf2_workplace_and_customer_requirements/
+├── lf3_networking/
+├── materialien_uebersicht/
+├── sol_layer_2_switch/
+└── wk_wirtschaftliche_grundlagen/
 ```
-.
-├── fi25
-│   ├──  lf1_dualeberufsausbildung
-│   ├──  lf2_workplace_and_customer_requirements 
-│   ├──  lf3_networking
-│   ├──  materialien_uebersicht
-│   ├──  sol_layer_2_switch
-│   ├──  wk_wirtschaftliche_grundlagen
-│   └──  gk_law
-├── prv
-│   ├── img
-│   ├──  math_roadmap
-|   └── meine_SOL
-└── README.md
-```
-
-## PRV – Private Projects
-
-Personal notes and learning projects (work in progress).
 
 ---
 
