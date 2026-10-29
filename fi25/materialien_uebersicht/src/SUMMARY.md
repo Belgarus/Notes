@@ -1,4 +1,4 @@
 # Summary
 
-- [Berufsbezogener Bereich](berufsbezogen.md)
-- [Berufübergreifender Bereich](berufsuebergreifend.md)
+- [Berufsbezogener Bereich](./berufsbezogen.md)
+- [Berufübergreifender Bereich](./berufsuebergreifend.md)
