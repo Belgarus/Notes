@@ -36,7 +36,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-bbd7e140.js";
+            window.path_to_searchindex_js = "searchindex-090943c7.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-8cb7e1b6.js"></script>
@@ -175,224 +175,131 @@
 
                 <div id="mdbook-content" class="content">
                     <main>
-                        <h1 id="service-level"><a class="header" href="#service-level">Service-Level</a></h1>
-<h2 id="it-services-allgemein"><a class="header" href="#it-services-allgemein">IT-Services allgemein</a></h2>
-<h3 id="service-management-system-sms"><a class="header" href="#service-management-system-sms">Service-Management-System (SMS)</a></h3>
-<p>Alle Aufgaben zur <strong>Organisation, Verwaltung und Weiterentwicklung</strong> eines Servicebereichs.</p>
-<h2 id="erstkontaktaufnahme"><a class="header" href="#erstkontaktaufnahme">Erstkontaktaufnahme</a></h2>
-<pre><code class="language-markdown">+----------+  1. Meldung  +------------------+  2. Protokoll.  +--------------+
-| Anwender | -----------&gt; | Servicedesk/SPOC | --------------&gt; | Ticketsystem |
-+----------+              +------------------+                 +--------------+
-     ^                                                                  |
-     |                      Rückmeldung / Lösung                        |
-     +------------------------------------------------------------------+
+                        <h1 id="support-level-eskalation-und-ticketsystem"><a class="header" href="#support-level-eskalation-und-ticketsystem">Support-Level, Eskalation und Ticketsystem</a></h1>
+<blockquote>
+<p>Lernfeld 6: Serviceanfragen bearbeiten, Leistungskontrolle am 02.11.2026 (Übung U1)</p>
+</blockquote>
+<h2 id="support-level"><a class="header" href="#support-level">Support-Level</a></h2>
+<p>Der Support ist in <strong>drei Stufen</strong> gegliedert. Je komplexer das Problem, desto höher die Stufe.</p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Level</th><th>Rolle</th><th>Wer?</th><th>Aufgabe in einem Satz</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1st Level</strong></td><td>Erste Anlaufstelle</td><td>Servicedesk / Helpdesk</td><td>Anfrage annehmen, einordnen, <strong>einfache und häufige Probleme selbst lösen</strong></td></tr>
+<tr><td><strong>2nd Level</strong></td><td><strong>Erste Eskalationsstufe</strong></td><td>Erfahrene Techniker, Spezialisten</td><td><strong>Komplexere Anfragen</strong>, Fehlerdiagnose, spezifischere Lösungen</td></tr>
+<tr><td><strong>3rd Level</strong></td><td><strong>Höchste Eskalationsstufe</strong></td><td>Hochspezialisierte Fachleute</td><td><strong>Komplexe Probleme</strong> analysieren, umfassende Fehlerbehebung über 2nd Level hinaus</td></tr>
+</tbody>
+</table>
+</div>
+<pre><code class="language-text">Anfrage
+   |
+   v
++------------------+  gelöst?  ja  ----------------+
+| 1st Level        |------------------------------&gt;|
++------------------+                               |
+   | nein -&gt; Eskalation                            |
+   v                                               v
++------------------+  gelöst?  ja  --------&gt;  Anwender informieren,
+| 2nd Level        |------------------------&gt;  Ticket schließen
++------------------+                               ^
+   | nein -&gt; Eskalation                            |
+   v                                               |
++------------------+  gelöst                       |
+| 3rd Level        |------------------------------&gt;+
++------------------+
 </code></pre>
-<h3 id="helpdesk--servicedesk"><a class="header" href="#helpdesk--servicedesk">Helpdesk / Servicedesk</a></h3>
-<p>Anlaufstelle, die <strong>Serviceanfragen annimmt</strong>, <strong>Servicetickets erstellt</strong> und den Vorgang <strong>bearbeitet oder mindestens betreut</strong>.</p>
-<h3 id="single-point-of-contact-spoc-"><a class="header" href="#single-point-of-contact-spoc-">Single Point of Contact (SPOC) 🖖</a></h3>
-<p><strong>Zentrale und einzige Anlaufstelle</strong> für <strong>jeden IT-Servicefall</strong> (Information, Serviceanliegen, Störung, Beschwerde).
-Kann auch pro Servicebereich (IT, Rechnungswesen, Vertrieb) oder Kundensegment (Unternehmen, Behörden, Stammkunden mit Key-Account-Manager) eingerichtet sein.</p>
+<h3 id="1st-level-aufgaben-prüfungsrelevant"><a class="header" href="#1st-level-aufgaben-prüfungsrelevant">1st Level: Aufgaben (prüfungsrelevant)</a></h3>
+<ul>
+<li><strong>Entgegennahme</strong> von Supportanfragen</li>
+<li><strong>Klassifizierung und Priorisierung</strong></li>
+<li><strong>Grundlegende Unterstützung</strong> bei häufig auftretenden Problemen</li>
+<li><strong>Weiterleitung</strong>, wenn das Problem über den 1st Level hinausgeht</li>
+<li><strong>Dokumentation</strong> in Ticketsystem oder Wissensdatenbank</li>
+<li><strong>Professionelle und freundliche Kommunikation</strong> mit den Kunden</li>
+</ul>
+<p><strong>Normalfall:</strong> Die Mitarbeiter versuchen, den Fall <strong>weitestgehend selbstständig zu lösen</strong>, und eskalieren ihn nur, wenn das nicht klappt.</p>
+<h3 id="2nd-level"><a class="header" href="#2nd-level">2nd Level</a></h3>
+<ul>
+<li><strong>Erste Eskalationsstufe</strong>, wenn der 1st Level nicht lösen kann</li>
+<li><strong>Erfahrene Techniker oder Spezialisten</strong></li>
+<li>Bearbeiten <strong>komplexere Anfragen</strong>, führen <strong>Fehlerdiagnosen</strong> durch, liefern <strong>spezifischere Lösungen</strong></li>
+<li><strong>Neue Erkenntnisse</strong> werden in die <strong>Wissensdatenbank</strong> eingetragen und unterstützen so den 1st Level</li>
+</ul>
+<h3 id="3rd-level"><a class="header" href="#3rd-level">3rd Level</a></h3>
+<ul>
+<li><strong>Höchste Eskalationsstufe</strong> im Supportprozess</li>
+<li><strong>Hochspezialisierte Fachleute</strong> mit umfangreichem technischem Wissen</li>
+<li>Analysieren <strong>komplexe Probleme</strong> und führen <strong>umfassende Fehlerbehebung</strong> durch, die <strong>über die Möglichkeiten des 2nd Levels hinausgeht</strong></li>
+</ul>
+<blockquote>
+<p><strong>Merkhilfe:</strong> 1st = <em>annehmen und einfach lösen</em>, 2nd = <em>komplexer</em>, 3rd = <em>Experten, letzte Instanz</em>.</p>
+</blockquote>
+<h3 id="video-support-level-erklärt"><a class="header" href="#video-support-level-erklärt">Video: Support-Level erklärt</a></h3>
+<p><strong>Deutsch</strong> (ein Dienstleister erklärt seine Service-Level; dort gibt es zusätzlich ein “1.5th Level”, das ist nicht Prüfungsstoff):</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/fMhqujWZptQ" title="Unsere Servicelevel 1st, 1.5th und 2nd Level kurz erklärt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p><a href="https://www.youtube.com/watch?v=fMhqujWZptQ">Video auf YouTube öffnen</a></p>
+<p><strong>Englisch</strong> (Level 1 bis 3 und Eskalation allgemein):</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/AfeuTK2SF_I" title="What Does IT Support Do? Level 1, Level 2, Level 3 Escalations" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p><a href="https://www.youtube.com/watch?v=AfeuTK2SF_I">Video auf YouTube öffnen</a></p>
+<h2 id="eskalation"><a class="header" href="#eskalation">Eskalation</a></h2>
+<p>Eskalationsstufen im IT-Kundensupport werden festgelegt anhand des <strong>Schweregrads</strong> eines Falls und der <strong>Eskalationsansprechpartner</strong>.</p>
+<p><strong>Auslöser einer Eskalation:</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Auslöser</th><th>Bedeutung</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Schweregrad</strong></td><td>Der Supportfall ist so schwerwiegend, dass er höher angesiedelt werden muss</td></tr>
+<tr><td><strong>Zeit</strong></td><td>Der Fall kann nicht innerhalb der im <strong>SLA</strong> (Service Level Agreement) vereinbarten <strong>maximalen Lösungszeit</strong> gelöst werden</td></tr>
+<tr><td><strong>Hinterlegte Regeln</strong></td><td>Das System eskaliert automatisch aufgrund festgelegter Regeln</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Ansprechpartner in der Eskalationshierarchie:</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Stufe</th><th>Ansprechpartner</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>1st Level</strong></td><td>Erste Anlaufstelle für Probleme</td></tr>
+<tr><td><strong>2nd Level</strong></td><td><strong>Incident Manager</strong>, Einsatz von <strong>IT-Spezialisten</strong></td></tr>
+<tr><td><strong>3rd Level</strong></td><td>Einsatz von <strong>Produktexperten oder Entwicklern</strong></td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="video-sla-grundlage-für-die-zeit-als-eskalationsauslöser"><a class="header" href="#video-sla-grundlage-für-die-zeit-als-eskalationsauslöser">Video: SLA (Grundlage für die Zeit als Eskalationsauslöser)</a></h3>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/l4Mc-s3wxK0" title="Service Level Agreement (SLA)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p><a href="https://www.youtube.com/watch?v=l4Mc-s3wxK0">Video auf YouTube öffnen</a></p>
 <h2 id="ticketsystem"><a class="header" href="#ticketsystem">Ticketsystem</a></h2>
-<h3 id="ticketsystem-1"><a class="header" href="#ticketsystem-1">Ticketsystem</a></h3>
-<p>Software zum <strong>Empfangen, Bestätigen, Klassifizieren und Bearbeiten</strong> von Kundenanfragen unter <strong>einer</strong> Ticket- bzw. Servicenummer.</p>
+<p><strong>Aufgabe:</strong> <strong>Empfang, Bestätigung, Klassifizierung und Bearbeitung</strong> sowie <strong>Pflege</strong> von Kundenanfragen in Form von <strong>Tickets</strong> (Fällen / Cases).</p>
 <ul>
-<li>Beispiele: Jira, ServiceNow</li>
+<li><strong>Eingang</strong> der Anfragen: per <strong>Telefon</strong>, per <strong>Mail</strong>, als Fax oder in einem <strong>Online-Tool</strong></li>
+<li><strong>Moderne Systeme:</strong> komplexe <strong>Datenbank</strong> und <strong>Schnittstelle zu einem Webportal</strong>, in dem der Kunde den <strong>Bearbeitungsstatus jederzeit verfolgen</strong> kann</li>
+<li><strong>Beispiele:</strong> <strong>Jira</strong>, <strong>ServiceNow</strong></li>
 </ul>
-<h3 id="serviceticket"><a class="header" href="#serviceticket">Serviceticket</a></h3>
-<p>Online als <strong>Datensatz</strong> erfasster Service-Auftrag (“Eintrittskarte”). Er <strong>löst den Auftrag aus</strong> und enthält <strong>alle Informationen</strong> für Bearbeitung und abschließende Kontrolle.</p>
-<p>Typische Felder im Ticket (Beispiel Ticket-Dokumentation):</p>
+<p><strong>Synonyme</strong> (alle meinen dasselbe):</p>
 <ul>
-<li>Anwender, Support (Bearbeiter), Tickettyp (z. B. Vorfall)</li>
-<li>Priorität, Kategorie (z. B. Hardware), Auswirkung, Dringlichkeit</li>
-<li>Ticketdatum, SLA-Zeitfenster (z. B. “in time”)</li>
-<li>Anwenderdaten (E-Mail, Telefon, Standort, Sprache, Anzahl bisheriger Tickets)</li>
-<li>Verlauf: jeder Bearbeitungsschritt mit Support-Level, Kanal (Phone, Mail, Ticket-System) und Zeitstempel</li>
+<li>Ticketing-System</li>
+<li>User-Helpdesk-System</li>
+<li>Support-Ticketing-System</li>
+<li>Service-Ticket-System</li>
+<li>Task-Tracking-System</li>
+<li>Request-Tracking-System (RTS)</li>
 </ul>
-<h2 id="bearbeitungsablauf-eines-tickets"><a class="header" href="#bearbeitungsablauf-eines-tickets">Bearbeitungsablauf eines Tickets</a></h2>
-<h3 id="incident-bearbeitungsablauf"><a class="header" href="#incident-bearbeitungsablauf">Incident-Bearbeitungsablauf</a></h3>
-<pre><code>ERFASSEN       1. Meldung am Servicedesk
-               2. Protokollierung im Ticketsystem
-                          |
-                          v
-EINORDNEN      3. Klassifizierung   (WAS für ein Fall?)
-               4. Kategorisierung   (WELCHER Servicebereich?)
-               5. Priorisierung     (WIE dringend/wichtig?)
-                          |
-                          v
-BEARBEITEN     6. Erste Diagnose im First Level
-               7. ggf. Eskalation an Second/Third Level
-               8. Untersuchung und Diagnose
-                          |
-                          v
-ABSCHLIESSEN   9. Lösung und Wiederherstellung
-              10. Ticket schließen
-</code></pre>
-<blockquote>
-<p>Merkhilfe: Die Schritte 3 bis 5 (Klassifizierung, Kategorisierung, Priorisierung) werden gerne verwechselt, siehe unten.</p>
-</blockquote>
-<h3 id="klassifizierung"><a class="header" href="#klassifizierung">Klassifizierung</a></h3>
-<p>Zuordnung nach <strong>Serviceklasse</strong>: z. B. <strong>Service Request</strong>, <strong>Incident</strong> (Störung mit Fehlerklassen), später auch <strong>Problem</strong> und <strong>Change</strong>.</p>
-<h3 id="kategorisierung"><a class="header" href="#kategorisierung">Kategorisierung</a></h3>
-<p>Zuordnung nach <strong>Dienstleistungskategorie</strong> gemäß Serviceportfolio, Servicekatalog oder SLA, z. B. IT-Systemerweiterung, Systemstörung, Cloud-Skalierung, Peripherieservice.</p>
-<h3 id="priorisierung"><a class="header" href="#priorisierung">Priorisierung</a></h3>
-<p><strong>Priorität = Impact (Auswirkung) + Urgency (Dringlichkeit)</strong>.
-Gibt an, wie wichtig und dringend die Bearbeitung ist, abhängig von <strong>Auswirkungen und Risiken</strong>.</p>
-<p>Dringlichkeitsstufen mit maximaler Lösungszeit:</p>
-<div class="table-wrapper">
-<table>
-<thead>
-<tr><th>Dringlichkeit \ Auswirkung/Risiko</th><th>Hoch</th><th>Mittel</th><th>Niedrig</th></tr>
-</thead>
-<tbody>
-<tr><td><strong>Hohe Dringlichkeit</strong></td><td>1 = &lt; 1 Std.</td><td>2 = &lt; 4 Std.</td><td>3 = &lt; 8 Std.</td></tr>
-<tr><td><strong>Mittlere Dringlichkeit</strong></td><td>2 = &lt; 4 Std.</td><td>3 = &lt; 8 Std.</td><td>3 = &lt; 24 Std.</td></tr>
-<tr><td><strong>Niedrige Dringlichkeit</strong></td><td>3 = &lt; 24 Std.</td><td>4 = &lt; 48 Std.</td><td>5 = &lt; xx Std.</td></tr>
-</tbody>
-</table>
-</div>
-<div class="table-wrapper">
-<table>
-<thead>
-<tr><th>Schritt</th><th>Frage</th><th>Beispiel</th></tr>
-</thead>
-<tbody>
-<tr><td>Klassifizierung</td><td><strong>Was für eine Art</strong> von Fall ist es?</td><td>Incident</td></tr>
-<tr><td>Kategorisierung</td><td><strong>Welcher Servicebereich</strong>?</td><td>Hardware / Peripherie</td></tr>
-<tr><td>Priorisierung</td><td><strong>Wie dringend und wichtig</strong>?</td><td>Hohe Dringlichkeit, &lt; 4 Std.</td></tr>
-</tbody>
-</table>
-</div>
-<h2 id="service-basisprozesse-begriffe"><a class="header" href="#service-basisprozesse-begriffe">Service-Basisprozesse (Begriffe)</a></h2>
-<h3 id="event"><a class="header" href="#event">Event</a></h3>
-<p>Meldung ohne Störung: <strong>Information, Warnung oder Exception</strong>.
-Beispiele: “Festplatte zu 80 % voll”, “Netzwerk läuft stabil bei 40 % Auslastung”.</p>
-<h3 id="incident"><a class="header" href="#incident">Incident</a></h3>
-<p><strong>Ungeplante Unterbrechung</strong> eines Services oder einer Servicekomponente <strong>oder Verschlechterung der Servicequalität</strong> (Störung).</p>
+<h3 id="video-ticketsystem-erklärt-englisch"><a class="header" href="#video-ticketsystem-erklärt-englisch">Video: Ticketsystem erklärt (Englisch)</a></h3>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9uER-Gr5WGI" title="What Is an IT Ticket System? Help Desk Ticketing Systems Explained" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+<p><a href="https://www.youtube.com/watch?v=9uER-Gr5WGI">Video auf YouTube öffnen</a></p>
+<h2 id="spickzettel"><a class="header" href="#spickzettel">Spickzettel</a></h2>
 <ul>
-<li>Zusammengehörige Incidents können zu einem <strong>Haupt-Incident</strong> zusammengefasst und gemeinsam bearbeitet werden.</li>
-<li>Lässt sich ein Incident nur durch einen Einsatz <strong>vor Ort</strong> lösen, spricht man von <strong>Field-Service</strong>.</li>
-<li>Beispiele: Drucker funktioniert nicht, Login nicht mehr möglich, ERP-System nicht erreichbar.</li>
-</ul>
-<h3 id="major-incident"><a class="header" href="#major-incident">Major Incident</a></h3>
-<p><strong>Schwerwiegende Störung</strong> mit <strong>erheblicher Unterbrechung der Business-Prozesse</strong>. Höchste Kategorie eines Incidents in Bezug auf die Auswirkung.</p>
-<h3 id="service-request-serviceanfrage"><a class="header" href="#service-request-serviceanfrage">Service Request (Serviceanfrage)</a></h3>
-<p>Anwenderanfrage nach <strong>Information, Beratung, Zugriff auf einen Service</strong> oder zur Einleitung eines <strong>vorautorisierten Changes</strong>.</p>
-<ul>
-<li>Wird oft über <strong>dieselben Prozesse und Tools</strong> wie Incidents verwaltet.</li>
-<li>Verfügbare Services stehen im <strong>Service-Katalog</strong>.</li>
-<li>Beispiele:
-<ul>
-<li>Beschaffungsservices (Hardware, Software, Dienste, Lizenzen)</li>
-<li>Informative Anfrage (Request for Information)</li>
-<li><strong>IMAC</strong>-Services (Serviceanfragen in Phasen des Hardwarelebenslaufs)</li>
-<li>Änderungswunsch (Change Request / Request for Change)</li>
-<li>Funktionserweiterung (Request for Enhancement)</li>
-</ul>
-</li>
-<li>Beispiel aus der Übung: “Marketing wünscht sich einen schnelleren A3-Farbdrucker” ist ein Service Request.</li>
-</ul>
-<h3 id="abgrenzung-event-service-request-oder-incident"><a class="header" href="#abgrenzung-event-service-request-oder-incident">Abgrenzung: Event, Service Request oder Incident?</a></h3>
-<div class="table-wrapper">
-<table>
-<thead>
-<tr><th>Meldung</th><th>Einordnung</th></tr>
-</thead>
-<tbody>
-<tr><td>a) Festplattenkapazität zu 80 % erschöpft</td><td>Event (Warnung)</td></tr>
-<tr><td>b) Drucker in der Finanzbuchhaltung funktioniert nicht</td><td>Incident</td></tr>
-<tr><td>c) Netzwerk läuft stabil mit 40 % Auslastung</td><td>Event (Information)</td></tr>
-<tr><td>d) Marketing wünscht schnelleren A3-Farbdrucker</td><td>Service Request</td></tr>
-<tr><td>e) ERP-System für mehrere Mitarbeiter nicht erreichbar, Systemnachricht “ERP-Ausfall”</td><td>Incident (ggf. Major Incident)</td></tr>
-<tr><td>f) Mitarbeiterin kann sich nicht mehr einloggen</td><td>Incident</td></tr>
-<tr><td>g) Dokumentenscanner hinterlässt Streifen auf jedem Scan</td><td>Incident</td></tr>
-</tbody>
-</table>
-</div>
-<blockquote>
-<p>Hinweis: Die Zuordnung ist meine Auflösung der Übungsaufgabe und stand nicht auf den Folien. Bitte mit eurer Lösung im Unterricht abgleichen. Die Aufgabe auf den Folien ist zudem abgeschnitten (es gibt vermutlich noch Punkt h).</p>
-</blockquote>
-<h2 id="support-levels"><a class="header" href="#support-levels">Support-Levels</a></h2>
-<h3 id="übersicht"><a class="header" href="#übersicht">Übersicht</a></h3>
-<div class="table-wrapper">
-<table>
-<thead>
-<tr><th>Level</th><th>Name</th><th>Aufgabe</th></tr>
-</thead>
-<tbody>
-<tr><td><strong>0</strong></td><td>Self Service</td><td>FAQs, Tutorials, Manuals</td></tr>
-<tr><td><strong>1</strong></td><td>Service Desk (First Level)</td><td><strong>Grundlegender Support</strong>: Bedienfragen, einfache und wiederkehrende Probleme, Anfragen mit IT-Einbeziehung (z. B. Freischalten von Produktoptionen). Nicht lösbar (auch nicht per Wissensdatenbank) → <strong>Eskalation an Level 2</strong></td></tr>
-<tr><td><strong>2</strong></td><td>Specialized Support (Second Level)</td><td><strong>Erfahrene, technisch kompetente</strong> Mitarbeiter bearbeiten, was Level 1 nicht lösen kann. Keine Lösung → <strong>Eskalation an Level 3</strong></td></tr>
-<tr><td><strong>3</strong></td><td>Expert Support (Third Level)</td><td><strong>Höchste Qualifikationsebene</strong>: Problem nachstellen, <strong>zentrale Ursachen finden</strong>, Entscheidung über <strong>Patches</strong>, Lösung für Level 1 und 2 <strong>dokumentieren</strong></td></tr>
-<tr><td><strong>4</strong></td><td>External Support</td><td>Support für Produkte und Dienstleistungen, die <strong>nicht vom Unternehmen selbst</strong> erbracht werden (z. B. Hersteller-Support für zugekaufte Software, Drucker-Wartung)</td></tr>
-</tbody>
-</table>
-</div>
-<h3 id="kurzfassung"><a class="header" href="#kurzfassung">Kurzfassung</a></h3>
-<ul>
-<li><strong>First Level:</strong> einfache und wiederkehrende Probleme</li>
-<li><strong>Second Level:</strong> durch Eskalation weitergeleitete Fälle</li>
-<li><strong>Third Level:</strong> Spezialprobleme und Speziallösungen</li>
-</ul>
-<h3 id="ablauf-über-die-levels"><a class="header" href="#ablauf-über-die-levels">Ablauf über die Levels</a></h3>
-<ul>
-<li><strong>First Level</strong> (IT-Techniker): Analyse, Diagnose, Selektion, Dokumentation</li>
-<li><strong>Second Level</strong> (IT-Experten): Analyse, Workaround, Diagnose, Dokumentation</li>
-<li><strong>Third Level</strong> (Resolution-Group): Analyse, Workaround, Diagnose, Dokumentation</li>
-<li>Nach jeder Stufe wird geprüft: <strong>Lösung/Test erfolgreich?</strong>
-<ul>
-<li><strong>Ja</strong> → Rückmeldung an den Anfragenden, Ticket kann geschlossen werden</li>
-<li><strong>Nein</strong> → <strong>Eskalation</strong> in die nächste Stufe</li>
-</ul>
-</li>
-<li><strong>Schulung:</strong> Höhere Levels schulen die niedrigeren Levels (Wissen fließt nach unten).</li>
-</ul>
-<h3 id="eskalierung"><a class="header" href="#eskalierung">Eskalierung</a></h3>
-<p>Kann ein Problem <strong>in der vereinbarten Frist nicht zufriedenstellend</strong> bearbeitet werden, wird der Vorgang <strong>eskaliert</strong>.</p>
-<div class="table-wrapper">
-<table>
-<thead>
-<tr><th>Art</th><th>Bedeutung</th></tr>
-</thead>
-<tbody>
-<tr><td><strong>Funktional</strong></td><td>Weiterleitung an Mitarbeiter/Team mit mehr <strong>Spezialkenntnissen, Erfahrung und Rechten</strong></td></tr>
-<tr><td><strong>Hierarchisch</strong></td><td>Einbeziehen <strong>höherer Managementstufen</strong> zur <strong>Information und Unterstützung</strong></td></tr>
-</tbody>
-</table>
-</div>
-<h3 id="workaround"><a class="header" href="#workaround">Workaround</a></h3>
-<p><strong>Provisorische Lösung / Notlösung</strong> (“um etwas herum arbeiten”).</p>
-<ul>
-<li>Wird bei Problemen als <strong>Known Error</strong> im System erfasst.</li>
-<li>Bei der Einrichtung <strong>muss festgelegt werden</strong>: bis wann, wie, womit und mit wem die <strong>Dauerlösung</strong> erarbeitet wird.</li>
-</ul>
-<h2 id="abläufe-der-service-basisprozesse"><a class="header" href="#abläufe-der-service-basisprozesse">Abläufe der Service-Basisprozesse</a></h2>
-<h3 id="incident-management"><a class="header" href="#incident-management">Incident-Management</a></h3>
-<p><strong>Hauptziel:</strong> den <strong>normalen Servicebetrieb so schnell wie möglich wiederherstellen</strong> und die <strong>negativen Auswirkungen</strong> auf den Geschäftsbetrieb <strong>so gering wie möglich</strong> halten.</p>
-<h3 id="problem-management"><a class="header" href="#problem-management">Problem-Management</a></h3>
-<p>Beseitigt die <strong>Ursache wiederkehrender Incidents</strong>. Sinnvoll ist oft eine <strong>tiefgehende Ursachenanalyse</strong>, um nicht nur die aktuelle Störung zu beheben, sondern <strong>künftige Beeinträchtigungen proaktiv zu verhindern</strong>.</p>
-<blockquote>
-<p><strong>Incident vs. Problem:</strong> Incident-Management = schnell wieder lauffähig (Symptom). Problem-Management = Ursache dauerhaft beseitigen.</p>
-</blockquote>
-<h3 id="request-for-change-rfc"><a class="header" href="#request-for-change-rfc">Request for Change (RFC)</a></h3>
-<p>Anfrage auf eine Veränderung oder Überarbeitung, die <strong>kein Standard-Change</strong> ist (Standard-Change z. B. Updates).</p>
-<ul>
-<li>Beispiele: Änderungen an Hard-/Software, Dokumentation, Services oder Prozessen</li>
-<li>Erfordert eine <strong>präzise Beschreibung</strong> der Änderung</li>
-<li>Geht an den <strong>Change-Manager</strong>, der sie <strong>formal prüft und genehmigt</strong></li>
-<li><strong>Standard-Changes</strong> laufen im normalen Qualitätsprozess</li>
-</ul>
-<h3 id="analyse"><a class="header" href="#analyse">Analyse</a></h3>
-<p>Vorfall, Anfrage, Störung oder Change-Wunsch werden von der <strong>fachlichen Stelle analysiert und bewertet</strong>. Danach folgt entweder eine <strong>Lösung</strong> oder die <strong>Eskalation</strong> an eine spezielle Stelle (z. B. Second-/Third-Level-Support).</p>
-<h2 id="prüfungs-spickzettel"><a class="header" href="#prüfungs-spickzettel">Prüfungs-Spickzettel</a></h2>
-<ul>
-<li><strong>Servicedesk</strong> nimmt an, <strong>SPOC</strong> ist die einzige Anlaufstelle, <strong>Ticketsystem</strong> verwaltet alles unter <strong>einer Ticketnummer</strong>.</li>
-<li><strong>Ablauf:</strong> Meldung → Protokollierung → Klassifizierung → Kategorisierung → Priorisierung → 1st Level → ggf. Eskalation → Diagnose → Lösung → Ticket schließen.</li>
-<li><strong>Priorität = Impact + Urgency.</strong></li>
-<li><strong>Incident</strong> = ungeplante Störung, <strong>Service Request</strong> = Anfrage, <strong>Event</strong> = Meldung ohne Störung, <strong>Major Incident</strong> = erhebliche Business-Unterbrechung.</li>
-<li><strong>Levels:</strong> 0 Self Service, 1 Service Desk, 2 Specialized, 3 Expert (Ursache, Patches, Doku), 4 External (Hersteller).</li>
-<li><strong>Eskalation:</strong> funktional (Spezialisten) oder hierarchisch (Management).</li>
-<li><strong>Workaround</strong> = Notlösung + Termin für Dauerlösung.</li>
-<li><strong>Incident-Management</strong> = schnell wiederherstellen, <strong>Problem-Management</strong> = Ursache beseitigen, <strong>RFC</strong> = Änderungsantrag an den Change-Manager.</li>
+<li><strong>1st Level:</strong> annehmen, klassifizieren, priorisieren, einfache Probleme lösen, weiterleiten, dokumentieren</li>
+<li><strong>2nd Level:</strong> erste Eskalationsstufe, Techniker/Spezialisten, komplexere Fälle, Wissensdatenbank füttern</li>
+<li><strong>3rd Level:</strong> höchste Stufe, hochspezialisierte Fachleute (Produktexperten/Entwickler), komplexe Probleme</li>
+<li><strong>Eskalationsauslöser:</strong> Schweregrad, Zeit (SLA), hinterlegte Regeln</li>
+<li><strong>Ticketsystem:</strong> Empfang, Bestätigung, Klassifizierung, Bearbeitung; Beispiele Jira, ServiceNow</li>
 </ul>
 
                     </main>
