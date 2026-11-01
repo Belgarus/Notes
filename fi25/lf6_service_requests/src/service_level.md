@@ -114,12 +114,6 @@ Eskalationsstufen im IT-Kundensupport werden festgelegt anhand des **Schweregrad
 - Task-Tracking-System
 - Request-Tracking-System (RTS)
 
-### Video: Ticketsystem erklärt (Englisch)
-
-<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/9uER-Gr5WGI" title="What Is an IT Ticket System? Help Desk Ticketing Systems Explained" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-[Video auf YouTube öffnen](https://www.youtube.com/watch?v=9uER-Gr5WGI)
-
 ## Spickzettel
 
 - **1st Level:** annehmen, klassifizieren, priorisieren, einfache Probleme lösen, weiterleiten, dokumentieren
