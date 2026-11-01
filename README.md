@@ -1,12 +1,10 @@
 # Notes
+
 ## FI25 – Vocational Training Documentation
-
-mdBooks related to german vocational training (Fachinformatik)
-
+mdBooks related to the german IT specialist vocational training 
 - [**Material Overview**](https://belgarus.github.io/Notes/fi25/materialien_uebersicht/book/)
 
 ## Repository Structure
-
 ``` powershell
 fi25/
 ├── gk_law/
