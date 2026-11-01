@@ -1,4 +1,8 @@
 [book]
 title = "lf6_service_requests"
 authors = ["Belgarus"]
-language = "en"
+language = "de"
+
+[output]
+[output.html]
+git-repository-url = "https://github.com/Belgarus/Notes"
