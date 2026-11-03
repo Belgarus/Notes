@@ -18,7 +18,7 @@
 | 10 | Stripe über Spiegelpaare | 4 | n/2·S (50 %) | 1 pro Paar |
 | JBOD | Platten aneinandergereiht | 2 | Summe | keine |
 
-## Bilder je Level (Wikipedia)
+## Bilder je Level 
 
 Farbe = zusammengehörige Blockgruppe (Stripe), **p / q** = Parität.
 
@@ -46,7 +46,7 @@ Pro Zeile **zwei** Paritätsblöcke (p und q).
 ![RAID_10.svg](https://commons.wikimedia.org/wiki/Special:FilePath/RAID_10.svg?width=420)
 Unten Spiegelpaare (RAID 1), oben Striping (RAID 0). Falls das Bild nicht lädt: siehe ASCII-Skizze unten.
 
-*Bilder: Wikimedia Commons / Wikipedia „Standard RAID levels", Autor u. a. Cburnett, CC BY-SA 3.0. Anzeige benötigt Internet.*
+*Bilder: Wikimedia Commons / Wikipedia „Standard RAID levels"
 
 ## Skizzen erkennen (Kurzform)
 

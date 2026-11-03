@@ -12,10 +12,14 @@ fi25/
 ├── lf2_workplace_and_customer_requirements/
 ├── lf3_networking/
 ├── lf6_service_requests/
+├── lf9_netzwerke_dienste/
 ├── materialien_uebersicht/
 ├── sol_layer_2_switch/
 └── wk_wirtschaftliche_grundlagen/
 ```
+
+> [!WARNING] 
+> If you find any false information or mistakes please open an issue or PR. 
 
 ---
 
