@@ -19,3 +19,5 @@
 8. Gateway muss im eigenen Subnetz liegen.
 9. IPv6: kein Broadcast, Multicast statt Broadcast.
 10. Subnetze = 2^(neue Präfixlänge − alte Präfixlänge).
+
+> Macht einfach die Übungen in Ilias :)

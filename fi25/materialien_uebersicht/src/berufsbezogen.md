@@ -43,3 +43,4 @@ Daten systemübergreifend bereitstellen
 
 # Lernfeld 9 
 Netzwerke und Dienste bereitstellen
+- [LF9 LK 4.11.26](https://belgarus.github.io/Notes/fi25/lf9_netzwerke_dienste/book/)
