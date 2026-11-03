@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-de857bcf.js";
+            window.path_to_searchindex_js = "searchindex-3caf2e33.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-e018666b.js"></script>
+        <script src="toc-2aa81d25.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -349,6 +349,62 @@ RAID 10  2 Spiegelpaare (A1|A1, A2|A2), darüber Stripe
 <ul>
 <li>Privat: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, <code>192.168.0.0/16</code></li>
 <li>Loopback: <code>127.0.0.1</code> · APIPA: <code>169.254.0.0/16</code> (kein DHCP erreichbar)</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ipv6--absolute-grundlagen"><a class="header" href="#ipv6--absolute-grundlagen">IPv6 – Absolute Grundlagen</a></h1>
+<ul>
+<li>128 Bit, 8 Hextette (je 16 Bit, hexadezimal), Trennzeichen <code>:</code></li>
+<li><strong>Kein Broadcast</strong> → Multicast (und Anycast)</li>
+<li>Typisch: <strong>/64</strong> pro LAN (64 Bit Präfix + 64 Bit Interface-ID)</li>
+</ul>
+<h2 id="adressarten"><a class="header" href="#adressarten">Adressarten</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Art</th><th>Bereich</th><th>Merkmal</th></tr>
+</thead>
+<tbody>
+<tr><td>Global Unicast</td><td>2000::/3</td><td>öffentlich routbar (<code>2001:db8::/32</code> = Dokumentation)</td></tr>
+<tr><td>Link Local</td><td>fe80::/10</td><td>nur lokaler Link, <strong>nicht geroutet</strong></td></tr>
+<tr><td>Unique Local</td><td>fc00::/7</td><td>privat (wie 192.168.x.x)</td></tr>
+<tr><td>Multicast</td><td>ff00::/8</td><td>Gruppenkommunikation</td></tr>
+<tr><td>Loopback</td><td>::1</td><td>eigener Rechner (wie 127.0.0.1)</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>Multicast:</strong> <code>ff02::1</code> = alle Nodes am Link · <code>ff02::2</code> = alle Router am Link.</p>
+<h2 id="kürzungsregeln"><a class="header" href="#kürzungsregeln">Kürzungsregeln</a></h2>
+<ol>
+<li><strong>Führende Nullen</strong> jedes Hextetts weglassen: <code>00a5</code> → <code>a5</code>.</li>
+<li><strong>Eine</strong> Folge aufeinanderfolgender Null-Hextette → <code>::</code> (<strong>nur einmal</strong> pro Adresse, die längste).</li>
+</ol>
+<pre><code>2001:0db8:0000:0000:0000:0000:0000:0001  →  2001:db8::1
+fe80:0000:0000:0000:0000:0000:0000:0001  →  fe80::1
+2001:0db8:4711:00a5::/64                 →  2001:db8:4711:a5::/64
+</code></pre>
+<h2 id="subnetting"><a class="header" href="#subnetting">Subnetting</a></h2>
+<p><strong>Subnetzbits = neue Präfixlänge − alte Präfixlänge · Anzahl Subnetze = 2^Subnetzbits</strong></p>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Von → Nach</th><th>Bits</th><th>Subnetze</th><th>Beispiel</th></tr>
+</thead>
+<tbody>
+<tr><td>/48 → /64</td><td>16</td><td>65.536</td><td><code>2001:db8:4711:0000::/64</code>, <code>…:0001::/64</code></td></tr>
+<tr><td>/56 → /64</td><td>8</td><td>256</td><td><code>…:1200::/64</code> bis <code>…:12ff::/64</code></td></tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>Subnetz-ID liegt im <strong>4. Hextett</strong> (bei /48 vollständig, bei /56 die letzten 8 Bit davon).</li>
+<li><strong>Gleiches Subnetz</strong> = ersten 64 Bit gleich (4. Hextett vergleichen!).</li>
+<li>Beispiel: Firma mit /48, 3 Abteilungen: <code>2001:db8:55aa:1::/64</code>, <code>…:2::/64</code>, <code>…:3::/64</code>; übrig 65.536 − 3 = 65.533.</li>
+<li>Keine Broadcast-/„letzte nutzbare Host“-Logik wie bei IPv4.</li>
+</ul>
+<h2 id="kurzdiagnose"><a class="header" href="#kurzdiagnose">Kurzdiagnose</a></h2>
+<ul>
+<li>Nur <code>fe80::</code> vorhanden → nur lokale Kommunikation; <strong>Router Advertisement/SLAAC</strong>, ggf. <strong>DHCPv6</strong>/Routerkonfig prüfen.</li>
+<li>Windows: <code>ipconfig /all</code>, <code>route print</code> · Linux: <code>ip -6 addr</code>, <code>ip -6 route</code></li>
 </ul>
 
                     </main>
