@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-d86a5f7f.js";
+            window.path_to_searchindex_js = "searchindex-f946573f.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-ff4797b4.js"></script>
+        <script src="toc-60b70185.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -202,6 +202,99 @@
 <li>IPv6: kein Broadcast, Multicast statt Broadcast.</li>
 <li>Subnetze = 2^(neue Präfixlänge − alte Präfixlänge).</li>
 </ol>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="raid-redundant-array-of-independent-discs"><a class="header" href="#raid-redundant-array-of-independent-discs">RAID (Redundant Array of Independent Discs)</a></h1>
+<ul>
+<li>Ziele: <strong>Ausfallsicherheit</strong> (Redundanz) und/oder <strong>Geschwindigkeit</strong>.</li>
+<li>Parität = Zusatzinfo, aus der Daten wiederhergestellt werden.</li>
+<li>Gleich große Platten; <strong>kleinste/langsamste</strong> bestimmt den Verbund.</li>
+<li><strong>Software-RAID:</strong> OS steuert, kein Controller, kostet CPU. <strong>Hardware-RAID:</strong> eigener Controller.</li>
+<li><strong>Hot Spare:</strong> Reserveplatte im System; springt bei Ausfall automatisch ein → <strong>Rebuild</strong> (Daten werden aus Rest/Parität neu berechnet). Währenddessen langsamer und <strong>nicht voll sicher</strong>.</li>
+</ul>
+<h2 id="übersicht-n-platten-à-s"><a class="header" href="#übersicht-n-platten-à-s">Übersicht (n Platten à S)</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Level</th><th>Prinzip</th><th>Min.</th><th>Nutzkapazität</th><th>Ausfalltoleranz</th></tr>
+</thead>
+<tbody>
+<tr><td>0</td><td>Striping</td><td>2</td><td>n·S</td><td><strong>keine</strong></td></tr>
+<tr><td>1</td><td>Spiegelung</td><td>2</td><td>S (50 %)</td><td>n−1 (bei 2: eine)</td></tr>
+<tr><td>4</td><td>Parität auf <em>einer</em> Platte (veraltet)</td><td>3</td><td>(n−1)·S</td><td>1</td></tr>
+<tr><td>5</td><td>Striping + verteilte Parität</td><td>3</td><td>(n−1)·S</td><td>1</td></tr>
+<tr><td>6</td><td>Striping + doppelte Parität</td><td>4</td><td>(n−2)·S</td><td>2</td></tr>
+<tr><td>10</td><td>Stripe über Spiegelpaare</td><td>4</td><td>n/2·S (50 %)</td><td>1 pro Paar</td></tr>
+<tr><td>JBOD</td><td>Platten aneinandergereiht</td><td>2</td><td>Summe</td><td>keine</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="bilder-je-level-wikipedia"><a class="header" href="#bilder-je-level-wikipedia">Bilder je Level (Wikipedia)</a></h2>
+<p>Farbe = zusammengehörige Blockgruppe (Stripe), <strong>p / q</strong> = Parität.</p>
+<h3 id="raid-0--striping"><a class="header" href="#raid-0--striping">RAID 0 – Striping</a></h3>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAID_0.svg?width=300" alt="RAID_0.svg"><span class="img-wrapper"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAID_0.svg?width=300" alt="RAID_0.svg"></span></label>
+A1|A2 · A3|A4 … abwechselnd auf beide Platten. Keine Kopie, keine Parität.</p>
+<h3 id="raid-1--spiegelung"><a class="header" href="#raid-1--spiegelung">RAID 1 – Spiegelung</a></h3>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAID_1.svg?width=300" alt="RAID_1.svg"><span class="img-wrapper"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAID_1.svg?width=300" alt="RAID_1.svg"></span></label>
+Beide Platten identisch.</p>
+<h3 id="raid-4--dedizierte-paritätsplatte-veraltet"><a class="header" href="#raid-4--dedizierte-paritätsplatte-veraltet">RAID 4 – dedizierte Paritätsplatte (veraltet)</a></h3>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAID_4.svg?width=380" alt="RAID_4.svg"><span class="img-wrapper"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAID_4.svg?width=380" alt="RAID_4.svg"></span></label>
+Alle Paritäten auf <strong>einer</strong> Platte (Flaschenhals).</p>
+<h3 id="raid-5--verteilte-parität"><a class="header" href="#raid-5--verteilte-parität">RAID 5 – verteilte Parität</a></h3>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAID_5.svg?width=380" alt="RAID_5.svg"><span class="img-wrapper"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAID_5.svg?width=380" alt="RAID_5.svg"></span></label>
+Parität „wandert“ über alle Platten (Diagonale).</p>
+<h3 id="raid-6--doppelte-verteilte-parität"><a class="header" href="#raid-6--doppelte-verteilte-parität">RAID 6 – doppelte verteilte Parität</a></h3>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAID_6.svg?width=480" alt="RAID_6.svg"><span class="img-wrapper"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAID_6.svg?width=480" alt="RAID_6.svg"></span></label>
+Pro Zeile <strong>zwei</strong> Paritätsblöcke (p und q).</p>
+<h3 id="raid-10--stripe-über-spiegelpaare"><a class="header" href="#raid-10--stripe-über-spiegelpaare">RAID 10 – Stripe über Spiegelpaare</a></h3>
+<p><label class="checkbox-label"><input class="checkbox-img" type="checkbox"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAID_10.svg?width=420" alt="RAID_10.svg"><span class="img-wrapper"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/RAID_10.svg?width=420" alt="RAID_10.svg"></span></label>
+Unten Spiegelpaare (RAID 1), oben Striping (RAID 0). Falls das Bild nicht lädt: siehe ASCII-Skizze unten.</p>
+<p><em>Bilder: Wikimedia Commons / Wikipedia „Standard RAID levels“, Autor u. a. Cburnett, CC BY-SA 3.0. Anzeige benötigt Internet.</em></p>
+<h2 id="skizzen-erkennen-kurzform"><a class="header" href="#skizzen-erkennen-kurzform">Skizzen erkennen (Kurzform)</a></h2>
+<pre><code>RAID 0   D0: A1 A3 A5   D1: A2 A4 A6      → Blöcke abwechselnd, nichts doppelt
+RAID 1   D0: A1 A2 A3   D1: A1 A2 A3      → identische Platten
+RAID 4   D0: A1  D1: A2  D2: A3  D3: Ap   → Parität nur auf letzter Platte
+RAID 5   Ap, Bp, Cp, Dp wandern "diagonal" über alle Platten
+RAID 6   zwei Paritäten pro Zeile (Ap + Aq), min. 4–5 Platten
+RAID 10  2 Spiegelpaare (A1|A1, A2|A2), darüber Stripe
+</code></pre>
+<p><strong>Erkennungsmerkmale:</strong> gleiche Blöcke auf 2 Platten = Spiegel · eigene Parity-Platte = RAID 4 · verteilte „p“ = RAID 5 · „p“ und „q“ = RAID 6 · Spiegel-Paare + Stripe = RAID 10.</p>
+<p><strong>Kombis:</strong> RAID 10 = 1 unten, 0 oben (Stripe über Spiegel). RAID 01 = umgekehrt. RAID 15 = RAID 5 über RAID-1-Paare (min. 6). RAID 51 = gespiegeltes RAID 5 (min. 6).</p>
+<p><strong>Schreibweise:</strong> RAID (5,2) = RAID 6 → 5 Platten, 2 dürfen ausfallen.</p>
+<h2 id="vor-nachteile-kurz"><a class="header" href="#vor-nachteile-kurz">Vor-/Nachteile kurz</a></h2>
+<ul>
+<li><strong>0:</strong> schnell, Totalausfall bei 1 Defekt.</li>
+<li><strong>1:</strong> sicher, einfach; 50 % Verlust, Schreiben etwas langsamer.</li>
+<li><strong>5:</strong> günstig, gute Kapazität (3 Platten: 33 % Verlust, 4 Platten: 25 %); Rebuild kritisch.</li>
+<li><strong>6:</strong> sicherer als 5; mehr Verlust, langsameres Schreiben (2 Paritäten).</li>
+<li><strong>10:</strong> schnell + sicher, ideal für Datenbanken; 50 % Verlust.</li>
+</ul>
+<h2 id="rechenbeispiele"><a class="header" href="#rechenbeispiele">Rechenbeispiele</a></h2>
+<ul>
+<li>4×2 TB RAID 0 → 8 TB · 2×4 TB RAID 1 → 4 TB · 5×2 TB RAID 5 → 8 TB · 6×4 TB RAID 6 → 16 TB · 8×2 TB RAID 10 → 8 TB</li>
+<li>4×3 TB RAID 5: roh 12 TB, nutzbar <strong>9 TB</strong>, 1 Ausfall.</li>
+<li>8×6 TB RAID 6: roh 48 TB, nutzbar <strong>36 TB</strong>, 2 Ausfälle.</li>
+<li><strong>12 TB nutzbar mit 4-TB-Platten:</strong> RAID 5 = <strong>4</strong> Platten · RAID 6 = <strong>5</strong> · RAID 10 = <strong>6</strong>.</li>
+<li><strong>Prüfungsfall:</strong> 5×4 TB, nutzbar 16 TB → <strong>RAID 5</strong>. Nach 1 Ausfall: <strong>0</strong> weitere dürfen ausfallen → Platte sofort ersetzen/Rebuild, Backup prüfen.</li>
+</ul>
+<h2 id="welches-raid-wofür"><a class="header" href="#welches-raid-wofür">Welches RAID wofür?</a></h2>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Anforderung</th><th>RAID</th></tr>
+</thead>
+<tbody>
+<tr><td>Max. Speed, Daten woanders vorhanden</td><td>0</td></tr>
+<tr><td>2 Platten, einfache Redundanz</td><td>1</td></tr>
+<tr><td>Dateiserver, gute Kapazität + 1 Ausfall</td><td>5</td></tr>
+<tr><td>Großer Speicher, 2 Ausfälle tolerieren</td><td>6</td></tr>
+<tr><td>Datenbank, hohe I/O + Redundanz</td><td>10</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="raid--backup"><a class="header" href="#raid--backup">RAID ≠ Backup</a></h2>
+<p>RAID schützt <strong>nur vor Plattenausfall</strong>, nicht vor: Löschen/Bedienfehler, Ransomware/Malware, Controller-Defekt, Feuer/Diebstahl/Wasser, Softwarefehlern.
+<strong>Merksatz:</strong> <em>RAID erhöht die Verfügbarkeit, Backup sichert die Daten.</em></p>
+<p><strong>Rebuild kritisch</strong>, weil alle Platten stark belastet werden (weiterer Ausfall = ggf. Datenverlust) und das System langsamer ist. Daher Zustand überwachen, defekte Platte zeitnah tauschen.</p>
 
                     </main>
 
