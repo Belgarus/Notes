@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-67c27277.js";
+            window.path_to_searchindex_js = "searchindex-de857bcf.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-60b70185.js"></script>
+        <script src="toc-e018666b.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -301,6 +301,55 @@ RAID 10  2 Spiegelpaare (A1|A1, A2|A2), darüber Stripe
 <p>RAID schützt <strong>nur vor Plattenausfall</strong>, nicht vor: Löschen/Bedienfehler, Ransomware/Malware, Controller-Defekt, Feuer/Diebstahl/Wasser, Softwarefehlern.
 <strong>Merksatz:</strong> <em>RAID erhöht die Verfügbarkeit, Backup sichert die Daten.</em></p>
 <p><strong>Rebuild kritisch</strong>, weil alle Platten stark belastet werden (weiterer Ausfall = ggf. Datenverlust) und das System langsamer ist. Daher Zustand überwachen, defekte Platte zeitnah tauschen.</p>
+<div style="break-before: page; page-break-before: always;"></div>
+<h1 id="ipv4--absolute-grundlagen"><a class="header" href="#ipv4--absolute-grundlagen">IPv4 – Absolute Grundlagen</a></h1>
+<h2 id="kernrechnung"><a class="header" href="#kernrechnung">Kernrechnung</a></h2>
+<ul>
+<li><strong>Blockgröße = 256 − Maskenoktett</strong></li>
+<li>Netz-ID = erste Adresse des Blocks · Broadcast = letzte · Hosts = dazwischen</li>
+<li>Hosts pro Netz = 2^h − 2 (h = Hostbits)</li>
+</ul>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>CIDR</th><th>Maske</th><th>Blockgröße</th><th>Hosts</th></tr>
+</thead>
+<tbody>
+<tr><td>/24</td><td>255.255.255.0</td><td>256</td><td>254</td></tr>
+<tr><td>/25</td><td>255.255.255.128</td><td>128</td><td>126</td></tr>
+<tr><td>/26</td><td>255.255.255.192</td><td>64</td><td>62</td></tr>
+<tr><td>/27</td><td>255.255.255.224</td><td>32</td><td>30</td></tr>
+<tr><td>/28</td><td>255.255.255.240</td><td>16</td><td>14</td></tr>
+<tr><td>/29</td><td>255.255.255.248</td><td>8</td><td>6</td></tr>
+<tr><td>/30</td><td>255.255.255.252</td><td>4</td><td>2</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="gleiches-subnetz"><a class="header" href="#gleiches-subnetz">Gleiches Subnetz?</a></h2>
+<p>Beide Adressen mit der Maske verUNDen → gleiche Netz-ID = gleiches Subnetz = Kommunikation ohne Router.</p>
+<p><strong>U03 Aufgabe 1</strong> (/25, Blöcke 0–127 und 128–255):</p>
+<ul>
+<li>PC 1 <code>192.168.10.25</code> → Netz <code>192.168.10.0/25</code></li>
+<li>PC 2 <code>192.168.10.130</code> → Netz <code>192.168.10.128/25</code></li>
+<li><strong>Nicht</strong> gleiches Subnetz.</li>
+<li>Lösung: PC 2 bekommt Adresse im Bereich <strong>.1–.126</strong>, z. B. <code>192.168.10.30</code> (nicht .1 = Gateway, nicht .25 = PC 1).</li>
+</ul>
+<h2 id="gateway-fehler"><a class="header" href="#gateway-fehler">Gateway-Fehler</a></h2>
+<p><strong>U03 Aufgabe 2:</strong> PC <code>192.168.20.50/24</code>, Router <code>192.168.30.1/24</code></p>
+<ul>
+<li>Verschiedene /24-Netze (192.168.<strong>20</strong>.0 vs. 192.168.<strong>30</strong>.0) → Router nicht direkt erreichbar.</li>
+<li>Lösung: Router-LAN z. B. <code>192.168.20.1/24</code>.</li>
+<li><strong>Regel:</strong> Standardgateway muss im selben Subnetz wie der PC liegen.</li>
+</ul>
+<h2 id="checkliste-bei-fehlersuche"><a class="header" href="#checkliste-bei-fehlersuche">Checkliste bei Fehlersuche</a></h2>
+<ol>
+<li>Gleiches Subnetz? 2. Maske gleich? 3. Gateway im eigenen Netz? 4. Adresse doppelt vergeben? 5. Netz-/Broadcast-Adresse versehentlich vergeben?</li>
+</ol>
+<h2 id="sonderbereiche"><a class="header" href="#sonderbereiche">Sonderbereiche</a></h2>
+<ul>
+<li>Privat: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>, <code>192.168.0.0/16</code></li>
+<li>Loopback: <code>127.0.0.1</code> · APIPA: <code>169.254.0.0/16</code> (kein DHCP erreichbar)</li>
+</ul>
 
                     </main>
 
