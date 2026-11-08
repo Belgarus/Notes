@@ -18,8 +18,8 @@ fi25/
 └── wk_wirtschaftliche_grundlagen/
 ```
 
-> [!WARNING] 
-> If you find any false information or mistakes please open an issue or PR. 
+> [!WARNING]
+> Should you notice any false information or mistakes please raise an issue or open a PR. 
 
 ---
 
