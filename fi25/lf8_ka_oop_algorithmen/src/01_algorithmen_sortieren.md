@@ -124,8 +124,6 @@ def selection_sort(arr):
                 min_i = j
         arr[i], arr[min_i] = arr[min_i], arr[i]    # EIN Tausch pro Durchgang
     return arr
-
-print(selection_sort([0, 13, 1337, 4004, -1, 42, 1312]))
 ```
 
 **Merke:** Wenige Tausche (höchstens n−1), aber **immer viele Vergleiche** (n(n−1)/2), auch bei schon sortierter Liste.
