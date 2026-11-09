@@ -40,6 +40,7 @@ Cyber-physische Systeme ergänzen
 Daten systemübergreifend bereitstellen
 - [Lehrmaterialien](https://fjodor.github.io/LF8/)
 - [Gemeinsames HedgeDoc](https://hedgedoc.c3d2.de/LF8a)
+- [LF8 KA 10.11.26](https://belgarus.github.io/Notes/fi25/lf8_ka_oop_algorithmen/book/)
 
 # Lernfeld 9 
 Netzwerke und Dienste bereitstellen

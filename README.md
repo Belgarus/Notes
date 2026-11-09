@@ -12,6 +12,7 @@ fi25/
 ├── lf2_workplace_and_customer_requirements/
 ├── lf3_networking/
 ├── lf6_service_requests/
+├──lf8_ka_oop_algorithmen
 ├── lf9_netzwerke_dienste/
 ├── materialien_uebersicht/
 ├── sol_layer_2_switch/
