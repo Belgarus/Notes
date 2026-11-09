@@ -37,7 +37,7 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-53f969f6.js";
+            window.path_to_searchindex_js = "searchindex-4e1d6ee8.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="toc-9463c31e.js"></script>
@@ -269,8 +269,6 @@ Durchgang 4:  1 2 3 4 5      ← keine Vertauschung mehr → fertig
             if arr[j] &gt; arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]   # tauschen
     return arr
-
-print(bubble_sort([0, 13, 1337, 4004, -1, 42, 1312]))
 </code></pre>
 <p><strong>Verbesserung mit Abbruch:</strong> Wird in einem Durchgang nicht getauscht, ist die Liste schon sortiert → <code>break</code>. Dadurch ist der <strong>Best Case O(n)</strong>.</p>
 <pre><code class="language-python">def bubble_sort(arr):
@@ -333,8 +331,6 @@ Nimm 2:    1 2 3 4 5          5, 4, 3 rutschen → fertig
             j -= 1
         arr[j + 1] = key                  # an die freie Stelle einfügen
     return arr
-
-print(insertion_sort([0, 13, 1337, 4004, -1, 42, 1312]))
 </code></pre>
 <p><strong>Merke:</strong> Schnell bei <strong>kleinen oder fast sortierten</strong> Listen (Best Case O(n)). Im Code gibt es kein Tauschen, sondern <strong>Verschieben</strong>.</p>
 <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/Aeuu34re_EI" title="Insertionsort erklärt (Deutsch)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen=""></iframe></div>

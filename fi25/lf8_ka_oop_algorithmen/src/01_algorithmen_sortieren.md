@@ -79,8 +79,6 @@ def bubble_sort(arr):
             if arr[j] > arr[j + 1]:
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]   # tauschen
     return arr
-
-print(bubble_sort([0, 13, 1337, 4004, -1, 42, 1312]))
 ```
 
 **Verbesserung mit Abbruch:** Wird in einem Durchgang nicht getauscht, ist die Liste schon sortiert → `break`. Dadurch ist der **Best Case O(n)**.
@@ -161,8 +159,6 @@ def insertion_sort(arr):
             j -= 1
         arr[j + 1] = key                  # an die freie Stelle einfügen
     return arr
-
-print(insertion_sort([0, 13, 1337, 4004, -1, 42, 1312]))
 ```
 
 **Merke:** Schnell bei **kleinen oder fast sortierten** Listen (Best Case O(n)). Im Code gibt es kein Tauschen, sondern **Verschieben**.
