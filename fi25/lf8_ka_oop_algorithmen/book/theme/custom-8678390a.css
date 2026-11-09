@@ -1,0 +1,27 @@
+/* Responsives YouTube-Einbetten */
+.video {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  aspect-ratio: 16 / 9;
+  margin: 1rem 0 0.4rem 0;
+}
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 8px;
+}
+.video-link {
+  font-size: 0.9em;
+  margin-bottom: 1.2rem;
+}
+details {
+  margin: 0.6rem 0;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--quote-border);
+  border-radius: 6px;
+}
+details summary { cursor: pointer; font-weight: 600; }

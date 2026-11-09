@@ -1,0 +1,9 @@
+[book]
+title = "LF8 Lernzettel – Daten systemübergreifend bereitstellen"
+description = "Kompakte Zusammenfassung für die Klassenarbeit: Algorithmen, OOP, Dateiformate, REST/SOAP"
+language = "de"
+src = "src"
+
+[output.html]
+additional-css = ["theme/custom.css"]
+git-repository-url = "https://github.com/Belgarus/Notes"
