@@ -96,8 +96,8 @@ def bubble_sort(arr):
     return arr
 ```
 
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/9l_KDfEHS-k" title="Bubble Sort Schritt für Schritt erklärt (Deutsch)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-<p class="video-link">▶ <a href="https://www.youtube.com/watch?v=9l_KDfEHS-k">Bubble Sort, Schritt für Schritt (Deutsch)</a> · Zum Merken zusätzlich: <a href="https://www.youtube.com/watch?v=lyZQPjUT5B4">Bubble Sort als Volkstanz (AlgoRythmics, Englisch)</a></p>
+<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/xli_FI7CuzA?si=5Eq84OomuDwWVeD2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p class="video-link">▶ <a href="https://www.youtube.com/watch?v=lyZQPjUT5B4">Bubble Sort als Volkstanz (AlgoRythmics, Englisch)</a></p>
 
 ---
 
@@ -130,8 +130,7 @@ print(selection_sort([0, 13, 1337, 4004, -1, 42, 1312]))
 
 **Merke:** Wenige Tausche (höchstens n−1), aber **immer viele Vergleiche** (n(n−1)/2), auch bei schon sortierter Liste.
 
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/ROalU379l3U" title="Select-sort with Gypsy folk dance (AlgoRythmics)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-<p class="video-link">▶ <a href="https://www.youtube.com/watch?v=ROalU379l3U">Selectionsort als Tanz (AlgoRythmics, Englisch)</a> · Deutsch zum Nachlesen: <a href="https://studyflix.de/informatik-schueler/selectionsort-1323">Studyflix Selectionsort</a></p>
+<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/g-PGLbMth_g?si=noSGfWtN23NlBR0u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
 ---
 
@@ -163,8 +162,8 @@ def insertion_sort(arr):
 
 **Merke:** Schnell bei **kleinen oder fast sortierten** Listen (Best Case O(n)). Im Code gibt es kein Tauschen, sondern **Verschieben**.
 
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/Aeuu34re_EI" title="Insertionsort erklärt (Deutsch)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-<p class="video-link">▶ <a href="https://www.youtube.com/watch?v=Aeuu34re_EI">Insertionsort erklärt (Deutsch)</a> · Zusätzlich: <a href="https://www.youtube.com/watch?v=Ns4TPTC8whw">Insertionsort als Tanz (AlgoRythmics, Englisch)</a></p>
+<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/JU767SDMDvA?si=1uFdQTmTy_FnG-8T" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+<p> Zusätzlich: <a href="https://www.youtube.com/watch?v=Ns4TPTC8whw">Insertionsort als Tanz (AlgoRythmics, Englisch)</a></p>
 
 ---
 
