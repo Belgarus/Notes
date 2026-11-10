@@ -18,6 +18,8 @@
 | Methode | Funktion eines Objekts, bildet das **Verhalten** | `spielen()` |
 | Konstruktor | wird beim Erzeugen automatisch aufgerufen (Python: `__init__`) | `Haustier("Bello")` |
 
+**Object-oriented programming** (OOP) ist ein Programmierparadigma, das Code in selbständige Einheiten namens Objekte organisiert, die Daten und Funktionen kapseln.
+
 **OOP vs. prozedural:** Bei OOP werden Daten und Funktionen im Objekt **zusammengefasst**. Prozedural bleiben Daten und Prozeduren **getrennt**.
 
 **Funktion vs. Prozedur:** Eine Funktion liefert in der Regel einen Wert zurück, eine Prozedur in der Regel nicht.

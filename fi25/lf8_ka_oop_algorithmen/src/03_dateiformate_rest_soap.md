@@ -106,69 +106,6 @@ print(daten["hobbys"][0])   # lesen
 
 ---
 
-## 3.6 REST
-
-**REST** ist ein **Architekturstil** für verteilte Systeme auf Basis des **HTTP-Protokolls**. Ressourcen werden über **URLs** identifiziert und mit **HTTP-Methoden** bearbeitet. Heute der Standard für Web-APIs.
-
-**Sechs Prinzipien:**
-
-| Prinzip | Bedeutung |
-| --- | --- |
-| Client-Server | klare Trennung von Client und Server |
-| **Stateless** | jede Anfrage enthält alle nötigen Informationen, der Server speichert keinen Client-Zustand |
-| Cacheable | Antworten können zwischengespeichert werden |
-| Uniform Interface | einheitliche Schnittstelle (URLs, HTTP-Methoden) |
-| Layered System | mehrschichtig möglich (z. B. Load Balancer dazwischen) |
-| Code on Demand | optional: Server kann ausführbaren Code senden |
-
-**HTTP-Methoden = CRUD** (**C**reate, **R**ead, **U**pdate, **D**elete):
-
-| Methode | CRUD | Bedeutung | Beispiel |
-| --- | --- | --- | --- |
-| `GET` | Read | Ressource abrufen | `GET /api/kunden/42` |
-| `POST` | Create | neue Ressource anlegen | `POST /api/kunden` |
-| `PUT` | Update | Ressource **vollständig** ersetzen | `PUT /api/kunden/42` |
-| `PATCH` | Update | Ressource **teilweise** ändern | `PATCH /api/kunden/42` |
-| `DELETE` | Delete | Ressource löschen | `DELETE /api/kunden/42` |
-
-Beispiel: `GET /api/kunden/42` liefert
-
-```json
-{ "id": 42, "name": "Müller", "ort": "Dresden" }
-```
-
----
-
-## 3.7 SOAP
-
-**SOAP** ist ein **XML-basiertes** Protokoll für Webservices. Jede Nachricht steckt in einem **Envelope** („Umschlag“) mit optionalem **Header** und einem **Body**. Die Schnittstelle wird mit **WSDL** beschrieben.
-
-```xml
-<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
-  <soap:Header/>
-  <soap:Body>
-    <getKunde>
-      <id>42</id>
-    </getKunde>
-  </soap:Body>
-</soap:Envelope>
-```
-
-### REST vs. SOAP
-
-| | REST | SOAP |
-| --- | --- | --- |
-| Art | Architekturstil | Protokoll |
-| Datenformat | meist JSON (auch XML möglich) | immer XML |
-| Beschreibung | locker, keine feste Beschreibung nötig | WSDL, Envelope-Struktur |
-| Aufwand | leichtgewichtig, schnell | schwerer, strenge Regeln |
-| Einsatz | Web-APIs, Apps, Cloud | Enterprise-Umgebungen |
-
-<div class="video"><iframe src="https://www.youtube-nocookie.com/embed/xq09ow7RuZA" title="REST vs SOAP – Quick Comparison (Englisch)" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
-<p class="video-link">▶ <a href="https://www.youtube.com/watch?v=xq09ow7RuZA">REST vs SOAP – Quick Comparison (Englisch)</a></p>
-
----
-
 ## Quick-Check
 
 <details>
@@ -189,14 +126,4 @@ Komma nach dem letzten Eintrag, einfache Anführungszeichen, Schlüssel ohne Anf
 <details>
 <summary>4. Unterschied well-formed und valid?</summary>
 Well-formed: formal korrekt (Tags geschlossen, ein Wurzelelement, …). Valid: zusätzlich regelkonform nach DTD oder XSD. XSD prüft auch Datentypen und Wertebereiche.
-</details>
-
-<details>
-<summary>5. Welche HTTP-Methode passt zu „Kunde 42 löschen“?</summary>
-`DELETE /api/kunden/42` (CRUD: Delete).
-</details>
-
-<details>
-<summary>6. Was bedeutet „stateless“ bei REST?</summary>
-Jede Anfrage enthält alle nötigen Informationen. Der Server speichert keinen Zustand des Clients.
 </details>

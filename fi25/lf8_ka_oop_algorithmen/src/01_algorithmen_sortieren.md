@@ -41,6 +41,8 @@ Ein Algorithmus ist eine **Schritt-für-Schritt-Anleitung**, die ein Problem lö
 
 ## 1.3 Die drei Sortierverfahren
 
+> Es werden KEINE Aufgaben zur Programmierung oder zum Codeverständnis gestellt. 
+
 Wir sortieren überall dieselbe Liste **aufsteigend**:
 
 ```
